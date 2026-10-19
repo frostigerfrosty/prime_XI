@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/
+src/data/database.json
+package-lock.json
+public/assets/clubs/
+test-results/
+playwright-report/

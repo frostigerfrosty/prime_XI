@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-10-19",
+  "status": "partial_historical_audit",
+  "retrieved": [
+    {
+      "id": "coach-register",
+      "url": "https://raw.githubusercontent.com/salimt/football-datasets/da9227e1f42baf74561324290dbf1ad2e3c00edd/datalake/transfermarkt/team_competitions_seasons/team_competitions_seasons.csv",
+      "sha256": "83f06c8108e87d74ebccd7d02df9b7a5fe5769bbc7004771af64230b1eff6319",
+      "bytes": 11032370,
+      "usedFor": "56 exact coach/club/season name matches; see coach-audit.json. Four unmatched or blank entries remain pending."
+    },
+    {
+      "id": "profile-register",
+      "url": "https://raw.githubusercontent.com/salimt/football-datasets/da9227e1f42baf74561324290dbf1ad2e3c00edd/datalake/transfermarkt/player_profiles/player_profiles.csv",
+      "sha256": "7ef9afbacf97577d099f21a0ef0ea0d46381bd4806a119f095b9562762a20096",
+      "bytes": 26380409,
+      "usedFor": "Research cross-check of newer player names, positions, current clubs and joining dates. No blanket historical verification was inferred."
+    },
+    {
+      "id": "historical-match-reference",
+      "url": "https://raw.githubusercontent.com/brooksryan/arsenal-data/ce9591f5bb5cf8ac504d033dd63048171c304786/data/root.sqlite",
+      "sha256": "ab205347c3fda767730ef8dd01c7d8b52b6efc725975feedf5392da5f217ec48",
+      "bytes": 12976128,
+      "usedFor": "Secondary research of 2025/26 club participation. Its match-squad table covers Arsenal 2006/07 only and cannot verify the 60 selected squads. Raw database is not distributed with PRIME XI."
+    }
+  ],
+  "blocked": [
+    {
+      "host": "en.wikipedia.org",
+      "operation": "GET historical season/final references",
+      "observed": "Proxy CONNECT HTTP 403 although the domain exists in saved environment configuration."
+    },
+    {
+      "host": "www.uefa.com",
+      "operation": "GET historical competition references",
+      "observed": "Proxy CONNECT HTTP 403 although the domain exists in saved environment configuration."
+    },
+    {
+      "host": "media.githubusercontent.com",
+      "operation": "GET public Git LFS performance data",
+      "observed": "Proxy CONNECT HTTP 403."
+    },
+    {
+      "host": "pub-e682421888d945d684bcae8890b0ec20.r2.dev",
+      "operation": "GET public CC0 transfermarkt-datasets exports",
+      "observed": "Proxy CONNECT HTTP 403."
+    },
+    {
+      "host": "github.com",
+      "operation": "Native git-lfs pull of public performance and transfer-history data",
+      "observed": "Resource not accessible by integration. Normal read-only Git access succeeded. This does not imply a missing user token."
+    }
+  ],
+  "requiredHistoricalWork": [
+    "season squad membership",
+    "captain status",
+    "season-specific nationality and position checks",
+    "four remaining coach-season references"
+  ],
+  "rawDataRedistributed": false,
+  "note": "Read references and field-level checks are recorded separately from original editorial game ratings. No unread reference or missing field has been marked verified."
+}

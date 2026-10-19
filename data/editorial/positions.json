@@ -1,0 +1,72 @@
+[
+  {
+    "id": "GK",
+    "label": "Torwart",
+    "group": "goalkeeper"
+  },
+  {
+    "id": "RB",
+    "label": "Rechter Verteidiger",
+    "group": "defence"
+  },
+  {
+    "id": "CB",
+    "label": "Innenverteidiger",
+    "group": "defence"
+  },
+  {
+    "id": "LB",
+    "label": "Linker Verteidiger",
+    "group": "defence"
+  },
+  {
+    "id": "RWB",
+    "label": "Rechter Flügelverteidiger",
+    "group": "defence"
+  },
+  {
+    "id": "LWB",
+    "label": "Linker Flügelverteidiger",
+    "group": "defence"
+  },
+  {
+    "id": "CDM",
+    "label": "Defensives Mittelfeld",
+    "group": "midfield"
+  },
+  {
+    "id": "CM",
+    "label": "Zentrales Mittelfeld",
+    "group": "midfield"
+  },
+  {
+    "id": "CAM",
+    "label": "Offensives Mittelfeld",
+    "group": "midfield"
+  },
+  {
+    "id": "RM",
+    "label": "Rechtes Mittelfeld",
+    "group": "midfield"
+  },
+  {
+    "id": "LM",
+    "label": "Linkes Mittelfeld",
+    "group": "midfield"
+  },
+  {
+    "id": "RW",
+    "label": "Rechtsaußen",
+    "group": "attack"
+  },
+  {
+    "id": "LW",
+    "label": "Linksaußen",
+    "group": "attack"
+  },
+  {
+    "id": "ST",
+    "label": "Stürmer",
+    "group": "attack"
+  }
+]

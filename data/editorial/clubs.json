@@ -1,0 +1,223 @@
+[
+  {
+    "id": "milan",
+    "name": "AC Milan",
+    "country": "ITA",
+    "shortName": "ACM",
+    "logo": null,
+    "wikipediaSeasonClub": "AC_Milan",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#AC0A1B",
+      "secondary": "#111827"
+    }
+  },
+  {
+    "id": "liverpool",
+    "name": "Liverpool",
+    "country": "ENG",
+    "shortName": "LIV",
+    "logo": null,
+    "wikipediaSeasonClub": "Liverpool_F.C.",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#C8102E",
+      "secondary": "#F5F5F5"
+    }
+  },
+  {
+    "id": "manchester-united",
+    "name": "Manchester United",
+    "country": "ENG",
+    "shortName": "MUN",
+    "logo": null,
+    "wikipediaSeasonClub": "Manchester_United_F.C.",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#DA291C",
+      "secondary": "#FFE500"
+    }
+  },
+  {
+    "id": "chelsea",
+    "name": "Chelsea",
+    "country": "ENG",
+    "shortName": "CHE",
+    "logo": null,
+    "wikipediaSeasonClub": "Chelsea_F.C.",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#034694",
+      "secondary": "#FFFFFF"
+    }
+  },
+  {
+    "id": "real-madrid",
+    "name": "Real Madrid",
+    "country": "ESP",
+    "shortName": "RMA",
+    "logo": null,
+    "wikipediaSeasonClub": "Real_Madrid_CF",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#F5F5F5",
+      "secondary": "#D6B15E"
+    }
+  },
+  {
+    "id": "barcelona",
+    "name": "Barcelona",
+    "country": "ESP",
+    "shortName": "BAR",
+    "logo": null,
+    "wikipediaSeasonClub": "FC_Barcelona",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#A50044",
+      "secondary": "#004D98"
+    }
+  },
+  {
+    "id": "inter",
+    "name": "Inter Milan",
+    "country": "ITA",
+    "shortName": "INT",
+    "logo": null,
+    "wikipediaSeasonClub": "Inter_Milan",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#0068A8",
+      "secondary": "#0B1324"
+    }
+  },
+  {
+    "id": "bayern",
+    "name": "Bayern München",
+    "country": "DEU",
+    "shortName": "FCB",
+    "logo": null,
+    "wikipediaSeasonClub": "FC_Bayern_Munich",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#DC052D",
+      "secondary": "#0066B2"
+    }
+  },
+  {
+    "id": "dortmund",
+    "name": "Borussia Dortmund",
+    "country": "DEU",
+    "shortName": "BVB",
+    "logo": null,
+    "wikipediaSeasonClub": "Borussia_Dortmund",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#FDE100",
+      "secondary": "#111827"
+    }
+  },
+  {
+    "id": "atletico",
+    "name": "Atlético Madrid",
+    "country": "ESP",
+    "shortName": "ATM",
+    "logo": null,
+    "wikipediaSeasonClub": "Atlético_Madrid",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#CE3524",
+      "secondary": "#FFFFFF"
+    }
+  },
+  {
+    "id": "juventus",
+    "name": "Juventus",
+    "country": "ITA",
+    "shortName": "JUV",
+    "logo": null,
+    "wikipediaSeasonClub": "Juventus_FC",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#F5F5F5",
+      "secondary": "#111827"
+    }
+  },
+  {
+    "id": "manchester-city",
+    "name": "Manchester City",
+    "country": "ENG",
+    "shortName": "MCI",
+    "logo": null,
+    "wikipediaSeasonClub": "Manchester_City_F.C.",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#6CABDD",
+      "secondary": "#FFFFFF"
+    }
+  },
+  {
+    "id": "ajax",
+    "name": "Ajax",
+    "country": "NLD",
+    "shortName": "AJA",
+    "logo": null,
+    "wikipediaSeasonClub": "AFC_Ajax",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#D2122E",
+      "secondary": "#FFFFFF"
+    }
+  },
+  {
+    "id": "psg",
+    "name": "Paris Saint-Germain",
+    "country": "FRA",
+    "shortName": "PSG",
+    "logo": null,
+    "wikipediaSeasonClub": "Paris_Saint-Germain_FC",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#004170",
+      "secondary": "#DA291C"
+    }
+  },
+  {
+    "id": "napoli",
+    "name": "Napoli",
+    "country": "ITA",
+    "shortName": "NAP",
+    "logo": null,
+    "wikipediaSeasonClub": "SSC_Napoli",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#12A0D7",
+      "secondary": "#FFFFFF"
+    }
+  },
+  {
+    "id": "leverkusen",
+    "name": "Bayer Leverkusen",
+    "country": "DEU",
+    "shortName": "B04",
+    "logo": null,
+    "wikipediaSeasonClub": "Bayer_04_Leverkusen",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#E32221",
+      "secondary": "#111827"
+    }
+  },
+  {
+    "id": "arsenal",
+    "name": "Arsenal",
+    "country": "ENG",
+    "shortName": "ARS",
+    "logo": null,
+    "wikipediaSeasonClub": "Arsenal_F.C.",
+    "verificationStatus": "pending",
+    "colors": {
+      "primary": "#EF0107",
+      "secondary": "#FFFFFF"
+    }
+  }
+]

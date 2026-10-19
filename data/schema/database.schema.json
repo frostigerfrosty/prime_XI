@@ -1,0 +1,2425 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "urn:prime-xi:database:v2",
+  "title": "Prime XI static content package v2",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "datasetVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "const": "editorial_draft"
+    },
+    "targetYears": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 2007,
+        "maximum": 2026
+      },
+      "minItems": 20,
+      "maxItems": 20,
+      "uniqueItems": true
+    },
+    "targetTeamsPerYear": {
+      "const": 3
+    },
+    "people": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/person"
+      }
+    },
+    "clubs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/club"
+      }
+    },
+    "formations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/formation"
+      },
+      "minItems": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "coverage": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/slot"
+      },
+      "minItems": 60,
+      "maxItems": 60
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/team"
+      },
+      "maxItems": 60
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    },
+    "ratingModel": {
+      "$ref": "#/$defs/ratingModel"
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 1,
+          "const": "original_game_design"
+        },
+        "builder": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "drawSize": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 12
+            },
+            "playersRequired": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 11
+            },
+            "coachRequired": {
+              "type": "boolean",
+              "const": true
+            },
+            "defaultFormation": {
+              "enum": [
+                "4-3-3",
+                "4-2-3-1",
+                "4-4-2",
+                "4-3-1-2",
+                "4-3-2-1",
+                "3-4-3",
+                "3-5-2"
+              ]
+            },
+            "distinctPrimeTeams": {
+              "type": "boolean",
+              "const": true
+            },
+            "playerIdentityKey": {
+              "type": "string",
+              "minLength": 1,
+              "const": "personId"
+            },
+            "maxPlayersPerPrimeTeam": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 1
+            },
+            "coachConsumesPlayerPick": {
+              "type": "boolean",
+              "const": false
+            }
+          },
+          "required": [
+            "drawSize",
+            "playersRequired",
+            "coachRequired",
+            "defaultFormation",
+            "distinctPrimeTeams",
+            "playerIdentityKey",
+            "maxPlayersPerPrimeTeam",
+            "coachConsumesPlayerPick"
+          ]
+        },
+        "strength": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "ratingMin": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 0
+            },
+            "ratingMax": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 99
+            },
+            "positionGroupWeights": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "goalkeeper": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "defence": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "midfield": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "attack": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "goalkeeper",
+                "defence",
+                "midfield",
+                "attack"
+              ]
+            },
+            "positionFit": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "primaryMultiplier": {
+                  "type": "number",
+                  "minimum": 0,
+                  "exclusiveMinimum": 0,
+                  "maximum": 1,
+                  "const": 1
+                },
+                "secondaryMultiplier": {
+                  "type": "number",
+                  "minimum": 0,
+                  "exclusiveMinimum": 0,
+                  "maximum": 1
+                },
+                "invalidPositionAllowed": {
+                  "type": "boolean",
+                  "const": false
+                }
+              },
+              "required": [
+                "primaryMultiplier",
+                "secondaryMultiplier",
+                "invalidPositionAllowed"
+              ]
+            },
+            "bonusCaps": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "chemistry": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "tactical": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "coach": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                },
+                "captain": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 10
+                }
+              },
+              "required": [
+                "chemistry",
+                "tactical",
+                "coach",
+                "captain"
+              ]
+            },
+            "naturalCaptainBonus": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          },
+          "required": [
+            "ratingMin",
+            "ratingMax",
+            "positionGroupWeights",
+            "positionFit",
+            "bonusCaps",
+            "naturalCaptainBonus"
+          ]
+        },
+        "chemistry": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sameNationalityPairWeight": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sameClubPairWeight": {
+              "type": "number",
+              "minimum": 0
+            },
+            "normalization": {
+              "type": "string",
+              "minLength": 1
+            },
+            "roundDecimals": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "sameNationalityPairWeight",
+            "sameClubPairWeight",
+            "normalization",
+            "roundDecimals"
+          ]
+        },
+        "coach": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "formationShare": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "styleShare": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "formationShare",
+            "styleShare"
+          ]
+        },
+        "match": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "distribution": {
+              "type": "string",
+              "minLength": 1,
+              "const": "poisson"
+            },
+            "baseExpectedGoals": {
+              "type": "number",
+              "minimum": 0
+            },
+            "strengthSensitivity": {
+              "type": "number",
+              "minimum": 0
+            },
+            "homeAdvantageRating": {
+              "type": "number",
+              "minimum": 0
+            },
+            "neutralVenueHomeAdvantage": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "expectedGoalsMin": {
+              "type": "number",
+              "minimum": 0
+            },
+            "expectedGoalsMax": {
+              "type": "number",
+              "minimum": 0
+            },
+            "matchVarianceFraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.3
+            },
+            "regularMinutes": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 90
+            },
+            "extraTimeMinutes": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 30
+            },
+            "penaltiesInitialKicks": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 5
+            },
+            "penaltiesSuddenDeath": {
+              "type": "boolean",
+              "const": true
+            },
+            "seedSupported": {
+              "type": "boolean",
+              "const": true
+            },
+            "calibrationStatus": {
+              "type": "string",
+              "minLength": 1,
+              "const": "requires_engine_validation"
+            }
+          },
+          "required": [
+            "distribution",
+            "baseExpectedGoals",
+            "strengthSensitivity",
+            "homeAdvantageRating",
+            "neutralVenueHomeAdvantage",
+            "expectedGoalsMin",
+            "expectedGoalsMax",
+            "matchVarianceFraction",
+            "regularMinutes",
+            "extraTimeMinutes",
+            "penaltiesInitialKicks",
+            "penaltiesSuddenDeath",
+            "seedSupported",
+            "calibrationStatus"
+          ]
+        },
+        "tournament": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "totalTeams": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 36
+            },
+            "userTeams": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 1
+            },
+            "opponentTeams": {
+              "type": "integer",
+              "minimum": 0,
+              "const": 35
+            },
+            "uniquePrimeTeamIds": {
+              "type": "boolean",
+              "const": true
+            },
+            "differentSeasonsOfSameClubAllowed": {
+              "type": "boolean",
+              "const": true
+            },
+            "league": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "matchesPerTeam": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "const": 8
+                },
+                "homeMatches": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "const": 4
+                },
+                "awayMatches": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "const": 4
+                },
+                "winPoints": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "drawPoints": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "lossPoints": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "tiebreakers": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "points",
+                      "goalDifference",
+                      "goalsFor",
+                      "wins",
+                      "teamId"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "directQualificationRanks": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "playoffRanks": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "eliminatedRanks": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              },
+              "required": [
+                "matchesPerTeam",
+                "homeMatches",
+                "awayMatches",
+                "winPoints",
+                "drawPoints",
+                "lossPoints",
+                "tiebreakers",
+                "directQualificationRanks",
+                "playoffRanks",
+                "eliminatedRanks"
+              ]
+            },
+            "knockout": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "rounds": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "enum": [
+                          "playoffs",
+                          "round-of-16",
+                          "quarter-finals",
+                          "semi-finals",
+                          "final"
+                        ]
+                      },
+                      "teams": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "legs": {
+                        "enum": [
+                          1,
+                          2
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "teams",
+                      "legs"
+                    ]
+                  },
+                  "minItems": 5,
+                  "maxItems": 5
+                },
+                "awayGoalsRule": {
+                  "type": "boolean",
+                  "const": false
+                },
+                "resolveDraw": {
+                  "type": "string",
+                  "minLength": 1,
+                  "const": "extra-time-then-penalties"
+                },
+                "finalNeutralVenue": {
+                  "type": "boolean",
+                  "const": true
+                }
+              },
+              "required": [
+                "rounds",
+                "awayGoalsRule",
+                "resolveDraw",
+                "finalNeutralVenue"
+              ]
+            }
+          },
+          "required": [
+            "totalTeams",
+            "userTeams",
+            "opponentTeams",
+            "uniquePrimeTeamIds",
+            "differentSeasonsOfSameClubAllowed",
+            "league",
+            "knockout"
+          ]
+        },
+        "storage": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "version": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "keys": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "currentTeam": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^prime-xi:[a-z-]+:v[0-9]+$"
+                },
+                "currentTournament": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^prime-xi:[a-z-]+:v[0-9]+$"
+                },
+                "completedTournaments": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^prime-xi:[a-z-]+:v[0-9]+$"
+                },
+                "userSettings": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^prime-xi:[a-z-]+:v[0-9]+$"
+                },
+                "currentDraft": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^prime-xi:[a-z-]+:v[0-9]+$"
+                }
+              },
+              "required": [
+                "currentTeam",
+                "currentTournament",
+                "completedTournaments",
+                "userSettings",
+                "currentDraft"
+              ]
+            }
+          },
+          "required": [
+            "version",
+            "keys"
+          ]
+        },
+        "designDecisions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "description"
+            ]
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "provenance",
+        "builder",
+        "strength",
+        "chemistry",
+        "coach",
+        "match",
+        "tournament",
+        "storage",
+        "designDecisions"
+      ]
+    },
+    "positions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "enum": [
+              "GK",
+              "RB",
+              "CB",
+              "LB",
+              "RWB",
+              "LWB",
+              "CDM",
+              "CM",
+              "CAM",
+              "RM",
+              "LM",
+              "RW",
+              "LW",
+              "ST"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "group": {
+            "enum": [
+              "goalkeeper",
+              "defence",
+              "midfield",
+              "attack"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "group"
+        ]
+      },
+      "minItems": 14,
+      "maxItems": 14
+    },
+    "countries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "label"
+        ]
+      },
+      "minItems": 1
+    },
+    "tactics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z-]+$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "styleTags": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "balanced",
+                "transition",
+                "compact",
+                "counter-attack",
+                "direct",
+                "wide-play",
+                "possession",
+                "high-press"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "preferredFormations": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "4-3-3",
+                "4-2-3-1",
+                "4-4-2",
+                "4-3-1-2",
+                "4-3-2-1",
+                "3-4-3",
+                "3-5-2"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "styleTags",
+          "preferredFormations"
+        ]
+      },
+      "minItems": 1
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "locale": {
+          "const": "de"
+        },
+        "theme": {
+          "const": "dark"
+        },
+        "defaultTactic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reduceMotion": {
+          "type": "boolean"
+        },
+        "soundEnabled": {
+          "type": "boolean"
+        },
+        "historyLimit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [
+        "locale",
+        "theme",
+        "defaultTactic",
+        "reduceMotion",
+        "soundEnabled",
+        "historyLimit"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "datasetVersion",
+    "status",
+    "targetYears",
+    "targetTeamsPerYear",
+    "people",
+    "clubs",
+    "formations",
+    "sources",
+    "coverage",
+    "teams",
+    "tasks",
+    "ratingModel",
+    "rules",
+    "positions",
+    "countries",
+    "tactics",
+    "defaults"
+  ],
+  "$defs": {
+    "person": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nationalities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "portrait": {
+          "type": "null"
+        },
+        "verificationStatus": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "nationalities",
+        "portrait",
+        "verificationStatus"
+      ]
+    },
+    "club": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "shortName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "logo": {
+          "type": "string",
+          "pattern": "^assets/clubs/[a-z0-9-]+\\.svg$"
+        },
+        "verificationStatus": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        },
+        "badgeKind": {
+          "const": "monogram"
+        },
+        "colors": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "primary": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            },
+            "secondary": {
+              "type": "string",
+              "pattern": "^#[0-9A-Fa-f]{6}$"
+            }
+          },
+          "required": [
+            "primary",
+            "secondary"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "country",
+        "shortName",
+        "logo",
+        "verificationStatus",
+        "badgeKind",
+        "colors"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://[^\\s]+$"
+        },
+        "kind": {
+          "enum": [
+            "season_reference",
+            "dataset_reference"
+          ]
+        },
+        "accessStatus": {
+          "enum": [
+            "not_retrieved",
+            "retrieved"
+          ]
+        },
+        "checkedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "intendedCoverage": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "contentSha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "url",
+        "kind",
+        "accessStatus",
+        "checkedAt",
+        "intendedCoverage",
+        "contentSha256"
+      ]
+    },
+    "formation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "enum": [
+            "4-3-3",
+            "4-2-3-1",
+            "4-4-2",
+            "4-3-1-2",
+            "4-3-2-1",
+            "3-4-3",
+            "3-5-2"
+          ]
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9:-]*$"
+              },
+              "acceptedPositions": {
+                "type": "array",
+                "items": {
+                  "enum": [
+                    "GK",
+                    "RB",
+                    "CB",
+                    "LB",
+                    "RWB",
+                    "LWB",
+                    "CDM",
+                    "CM",
+                    "CAM",
+                    "RM",
+                    "LM",
+                    "RW",
+                    "LW",
+                    "ST"
+                  ]
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "coordinates": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "x": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "y": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                },
+                "required": [
+                  "x",
+                  "y"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "acceptedPositions",
+              "coordinates"
+            ]
+          },
+          "minItems": 11,
+          "maxItems": 11
+        }
+      },
+      "required": [
+        "id",
+        "slots"
+      ]
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overall": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "pace": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "shooting": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "passing": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "dribbling": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "defending": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "physical": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "goalkeeping": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 99
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "leadership": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        }
+      },
+      "required": [
+        "overall",
+        "pace",
+        "shooting",
+        "passing",
+        "dribbling",
+        "defending",
+        "physical",
+        "goalkeeping",
+        "leadership"
+      ]
+    },
+    "player": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "personId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nationality": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        },
+        "primeTeamId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "season": {
+          "type": "string",
+          "pattern": "^20\\d{2}/\\d{2}$"
+        },
+        "position": {
+          "enum": [
+            "GK",
+            "RB",
+            "CB",
+            "LB",
+            "RWB",
+            "LWB",
+            "CDM",
+            "CM",
+            "CAM",
+            "RM",
+            "LM",
+            "RW",
+            "LW",
+            "ST"
+          ]
+        },
+        "secondaryPositions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "GK",
+              "RB",
+              "CB",
+              "LB",
+              "RWB",
+              "LWB",
+              "CDM",
+              "CM",
+              "CAM",
+              "RM",
+              "LM",
+              "RW",
+              "LW",
+              "ST"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "rating": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "attributes": {
+          "$ref": "#/$defs/attributes"
+        },
+        "ratingStatus": {
+          "enum": [
+            "provisional",
+            "approved"
+          ]
+        },
+        "ratingModelId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "naturalCaptain": {
+          "type": "boolean"
+        },
+        "verificationStatus": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9:-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "styleTags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "balanced",
+              "transition",
+              "compact",
+              "counter-attack",
+              "direct",
+              "wide-play",
+              "possession",
+              "high-press"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "personId",
+        "name",
+        "nationality",
+        "primeTeamId",
+        "season",
+        "position",
+        "secondaryPositions",
+        "rating",
+        "attributes",
+        "ratingStatus",
+        "ratingModelId",
+        "naturalCaptain",
+        "verificationStatus",
+        "sourceIds",
+        "styleTags"
+      ]
+    },
+    "coach": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "personId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primeTeamId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "preferredFormations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "4-3-3",
+              "4-2-3-1",
+              "4-4-2",
+              "4-3-1-2",
+              "4-3-2-1",
+              "3-4-3",
+              "3-5-2"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "tacticalRating": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "styleTags": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "balanced",
+              "transition",
+              "compact",
+              "counter-attack",
+              "direct",
+              "wide-play",
+              "possession",
+              "high-press"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "ratingStatus": {
+          "enum": [
+            "provisional",
+            "approved"
+          ]
+        },
+        "verificationStatus": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9:-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "personId",
+        "name",
+        "primeTeamId",
+        "preferredFormations",
+        "tacticalRating",
+        "styleTags",
+        "ratingStatus",
+        "verificationStatus",
+        "sourceIds"
+      ]
+    },
+    "team": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "clubId": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "clubName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "season": {
+          "type": "string",
+          "pattern": "^20\\d{2}/\\d{2}$"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2007,
+          "maximum": 2026
+        },
+        "logo": {
+          "type": "string",
+          "pattern": "^assets/clubs/[a-z0-9-]+\\.svg$"
+        },
+        "status": {
+          "enum": [
+            "editorial_draft",
+            "research_pending",
+            "reviewed"
+          ]
+        },
+        "rosterScope": {
+          "enum": [
+            "curated_squad",
+            "not_entered"
+          ]
+        },
+        "formation": {
+          "anyOf": [
+            {
+              "enum": [
+                "4-3-3",
+                "4-2-3-1",
+                "4-4-2",
+                "4-3-1-2",
+                "4-3-2-1",
+                "3-4-3",
+                "3-5-2"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "coach": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/coach"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "captainPersonId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "players": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/player"
+          }
+        },
+        "defaultLineup": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "slotId": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9:-]*$"
+              },
+              "playerId": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9:-]*$"
+              }
+            },
+            "required": [
+              "slotId",
+              "playerId"
+            ]
+          }
+        },
+        "teamRating": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 99
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "enum": [
+            "pending",
+            "verified"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9:-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "clubId",
+        "clubName",
+        "season",
+        "year",
+        "logo",
+        "status",
+        "rosterScope",
+        "formation",
+        "coach",
+        "captainPersonId",
+        "players",
+        "defaultLineup",
+        "teamRating",
+        "verificationStatus",
+        "sourceIds"
+      ]
+    },
+    "slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 2007,
+          "maximum": 2026
+        },
+        "selectionNumber": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "teamId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "year",
+        "selectionNumber",
+        "teamId"
+      ]
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "teamId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "slotId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "enum": [
+            "historical_review",
+            "roster_research",
+            "team_selection"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "teamId",
+        "slotId",
+        "kind",
+        "description"
+      ]
+    },
+    "ratingModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9:-]*$"
+        },
+        "status": {
+          "enum": [
+            "provisional",
+            "approved"
+          ]
+        },
+        "provenance": {
+          "const": "original_editorial_gameplay"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attributeOffsets": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "GK": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "RB": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "CB": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "LB": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "RWB": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "LWB": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "CDM": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "CM": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "CAM": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "RM": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "LM": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "RW": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "LW": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            },
+            "ST": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "pace": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "shooting": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "passing": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "dribbling": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "defending": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "physical": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                },
+                "leadership": {
+                  "type": "integer",
+                  "minimum": -99,
+                  "maximum": 99
+                }
+              },
+              "required": [
+                "pace",
+                "shooting",
+                "passing",
+                "dribbling",
+                "defending",
+                "physical",
+                "leadership"
+              ]
+            }
+          },
+          "required": [
+            "GK",
+            "RB",
+            "CB",
+            "LB",
+            "RWB",
+            "LWB",
+            "CDM",
+            "CM",
+            "CAM",
+            "RM",
+            "LM",
+            "RW",
+            "LW",
+            "ST"
+          ]
+        },
+        "method": {
+          "const": "explicit-season-attributes"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "provenance",
+        "description",
+        "attributeOffsets",
+        "method"
+      ]
+    }
+  }
+}

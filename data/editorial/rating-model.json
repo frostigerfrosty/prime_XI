@@ -1,0 +1,135 @@
+{
+  "id": "prime-xi-editorial-v2",
+  "status": "approved",
+  "provenance": "original_editorial_gameplay",
+  "description": "Eigene feste V1-Spielwerte. Individuelle Saisonattribute sind explizit je Karte gespeichert; Rollenprofile und bewusste Personenanpassungen dienten nur zur initialen redaktionellen Erstellung. Keine historischen Messwerte, keine EA/FIFA-Ratings. Simulationskalibrierung folgt mit der Engine.",
+  "attributeOffsets": {
+    "GK": {
+      "pace": -35,
+      "shooting": -60,
+      "passing": -22,
+      "dribbling": -40,
+      "defending": -40,
+      "physical": -8,
+      "leadership": 0
+    },
+    "RB": {
+      "pace": 0,
+      "shooting": -25,
+      "passing": -8,
+      "dribbling": -9,
+      "defending": -5,
+      "physical": -6,
+      "leadership": -8
+    },
+    "CB": {
+      "pace": -15,
+      "shooting": -40,
+      "passing": -18,
+      "dribbling": -28,
+      "defending": 0,
+      "physical": 0,
+      "leadership": -5
+    },
+    "LB": {
+      "pace": 0,
+      "shooting": -25,
+      "passing": -8,
+      "dribbling": -9,
+      "defending": -5,
+      "physical": -6,
+      "leadership": -8
+    },
+    "RWB": {
+      "pace": 3,
+      "shooting": -18,
+      "passing": -6,
+      "dribbling": -5,
+      "defending": -10,
+      "physical": -8,
+      "leadership": -10
+    },
+    "LWB": {
+      "pace": 3,
+      "shooting": -18,
+      "passing": -6,
+      "dribbling": -5,
+      "defending": -10,
+      "physical": -8,
+      "leadership": -10
+    },
+    "CDM": {
+      "pace": -12,
+      "shooting": -22,
+      "passing": -3,
+      "dribbling": -12,
+      "defending": -3,
+      "physical": -3,
+      "leadership": -4
+    },
+    "CM": {
+      "pace": -10,
+      "shooting": -12,
+      "passing": 0,
+      "dribbling": -5,
+      "defending": -15,
+      "physical": -10,
+      "leadership": -8
+    },
+    "CAM": {
+      "pace": -5,
+      "shooting": -5,
+      "passing": 0,
+      "dribbling": 0,
+      "defending": -40,
+      "physical": -18,
+      "leadership": -12
+    },
+    "RM": {
+      "pace": 2,
+      "shooting": -8,
+      "passing": -5,
+      "dribbling": 0,
+      "defending": -30,
+      "physical": -17,
+      "leadership": -14
+    },
+    "LM": {
+      "pace": 2,
+      "shooting": -8,
+      "passing": -5,
+      "dribbling": 0,
+      "defending": -30,
+      "physical": -17,
+      "leadership": -14
+    },
+    "RW": {
+      "pace": 2,
+      "shooting": -3,
+      "passing": -8,
+      "dribbling": 0,
+      "defending": -45,
+      "physical": -18,
+      "leadership": -14
+    },
+    "LW": {
+      "pace": 2,
+      "shooting": -3,
+      "passing": -8,
+      "dribbling": 0,
+      "defending": -45,
+      "physical": -18,
+      "leadership": -14
+    },
+    "ST": {
+      "pace": -5,
+      "shooting": 0,
+      "passing": -18,
+      "dribbling": -7,
+      "defending": -50,
+      "physical": -5,
+      "leadership": -12
+    }
+  },
+  "method": "explicit-season-attributes"
+}

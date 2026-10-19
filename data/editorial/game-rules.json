@@ -1,0 +1,161 @@
+{
+  "id": "prime-xi-rules-v1",
+  "version": "1.0.0",
+  "provenance": "original_game_design",
+  "builder": {
+    "drawSize": 12,
+    "playersRequired": 11,
+    "coachRequired": true,
+    "defaultFormation": "4-3-3",
+    "distinctPrimeTeams": true,
+    "playerIdentityKey": "personId",
+    "maxPlayersPerPrimeTeam": 1,
+    "coachConsumesPlayerPick": false
+  },
+  "strength": {
+    "ratingMin": 0,
+    "ratingMax": 99,
+    "positionGroupWeights": {
+      "goalkeeper": 0.08,
+      "defence": 0.27,
+      "midfield": 0.3,
+      "attack": 0.35
+    },
+    "positionFit": {
+      "primaryMultiplier": 1,
+      "secondaryMultiplier": 0.95,
+      "invalidPositionAllowed": false
+    },
+    "bonusCaps": {
+      "chemistry": 7,
+      "tactical": 3,
+      "coach": 2,
+      "captain": 2
+    },
+    "naturalCaptainBonus": 2
+  },
+  "chemistry": {
+    "sameNationalityPairWeight": 1,
+    "sameClubPairWeight": 0.5,
+    "normalization": "weighted-matching-pairs / (playerCount * (playerCount - 1) / 2 * 1.5)",
+    "roundDecimals": 2
+  },
+  "coach": {
+    "formationShare": 0.6,
+    "styleShare": 0.4
+  },
+  "match": {
+    "distribution": "poisson",
+    "baseExpectedGoals": 1.35,
+    "strengthSensitivity": 0.08,
+    "homeAdvantageRating": 1.5,
+    "neutralVenueHomeAdvantage": 0,
+    "expectedGoalsMin": 0.15,
+    "expectedGoalsMax": 4.5,
+    "matchVarianceFraction": 0.08,
+    "regularMinutes": 90,
+    "extraTimeMinutes": 30,
+    "penaltiesInitialKicks": 5,
+    "penaltiesSuddenDeath": true,
+    "seedSupported": true,
+    "calibrationStatus": "requires_engine_validation"
+  },
+  "tournament": {
+    "totalTeams": 36,
+    "userTeams": 1,
+    "opponentTeams": 35,
+    "uniquePrimeTeamIds": true,
+    "differentSeasonsOfSameClubAllowed": true,
+    "league": {
+      "matchesPerTeam": 8,
+      "homeMatches": 4,
+      "awayMatches": 4,
+      "winPoints": 3,
+      "drawPoints": 1,
+      "lossPoints": 0,
+      "tiebreakers": [
+        "points",
+        "goalDifference",
+        "goalsFor",
+        "wins",
+        "teamId"
+      ],
+      "directQualificationRanks": [
+        1,
+        8
+      ],
+      "playoffRanks": [
+        9,
+        24
+      ],
+      "eliminatedRanks": [
+        25,
+        36
+      ]
+    },
+    "knockout": {
+      "rounds": [
+        {
+          "id": "playoffs",
+          "teams": 16,
+          "legs": 2
+        },
+        {
+          "id": "round-of-16",
+          "teams": 16,
+          "legs": 2
+        },
+        {
+          "id": "quarter-finals",
+          "teams": 8,
+          "legs": 2
+        },
+        {
+          "id": "semi-finals",
+          "teams": 4,
+          "legs": 2
+        },
+        {
+          "id": "final",
+          "teams": 2,
+          "legs": 1
+        }
+      ],
+      "awayGoalsRule": false,
+      "resolveDraw": "extra-time-then-penalties",
+      "finalNeutralVenue": true
+    }
+  },
+  "storage": {
+    "version": 1,
+    "keys": {
+      "currentTeam": "prime-xi:current-team:v1",
+      "currentTournament": "prime-xi:current-tournament:v1",
+      "completedTournaments": "prime-xi:completed-tournaments:v1",
+      "userSettings": "prime-xi:user-settings:v1",
+      "currentDraft": "prime-xi:current-draft:v1"
+    }
+  },
+  "designDecisions": [
+    {
+      "id": "one-player-per-source-team",
+      "description": "Höchstens ein Spieler pro gezogenem Saisonteam; der Coach ist separat und darf aus einem bereits für Spieler verwendeten Team stammen."
+    },
+    {
+      "id": "catalog-year",
+      "description": "year bezeichnet das Saison-Endjahr; die Kader sind ausgewählte Saisonkader, keine vollständigen Registrierungslisten oder behaupteten Finalaufstellungen."
+    },
+    {
+      "id": "game-tournament-format",
+      "description": "36-Team-Spielformat mit acht Ligaspielen, 1–8 direkt weiter, 9–24 Playoffs. Der letzte stabile Tie-Breaker ist teamId; keine Behauptung einer vollständigen UEFA-Regelkopie."
+    },
+    {
+      "id": "bonus-defaults",
+      "description": "Gewichte und Captain +2 stammen aus der Spezifikation; übrige begrenzte V1-Startwerte sind eigene Spielentscheidungen und zentral kalibrierbar."
+    },
+    {
+      "id": "simulation-calibration",
+      "description": "Poisson-Parameter sind Eingangsdaten für die noch zu bauende Engine. Ziel-Siegchancen sind erst mit deren Tests nachgewiesen."
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "id": "ARG",
+    "label": "Argentinien"
+  },
+  {
+    "id": "ARM",
+    "label": "Armenien"
+  },
+  {
+    "id": "AUS",
+    "label": "Australien"
+  },
+  {
+    "id": "AUT",
+    "label": "Österreich"
+  },
+  {
+    "id": "BEL",
+    "label": "Belgien"
+  },
+  {
+    "id": "BFA",
+    "label": "Burkina Faso"
+  },
+  {
+    "id": "BGR",
+    "label": "Bulgarien"
+  },
+  {
+    "id": "BIH",
+    "label": "Bosnien und Herzegowina"
+  },
+  {
+    "id": "BLR",
+    "label": "Belarus"
+  },
+  {
+    "id": "BRA",
+    "label": "Brasilien"
+  },
+  {
+    "id": "CAN",
+    "label": "Kanada"
+  },
+  {
+    "id": "CHE",
+    "label": "Schweiz"
+  },
+  {
+    "id": "CHL",
+    "label": "Chile"
+  },
+  {
+    "id": "CIV",
+    "label": "Elfenbeinküste"
+  },
+  {
+    "id": "CMR",
+    "label": "Kamerun"
+  },
+  {
+    "id": "COL",
+    "label": "Kolumbien"
+  },
+  {
+    "id": "CRI",
+    "label": "Costa Rica"
+  },
+  {
+    "id": "CZE",
+    "label": "Tschechien"
+  },
+  {
+    "id": "DEU",
+    "label": "Deutschland"
+  },
+  {
+    "id": "DNK",
+    "label": "Dänemark"
+  },
+  {
+    "id": "DZA",
+    "label": "Algerien"
+  },
+  {
+    "id": "ECU",
+    "label": "Ecuador"
+  },
+  {
+    "id": "EGY",
+    "label": "Ägypten"
+  },
+  {
+    "id": "ENG",
+    "label": "England"
+  },
+  {
+    "id": "ESP",
+    "label": "Spanien"
+  },
+  {
+    "id": "EST",
+    "label": "Estland"
+  },
+  {
+    "id": "FIN",
+    "label": "Finnland"
+  },
+  {
+    "id": "FRA",
+    "label": "Frankreich"
+  },
+  {
+    "id": "GAB",
+    "label": "Gabun"
+  },
+  {
+    "id": "GEO",
+    "label": "Georgien"
+  },
+  {
+    "id": "GHA",
+    "label": "Ghana"
+  },
+  {
+    "id": "GIN",
+    "label": "Guinea"
+  },
+  {
+    "id": "GRC",
+    "label": "Griechenland"
+  },
+  {
+    "id": "HRV",
+    "label": "Kroatien"
+  },
+  {
+    "id": "IRL",
+    "label": "Irland"
+  },
+  {
+    "id": "IRN",
+    "label": "Iran"
+  },
+  {
+    "id": "ISL",
+    "label": "Island"
+  },
+  {
+    "id": "ISR",
+    "label": "Israel"
+  },
+  {
+    "id": "ITA",
+    "label": "Italien"
+  },
+  {
+    "id": "KOR",
+    "label": "Südkorea"
+  },
+  {
+    "id": "MAR",
+    "label": "Marokko"
+  },
+  {
+    "id": "MEX",
+    "label": "Mexiko"
+  },
+  {
+    "id": "MKD",
+    "label": "Nordmazedonien"
+  },
+  {
+    "id": "MLI",
+    "label": "Mali"
+  },
+  {
+    "id": "MNE",
+    "label": "Montenegro"
+  },
+  {
+    "id": "NGA",
+    "label": "Nigeria"
+  },
+  {
+    "id": "NIR",
+    "label": "Nordirland"
+  },
+  {
+    "id": "NLD",
+    "label": "Niederlande"
+  },
+  {
+    "id": "NOR",
+    "label": "Norwegen"
+  },
+  {
+    "id": "PER",
+    "label": "Peru"
+  },
+  {
+    "id": "POL",
+    "label": "Polen"
+  },
+  {
+    "id": "PRT",
+    "label": "Portugal"
+  },
+  {
+    "id": "ROU",
+    "label": "Rumänien"
+  },
+  {
+    "id": "RUS",
+    "label": "Russland"
+  },
+  {
+    "id": "SCO",
+    "label": "Schottland"
+  },
+  {
+    "id": "SEN",
+    "label": "Senegal"
+  },
+  {
+    "id": "SRB",
+    "label": "Serbien"
+  },
+  {
+    "id": "SVK",
+    "label": "Slowakei"
+  },
+  {
+    "id": "SVN",
+    "label": "Slowenien"
+  },
+  {
+    "id": "SWE",
+    "label": "Schweden"
+  },
+  {
+    "id": "TUR",
+    "label": "Türkei"
+  },
+  {
+    "id": "UKR",
+    "label": "Ukraine"
+  },
+  {
+    "id": "URY",
+    "label": "Uruguay"
+  },
+  {
+    "id": "USA",
+    "label": "USA"
+  },
+  {
+    "id": "WAL",
+    "label": "Wales"
+  },
+  {
+    "id": "XKX",
+    "label": "Kosovo"
+  }
+]

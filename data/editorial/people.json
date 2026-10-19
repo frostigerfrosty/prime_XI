@@ -1,0 +1,5208 @@
+[
+  {
+    "id": "dida",
+    "name": "Dida",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "oddo",
+    "name": "Massimo Oddo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "nesta",
+    "name": "Alessandro Nesta",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "maldini",
+    "name": "Paolo Maldini",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "jankulovski",
+    "name": "Marek Jankulovski",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CZE"
+    ]
+  },
+  {
+    "id": "gattuso",
+    "name": "Gennaro Gattuso",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "pirlo",
+    "name": "Andrea Pirlo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "ambrosini",
+    "name": "Massimo Ambrosini",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "kaka",
+    "name": "Kaká",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "seedorf",
+    "name": "Clarence Seedorf",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "inzaghi",
+    "name": "Filippo Inzaghi",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "reina",
+    "name": "Pepe Reina",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "finnan",
+    "name": "Steve Finnan",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "IRL"
+    ]
+  },
+  {
+    "id": "carragher",
+    "name": "Jamie Carragher",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "agger",
+    "name": "Daniel Agger",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DNK"
+    ]
+  },
+  {
+    "id": "riise",
+    "name": "John Arne Riise",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NOR"
+    ]
+  },
+  {
+    "id": "xabi-alonso",
+    "name": "Xabi Alonso",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "mascherano",
+    "name": "Javier Mascherano",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "pennant",
+    "name": "Jermaine Pennant",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "gerrard",
+    "name": "Steven Gerrard",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "zenden",
+    "name": "Boudewijn Zenden",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "kuyt",
+    "name": "Dirk Kuyt",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "van-der-sar",
+    "name": "Edwin van der Sar",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "gary-neville",
+    "name": "Gary Neville",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "ferdinand",
+    "name": "Rio Ferdinand",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "vidic",
+    "name": "Nemanja Vidić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SRB"
+    ]
+  },
+  {
+    "id": "evra",
+    "name": "Patrice Evra",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "carrick",
+    "name": "Michael Carrick",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "scholes",
+    "name": "Paul Scholes",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "giggs",
+    "name": "Ryan Giggs",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "WAL"
+    ]
+  },
+  {
+    "id": "rooney",
+    "name": "Wayne Rooney",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "saha",
+    "name": "Louis Saha",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "wes-brown",
+    "name": "Wes Brown",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "tevez",
+    "name": "Carlos Tévez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "cech",
+    "name": "Petr Čech",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CZE"
+    ]
+  },
+  {
+    "id": "essien",
+    "name": "Michael Essien",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "GHA"
+    ]
+  },
+  {
+    "id": "carvalho",
+    "name": "Ricardo Carvalho",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "terry",
+    "name": "John Terry",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "ashley-cole",
+    "name": "Ashley Cole",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "makelele",
+    "name": "Claude Makélélé",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "ballack",
+    "name": "Michael Ballack",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "lampard",
+    "name": "Frank Lampard",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "joe-cole",
+    "name": "Joe Cole",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "drogba",
+    "name": "Didier Drogba",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CIV"
+    ]
+  },
+  {
+    "id": "malouda",
+    "name": "Florent Malouda",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "casillas",
+    "name": "Iker Casillas",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "sergio-ramos",
+    "name": "Sergio Ramos",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "pepe",
+    "name": "Pepe",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "cannavaro",
+    "name": "Fabio Cannavaro",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "marcelo",
+    "name": "Marcelo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "diarra",
+    "name": "Mahamadou Diarra",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MLI"
+    ]
+  },
+  {
+    "id": "guti",
+    "name": "Guti",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "robben",
+    "name": "Arjen Robben",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "sneijder",
+    "name": "Wesley Sneijder",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "robinho",
+    "name": "Robinho",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "raul",
+    "name": "Raúl",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "valdes",
+    "name": "Víctor Valdés",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "dani-alves",
+    "name": "Dani Alves",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "pique",
+    "name": "Gerard Piqué",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "puyol",
+    "name": "Carles Puyol",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "abidal",
+    "name": "Éric Abidal",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "xavi",
+    "name": "Xavi Hernández",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "busquets",
+    "name": "Sergio Busquets",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "iniesta",
+    "name": "Andrés Iniesta",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "messi",
+    "name": "Lionel Messi",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "etoo",
+    "name": "Samuel Eto'o",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CMR"
+    ]
+  },
+  {
+    "id": "henry",
+    "name": "Thierry Henry",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "oshea",
+    "name": "John O'Shea",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "IRL"
+    ]
+  },
+  {
+    "id": "berbatov",
+    "name": "Dimitar Berbatov",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BGR"
+    ]
+  },
+  {
+    "id": "bosingwa",
+    "name": "José Bosingwa",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "ivanovic",
+    "name": "Branislav Ivanović",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SRB"
+    ]
+  },
+  {
+    "id": "anelka",
+    "name": "Nicolas Anelka",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "julio-cesar",
+    "name": "Júlio César",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "maicon",
+    "name": "Maicon",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "lucio",
+    "name": "Lúcio",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "samuel",
+    "name": "Walter Samuel",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "chivu",
+    "name": "Cristian Chivu",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ROU"
+    ]
+  },
+  {
+    "id": "cambiasso",
+    "name": "Esteban Cambiasso",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "motta",
+    "name": "Thiago Motta",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA",
+      "ITA"
+    ]
+  },
+  {
+    "id": "pandev",
+    "name": "Goran Pandev",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MKD"
+    ]
+  },
+  {
+    "id": "milito",
+    "name": "Diego Milito",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "butt",
+    "name": "Hans-Jörg Butt",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "lahm",
+    "name": "Philipp Lahm",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "van-buyten",
+    "name": "Daniel Van Buyten",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "demichelis",
+    "name": "Martín Demichelis",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "badstuber",
+    "name": "Holger Badstuber",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "van-bommel",
+    "name": "Mark van Bommel",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "schweinsteiger",
+    "name": "Bastian Schweinsteiger",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "muller",
+    "name": "Thomas Müller",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "ribery",
+    "name": "Franck Ribéry",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "olic",
+    "name": "Ivica Olić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "pedro",
+    "name": "Pedro Rodríguez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "ibrahimovic",
+    "name": "Zlatan Ibrahimović",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SWE"
+    ]
+  },
+  {
+    "id": "villa",
+    "name": "David Villa",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "rafael",
+    "name": "Rafael da Silva",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "valencia",
+    "name": "Antonio Valencia",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ECU"
+    ]
+  },
+  {
+    "id": "park",
+    "name": "Park Ji-sung",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "KOR"
+    ]
+  },
+  {
+    "id": "hernandez",
+    "name": "Javier Hernández",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MEX"
+    ]
+  },
+  {
+    "id": "khedira",
+    "name": "Sami Khedira",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "di-maria",
+    "name": "Ángel Di María",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "ozil",
+    "name": "Mesut Özil",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "benzema",
+    "name": "Karim Benzema",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "david-luiz",
+    "name": "David Luiz",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "mikel",
+    "name": "John Obi Mikel",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NGA"
+    ]
+  },
+  {
+    "id": "ramires",
+    "name": "Ramires",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "mata",
+    "name": "Juan Mata",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "kalou",
+    "name": "Salomon Kalou",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CIV"
+    ]
+  },
+  {
+    "id": "neuer",
+    "name": "Manuel Neuer",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "boateng",
+    "name": "Jérôme Boateng",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "alaba",
+    "name": "David Alaba",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "AUT"
+    ]
+  },
+  {
+    "id": "luiz-gustavo",
+    "name": "Luiz Gustavo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "kroos",
+    "name": "Toni Kroos",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "gomez",
+    "name": "Mario Gómez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "arbeloa",
+    "name": "Álvaro Arbeloa",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "dante",
+    "name": "Dante",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "javi-martinez",
+    "name": "Javi Martínez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "mandzukic",
+    "name": "Mario Mandžukić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "weidenfeller",
+    "name": "Roman Weidenfeller",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "piszczek",
+    "name": "Łukasz Piszczek",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "POL"
+    ]
+  },
+  {
+    "id": "subotic",
+    "name": "Neven Subotić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SRB"
+    ]
+  },
+  {
+    "id": "hummels",
+    "name": "Mats Hummels",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "schmelzer",
+    "name": "Marcel Schmelzer",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "sven-bender",
+    "name": "Sven Bender",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "gundogan",
+    "name": "İlkay Gündoğan",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "blaszczykowski",
+    "name": "Jakub Błaszczykowski",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "POL"
+    ]
+  },
+  {
+    "id": "gotze",
+    "name": "Mario Götze",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "reus",
+    "name": "Marco Reus",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "lewandowski",
+    "name": "Robert Lewandowski",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "POL"
+    ]
+  },
+  {
+    "id": "kehl",
+    "name": "Sebastian Kehl",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "jordi-alba",
+    "name": "Jordi Alba",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "carvajal",
+    "name": "Dani Carvajal",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "modric",
+    "name": "Luka Modrić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "bale",
+    "name": "Gareth Bale",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "WAL"
+    ]
+  },
+  {
+    "id": "courtois",
+    "name": "Thibaut Courtois",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "juanfran",
+    "name": "Juanfran",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "miranda",
+    "name": "Miranda",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "godin",
+    "name": "Diego Godín",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "URY"
+    ]
+  },
+  {
+    "id": "filipe-luis",
+    "name": "Filipe Luís",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "gabi",
+    "name": "Gabi",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "tiago",
+    "name": "Tiago Mendes",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "arda-turan",
+    "name": "Arda Turan",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "TUR"
+    ]
+  },
+  {
+    "id": "koke",
+    "name": "Koke",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "diego-costa",
+    "name": "Diego Costa",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "thiago",
+    "name": "Thiago Alcântara",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "ter-stegen",
+    "name": "Marc-André ter Stegen",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "rakitic",
+    "name": "Ivan Rakitić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "suarez",
+    "name": "Luis Suárez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "URY"
+    ]
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "buffon",
+    "name": "Gianluigi Buffon",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "lichtsteiner",
+    "name": "Stephan Lichtsteiner",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CHE"
+    ]
+  },
+  {
+    "id": "bonucci",
+    "name": "Leonardo Bonucci",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "chiellini",
+    "name": "Giorgio Chiellini",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "pogba",
+    "name": "Paul Pogba",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "marchisio",
+    "name": "Claudio Marchisio",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "vidal",
+    "name": "Arturo Vidal",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CHL"
+    ]
+  },
+  {
+    "id": "morata",
+    "name": "Álvaro Morata",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "rafinha",
+    "name": "Rafinha",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "benatia",
+    "name": "Medhi Benatia",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MAR"
+    ]
+  },
+  {
+    "id": "bernat",
+    "name": "Juan Bernat",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "navas",
+    "name": "Keylor Navas",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CRI"
+    ]
+  },
+  {
+    "id": "casemiro",
+    "name": "Casemiro",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "oblak",
+    "name": "Jan Oblak",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SVN"
+    ]
+  },
+  {
+    "id": "gimenez",
+    "name": "José María Giménez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "URY"
+    ]
+  },
+  {
+    "id": "saul",
+    "name": "Saúl Ñíguez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "carrasco",
+    "name": "Yannick Carrasco",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "griezmann",
+    "name": "Antoine Griezmann",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "torres",
+    "name": "Fernando Torres",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "alex-sandro",
+    "name": "Alex Sandro",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "pjanic",
+    "name": "Miralem Pjanić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BIH"
+    ]
+  },
+  {
+    "id": "cuadrado",
+    "name": "Juan Cuadrado",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "COL"
+    ]
+  },
+  {
+    "id": "dybala",
+    "name": "Paulo Dybala",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "higuain",
+    "name": "Gonzalo Higuaín",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "azpilicueta",
+    "name": "César Azpilicueta",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "cahill",
+    "name": "Gary Cahill",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "moses",
+    "name": "Victor Moses",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NGA"
+    ]
+  },
+  {
+    "id": "kante",
+    "name": "N'Golo Kanté",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "matic",
+    "name": "Nemanja Matić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SRB"
+    ]
+  },
+  {
+    "id": "marcos-alonso",
+    "name": "Marcos Alonso",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "hazard",
+    "name": "Eden Hazard",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "karius",
+    "name": "Loris Karius",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "trent",
+    "name": "Trent Alexander-Arnold",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "lovren",
+    "name": "Dejan Lovren",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "van-dijk",
+    "name": "Virgil van Dijk",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "robertson",
+    "name": "Andrew Robertson",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SCO"
+    ]
+  },
+  {
+    "id": "henderson",
+    "name": "Jordan Henderson",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "milner",
+    "name": "James Milner",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "wijnaldum",
+    "name": "Georginio Wijnaldum",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "salah",
+    "name": "Mohamed Salah",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "EGY"
+    ]
+  },
+  {
+    "id": "firmino",
+    "name": "Roberto Firmino",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "mane",
+    "name": "Sadio Mané",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SEN"
+    ]
+  },
+  {
+    "id": "ederson",
+    "name": "Ederson",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "walker",
+    "name": "Kyle Walker",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "kompany",
+    "name": "Vincent Kompany",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "otamendi",
+    "name": "Nicolás Otamendi",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "delph",
+    "name": "Fabian Delph",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "de-bruyne",
+    "name": "Kevin De Bruyne",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "fernandinho",
+    "name": "Fernandinho",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "david-silva",
+    "name": "David Silva",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "sterling",
+    "name": "Raheem Sterling",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "aguero",
+    "name": "Sergio Agüero",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "sane",
+    "name": "Leroy Sané",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "alisson",
+    "name": "Alisson Becker",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "matip",
+    "name": "Joël Matip",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CMR"
+    ]
+  },
+  {
+    "id": "fabinho",
+    "name": "Fabinho",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "laporte",
+    "name": "Aymeric Laporte",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA",
+      "ESP"
+    ]
+  },
+  {
+    "id": "zinchenko",
+    "name": "Oleksandr Zinchenko",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "UKR"
+    ]
+  },
+  {
+    "id": "bernardo-silva",
+    "name": "Bernardo Silva",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "onana",
+    "name": "André Onana",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CMR"
+    ]
+  },
+  {
+    "id": "mazraoui",
+    "name": "Noussair Mazraoui",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MAR"
+    ]
+  },
+  {
+    "id": "de-ligt",
+    "name": "Matthijs de Ligt",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "blind",
+    "name": "Daley Blind",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "tagliafico",
+    "name": "Nicolás Tagliafico",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "de-jong",
+    "name": "Frenkie de Jong",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "schone",
+    "name": "Lasse Schöne",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DNK"
+    ]
+  },
+  {
+    "id": "ziyech",
+    "name": "Hakim Ziyech",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MAR"
+    ]
+  },
+  {
+    "id": "van-de-beek",
+    "name": "Donny van de Beek",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "neres",
+    "name": "David Neres",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "tadic",
+    "name": "Dušan Tadić",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SRB"
+    ]
+  },
+  {
+    "id": "kimmich",
+    "name": "Joshua Kimmich",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "davies",
+    "name": "Alphonso Davies",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CAN"
+    ]
+  },
+  {
+    "id": "goretzka",
+    "name": "Leon Goretzka",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "gnabry",
+    "name": "Serge Gnabry",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "coman",
+    "name": "Kingsley Coman",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "kehrer",
+    "name": "Thilo Kehrer",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "thiago-silva",
+    "name": "Thiago Silva",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "kimpembe",
+    "name": "Presnel Kimpembe",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "marquinhos",
+    "name": "Marquinhos",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "verratti",
+    "name": "Marco Verratti",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "ander-herrera",
+    "name": "Ander Herrera",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "mbappe",
+    "name": "Kylian Mbappé",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "joe-gomez",
+    "name": "Joe Gomez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "mendy",
+    "name": "Édouard Mendy",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SEN"
+    ]
+  },
+  {
+    "id": "rudiger",
+    "name": "Antonio Rüdiger",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "reece-james",
+    "name": "Reece James",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "jorginho",
+    "name": "Jorginho",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "chilwell",
+    "name": "Ben Chilwell",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "mount",
+    "name": "Mason Mount",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "werner",
+    "name": "Timo Werner",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "havertz",
+    "name": "Kai Havertz",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "ruben-dias",
+    "name": "Rúben Dias",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "stones",
+    "name": "John Stones",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "rodri",
+    "name": "Rodri",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "mahrez",
+    "name": "Riyad Mahrez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DZA"
+    ]
+  },
+  {
+    "id": "foden",
+    "name": "Phil Foden",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "pavard",
+    "name": "Benjamin Pavard",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "militao",
+    "name": "Éder Militão",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "ferland-mendy",
+    "name": "Ferland Mendy",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "valverde",
+    "name": "Federico Valverde",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "URY"
+    ]
+  },
+  {
+    "id": "vinicius",
+    "name": "Vinícius Júnior",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "konate",
+    "name": "Ibrahima Konaté",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "luis-diaz",
+    "name": "Luis Díaz",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "COL"
+    ]
+  },
+  {
+    "id": "cancelo",
+    "name": "João Cancelo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "gabriel-jesus",
+    "name": "Gabriel Jesus",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "ake",
+    "name": "Nathan Aké",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "grealish",
+    "name": "Jack Grealish",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "haaland",
+    "name": "Erling Haaland",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NOR"
+    ]
+  },
+  {
+    "id": "darmian",
+    "name": "Matteo Darmian",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "acerbi",
+    "name": "Francesco Acerbi",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "bastoni",
+    "name": "Alessandro Bastoni",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "dumfries",
+    "name": "Denzel Dumfries",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "barella",
+    "name": "Nicolò Barella",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "brozovic",
+    "name": "Marcelo Brozović",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "calhanoglu",
+    "name": "Hakan Çalhanoğlu",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "TUR"
+    ]
+  },
+  {
+    "id": "dimarco",
+    "name": "Federico Dimarco",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "lautaro",
+    "name": "Lautaro Martínez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "dzeko",
+    "name": "Edin Džeko",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BIH"
+    ]
+  },
+  {
+    "id": "handanovic",
+    "name": "Samir Handanović",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SVN"
+    ]
+  },
+  {
+    "id": "meret",
+    "name": "Alex Meret",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "di-lorenzo",
+    "name": "Giovanni Di Lorenzo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "rrahmani",
+    "name": "Amir Rrahmani",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "XKX"
+    ]
+  },
+  {
+    "id": "kim",
+    "name": "Kim Min-jae",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "KOR"
+    ]
+  },
+  {
+    "id": "mario-rui",
+    "name": "Mário Rui",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "anguissa",
+    "name": "André-Frank Zambo Anguissa",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CMR"
+    ]
+  },
+  {
+    "id": "lobotka",
+    "name": "Stanislav Lobotka",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SVK"
+    ]
+  },
+  {
+    "id": "zielinski",
+    "name": "Piotr Zieliński",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "POL"
+    ]
+  },
+  {
+    "id": "lozano",
+    "name": "Hirving Lozano",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "MEX"
+    ]
+  },
+  {
+    "id": "osimhen",
+    "name": "Victor Osimhen",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NGA"
+    ]
+  },
+  {
+    "id": "kvaratskhelia",
+    "name": "Khvicha Kvaratskhelia",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "GEO"
+    ]
+  },
+  {
+    "id": "lunin",
+    "name": "Andriy Lunin",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "UKR"
+    ]
+  },
+  {
+    "id": "nacho",
+    "name": "Nacho Fernández",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "camavinga",
+    "name": "Eduardo Camavinga",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "bellingham",
+    "name": "Jude Bellingham",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ENG"
+    ]
+  },
+  {
+    "id": "rodrygo",
+    "name": "Rodrygo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BRA"
+    ]
+  },
+  {
+    "id": "gvardiol",
+    "name": "Joško Gvardiol",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "HRV"
+    ]
+  },
+  {
+    "id": "doku",
+    "name": "Jérémy Doku",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BEL"
+    ]
+  },
+  {
+    "id": "hradecky",
+    "name": "Lukáš Hrádecký",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FIN"
+    ]
+  },
+  {
+    "id": "kossounou",
+    "name": "Odilon Kossounou",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CIV"
+    ]
+  },
+  {
+    "id": "tah",
+    "name": "Jonathan Tah",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "tapsoba",
+    "name": "Edmond Tapsoba",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "BFA"
+    ]
+  },
+  {
+    "id": "frimpong",
+    "name": "Jeremie Frimpong",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "xhaka",
+    "name": "Granit Xhaka",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "CHE"
+    ]
+  },
+  {
+    "id": "palacios",
+    "name": "Exequiel Palacios",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "grimaldo",
+    "name": "Álex Grimaldo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "hofmann",
+    "name": "Jonas Hofmann",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "boniface",
+    "name": "Victor Boniface",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NGA"
+    ]
+  },
+  {
+    "id": "wirtz",
+    "name": "Florian Wirtz",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "ancelotti",
+    "name": "Carlo Ancelotti",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "benitez",
+    "name": "Rafael Benítez",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "ferguson",
+    "name": "Alex Ferguson",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "SCO"
+    ]
+  },
+  {
+    "id": "grant",
+    "name": "Avram Grant",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ISR"
+    ]
+  },
+  {
+    "id": "schuster",
+    "name": "Bernd Schuster",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "guardiola",
+    "name": "Pep Guardiola",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "hiddink",
+    "name": "Guus Hiddink",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "mourinho",
+    "name": "José Mourinho",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "PRT"
+    ]
+  },
+  {
+    "id": "van-gaal",
+    "name": "Louis van Gaal",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "di-matteo",
+    "name": "Roberto Di Matteo",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "heynckes",
+    "name": "Jupp Heynckes",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "klopp",
+    "name": "Jürgen Klopp",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "simeone",
+    "name": "Diego Simeone",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "luis-enrique",
+    "name": "Luis Enrique",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "allegri",
+    "name": "Massimiliano Allegri",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "zidane",
+    "name": "Zinédine Zidane",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "conte",
+    "name": "Antonio Conte",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "ten-hag",
+    "name": "Erik ten Hag",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "NLD"
+    ]
+  },
+  {
+    "id": "flick",
+    "name": "Hansi Flick",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "tuchel",
+    "name": "Thomas Tuchel",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "DEU"
+    ]
+  },
+  {
+    "id": "simone-inzaghi",
+    "name": "Simone Inzaghi",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "spalletti",
+    "name": "Luciano Spalletti",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ITA"
+    ]
+  },
+  {
+    "id": "zanetti",
+    "name": "Javier Zanetti",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ARG"
+    ]
+  },
+  {
+    "id": "vilanova",
+    "name": "Tito Vilanova",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "ESP"
+    ]
+  },
+  {
+    "id": "varane",
+    "name": "Raphaël Varane",
+    "portrait": null,
+    "verificationStatus": "pending",
+    "nationalities": [
+      "FRA"
+    ]
+  },
+  {
+    "id": "kalac",
+    "name": "Željko Kalac",
+    "nationalities": [
+      "AUS"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "cafu",
+    "name": "Cafu",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bonera",
+    "name": "Daniele Bonera",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "serginho",
+    "name": "Serginho",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gourcuff",
+    "name": "Yoann Gourcuff",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gilardino",
+    "name": "Alberto Gilardino",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "ronaldo-nazario",
+    "name": "Ronaldo Nazário",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "dudek",
+    "name": "Jerzy Dudek",
+    "nationalities": [
+      "POL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "hyypia",
+    "name": "Sami Hyypiä",
+    "nationalities": [
+      "FIN"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "aurelio",
+    "name": "Fábio Aurélio",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sissoko",
+    "name": "Mohamed Sissoko",
+    "nationalities": [
+      "MLI"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "crouch",
+    "name": "Peter Crouch",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bellamy",
+    "name": "Craig Bellamy",
+    "nationalities": [
+      "WAL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kuszczak",
+    "name": "Tomasz Kuszczak",
+    "nationalities": [
+      "POL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "fletcher",
+    "name": "Darren Fletcher",
+    "nationalities": [
+      "SCO"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "solskjaer",
+    "name": "Ole Gunnar Solskjær",
+    "nationalities": [
+      "NOR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "richardson",
+    "name": "Kieran Richardson",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "anderson",
+    "name": "Anderson",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "nani",
+    "name": "Nani",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "cudicini",
+    "name": "Carlo Cudicini",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "belletti",
+    "name": "Juliano Belletti",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "alex",
+    "name": "Alex",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "wayne-bridge",
+    "name": "Wayne Bridge",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "salgado",
+    "name": "Míchel Salgado",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "metzelder",
+    "name": "Christoph Metzelder",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "heinze",
+    "name": "Gabriel Heinze",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gago",
+    "name": "Fernando Gago",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "baptista",
+    "name": "Júlio Baptista",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "van-nistelrooy",
+    "name": "Ruud van Nistelrooy",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pinto",
+    "name": "José Manuel Pinto",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rafa-marquez",
+    "name": "Rafael Márquez",
+    "nationalities": [
+      "MEX"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sylvinho",
+    "name": "Sylvinho",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "keita",
+    "name": "Seydou Keita",
+    "nationalities": [
+      "MLI"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gudjohnsen",
+    "name": "Eiður Guðjohnsen",
+    "nationalities": [
+      "ISL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bojan",
+    "name": "Bojan Krkić",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "hleb",
+    "name": "Alexander Hleb",
+    "nationalities": [
+      "BLR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "foster",
+    "name": "Ben Foster",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "jonny-evans",
+    "name": "Jonny Evans",
+    "nationalities": [
+      "NIR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "hilario",
+    "name": "Hilário",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "deco",
+    "name": "Deco",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "toldo",
+    "name": "Francesco Toldo",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "cordoba",
+    "name": "Iván Córdoba",
+    "nationalities": [
+      "COL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "materazzi",
+    "name": "Marco Materazzi",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "santon",
+    "name": "Davide Santon",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "stankovic",
+    "name": "Dejan Stanković",
+    "nationalities": [
+      "SRB"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "balotelli",
+    "name": "Mario Balotelli",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rensing",
+    "name": "Michael Rensing",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "contento",
+    "name": "Diego Contento",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "breno",
+    "name": "Breno",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "tymoshchuk",
+    "name": "Anatoliy Tymoshchuk",
+    "nationalities": [
+      "UKR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "altintop",
+    "name": "Hamit Altıntop",
+    "nationalities": [
+      "TUR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pranjic",
+    "name": "Danijel Pranjić",
+    "nationalities": [
+      "HRV"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "maxwell",
+    "name": "Maxwell",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "yaya-toure",
+    "name": "Yaya Touré",
+    "nationalities": [
+      "CIV"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "adriano",
+    "name": "Adriano Correia",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "afellay",
+    "name": "Ibrahim Afellay",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "smalling",
+    "name": "Chris Smalling",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "albiol",
+    "name": "Raúl Albiol",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lass-diarra",
+    "name": "Lassana Diarra",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "granero",
+    "name": "Esteban Granero",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "turnbull",
+    "name": "Ross Turnbull",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "meireles",
+    "name": "Raul Meireles",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sturridge",
+    "name": "Daniel Sturridge",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "adan",
+    "name": "Antonio Adán",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "coentrao",
+    "name": "Fábio Coentrão",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "callejon",
+    "name": "José Callejón",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "starke",
+    "name": "Tom Starke",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "shaqiri",
+    "name": "Xherdan Shaqiri",
+    "nationalities": [
+      "CHE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "langerak",
+    "name": "Mitchell Langerak",
+    "nationalities": [
+      "AUS"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "felipe-santana",
+    "name": "Felipe Santana",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "grosskreutz",
+    "name": "Kevin Großkreutz",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sahin",
+    "name": "Nuri Şahin",
+    "nationalities": [
+      "TUR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "leitner",
+    "name": "Moritz Leitner",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "schieber",
+    "name": "Julian Schieber",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "alex-song",
+    "name": "Alex Song",
+    "nationalities": [
+      "CMR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "alexis-sanchez",
+    "name": "Alexis Sánchez",
+    "nationalities": [
+      "CHL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "tello",
+    "name": "Cristian Tello",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "diego-lopez",
+    "name": "Diego López",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "illarramendi",
+    "name": "Asier Illarramendi",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "isco",
+    "name": "Isco",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "aranzubia",
+    "name": "Dani Aranzubia",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "alderweireld",
+    "name": "Toby Alderweireld",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "insua",
+    "name": "Emiliano Insúa",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "mario-suarez",
+    "name": "Mario Suárez",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "raul-garcia",
+    "name": "Raúl García",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "adrian-lopez",
+    "name": "Adrián López",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "jose-sosa",
+    "name": "José Sosa",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pizarro",
+    "name": "Claudio Pizarro",
+    "nationalities": [
+      "PER"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bravo",
+    "name": "Claudio Bravo",
+    "nationalities": [
+      "CHL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bartra",
+    "name": "Marc Bartra",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rafinha-alcantara",
+    "name": "Rafinha Alcântara",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sergi-roberto",
+    "name": "Sergi Roberto",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "storari",
+    "name": "Marco Storari",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "barzagli",
+    "name": "Andrea Barzagli",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "caceres",
+    "name": "Martín Cáceres",
+    "nationalities": [
+      "URY"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "padoin",
+    "name": "Simone Padoin",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sturaro",
+    "name": "Stefano Sturaro",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pereyra",
+    "name": "Roberto Pereyra",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "llorente",
+    "name": "Fernando Llorente",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "casilla",
+    "name": "Kiko Casilla",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "danilo",
+    "name": "Danilo",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kovacic",
+    "name": "Mateo Kovačić",
+    "nationalities": [
+      "HRV"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "jese",
+    "name": "Jesé Rodríguez",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "moya",
+    "name": "Miguel Ángel Moyà",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "savic",
+    "name": "Stefan Savić",
+    "nationalities": [
+      "MNE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lucas-hernandez",
+    "name": "Lucas Hernández",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "augusto-fernandez",
+    "name": "Augusto Fernández",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "oliver-torres",
+    "name": "Óliver Torres",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "correa",
+    "name": "Ángel Correa",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "mathieu",
+    "name": "Jérémy Mathieu",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "vermaelen",
+    "name": "Thomas Vermaelen",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "munir",
+    "name": "Munir El Haddadi",
+    "nationalities": [
+      "ESP",
+      "MAR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "asensio",
+    "name": "Marco Asensio",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "neto",
+    "name": "Neto",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rugani",
+    "name": "Daniele Rugani",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lemina",
+    "name": "Mario Lemina",
+    "nationalities": [
+      "GAB"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pjaca",
+    "name": "Marko Pjaca",
+    "nationalities": [
+      "HRV"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "begovic",
+    "name": "Asmir Begović",
+    "nationalities": [
+      "BIH"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "zouma",
+    "name": "Kurt Zouma",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "fabregas",
+    "name": "Cesc Fàbregas",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "willian",
+    "name": "Willian",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "batshuayi",
+    "name": "Michy Batshuayi",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "loftus-cheek",
+    "name": "Ruben Loftus-Cheek",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "theo-hernandez",
+    "name": "Theo Hernández",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lucas-vazquez",
+    "name": "Lucas Vázquez",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "mignolet",
+    "name": "Simon Mignolet",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "klavan",
+    "name": "Ragnar Klavan",
+    "nationalities": [
+      "EST"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "emre-can",
+    "name": "Emre Can",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lallana",
+    "name": "Adam Lallana",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "oxlade-chamberlain",
+    "name": "Alex Oxlade-Chamberlain",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "solanke",
+    "name": "Dominic Solanke",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "naby-keita",
+    "name": "Naby Keïta",
+    "nationalities": [
+      "GIN"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "origi",
+    "name": "Divock Origi",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lamprou",
+    "name": "Kostas Lamprou",
+    "nationalities": [
+      "GRC"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "veltman",
+    "name": "Joël Veltman",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sinkgraven",
+    "name": "Daley Sinkgraven",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "eiting",
+    "name": "Carel Eiting",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "de-wit",
+    "name": "Dani de Wit",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "labyad",
+    "name": "Zakaria Labyad",
+    "nationalities": [
+      "MAR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "huntelaar",
+    "name": "Klaas-Jan Huntelaar",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "ulreich",
+    "name": "Sven Ulreich",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sule",
+    "name": "Niklas Süle",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "tolisso",
+    "name": "Corentin Tolisso",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "perisic",
+    "name": "Ivan Perišić",
+    "nationalities": [
+      "HRV"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "zirkzee",
+    "name": "Joshua Zirkzee",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rico",
+    "name": "Sergio Rico",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "meunier",
+    "name": "Thomas Meunier",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "diallo",
+    "name": "Abdou Diallo",
+    "nationalities": [
+      "SEN"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kurzawa",
+    "name": "Layvin Kurzawa",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "paredes",
+    "name": "Leandro Paredes",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "draxler",
+    "name": "Julian Draxler",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "icardi",
+    "name": "Mauro Icardi",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "adrian",
+    "name": "Adrián San Miguel",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kepa",
+    "name": "Kepa Arrizabalaga",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "christensen",
+    "name": "Andreas Christensen",
+    "nationalities": [
+      "DNK"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pulisic",
+    "name": "Christian Pulisic",
+    "nationalities": [
+      "USA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "giroud",
+    "name": "Olivier Giroud",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "steffen",
+    "name": "Zack Steffen",
+    "nationalities": [
+      "USA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "ferran-torres",
+    "name": "Ferran Torres",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "nubel",
+    "name": "Alexander Nübel",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bouna-sarr",
+    "name": "Bouna Sarr",
+    "nationalities": [
+      "SEN"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "choupo-moting",
+    "name": "Eric Maxim Choupo-Moting",
+    "nationalities": [
+      "CMR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kelleher",
+    "name": "Caoimhín Kelleher",
+    "nationalities": [
+      "IRL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "jota",
+    "name": "Diogo Jota",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "ortega",
+    "name": "Stefan Ortega",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "akanji",
+    "name": "Manuel Akanji",
+    "nationalities": [
+      "CHE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rico-lewis",
+    "name": "Rico Lewis",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "alvarez",
+    "name": "Julián Álvarez",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "skriniar",
+    "name": "Milan Škriniar",
+    "nationalities": [
+      "SVK"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "de-vrij",
+    "name": "Stefan de Vrij",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gosens",
+    "name": "Robin Gosens",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "mkhitaryan",
+    "name": "Henrikh Mkhitaryan",
+    "nationalities": [
+      "ARM"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gagliardini",
+    "name": "Roberto Gagliardini",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lukaku",
+    "name": "Romelu Lukaku",
+    "nationalities": [
+      "BEL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gollini",
+    "name": "Pierluigi Gollini",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "juan-jesus",
+    "name": "Juan Jesus",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "olivera",
+    "name": "Mathías Olivera",
+    "nationalities": [
+      "URY"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "elmas",
+    "name": "Eljif Elmas",
+    "nationalities": [
+      "MKD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "politano",
+    "name": "Matteo Politano",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "raspadori",
+    "name": "Giacomo Raspadori",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "giovanni-simeone",
+    "name": "Giovanni Simeone",
+    "nationalities": [
+      "ARG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "fran-garcia",
+    "name": "Fran García",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "tchouameni",
+    "name": "Aurélien Tchouaméni",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "brahim",
+    "name": "Brahim Díaz",
+    "nationalities": [
+      "ESP",
+      "MAR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "joselu",
+    "name": "Joselu",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kovar",
+    "name": "Matěj Kovář",
+    "nationalities": [
+      "CZE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "hincapie",
+    "name": "Piero Hincapié",
+    "nationalities": [
+      "ECU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "stanisic",
+    "name": "Josip Stanišić",
+    "nationalities": [
+      "HRV"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "andrich",
+    "name": "Robert Andrich",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "tella",
+    "name": "Nathan Tella",
+    "nationalities": [
+      "NGA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "adli",
+    "name": "Amine Adli",
+    "nationalities": [
+      "MAR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "schick",
+    "name": "Patrik Schick",
+    "nationalities": [
+      "CZE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "donnarumma",
+    "name": "Gianluigi Donnarumma",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "hakimi",
+    "name": "Achraf Hakimi",
+    "nationalities": [
+      "MAR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pacho",
+    "name": "Willian Pacho",
+    "nationalities": [
+      "ECU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "nuno-mendes",
+    "name": "Nuno Mendes",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "fabian-ruiz",
+    "name": "Fabián Ruiz",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "vitinha",
+    "name": "Vitinha",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "joao-neves",
+    "name": "João Neves",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "desire-doue",
+    "name": "Désiré Doué",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "ousmane-dembele",
+    "name": "Ousmane Dembélé",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "safonov",
+    "name": "Matvey Safonov",
+    "nationalities": [
+      "RUS"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "beraldo",
+    "name": "Lucas Beraldo",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "zaire-emery",
+    "name": "Warren Zaïre-Emery",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lee-kang-in",
+    "name": "Lee Kang-in",
+    "nationalities": [
+      "KOR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "barcola",
+    "name": "Bradley Barcola",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "goncalo-ramos",
+    "name": "Gonçalo Ramos",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "sommer",
+    "name": "Yann Sommer",
+    "nationalities": [
+      "CHE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "thuram",
+    "name": "Marcus Thuram",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "josep-martinez",
+    "name": "Josep Martínez",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "bisseck",
+    "name": "Yann Bisseck",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "carlos-augusto",
+    "name": "Carlos Augusto",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "frattesi",
+    "name": "Davide Frattesi",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "taremi",
+    "name": "Mehdi Taremi",
+    "nationalities": [
+      "IRN"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "szczesny",
+    "name": "Wojciech Szczęsny",
+    "nationalities": [
+      "POL"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "kounde",
+    "name": "Jules Koundé",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "araujo",
+    "name": "Ronald Araújo",
+    "nationalities": [
+      "URY"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "cubarsi",
+    "name": "Pau Cubarsí",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "balde",
+    "name": "Alejandro Balde",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "casado",
+    "name": "Marc Casadó",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pedri",
+    "name": "Pedri",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "lamine-yamal",
+    "name": "Lamine Yamal",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "dani-olmo",
+    "name": "Dani Olmo",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "raphinha",
+    "name": "Raphinha",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "inigo-martinez",
+    "name": "Iñigo Martínez",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gavi",
+    "name": "Gavi",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "fermin",
+    "name": "Fermín López",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "eric-garcia",
+    "name": "Eric García",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "chevalier",
+    "name": "Lucas Chevalier",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "zabarnyi",
+    "name": "Illia Zabarnyi",
+    "nationalities": [
+      "UKR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "raya",
+    "name": "David Raya",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "timber",
+    "name": "Jurriën Timber",
+    "nationalities": [
+      "NLD"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "saliba",
+    "name": "William Saliba",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gabriel-magalhaes",
+    "name": "Gabriel Magalhães",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "calafiori",
+    "name": "Riccardo Calafiori",
+    "nationalities": [
+      "ITA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "zubimendi",
+    "name": "Martín Zubimendi",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "rice",
+    "name": "Declan Rice",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "saka",
+    "name": "Bukayo Saka",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "odegaard",
+    "name": "Martin Ødegaard",
+    "nationalities": [
+      "NOR"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "eze",
+    "name": "Eberechi Eze",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "gyokeres",
+    "name": "Viktor Gyökeres",
+    "nationalities": [
+      "SWE"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "ben-white",
+    "name": "Ben White",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "merino",
+    "name": "Mikel Merino",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "nwaneri",
+    "name": "Ethan Nwaneri",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "madueke",
+    "name": "Noni Madueke",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "martinelli",
+    "name": "Gabriel Martinelli",
+    "nationalities": [
+      "BRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "upamecano",
+    "name": "Dayot Upamecano",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "pavlovic",
+    "name": "Aleksandar Pavlović",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "olise",
+    "name": "Michael Olise",
+    "nationalities": [
+      "FRA"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "musiala",
+    "name": "Jamal Musiala",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "harry-kane",
+    "name": "Harry Kane",
+    "nationalities": [
+      "ENG"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "urbig",
+    "name": "Jonas Urbig",
+    "nationalities": [
+      "DEU"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "laimer",
+    "name": "Konrad Laimer",
+    "nationalities": [
+      "AUT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "guerreiro",
+    "name": "Raphaël Guerreiro",
+    "nationalities": [
+      "PRT"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "nicolas-jackson",
+    "name": "Nicolas Jackson",
+    "nationalities": [
+      "SEN"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  },
+  {
+    "id": "arteta",
+    "name": "Mikel Arteta",
+    "nationalities": [
+      "ESP"
+    ],
+    "portrait": null,
+    "verificationStatus": "pending"
+  }
+]

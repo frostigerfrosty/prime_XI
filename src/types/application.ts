@@ -1,0 +1,147 @@
+import type { CoachSeason, FormationId, PlayerSeason, PrimeTeam } from './database.ts';
+
+export type TournamentRound = 'playoffs' | 'round-of-16' | 'quarter-finals' | 'semi-finals' | 'final';
+export type TournamentPhase = 'league' | TournamentRound | 'completed';
+
+export interface UserSettings {
+  locale: 'de';
+  theme: 'dark';
+  defaultTactic: string;
+  reduceMotion: boolean;
+  soundEnabled: boolean;
+  historyLimit: number;
+}
+
+export interface DraftState {
+  id: string;
+  seed: string;
+  createdAt: string;
+  updatedAt: string;
+  drawnPrimeTeamIds: string[];
+  formationId: FormationId;
+  tacticId: string;
+  picks: { slotId: string; playerCardId: string }[];
+  coachCardId: string | null;
+  captainPersonId: string | null;
+}
+
+export interface StrengthBreakdown {
+  baseTeamStrength: number;
+  chemistryBonus: number;
+  tacticalBonus: number;
+  coachBonus: number;
+  captainBonus: number;
+  matchStrength: number;
+}
+
+/** Embed selected card/coach snapshots so future catalog edits do not rewrite a save. */
+export interface SavedTeam {
+  id: string;
+  name: string;
+  createdAt: string;
+  datasetVersion: string;
+  formationId: FormationId;
+  tacticId: string;
+  lineup: { slotId: string; player: PlayerSeason }[];
+  coach: CoachSeason;
+  captainPersonId: string;
+  strength: StrengthBreakdown;
+}
+
+export type TournamentParticipant =
+  | { id: string; kind: 'user'; team: SavedTeam }
+  | { id: string; kind: 'prime'; team: PrimeTeam };
+
+export interface Score {
+  home: number;
+  away: number;
+}
+
+export interface MatchResult {
+  regularTime: Score;
+  /** Cumulative score after 120 minutes, not just goals in the extra-time segment. */
+  afterExtraTime: Score | null;
+  /** Separate shootout score; never added to table goals or aggregate match goals. */
+  penalties: Score | null;
+  winnerParticipantId: string | null;
+  decidedBy: 'regular-time' | 'extra-time' | 'penalties' | 'draw';
+  expectedGoals: { home: number; away: number };
+  seed: string;
+}
+
+export type ScheduledMatch = {
+  id: string;
+  phase: Exclude<TournamentPhase, 'completed'>;
+  roundNumber: number;
+  leg: 1 | 2 | null;
+  homeParticipantId: string;
+  awayParticipantId: string;
+  neutralVenue: boolean;
+} & (
+  | { status: 'scheduled'; result: null }
+  | { status: 'played'; result: MatchResult }
+);
+
+export interface LeagueTableRow {
+  participantId: string;
+  rank: number;
+  played: number;
+  wins: number;
+  draws: number;
+  losses: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+  points: number;
+}
+
+export interface KnockoutTie {
+  id: string;
+  round: TournamentRound;
+  teamAId: string;
+  teamBId: string;
+  matchIds: string[];
+  aggregateGoals: { teamA: number; teamB: number };
+  winnerParticipantId: string | null;
+}
+
+export interface TournamentState {
+  id: string;
+  datasetVersion: string;
+  rulesVersion: string;
+  seed: string;
+  createdAt: string;
+  completedAt: string | null;
+  phase: TournamentPhase;
+  userParticipantId: string;
+  participants: TournamentParticipant[];
+  matches: ScheduledMatch[];
+  standings: LeagueTableRow[];
+  knockoutTies: KnockoutTie[];
+  championParticipantId: string | null;
+}
+
+export interface HistoryEntry {
+  id: string;
+  tournamentId: string;
+  finishedAt: string;
+  seed: string;
+  userTeam: SavedTeam;
+  finalPosition: number;
+  champion: { participantId: string; label: string };
+  statistics: {
+    played: number; wins: number; draws: number; losses: number;
+    goalsFor: number; goalsAgainst: number;
+  };
+}
+
+/** Persistence contract. Runtime validation/migrations belong to the application step. */
+export interface AppState {
+  schemaVersion: 1;
+  datasetVersion: string;
+  currentDraft: DraftState | null;
+  currentTeam: SavedTeam | null;
+  currentTournament: TournamentState | null;
+  completedTournaments: HistoryEntry[];
+  userSettings: UserSettings;
+}

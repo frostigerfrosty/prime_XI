@@ -1,0 +1,63 @@
+[
+  {
+    "id": "balanced",
+    "label": "Ausgewogen",
+    "styleTags": [
+      "balanced"
+    ],
+    "preferredFormations": [
+      "4-3-3",
+      "4-2-3-1",
+      "4-4-2"
+    ]
+  },
+  {
+    "id": "possession",
+    "label": "Ballbesitz",
+    "styleTags": [
+      "possession"
+    ],
+    "preferredFormations": [
+      "4-3-3",
+      "4-2-3-1",
+      "4-3-1-2"
+    ]
+  },
+  {
+    "id": "high-press",
+    "label": "Hohes Pressing",
+    "styleTags": [
+      "high-press",
+      "transition"
+    ],
+    "preferredFormations": [
+      "4-3-3",
+      "4-2-3-1"
+    ]
+  },
+  {
+    "id": "counter-attack",
+    "label": "Konter",
+    "styleTags": [
+      "compact",
+      "counter-attack"
+    ],
+    "preferredFormations": [
+      "4-4-2",
+      "4-2-3-1",
+      "3-5-2"
+    ]
+  },
+  {
+    "id": "wide-play",
+    "label": "Flügelspiel",
+    "styleTags": [
+      "wide-play"
+    ],
+    "preferredFormations": [
+      "4-3-3",
+      "3-4-3",
+      "3-5-2"
+    ]
+  }
+]
