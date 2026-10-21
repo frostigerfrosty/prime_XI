@@ -1,0 +1,486 @@
+.tournament-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.tournament-heading > .button {
+  margin-top: 28px;
+  white-space: nowrap;
+}
+.tournament-feedback {
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.tournament-feedback:empty {
+  display: none;
+}
+.tournament-start {
+  padding: 40px;
+  text-align: center;
+}
+.tournament-start > svg {
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.tournament-start h2 {
+  font-family: var(--display);
+  font-size: 40px;
+  font-weight: 600;
+  margin-block: 15px;
+}
+.tournament-start > p:not(.eyebrow) {
+  max-width: 540px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.tournament-start form {
+  max-width: 430px;
+  margin: 24px auto 0;
+  text-align: left;
+}
+.tournament-start .button {
+  width: 100%;
+  margin-top: 23px;
+}
+.tournament-overview,
+.next-league-match,
+.last-league-match,
+.league-table-panel,
+.league-fixtures {
+  padding: 25px;
+  margin-bottom: 22px;
+  min-width: 0;
+}
+.tournament-overview {
+  background: radial-gradient(ellipse at 90% 0%, #2a422a66, transparent 65%), var(--surface);
+}
+.tournament-overview .section-heading .eyebrow {
+  margin-bottom: 9px;
+}
+.tournament-overview .section-heading {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.league-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 25px;
+  gap: 18px;
+}
+.league-stats > div {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  background: #101d23aa;
+}
+.league-stats > div > span {
+  color: #bdcbd3;
+  font-size: 11px;
+}
+.league-stats > div > strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.league-stats strong > small {
+  font-size: 23px;
+  color: var(--muted);
+}
+.league-stats > div > small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.league-progress {
+  margin-top: 23px;
+}
+.league-progress label {
+  display: block;
+  color: #c8d8c5;
+  font-size: 11px;
+  margin-bottom: 13px;
+}
+.league-progress progress {
+  display: block;
+  width: 100%;
+  height: 7px;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  accent-color: var(--accent);
+}
+.league-progress progress::-webkit-progress-bar {
+  background: #263631;
+  border-radius: 8px;
+}
+.league-progress progress::-webkit-progress-value {
+  background: var(--accent);
+  border-radius: 8px;
+}
+.tournament-caption {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 18px;
+}
+.tournament-team-name {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+.tournament-team-name .club-badge,
+.tournament-team-name > svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.tournament-team-name > span {
+  min-width: 0;
+}
+.tournament-team-name strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.tournament-team-name small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.league-match-list,
+.own-league-fixtures ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.league-match {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--border);
+}
+.league-match > .tournament-team-name:last-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+.league-match > .tournament-team-name:last-child .club-badge,
+.league-match > .tournament-team-name:last-child > svg {
+  order: 1;
+}
+.league-match-score {
+  text-align: center;
+  min-width: 50px;
+  font-variant-numeric: tabular-nums;
+}
+.league-match-score strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.league-match-score small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.league-match--own .league-match-score strong {
+  color: var(--accent);
+}
+.league-match:last-child {
+  border-bottom: 0;
+}
+.next-league-match .league-match {
+  padding-block: 24px;
+}
+.next-league-match .tournament-team-name strong {
+  font-size: 19px;
+  font-family: var(--display);
+  font-weight: 600;
+}
+.next-league-match .tournament-team-name .club-badge,
+.next-league-match .tournament-team-name > svg {
+  width: 42px;
+  height: 42px;
+}
+.league-play-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 17px;
+}
+.last-league-match > .eyebrow {
+  margin-bottom: 6px;
+}
+.qualification-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 27px;
+  border-color: #4d6636;
+  margin-bottom: 22px;
+  background: linear-gradient(110deg, #243e2370, transparent), var(--surface);
+}
+.qualification-panel > svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.qualification-panel h2 {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 600;
+  margin-block: 9px;
+}
+.qualification-panel p:not(.eyebrow) {
+  color: #c2cec8;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+.qualification-panel--eliminated {
+  border-color: #6d5334;
+  background: linear-gradient(110deg, #47351f55, transparent), var(--surface);
+}
+.qualification-panel--eliminated > svg {
+  color: #edc28d;
+}
+.league-table-panel .section-heading {
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.league-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+  font-size: 10px;
+  color: var(--muted);
+}
+.league-legend span::before {
+  display: inline-block;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 7px;
+}
+.league-legend span:nth-child(2)::before {
+  background: #87b8f1;
+}
+.league-legend span:nth-child(3)::before {
+  background: #e2b88a;
+}
+.league-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.league-table-scroll table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 685px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.league-table-scroll th,
+.league-table-scroll td {
+  padding: 14px 12px;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: 400;
+}
+.league-table-scroll thead {
+  background: #1a2832;
+  color: #bccbd4;
+}
+.league-table-scroll thead th:nth-child(2),
+.league-table-scroll tbody th {
+  text-align: left;
+}
+.league-table-scroll tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+.league-table-scroll tbody .league-points {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+.league-table-scroll tbody .league-zone {
+  font-size: 10px;
+  color: var(--muted);
+  text-align: left;
+}
+.league-table-scroll .league-row--own {
+  background: #adf56b0b;
+}
+.league-table-scroll .league-row--own .tournament-team-name strong {
+  color: var(--accent);
+}
+.league-rank--direct {
+  box-shadow: inset 3px 0 var(--accent);
+}
+.league-rank--playoff {
+  box-shadow: inset 3px 0 #87b8f1;
+}
+.league-rank--eliminated {
+  box-shadow: inset 3px 0 #e2b88a;
+}
+.league-fixture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+.league-fixtures .section-heading {
+  flex-wrap: wrap;
+  gap: 13px;
+}
+.own-league-fixtures > li {
+  border-bottom: 1px solid var(--border);
+  padding-block: 20px;
+}
+.own-league-fixtures > li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.own-league-fixtures .eyebrow {
+  font-size: 9px;
+  color: var(--muted);
+}
+.own-league-fixtures .league-match {
+  padding-bottom: 0;
+}
+.league-round-select {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.league-round-select select {
+  min-height: 36px;
+  padding: 7px;
+  color: var(--text);
+  background: #14222c;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+}
+.tournament-code-details {
+  padding: 22px 25px;
+  margin-bottom: 20px;
+}
+.tournament-code-details summary {
+  color: var(--accent);
+  font-size: 12px;
+  cursor: pointer;
+  padding-block: 4px;
+}
+.tournament-code-details p {
+  margin-top: 15px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.tournament-code-details code {
+  color: #ccd9cf;
+}
+.tournament-confirm .match-field {
+  margin-bottom: 25px;
+}
+.tournament-confirm .confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+@media (max-width: 1100px) {
+  .league-fixture-grid {
+    grid-template-columns: 1fr;
+  }
+  .league-stats {
+    gap: 12px;
+  }
+  .league-stats > div {
+    padding: 16px;
+  }
+}
+@media (max-width: 680px) {
+  .tournament-heading {
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 24px;
+  }
+  .tournament-heading > .button {
+    margin-top: 0;
+  }
+  .league-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tournament-start {
+    padding: 30px 20px;
+  }
+  .tournament-overview,
+  .next-league-match,
+  .last-league-match,
+  .league-table-panel,
+  .league-fixtures {
+    padding: 20px;
+  }
+  .league-match {
+    gap: 8px;
+  }
+  .league-match .tournament-team-name {
+    gap: 7px;
+  }
+  .league-match .tournament-team-name .club-badge,
+  .league-match .tournament-team-name > svg {
+    width: 23px;
+    height: 23px;
+  }
+  .league-match .tournament-team-name strong {
+    font-size: 11px;
+  }
+  .next-league-match .tournament-team-name strong {
+    font-size: 19px;
+  }
+  .league-match .tournament-team-name small {
+    font-size: 9px;
+  }
+  .league-match-score {
+    min-width: 44px;
+  }
+  .league-match-score strong {
+    font-size: 24px;
+  }
+  .league-play-actions .button {
+    width: 100%;
+  }
+  .qualification-panel {
+    padding: 22px;
+    gap: 15px;
+  }
+}
+@media (max-width: 370px) {
+  .league-match .tournament-team-name .club-badge,
+  .league-match .tournament-team-name > svg {
+    display: none;
+  }
+}

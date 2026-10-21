@@ -13,6 +13,8 @@ import { catalogStats, featuredTeamIds, teams } from '../app/catalog.ts';
 import { ClubBadge, Step, TeamCard } from '../components/ui.tsx';
 import { formatNumber, formatStrength, initials } from '../utils/display.ts';
 import { builder, useDraft } from '../app/DraftProvider.tsx';
+import { useTournament } from '../app/TournamentProvider.tsx';
+import { tournamentEngine } from '../app/game.ts';
 
 function HeroCards() {
   const cards = [
@@ -71,6 +73,11 @@ function HeroCards() {
 
 export default function DashboardPage() {
   const { draft, currentTeam, teamPersisted, teamMatchesDraft } = useDraft();
+  const { tournament } = useTournament();
+  const progress = tournament ? tournamentEngine.progress(tournament) : null;
+  const tournamentRow = tournament?.standings.find(
+    (row) => row.participantId === tournament.userParticipantId,
+  );
   const draftStatus = draft ? builder.status(draft) : null;
   return (
     <>
@@ -130,7 +137,7 @@ export default function DashboardPage() {
             icon: Trophy,
             value: '36',
             label: 'Teams pro Turnier',
-            detail: 'Das geplante Turnierformat',
+            detail: 'Eine gemeinsame Ligaphase',
           },
         ].map(({ icon: Icon, value, label, detail }) => (
           <div className="stat-card panel" key={label}>
@@ -170,7 +177,8 @@ export default function DashboardPage() {
             <Step
               number="03"
               title="Geschichte schreiben"
-              text="Später tritt deine Elf im 36-Team-Turnier an."
+              text="Tritt mit deiner Elf in der 36-Team-Ligaphase an."
+              done={Boolean(tournament)}
             />
           </div>
         </section>
@@ -212,9 +220,27 @@ export default function DashboardPage() {
               <Trophy size={20} aria-hidden="true" />
             </span>
             <div>
-              <h3>Noch kein Turnier</h3>
-              <p>Beginnt mit deinem vollständigen Team</p>
+              <h3>
+                {tournament
+                  ? progress?.complete
+                    ? 'Ligaphase beendet'
+                    : 'Dein Turnier läuft'
+                  : 'Noch kein Turnier'}
+              </h3>
+              <p>
+                {tournamentRow && progress
+                  ? `${progress.completedRounds} / ${progress.totalRounds} Spieltage · ${tournamentRow.points} Punkte${tournamentRow.played ? ` · Platz ${tournamentRow.rank}` : ''}`
+                  : 'Beginnt mit deinem vollständigen Team'}
+              </p>
             </div>
+            {(tournament || currentTeam) && (
+              <Link
+                to="/tournament"
+                aria-label={tournament ? 'Turnier öffnen' : 'Turnier vorbereiten'}
+              >
+                <ChevronRight size={18} />
+              </Link>
+            )}
           </div>
           <Link className="text-link" to="/team-builder">
             Aufstellung ansehen <ArrowRight size={15} aria-hidden="true" />

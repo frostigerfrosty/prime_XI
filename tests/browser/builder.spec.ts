@@ -126,10 +126,10 @@ test('eleven players, coach and captain can be selected and saved entirely throu
   expect(await read(page)).toEqual(saved);
   await expect(
     page.getByRole('button', { name: 'Team speichern & Turnier starten' }),
-  ).toBeDisabled();
+  ).toBeEnabled();
   await page.goto('#/tournament');
   await expect(
-    page.getByRole('heading', { name: 'Deine Elf steht. Die große Bühne folgt.' }),
+    page.getByRole('heading', { name: 'Die große Bühne wartet.' }),
   ).toBeVisible();
   await expect(page.getByRole('table')).toHaveCount(0);
 });

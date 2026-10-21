@@ -9,6 +9,7 @@ import { App } from './app/App.tsx';
 import './styles/app.css';
 import './styles/strength.css';
 import './styles/match.css';
+import './styles/tournament.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -102,11 +102,11 @@ test('a saved team survives later catalog versions because validation uses its o
 
 test('Phase 4 strength-version 1.1.0 saves survive the match-only rules update', () => {
   const { team, model, data } = fixture();
-  assert.equal(data.rules.version, '1.2.0');
+  assert.notEqual(data.rules.version, team.rulesVersion);
   assert.equal(team.rulesVersion, '1.1.0');
   assert.equal(isSavedTeam(JSON.parse(JSON.stringify(team)), model), true);
   const next = structuredClone(data);
-  next.rules.version = '1.3.0';
+  next.rules.version = '9.0.0';
   next.rules.match.strengthSensitivity = 0.06;
   const nextModel = createStrengthModel(next);
   assert.equal(isSavedTeam(team, nextModel), true);

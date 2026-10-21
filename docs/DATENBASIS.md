@@ -7,23 +7,23 @@ beim Seitenaufruf neu erzeugen.
 
 ## Dateien und Verantwortlichkeiten
 
-| Datei | Inhalt |
-| --- | --- |
-| `data/editorial/teams.json` | 60 ausgewählte 18er-Kader, explizite Standardelf, Saisonattribute und Trainer |
-| `data/editorial/people.json` | 578 dauerhafte Personenidentitäten, darunter 554 Spieler und 26 Trainer mit zwei Überschneidungen |
-| `data/editorial/clubs.json` | 17 Vereine, Kürzel und Darstellungsfarben |
-| `data/editorial/formations.json` | Sieben Formationen mit je elf Slots und normierten Koordinaten |
-| `data/editorial/positions.json` | 14 Rollen und ihre Gruppen für die Stärkeberechnung |
-| `data/editorial/tactics.json` | Fünf eigene Spieltaktiken und passende Formationen/Stil-Tags |
-| `data/editorial/countries.json` | 66 verwendete Länder-/Verbandskennungen mit deutschen Labels |
-| `data/editorial/game-rules.json` | Draft, Stärke, Boni, Turnierformat, Matchparameter und Speicherschlüssel |
-| `data/editorial/defaults.json` | Echte initiale Benutzereinstellungen |
-| `data/editorial/sources.json` | Vorgeschlagene und tatsächlich gelesene Referenzen getrennt |
-| `data/editorial/rating-model.json` | Herkunft der eigenen V1-Spielwerte und initiale Rollenprofile |
-| `data/research/` | Tatsächliche Recherchebelege, Prüfumfang und beobachtete Sperren |
-| `data/schema/database.schema.json` | Striktes JSON Schema für den Export |
-| `src/data/database.json` | Erzeugter Export für Browser und Tests |
-| `public/assets/clubs/` | 17 selbst erzeugte Monogramme, keine offiziellen Wappen |
+| Datei                              | Inhalt                                                                                            |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `data/editorial/teams.json`        | 60 ausgewählte 18er-Kader, explizite Standardelf, Saisonattribute und Trainer                     |
+| `data/editorial/people.json`       | 578 dauerhafte Personenidentitäten, darunter 554 Spieler und 26 Trainer mit zwei Überschneidungen |
+| `data/editorial/clubs.json`        | 17 Vereine, Kürzel und Darstellungsfarben                                                         |
+| `data/editorial/formations.json`   | Sieben Formationen mit je elf Slots und normierten Koordinaten                                    |
+| `data/editorial/positions.json`    | 14 Rollen und ihre Gruppen für die Stärkeberechnung                                               |
+| `data/editorial/tactics.json`      | Fünf eigene Spieltaktiken und passende Formationen/Stil-Tags                                      |
+| `data/editorial/countries.json`    | 66 verwendete Länder-/Verbandskennungen mit deutschen Labels                                      |
+| `data/editorial/game-rules.json`   | Draft, Stärke, Boni, Turnierformat, Matchparameter und Speicherschlüssel                          |
+| `data/editorial/defaults.json`     | Echte initiale Benutzereinstellungen                                                              |
+| `data/editorial/sources.json`      | Vorgeschlagene und tatsächlich gelesene Referenzen getrennt                                       |
+| `data/editorial/rating-model.json` | Herkunft der eigenen V1-Spielwerte und initiale Rollenprofile                                     |
+| `data/research/`                   | Tatsächliche Recherchebelege, Prüfumfang und beobachtete Sperren                                  |
+| `data/schema/database.schema.json` | Striktes JSON Schema für den Export                                                               |
+| `src/data/database.json`           | Erzeugter Export für Browser und Tests                                                            |
+| `public/assets/clubs/`             | 17 selbst erzeugte Monogramme, keine offiziellen Wappen                                           |
 
 `year` ist das Endjahr der europäischen Vereinssaison. 2007 bedeutet 2006/07, 2026
 bedeutet 2025/26. Die Auswahl ist redaktionell und umfasst CL-Finalisten, weitere
@@ -96,21 +96,21 @@ Wirkung auf Ziel-Siegchancen ist eine spätere Aufgabe der Simulationsengine.
 
 ## Abfragen
 
-| Export aus `src/data/index.ts` | Zweck |
-| --- | --- |
-| `getDatabase()` | Unabhängige Kopie des kompletten Pakets |
-| `findPrimeTeam(id)` | Team samt gesamtem 18er-Kader |
-| `getDevelopmentTeams()` | Alle erfassten Entwicklungskader; ungeprüfte Angaben bleiben gekennzeichnet |
-| `getReleasedTeams()` | Ausschließlich historisch freigegebene Kader; aktuell leer |
-| `getDefaultLineup(teamId)` | Elf Karten in Slot-Reihenfolge |
-| `findPlayerCard(cardId)` | Exakte Saisonkarte |
-| `getPositionOptions(teamId, position, includeSecondary)` | Spieler für Haupt-/Nebenpositionen filtern |
-| `searchPrimeTeams({ year, clubId, query })` | Filtern und akzentunabhängig suchen |
-| `isSamePlayer(a, b)` | Dauerhafte Identitäten vergleichen |
-| `getGameRules()` | Zentrale Spielkonfiguration |
-| `getDefaultSettings()` | Unabhängige Kopie der Einstellungen |
-| `getClubBadgePath(clubId, siteBase)` | Relative Monogrammpfade für GitHub Pages auflösen |
-| `getDataReadiness()` | Entwicklungsumfang und historische Freigabe getrennt auswerten |
+| Export aus `src/data/index.ts`                           | Zweck                                                                       |
+| -------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `getDatabase()`                                          | Unabhängige Kopie des kompletten Pakets                                     |
+| `findPrimeTeam(id)`                                      | Team samt gesamtem 18er-Kader                                               |
+| `getDevelopmentTeams()`                                  | Alle erfassten Entwicklungskader; ungeprüfte Angaben bleiben gekennzeichnet |
+| `getReleasedTeams()`                                     | Ausschließlich historisch freigegebene Kader; aktuell leer                  |
+| `getDefaultLineup(teamId)`                               | Elf Karten in Slot-Reihenfolge                                              |
+| `findPlayerCard(cardId)`                                 | Exakte Saisonkarte                                                          |
+| `getPositionOptions(teamId, position, includeSecondary)` | Spieler für Haupt-/Nebenpositionen filtern                                  |
+| `searchPrimeTeams({ year, clubId, query })`              | Filtern und akzentunabhängig suchen                                         |
+| `isSamePlayer(a, b)`                                     | Dauerhafte Identitäten vergleichen                                          |
+| `getGameRules()`                                         | Zentrale Spielkonfiguration                                                 |
+| `getDefaultSettings()`                                   | Unabhängige Kopie der Einstellungen                                         |
+| `getClubBadgePath(clubId, siteBase)`                     | Relative Monogrammpfade für GitHub Pages auflösen                           |
+| `getDataReadiness()`                                     | Entwicklungsumfang und historische Freigabe getrennt auswerten              |
 
 Die Datenabfragen liefern unabhängige Kopien; Änderungen einer UI verändern keine
 gemeinsamen Ausgangsdaten. Die Abfragen erwarten den durch `data:check` technisch
@@ -132,14 +132,17 @@ kein falsches Aggregatergebnis erzeugen.
 
 `createInitialAppState()` aus `src/data/initial-state.ts` erzeugt einen leeren Zustand:
 kein Team, kein Draft, kein Turnier und keine erfundene History. Die Speicherschlüssel
-sind in der Spielkonfiguration versioniert. Der tatsächliche localStorage-/IndexedDB-
-Adapter für laufende/abgeschlossene Turniere und deren Migrationen folgen in den
-jeweiligen Etappen. Einstellungen, aktiver Draft und vollständige Teams werden
-bereits defensiv im Browser gespeichert. Der Draft-Adapter prüft Version,
+sind in der Spielkonfiguration versioniert. Einstellungen, aktiver Draft,
+vollständige Teams und die laufende Ligaphase werden defensiv im Browser gespeichert.
+Der Turnieradapter prüft eingebettete Kader und Matchstärken, die Auslosung des
+Spielplans, Ergebnisse der gespielten Runden und die neu berechnete Tabelle.
+Archivierung und Migrationen weiterer Turnierphasen folgen in ihren Etappen.
+Der Draft-Adapter prüft Version,
 Identitäten, Positionen und Vervollständigbarkeit. Team-Snapshots betten zusätzlich
 Vereins-IDs pro Pick, Regelversion und berechnete Stärkewerte ein. Sie werden aus
 ihren eigenen Karten validiert und nicht auf aktuelle Katalogratings umgeschrieben.
 Details: [Team Builder](TEAM_BUILDER.md) und [Teamstärke](TEAMSTAERKE.md).
+Zur laufenden Ligaphase: [Turnierablauf und Speicherung](LIGAPHASE.md).
 
 ## Pflege
 

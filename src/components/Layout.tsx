@@ -5,7 +5,6 @@ import {
   CircleHelp,
   History,
   LayoutDashboard,
-  LockKeyhole,
   Menu,
   Settings,
   Shield,
@@ -43,9 +42,6 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
             >
               <Icon size={19} strokeWidth={1.6} aria-hidden="true" />
               <span>{label}</span>
-              {to === '/tournament' && (
-                <LockKeyhole className="nav-lock" size={13} aria-hidden="true" />
-              )}
             </NavLink>
           ))}
         </nav>
@@ -76,7 +72,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.6 · Matchengine</span>
+          PRIME XI <span>v0.7 · Ligaphase</span>
         </p>
       </div>
     </>

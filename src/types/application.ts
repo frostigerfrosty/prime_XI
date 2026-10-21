@@ -52,8 +52,8 @@ export interface SavedTeam {
 }
 
 export type TournamentParticipant =
-  | { id: string; kind: 'user'; team: SavedTeam }
-  | { id: string; kind: 'prime'; team: PrimeTeam };
+  | { id: string; kind: 'user'; team: SavedTeam; matchStrength: number }
+  | { id: string; kind: 'prime'; team: PrimeTeam; matchStrength: number };
 
 export interface Score {
   home: number;
@@ -124,6 +124,9 @@ export interface TournamentState {
   id: string;
   datasetVersion: string;
   rulesVersion: string;
+  leagueVersion: string;
+  matchEngineVersion: string;
+  opponentTacticId: string;
   seed: string;
   createdAt: string;
   completedAt: string | null;

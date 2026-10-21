@@ -4,8 +4,8 @@ Die Werte stehen in `data/editorial/game-rules.json` und werden mit dem Datensat
 exportiert. Teamstärke und Matchsimulation verwenden diese zentralen Parameter.
 Eigene Entscheidungen stehen zusätzlich unter
 `designDecisions`; die Spezifikationswerte sind von kalibrierbaren Startwerten
-unterschieden. Die Gesamtregeln haben Version 1.2.0, das unveränderte Stärkemodell
-Version 1.1.0 und die Matchengine Version 1.0.0. Bestehende Team-Snapshots bleiben
+unterschieden. Die Gesamtregeln haben Version 1.3.0, das unveränderte Stärkemodell
+Version 1.1.0, die Matchengine Version 1.0.0 und die Ligaengine Version 1.0.0. Bestehende Team-Snapshots bleiben
 gültig: `SavedTeam.rulesVersion` bezeichnet die Version des Stärkemodells.
 [Formeln und Snapshot-Verhalten](TEAMSTAERKE.md) sind separat dokumentiert.
 
@@ -74,6 +74,14 @@ stabile Teilnehmer-ID. Plätze 1–8 gehen direkt ins Achtelfinale, 9–24 spiel
 25–36 scheiden aus. Das Spielformat bildet die 36-Team-Idee nach; es behauptet keine
 vollständige Kopie aller UEFA-Auslosungs- und Tie-Breaker-Bestimmungen.
 
+Seit Version 0.7 ist diese Ligaphase spielbar. Ein Turniercode zieht 35 verschiedene
+Saisonteams und acht vollständige Runden eines Round-Robin-Plans. Geschlossene Wege
+im geraden Spielgraphen verteilen das Heimrecht auf exakt vier Heim- und vier
+Auswärtsspiele pro Team. Es gibt keine Wiederholungspaarungen, Freilose, Töpfe oder
+Länderverbote. Ein Schritt simuliert einen vollständigen Spieltag mit 18 Spielen.
+Die Tabelle wird aus den gespeicherten Ergebnissen neu aufgebaut. Ihre Zonen
+bleiben bis zum achten Spieltag vorläufig. Details: [Ligaphase](LIGAPHASE.md).
+
 Playoffs mit 16 Teams liefern acht Sieger für die acht Direktqualifizierten.
 Danach Achtelfinale mit 16, Viertelfinale mit 8, Halbfinale mit 4 und Finale mit 2 Teams.
 Außer dem einzelnen neutralen Finale haben die K.-o.-Runden Hin- und Rückspiel.
@@ -84,5 +92,7 @@ gegebenenfalls Elfmeterschießen aufgelöst.
 
 Eigene versionierte Schlüssel sind für Draft, Team, laufendes Turnier, abgeschlossene
 Turniere und Einstellungen festgelegt. Die Anwendungszustände besitzen passende
-TypeScript-Verträge. Die Datenbasis führt noch keine Speicherzugriffe oder
-Zustandsänderungen selbst aus.
+TypeScript-Verträge. Einstellungen, Draft, Team und laufende Ligaphase werden
+bereits defensiv im Browser gespeichert. Archivierung und Migrationen weiterer
+Turnierphasen folgen in ihren Etappen. Die statische Datenbasis selbst führt keine
+Speicherzugriffe aus.

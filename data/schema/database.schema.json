@@ -596,6 +596,10 @@
                 "resolveDraw",
                 "finalNeutralVenue"
               ]
+            },
+            "engineVersion": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -605,7 +609,8 @@
             "uniquePrimeTeamIds",
             "differentSeasonsOfSameClubAllowed",
             "league",
-            "knockout"
+            "knockout",
+            "engineVersion"
           ]
         },
         "storage": {

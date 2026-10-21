@@ -198,6 +198,7 @@ export interface GameRules {
     penaltiesSuddenDeath: boolean; seedSupported: boolean; calibrationStatus: 'validated_v1';
   };
   tournament: {
+    engineVersion: string;
     totalTeams: number; userTeams: number; opponentTeams: number;
     uniquePrimeTeamIds: boolean; differentSeasonsOfSameClubAllowed: boolean;
     league: {

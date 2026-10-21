@@ -13,6 +13,8 @@ export function validateRules(rules) {
   assert(builder.playersRequired <= builder.drawSize * builder.maxPlayersPerPrimeTeam, 'not enough player picks in a draft');
   assert(tournament.userTeams + tournament.opponentTeams === tournament.totalTeams, 'participant totals disagree');
   assert(league.homeMatches + league.awayMatches === league.matchesPerTeam, 'home/away counts disagree');
+  assert(tournament.totalTeams % 2 === 0 && league.matchesPerTeam % 2 === 0 && league.homeMatches === league.awayMatches,
+    'league scheduling needs even participants and balanced home/away rounds');
   assert(league.matchesPerTeam < tournament.totalTeams, 'not enough distinct league opponents');
   assert((league.matchesPerTeam * tournament.totalTeams) % 2 === 0, 'league schedule has a fractional match count');
   assert(league.winPoints > league.drawPoints && league.drawPoints >= league.lossPoints, 'invalid points ordering');

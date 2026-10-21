@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Check,
   Dices,
@@ -8,6 +8,7 @@ import {
   Save,
   Search,
   Trash2,
+  Trophy,
   UserRound,
   UsersRound,
 } from 'lucide-react';
@@ -16,13 +17,16 @@ import { formations, tactics } from '../app/catalog.ts';
 import { Pitch } from '../components/Pitch.tsx';
 import { StrengthPanel } from '../components/StrengthPanel.tsx';
 import { gameRules } from '../app/game.ts';
+import { useTournament } from '../app/TournamentProvider.tsx';
 import { CatalogNote, ClubBadge, PageHeading } from '../components/ui.tsx';
 import { getGameRules } from '../data/index.ts';
 import type { FormationId } from '../types/database.ts';
 import { formatNumber, formatStrength, initials } from '../utils/display.ts';
 
 type Confirmation =
-  { kind: 'redraw' } | { kind: 'formation'; formationId: FormationId; names: string[] };
+  | { kind: 'redraw' }
+  | { kind: 'tournament' }
+  | { kind: 'formation'; formationId: FormationId; names: string[] };
 const normalize = (value: string) =>
   value.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase('de');
 
@@ -39,7 +43,10 @@ export default function BuilderPage() {
     start,
     dispatch,
     save,
+    saveForTournament,
   } = useDraft();
+  const { tournament, start: startTournament } = useTournament();
+  const navigate = useNavigate();
   const [initialFormation, setInitialFormation] = useState(
     () => getGameRules().builder.defaultFormation,
   );
@@ -125,11 +132,19 @@ export default function BuilderPage() {
     const pending = confirmation;
     setConfirmation(null);
     if (pending?.kind === 'redraw') draw();
+    else if (pending?.kind === 'tournament') launchTournament(true);
     else if (pending?.kind === 'formation')
       attempt(() => {
         dispatch({ type: 'formation', formationId: pending.formationId });
         setSelectedSlot('gk-1');
       }, 'Formation geändert. Die übrigen Spieler bleiben erhalten.');
+  }
+
+  function launchTournament(replace = false) {
+    attempt(() => {
+      startTournament(saveForTournament(), crypto.randomUUID(), replace);
+      navigate('/tournament');
+    });
   }
 
   return (
@@ -557,15 +572,21 @@ export default function BuilderPage() {
                   Gespeicherte Elf im Testspiel ausprobieren
                 </Link>
               )}
-              <button className="button button--locked" disabled>
-                <LockKeyhole size={15} aria-hidden="true" />
+              <button
+                className="button button--primary"
+                disabled={!status?.complete}
+                onClick={() =>
+                  tournament ? setConfirmation({ kind: 'tournament' }) : launchTournament()
+                }
+              >
+                <Trophy size={15} aria-hidden="true" />
                 Team speichern & Turnier starten
               </button>
               <p className="picker-hint">
                 {saved
                   ? 'Dein Draft bleibt beim Neuladen erhalten.'
                   : 'Dein Draft ist momentan nur für diese Sitzung gesichert.'}{' '}
-                Testspiele sind verfügbar. Der Turniermodus folgt in der nächsten Etappe.
+                Die Ligaphase ist spielbar. Playoffs und K.-o.-Runden folgen in Etappe 7.
               </p>
             </section>
           </div>
@@ -594,12 +615,16 @@ export default function BuilderPage() {
         <h2 id="draft-confirm-title">
           {confirmation?.kind === 'redraw'
             ? 'Einen neuen Draft starten?'
-            : 'Formation wirklich ändern?'}
+            : confirmation?.kind === 'tournament'
+              ? 'Bisheriges Turnier ersetzen?'
+              : 'Formation wirklich ändern?'}
         </h2>
         <p>
           {confirmation?.kind === 'redraw'
             ? 'Dein bisheriger Pool, Spieler, Coach und Captain werden ersetzt. Dieser Schritt kann nicht rückgängig gemacht werden.'
-            : `Diese Spieler passen nicht mehr in die neue Aufstellung und werden entfernt: ${confirmation?.kind === 'formation' ? confirmation.names.join(', ') : ''}. Alle anderen Picks bleiben erhalten.`}
+            : confirmation?.kind === 'tournament'
+              ? 'Dein bisheriger Spielplan und alle Ergebnisse werden ersetzt. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
+              : `Diese Spieler passen nicht mehr in die neue Aufstellung und werden entfernt: ${confirmation?.kind === 'formation' ? confirmation.names.join(', ') : ''}. Alle anderen Picks bleiben erhalten.`}
         </p>
         <div>
           <button className="button button--secondary" onClick={() => setConfirmation(null)}>

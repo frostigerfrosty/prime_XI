@@ -1,60 +1,7 @@
-import { ArrowLeft, ArrowUpRight, History, Shield, Trophy } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, History, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../app/SettingsProvider.tsx';
 import { EmptyState, PageHeading } from '../components/ui.tsx';
-import { builder, useDraft } from '../app/DraftProvider.tsx';
-import { formatStrength } from '../utils/display.ts';
-
-export function TournamentPage() {
-  const { draft, currentTeam, teamPersisted } = useDraft();
-  const ready = Boolean(currentTeam) || (draft ? builder.status(draft).complete : false);
-  return (
-    <>
-      <PageHeading
-        eyebrow="DIE GRÖSSTE BÜHNE"
-        title="Dein Turnier"
-        description="Deine Elf. 35 Gegner. Ein gemeinsames Ziel."
-      />
-      <section className="panel test-match-entry">
-        <div>
-          <h2>Bereit für ein Testspiel?</h2>
-          <p>Deine gespeicherte Elf oder zwei Prime-Teams können schon antreten.</p>
-        </div>
-        <Link className="button button--primary" to="/test-match">
-          Testspiel öffnen <ArrowUpRight size={16} aria-hidden="true" />
-        </Link>
-      </section>
-      <EmptyState
-        icon={Trophy}
-        eyebrow="NOCH KEIN ANPFIFF"
-        title={
-          ready
-            ? 'Deine Elf steht. Die große Bühne folgt.'
-            : 'Große Spiele brauchen eine vollständige Elf.'
-        }
-        description={
-          ready
-            ? currentTeam
-              ? `Deine Elf hat eine Matchstärke von ${formatStrength(currentTeam.strength.matchStrength)} und ist ${teamPersisted ? 'im Browser gespeichert' : 'für diese Sitzung vorhanden'}. Du kannst bereits Testspiele bestreiten. Der Turniermodus folgt in der nächsten Etappe.`
-              : 'Deine Aufstellung und ihre Matchstärke sind vollständig. Speichere die Elf im Team Builder für ein Testspiel. Der Turniermodus folgt in der nächsten Etappe.'
-            : 'Hier erscheinen später Spielplan, Tabelle und Ergebnisse. Vervollständige zuerst deine Elf mit Coach und Captain. Der Turniermodus folgt in einer kommenden Etappe.'
-        }
-      />
-      <div className="format-strip panel">
-        <span>
-          <strong>36</strong> Teilnehmer
-        </span>
-        <span>
-          <strong>8</strong> Ligaspiele pro Team
-        </span>
-        <span>
-          <strong>1</strong> Sieger
-        </span>
-        <p>Geplantes Format · Ligaphase, Playoffs und K.-o.-Runden</p>
-      </div>
-    </>
-  );
-}
 
 export function HistoryPage() {
   return (
@@ -121,11 +68,11 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.6 · Matchengine</dd>
+              <dd>0.7 · Ligaphase</dd>
             </div>
             <div>
               <dt>Stand</dt>
-              <dd>Team Builder, Teamstärke & Testspiele</dd>
+              <dd>Team Builder, Testspiele & 36-Team-Ligaphase</dd>
             </div>
             <div>
               <dt>Bilder</dt>

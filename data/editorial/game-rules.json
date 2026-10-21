@@ -1,6 +1,6 @@
 {
   "id": "prime-xi-rules-v1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "provenance": "original_game_design",
   "builder": {
     "drawSize": 12,
@@ -64,6 +64,7 @@
     "penaltyConversionProbability": 0.76
   },
   "tournament": {
+    "engineVersion": "1.0.0",
     "totalTeams": 36,
     "userTeams": 1,
     "opponentTeams": 35,
@@ -174,11 +175,19 @@
     },
     {
       "id": "separate-model-versions",
-      "description": "Gesamtregeln 1.2.0, unverändertes Stärkemodell 1.1.0 und Matchengine 1.0.0 sind separat versioniert. SavedTeam.rulesVersion bezeichnet das Stärkemodell; bestehende Teams aus Regelstand 1.1.0 bleiben gültig."
+      "description": "Gesamtregeln 1.3.0, unverändertes Stärkemodell 1.1.0 und Matchengine 1.0.0 sind separat versioniert. SavedTeam.rulesVersion bezeichnet das Stärkemodell; bestehende Teams aus Regelstand 1.1.0 bleiben gültig."
     },
     {
       "id": "match-v1-formula",
       "description": "xG = clamp(1.35 * exp(+/-0.048 * (Heimstärke - Gaststärke + Heimvorteil)) * gleichverteilte Form 0.92–1.08, 0.15, 4.5). Zwei unabhängige Poisson-Torwerte. Verlängerung verwendet ein Drittel dieser xG. Beide Teams haben bei Elfmetern dieselbe Trefferchance 0.76; keine erfundenen Schützenwerte."
+    },
+    {
+      "id": "league-v1-schedule",
+      "description": "Die Ligaphase wählt acht verschiedene vollständige Runden eines seedbasierten Round-Robin-Plans. Geschlossene Wege im geraden Spielgraphen verteilen die Heimrechte auf genau vier Heim- und vier Auswärtsspiele je Team. Keine Töpfe oder UEFA-spezifischen Vereins-/Länderverbote."
+    },
+    {
+      "id": "league-v1-snapshots",
+      "description": "36 Teilnehmer inklusive eigener Elf, Gegnerkarten, Standardtaktik und berechnete Matchstärken werden bei Turnierbeginn eingefroren. Ein Spieltag simuliert alle 18 Begegnungen. Gesamtregeln 1.3.0, Stärkemodell 1.1.0, Matchengine 1.0.0, Ligaengine 1.0.0."
     }
   ]
 }

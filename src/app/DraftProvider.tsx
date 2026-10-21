@@ -22,6 +22,7 @@ interface DraftContextValue {
   start: (formationId: FormationId) => void;
   dispatch: (action: BuilderAction) => void;
   save: () => boolean;
+  saveForTournament: () => SavedTeam;
 }
 const DraftContext = createContext<DraftContextValue | null>(null);
 
@@ -84,8 +85,9 @@ export function DraftProvider({ children }: { children: ReactNode }) {
     if (!current.current) throw new Error('Ziehe zuerst zwölf Prime-Teams.');
     commit(builder.change(current.current, action));
   }
-  function save() {
-    if (!current.current || !builder.status(current.current).complete) return false;
+  function capture() {
+    if (!current.current || !builder.status(current.current).complete)
+      throw new Error('Vervollständige zuerst deine Elf mit Coach und Captain.');
     const team = createSavedTeam(current.current, builder, strengthModel, getDatasetVersion());
     const draftSuccess = persist(current.current);
     let teamSuccess = false;
@@ -97,8 +99,13 @@ export function DraftProvider({ children }: { children: ReactNode }) {
     setCurrentTeam(team);
     setTeamPersisted(teamSuccess);
     setTeamWarning(teamSuccess ? null : teamStorageWarning);
-    return teamSuccess && draftSuccess;
+    return { team, persisted: teamSuccess && draftSuccess };
   }
+  function save() {
+    if (!current.current || !builder.status(current.current).complete) return false;
+    return capture().persisted;
+  }
+  const saveForTournament = () => capture().team;
   return (
     <DraftContext
       value={{
@@ -113,6 +120,7 @@ export function DraftProvider({ children }: { children: ReactNode }) {
         start,
         dispatch,
         save,
+        saveForTournament,
       }}
     >
       {children}
