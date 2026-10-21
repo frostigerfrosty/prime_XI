@@ -1,42 +1,7 @@
-import { ArrowLeft, ArrowUpRight, History, Shield } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../app/SettingsProvider.tsx';
-import { EmptyState, PageHeading } from '../components/ui.tsx';
-import { useTournament } from '../app/TournamentProvider.tsx';
-
-export function HistoryPage() {
-  const { tournament } = useTournament();
-  const completed = tournament?.phase === 'completed';
-  return (
-    <>
-      <PageHeading
-        eyebrow="DEINE GESCHICHTE"
-        title="Die Spiele bleiben."
-        description="Deine abgeschlossenen Turniere bekommen hier ihren Platz."
-      />
-      <EmptyState
-        icon={History}
-        eyebrow="DAS ERSTE KAPITEL IST NOCH OFFEN"
-        title={
-          completed
-            ? 'Dein Turnier ist beendet. Das Archiv folgt.'
-            : 'Jede Legende fängt bei null an.'
-        }
-        description={
-          completed
-            ? 'Dein abgeschlossenes Turnier bleibt auf der Turnierseite erhalten. Das Archiv für mehrere Turniere folgt in Etappe 8.'
-            : 'Du hast noch kein Turnier abgeschlossen. Später findest du hier deine Teams, Platzierungen und Ergebnisse.'
-        }
-        action={!completed}
-      />
-      {completed && (
-        <Link className="button button--primary" to="/tournament">
-          Zum abgeschlossenen Turnier
-        </Link>
-      )}
-    </>
-  );
-}
+import { PageHeading } from '../components/ui.tsx';
 
 export function SettingsPage() {
   const { reduceMotion, setReduceMotion, storageAvailable } = useSettings();
@@ -85,11 +50,11 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.8 · Komplettes Turnier</dd>
+              <dd>0.9 · Turnierarchiv</dd>
             </div>
             <div>
               <dt>Stand</dt>
-              <dd>Team Builder, Ligaphase, Playoffs & K.-o.-Runden</dd>
+              <dd>Team Builder, komplettes Turnier & Historie</dd>
             </div>
             <div>
               <dt>Bilder</dt>

@@ -70,8 +70,9 @@ Verlängerung und Elfmeter entschieden. Nach dem Finale enthält der Spielstand:
 Die eigene Anzeige unterscheidet direkten Achtelfinaleinzug, Ausscheiden nach der
 Liga oder einer bestimmten K.-o.-Runde, Finalist und Turniersieger. Es werden keine
 willkürlichen Gesamtplätze für gemeinsam ausgeschiedene Teams erfunden. Das
-Dashboard zeigt die aktuelle Runde oder den Turnierabschluss. Die Archivseite
-verweist bei einem beendeten Turnier ehrlich auf dessen gespeicherte Turnieransicht.
+Dashboard zeigt die aktuelle Runde oder den Turnierabschluss. Seit Version 0.9
+bewahrt die [Historie](HISTORIE.md) zusätzlich die eigene Elf, Ergebnisse und
+Statistiken mehrerer abgeschlossener Turniere auf.
 
 ## Speichern und bestehende Ligastände
 
@@ -106,9 +107,9 @@ Abschlusszeit identische Spielstände.
 
 Das aktuelle beziehungsweise zuletzt beendete Turnier bleibt vollständig unter
 **Turnier** gespeichert. Das Starten eines neuen Turniers fragt vor dem Ersetzen
-dieses Stands nach. Ein Archiv für mehrere abgeschlossene Turniere, dessen
-Statistiken und weitergehende Speicher-Migrationen folgen in Etappe 8. Es werden
-noch keine History-Einträge in `completedTournaments` angelegt.
+dieses Stands nach. Version 0.9 ergänzt das separate [Turnierarchiv](HISTORIE.md)
+aus Etappe 8. Die vollständige Turnieransicht bleibt beim aktuellen Turnier;
+ältere Archivdetails enthalten die damalige Elf und ihre eigenen Spiele.
 
 ## Module und Prüfung
 

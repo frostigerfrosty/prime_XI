@@ -72,7 +72,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.8 · Turniermodus</span>
+          PRIME XI <span>v0.9 · Turnierarchiv</span>
         </p>
       </div>
     </>
@@ -88,9 +88,11 @@ export function Layout() {
     navigation.find((item) => item.to === pathname)?.label ??
     (pathname.startsWith('/teams/')
       ? 'Teamdetails'
-      : pathname === '/settings'
-        ? 'Einstellungen'
-        : 'Seite nicht gefunden');
+      : pathname.startsWith('/history/')
+        ? 'Turnierrückblick'
+        : pathname === '/settings'
+          ? 'Einstellungen'
+          : 'Seite nicht gefunden');
   useEffect(() => {
     document.title = `${title} · PRIME XI`;
     if (previousPath.current !== pathname) {

@@ -139,7 +139,12 @@ beendete Finale. Er führt eine eigene `knockoutVersion`; bei älteren bekannten
 Liga-Spielständen darf dieses Feld bis zur ersten K.-o.-Auslosung fehlen.
 Der Turnieradapter prüft eingebettete Kader und Matchstärken, die Auslosung des
 Spielplans, Ergebnisse der gespielten Runden und die neu berechnete Tabelle.
-Das Archiv mehrerer Turniere und weitere Formatmigrationen folgen in Etappe 8.
+Seit Version 0.9 enthält `HistoryEntry` die eingefrorene Turnier-Elf, Ligaplatz,
+erreichten Turnierabschnitt, Champion, eigene Partien und die daraus berechnete
+Statistik. Die letzten 50 Einträge werden separat gespeichert und gegen die
+eingebetteten Stärken und Ergebnisse geprüft. Ein vorhandener vollständiger
+Turnierabschluss wird einmalig in das Archiv übernommen; laufende Liga-Stände
+werden unverändert weitergeführt. Details: [Historie](HISTORIE.md).
 Der Draft-Adapter prüft Version,
 Identitäten, Positionen und Vervollständigbarkeit. Team-Snapshots betten zusätzlich
 Vereins-IDs pro Pick, Regelversion und berechnete Stärkewerte ein. Sie werden aus

@@ -105,8 +105,9 @@ JSON-Texts beträgt vier Millionen Zeichen.
 Die Ligaphase endet mit der endgültigen Platzierung und Qualifikationsanzeige.
 `phase` bleibt `league`, `completedAt` und `championParticipantId` bleiben `null`,
 `knockoutTies` bleibt leer. Das Turnier ist damit noch nicht als Ganzes abgeschlossen.
-Es wird kein History-Eintrag angelegt. Playoffs, K.-o.-Runden und das Finale folgen
-in Etappe 7; das vollständige Archiv und weitere Migrationen in Etappe 8.
+Es wird kein History-Eintrag für eine allein beendete Ligaphase angelegt. Seit
+Version 0.8 führen [Playoffs und K.-o.-Runden](KNOCKOUT.md) bis zum Finale weiter;
+Version 0.9 ergänzt das [Archiv abgeschlossener Turniere](HISTORIE.md).
 
 Gesamtregeln 1.3.0, Stärkemodell 1.1.0, Matchengine 1.0.0 und Ligaengine 1.0.0 sind
 separat erfasst. Bestehende gespeicherte Elf-Snapshots aus Phase 4 bleiben spielbar.

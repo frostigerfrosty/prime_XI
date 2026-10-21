@@ -257,8 +257,8 @@ export function KnockoutPanel({
       )}
       {info.complete && (
         <p className="tournament-caption">
-          Alle 189 Spiele sind abgeschlossen. Das Turnier bleibt hier gespeichert. Das Archiv für
-          mehrere Turniere folgt in Etappe 8.
+          Alle 189 Spiele sind abgeschlossen. Das vollständige Turnier bleibt hier gespeichert. In
+          der Historie findest du zusätzlich den Rückblick mit deiner Elf und ihren Spielen.
         </p>
       )}
       <dialog

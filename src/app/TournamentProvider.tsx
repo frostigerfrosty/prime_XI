@@ -1,4 +1,5 @@
-import { createContext, useContext, useRef, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { useHistory } from './HistoryProvider.tsx';
 import type { SavedTeam, TournamentState } from '../types/application.ts';
 import {
   readTournament,
@@ -18,6 +19,7 @@ interface TournamentContextValue {
 const TournamentContext = createContext<TournamentContextValue | null>(null);
 
 export function TournamentProvider({ children }: { children: ReactNode }) {
+  const { archive } = useHistory();
   const [loaded] = useState(() => {
     try {
       return readTournament(window.localStorage, tournamentEngine);
@@ -32,6 +34,10 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
   const current = useRef(tournament);
   const [warning, setWarning] = useState(loaded.warning);
   const [persisted, setPersisted] = useState(Boolean(loaded.tournament));
+  // Import the last completed pre-archive save without rewriting that original save.
+  useEffect(() => {
+    if (loaded.tournament?.phase === 'completed') archive(loaded.tournament);
+  }, [loaded.tournament, archive]);
   function commit(next: TournamentState) {
     let success = false;
     try {
@@ -43,10 +49,15 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
     setTournament(next);
     setPersisted(success);
     setWarning(success ? null : tournamentStorageWarning);
+    if (next.phase === 'completed') archive(next);
   }
   function start(team: SavedTeam, seed: string, replace = false) {
     if (current.current && !replace)
       throw new Error('Bestätige zuerst, dass dein bisheriges Turnier ersetzt werden darf.');
+    if (current.current?.phase === 'completed' && !archive(current.current))
+      throw new Error(
+        'Dein abgeschlossenes Turnier konnte noch nicht dauerhaft archiviert werden. Prüfe die Historie und den verfügbaren Browserspeicher, bevor du ein neues Turnier startest.',
+      );
     commit(tournamentEngine.start(team, seed, new Date().toISOString()));
   }
   function advance(expectedRound: number, all = false) {

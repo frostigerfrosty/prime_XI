@@ -11,6 +11,7 @@ import './styles/strength.css';
 import './styles/match.css';
 import './styles/tournament.css';
 import './styles/knockout.css';
+import './styles/history.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

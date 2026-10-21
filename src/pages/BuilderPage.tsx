@@ -623,7 +623,9 @@ export default function BuilderPage() {
           {confirmation?.kind === 'redraw'
             ? 'Dein bisheriger Pool, Spieler, Coach und Captain werden ersetzt. Dieser Schritt kann nicht rückgängig gemacht werden.'
             : confirmation?.kind === 'tournament'
-              ? 'Dein bisheriger Spielplan und alle Ergebnisse werden ersetzt. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
+              ? tournament?.phase === 'completed'
+                ? 'Dein abgeschlossener Turnierrückblick bleibt im Archiv erhalten. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
+                : 'Dein bisheriger Spielplan und alle Ergebnisse werden ersetzt. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
               : `Diese Spieler passen nicht mehr in die neue Aufstellung und werden entfernt: ${confirmation?.kind === 'formation' ? confirmation.names.join(', ') : ''}. Alle anderen Picks bleiben erhalten.`}
         </p>
         <div>

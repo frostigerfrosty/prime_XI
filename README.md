@@ -40,8 +40,14 @@ sowie ein einzelnes neutrales Finale. Lose jede Runde aus und spiele die beiden
 Partien nacheinander, oder bestätige die Simulation bis zum Turniersieger.
 Gesamttore entscheiden ohne Auswärtstorregel; bei Gleichstand gibt es Verlängerung
 und gegebenenfalls Elfmeter. Auch nach dem Ausscheiden deiner Elf kannst du den
-Rest des Turniers verfolgen. Das zuletzt beendete Turnier bleibt gespeichert;
-ein Archiv für mehrere Turniere folgt in Etappe 8.
+Rest des Turniers verfolgen. Nach dem Finale wird dein Turnier automatisch in der
+**Historie** archiviert. Dort bleiben die letzten 50 Abschlüsse mit der damaligen
+Elf, Ligaplatz, erreichtem Turnierabschnitt, eigenen Ergebnissen und Statistik
+erhalten. Das Archiv lässt sich nach Team, Turniercode oder Sieger durchsuchen
+und auf eigene Titel filtern. Ein vorhandener Abschluss aus Version 0.8 wird
+beim ersten Laden automatisch übernommen, ohne den ursprünglichen Spielstand
+umzuschreiben. Scheitert das Archivieren, bleibt der Abschluss vor einem neuen
+Turnier geschützt und für diese Sitzung sichtbar.
 
 [Umfang, Architektur, Prüfungen und Commit-Grenze von Etappe 1](docs/ETAPPE_1.md)
 
@@ -54,6 +60,8 @@ ein Archiv für mehrere Turniere folgt in Etappe 8.
 [36-Team-Turnier: Ligaphase, Tabelle und Fortsetzen](docs/LIGAPHASE.md)
 
 [Playoffs und K.-o.-Runden: Auslosung, Gesamttore und Finale](docs/KNOCKOUT.md)
+
+[Etappe 8: Turnierarchiv, Statistiken und bestehende Spielstände](docs/HISTORIE.md)
 
 ## Datenbestand
 

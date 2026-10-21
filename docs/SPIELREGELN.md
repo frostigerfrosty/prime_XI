@@ -107,6 +107,9 @@ Turniere und Einstellungen festgelegt. Die Anwendungszustände besitzen passende
 TypeScript-Verträge. Einstellungen, Draft, Team und das vollständige laufende oder
 zuletzt beendete Turnier werden defensiv im Browser gespeichert. Bekannte
 Liga-Spielstände mit Gesamtregeln 1.3.0 bleiben lesbar und werden beim ersten
-K.-o.-Schritt verlustfrei auf 1.4.0 erweitert. Das Archiv mehrerer Turniere und
-weitere Migrationen folgen in Etappe 8. Die statische Datenbasis selbst führt keine
-Speicherzugriffe aus.
+K.-o.-Schritt verlustfrei auf 1.4.0 erweitert. Seit Version 0.9 werden die letzten
+50 Abschlüsse mit der eigenen Elf und den eigenen Spielen separat archiviert.
+Vorhandene vollständige Abschlüsse werden einmalig übernommen. Unbekannte oder
+beschädigte Archivformate bleiben bis zu einem ausdrücklich bestätigten
+Zurücksetzen unberührt. Details: [Historie](HISTORIE.md). Die statische Datenbasis
+selbst führt keine Speicherzugriffe aus.

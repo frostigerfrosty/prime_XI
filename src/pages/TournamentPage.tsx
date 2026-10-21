@@ -8,6 +8,7 @@ import { CatalogNote, EmptyState, PageHeading } from '../components/ui.tsx';
 import { formatStrength } from '../utils/display.ts';
 import { TeamName, MatchRow } from '../components/TournamentTeams.tsx';
 import { KnockoutPanel } from '../components/KnockoutPanel.tsx';
+import { useHistory } from '../app/HistoryProvider.tsx';
 
 const qualificationText = {
   direct: 'Achtelfinale',
@@ -17,6 +18,7 @@ const qualificationText = {
 export default function TournamentPage() {
   const { currentTeam, teamWarning } = useDraft();
   const { tournament, warning, persisted, start, advance } = useTournament();
+  const { warning: historyWarning } = useHistory();
   const [seed, setSeed] = useState<string>(() => crypto.randomUUID());
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
@@ -118,6 +120,18 @@ export default function TournamentPage() {
         <p className="builder-alert" role="alert">
           {warning}
         </p>
+      )}
+      {tournament?.phase === 'completed' && (
+        <>
+          {historyWarning && (
+            <p className="builder-alert" role="alert">
+              {historyWarning}
+            </p>
+          )}
+          <Link className="button button--secondary" to="/history">
+            Zum Turnierarchiv
+          </Link>
+        </>
       )}
       {error && (
         <p className="builder-alert builder-alert--error" role="alert">
@@ -536,7 +550,9 @@ export default function TournamentPage() {
           </h2>
           <p>
             {pending === 'restart'
-              ? 'Dein bisheriger Spielplan und alle Ergebnisse werden durch ein neues Turnier mit deiner zuletzt gespeicherten Elf ersetzt. Dein Draft bleibt erhalten.'
+              ? tournament?.phase === 'completed'
+                ? 'Dein abgeschlossener Turnierrückblick bleibt im Archiv erhalten. Das neue Turnier verwendet deine zuletzt gespeicherte Elf. Dein Draft bleibt erhalten.'
+                : 'Dein bisheriger Spielplan und alle Ergebnisse werden durch ein neues Turnier mit deiner zuletzt gespeicherten Elf ersetzt. Dein Draft bleibt erhalten.'
               : 'Alle noch offenen Spiele werden simuliert. Danach steht deine endgültige Ligaplatzierung fest.'}
           </p>
           {pending === 'restart' && (

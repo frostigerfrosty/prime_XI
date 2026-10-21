@@ -128,9 +128,12 @@ test('every draw and leg can be played through the UI, with a real neutral final
   ).toHaveCount(36);
   await expect(page.getByText('36 Teams · 144 / 144 Spiele', { exact: false })).toBeVisible();
   await expect(page.locator('.own-league-fixtures > li')).toHaveCount(8);
-  expect(
-    await page.evaluate((key) => localStorage.getItem(key), keys.completedTournaments),
-  ).toBeNull();
+  const archive = await page.evaluate(
+    (key) => JSON.parse(localStorage.getItem(key)!),
+    keys.completedTournaments,
+  );
+  expect(archive.entries).toHaveLength(1);
+  expect(archive.entries[0].tournamentId).toBe(state.id);
 });
 
 test('extra time displays the cumulative leg score and the shootout remains separate from aggregate goals', async ({
@@ -195,14 +198,17 @@ test('bulk completion asks first, shows a real user champion and preserves the c
   await page.goto('#/');
   await expect(page.getByRole('heading', { name: 'Turnier beendet', exact: true })).toBeVisible();
   await page.goto('#/history');
-  await expect(
-    page.getByRole('heading', { name: 'Dein Turnier ist beendet. Das Archiv folgt.' }),
-  ).toBeVisible();
-  await page.getByRole('link', { name: 'Zum abgeschlossenen Turnier', exact: true }).click();
-  await expect(page.getByTestId('tournament-champion')).toBeVisible();
-  expect(
-    await page.evaluate((key) => localStorage.getItem(key), keys.completedTournaments),
-  ).toBeNull();
+  await expect(page.getByTestId('history-entry')).toHaveCount(1);
+  await expect(page.getByTestId('history-entry')).toContainText('Turniersieger');
+  await page.getByRole('link', { name: 'Turnier ansehen', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Deine damalige Elf' })).toBeVisible();
+  expect(await read(page)).toEqual(final);
+  const archive = await page.evaluate(
+    (key) => JSON.parse(localStorage.getItem(key)!),
+    keys.completedTournaments,
+  );
+  expect(archive.entries).toHaveLength(1);
+  expect(archive.entries[0].tournamentId).toBe(final.id);
 });
 
 test('an eliminated user can follow the remaining tournament without re-entering it', async ({

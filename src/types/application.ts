@@ -1,6 +1,7 @@
 import type { CoachSeason, FormationId, PlayerSeason, PrimeTeam } from './database.ts';
 
-export type TournamentRound = 'playoffs' | 'round-of-16' | 'quarter-finals' | 'semi-finals' | 'final';
+export type TournamentRound =
+  'playoffs' | 'round-of-16' | 'quarter-finals' | 'semi-finals' | 'final';
 export type TournamentPhase = 'league' | TournamentRound | 'completed';
 
 export interface UserSettings {
@@ -92,10 +93,7 @@ export type ScheduledMatch = {
   homeParticipantId: string;
   awayParticipantId: string;
   neutralVenue: boolean;
-} & (
-  | { status: 'scheduled'; result: null }
-  | { status: 'played'; result: MatchResult }
-);
+} & ({ status: 'scheduled'; result: null } | { status: 'played'; result: MatchResult });
 
 export interface LeagueTableRow {
   participantId: string;
@@ -145,13 +143,26 @@ export interface HistoryEntry {
   id: string;
   tournamentId: string;
   finishedAt: string;
+  createdAt: string;
   seed: string;
+  datasetVersion: string;
+  rulesVersion: string;
   userTeam: SavedTeam;
-  finalPosition: number;
+  leaguePosition: number;
+  leaguePoints: number;
+  outcome: 'champion' | 'league' | TournamentRound;
   champion: { participantId: string; label: string };
+  matches: {
+    fixture: Extract<ScheduledMatch, { status: 'played' }>;
+    opponent: { id: string; label: string; matchStrength: number };
+  }[];
   statistics: {
-    played: number; wins: number; draws: number; losses: number;
-    goalsFor: number; goalsAgainst: number;
+    played: number;
+    wins: number;
+    draws: number;
+    losses: number;
+    goalsFor: number;
+    goalsAgainst: number;
   };
 }
 
