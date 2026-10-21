@@ -1,9 +1,10 @@
 # PRIME XI — Football Simulator
 
 React-/TypeScript-Anwendung mit Vite und einer eigenen statischen Datenbasis.
-Etappe 1 und der Team Builder sind umgesetzt: responsives Grundlayout, Navigation,
-Dashboard, durchsuchbarer Teamkatalog sowie Draft, Spieler-/Coach-/Captain-Auswahl,
-Formationswechsel und Wiederherstellung des Drafts nach Neuladen.
+Grundlayout, Team Builder und Teamstärke sind umgesetzt: Navigation, Dashboard,
+Teamkatalog, Draft, Spieler-/Coach-/Captain-Auswahl, Formationswechsel sowie
+nachvollziehbare Basisstärke, Chemie, Taktik-, Coach- und Captain-Boni.
+Draft und vollständige Teams werden getrennt im Browser gespeichert.
 Die Anwendung benötigt kein Backend, API-Abo oder geheime Schlüssel.
 
 ## Starten
@@ -22,13 +23,16 @@ Veröffentlichung eingerichtet oder ausgeführt.
 
 Ziehe zwölf verschiedene Saisonmannschaften, wähle elf Spieler aus verschiedenen
 Quellteams sowie Coach und Captain. Der Draft wird im Browser gespeichert.
-Stärke-/Chemieberechnung, Simulation und Turnierablauf sind die nächsten Etappen.
-Der Turnierstart bleibt bis zu deren Umsetzung gesperrt. Das sichtbare
-Ø Kartenrating ersetzt keine Matchstärke.
+Mit elf Spielern erscheinen die berechnete Basis und alle Boni. Vollständige Teams
+speichern ihre damaligen Spielerwerte und Matchstärke als Snapshot. Das sichtbare
+Ø Kartenrating bleibt davon getrennt. Matchsimulation und Turnierablauf sind die
+nächsten Etappen; der Turnierstart bleibt bis zu deren Umsetzung gesperrt.
 
 [Umfang, Architektur, Prüfungen und Commit-Grenze von Etappe 1](docs/ETAPPE_1.md)
 
 [Team Builder: Ablauf, Regeln und Speicherung](docs/TEAM_BUILDER.md)
+
+[Teamstärke: Formeln, Boni und gespeicherte Elf](docs/TEAMSTAERKE.md)
 
 ## Datenbestand
 

@@ -133,11 +133,13 @@ kein falsches Aggregatergebnis erzeugen.
 `createInitialAppState()` aus `src/data/initial-state.ts` erzeugt einen leeren Zustand:
 kein Team, kein Draft, kein Turnier und keine erfundene History. Die Speicherschlüssel
 sind in der Spielkonfiguration versioniert. Der tatsächliche localStorage-/IndexedDB-
-Adapter für gespeicherte Teams und Turniere sowie deren Laufzeitvalidierung und
-Migrationen entstehen in den jeweiligen Anwendungsetappen. Die Einstellung für
-reduzierte Bewegung und der aktive Draft werden bereits defensiv im Browser
-gespeichert. Der Draft-Adapter prüft Version, Identitäten, Positionen und
-Vervollständigbarkeit; Details stehen in [Team Builder](TEAM_BUILDER.md).
+Adapter für laufende/abgeschlossene Turniere und deren Migrationen folgen in den
+jeweiligen Etappen. Einstellungen, aktiver Draft und vollständige Teams werden
+bereits defensiv im Browser gespeichert. Der Draft-Adapter prüft Version,
+Identitäten, Positionen und Vervollständigbarkeit. Team-Snapshots betten zusätzlich
+Vereins-IDs pro Pick, Regelversion und berechnete Stärkewerte ein. Sie werden aus
+ihren eigenen Karten validiert und nicht auf aktuelle Katalogratings umgeschrieben.
+Details: [Team Builder](TEAM_BUILDER.md) und [Teamstärke](TEAMSTAERKE.md).
 
 ## Pflege
 

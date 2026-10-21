@@ -74,7 +74,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.4 · Team Builder</span>
+          PRIME XI <span>v0.5 · Teamstärke</span>
         </p>
       </div>
     </>

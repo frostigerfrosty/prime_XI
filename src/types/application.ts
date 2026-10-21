@@ -37,12 +37,15 @@ export interface StrengthBreakdown {
 /** Embed selected card/coach snapshots so future catalog edits do not rewrite a save. */
 export interface SavedTeam {
   id: string;
+  draftId: string;
   name: string;
   createdAt: string;
   datasetVersion: string;
+  rulesVersion: string;
+  drawnPrimeTeamIds: string[];
   formationId: FormationId;
   tacticId: string;
-  lineup: { slotId: string; player: PlayerSeason }[];
+  lineup: { slotId: string; player: PlayerSeason; clubId: string }[];
   coach: CoachSeason;
   captainPersonId: string;
   strength: StrengthBreakdown;

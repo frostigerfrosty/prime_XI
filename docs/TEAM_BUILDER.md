@@ -1,5 +1,8 @@
 # Team Builder — nächste Entwicklungsetappe
 
+Dieses Dokument beschreibt den Stand von Version 0.4. Seit Version 0.5 ergänzt
+[Teamstärke und gespeicherte Elf](TEAMSTAERKE.md) die Berechnung und Team-Snapshots.
+
 Die Datenbasis wurde vor Etappe 1 erstellt. Dieser Schritt setzt nun den
 Team Builder um, fachlich Phase 3 der Master-Spezifikation. Stärkeberechnung,
 Matchengine und Turnierablauf bleiben die folgenden Etappen.

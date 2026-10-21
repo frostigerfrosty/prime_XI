@@ -13,10 +13,12 @@ import {
 import { builder, useDraft } from '../app/DraftProvider.tsx';
 import { formations, tactics } from '../app/catalog.ts';
 import { Pitch } from '../components/Pitch.tsx';
+import { StrengthPanel } from '../components/StrengthPanel.tsx';
+import { gameRules } from '../app/game.ts';
 import { CatalogNote, ClubBadge, PageHeading } from '../components/ui.tsx';
 import { getGameRules } from '../data/index.ts';
 import type { FormationId } from '../types/database.ts';
-import { formatNumber, initials } from '../utils/display.ts';
+import { formatNumber, formatStrength, initials } from '../utils/display.ts';
 
 type Confirmation =
   { kind: 'redraw' } | { kind: 'formation'; formationId: FormationId; names: string[] };
@@ -24,7 +26,19 @@ const normalize = (value: string) =>
   value.normalize('NFKD').replace(/\p{M}/gu, '').toLocaleLowerCase('de');
 
 export default function BuilderPage() {
-  const { draft, warning, saved, start, dispatch, save } = useDraft();
+  const {
+    draft,
+    warning,
+    saved,
+    assessment,
+    currentTeam,
+    teamPersisted,
+    teamMatchesDraft,
+    teamWarning,
+    start,
+    dispatch,
+    save,
+  } = useDraft();
   const [initialFormation, setInitialFormation] = useState(
     () => getGameRules().builder.defaultFormation,
   );
@@ -143,6 +157,11 @@ export default function BuilderPage() {
           {warning}
         </p>
       )}
+      {teamWarning && (
+        <p className="builder-alert" role="alert">
+          {teamWarning}
+        </p>
+      )}
       {error && (
         <p className="builder-alert builder-alert--error" role="alert">
           {error}
@@ -199,6 +218,12 @@ export default function BuilderPage() {
               Ø Kartenrating{' '}
               <strong>
                 {status?.averageRating == null ? '–' : formatNumber(status.averageRating)}
+              </strong>
+            </span>
+            <span>
+              Matchstärke{' '}
+              <strong className="match-value">
+                {assessment ? formatStrength(assessment.strength.matchStrength) : '–'}
               </strong>
             </span>
           </div>
@@ -320,7 +345,7 @@ export default function BuilderPage() {
                           : (issue ??
                             (slot.acceptedPositions.includes(player.position)
                               ? 'Hauptposition'
-                              : 'Nebenposition'))}
+                              : `Nebenposition · ${formatNumber(gameRules.strength.positionFit.secondaryMultiplier * 100)} % Wirkung`))}
                       </small>
                     </div>
                     <strong className="roster-rating">{player.rating}</strong>
@@ -373,6 +398,7 @@ export default function BuilderPage() {
           </section>
         )}
       </div>
+      <StrengthPanel />
       {draft ? (
         <>
           <section className="panel drawn-teams-panel">
@@ -510,12 +536,21 @@ export default function BuilderPage() {
                       throw new Error(
                         'Deine Elf bleibt für diese Sitzung erhalten, konnte aber nicht im Browser gespeichert werden.',
                       );
-                  }, 'Aufstellung gespeichert. Du kannst später an dieser Stelle weitermachen.')
+                  }, 'Aufstellung gespeichert. Spielerwerte und berechnete Matchstärke sind gesichert.')
                 }
               >
                 <Save size={16} aria-hidden="true" />
                 Aufstellung speichern
               </button>
+              {currentTeam && (
+                <p className="team-save-state">
+                  {teamMatchesDraft
+                    ? teamPersisted
+                      ? 'Diese Elf ist mit ihren aktuellen Spielerwerten und Boni gespeichert.'
+                      : 'Diese Elf bleibt nur für die aktuelle Sitzung erhalten.'
+                    : 'Du bearbeitest einen anderen Stand. Deine zuletzt gespeicherte Elf bleibt erhalten, bis du erneut speicherst.'}
+                </p>
+              )}
               <button className="button button--locked" disabled>
                 <LockKeyhole size={15} aria-hidden="true" />
                 Team speichern & Turnier starten
@@ -524,7 +559,7 @@ export default function BuilderPage() {
                 {saved
                   ? 'Dein Draft bleibt beim Neuladen erhalten.'
                   : 'Dein Draft ist momentan nur für diese Sitzung gesichert.'}{' '}
-                Stärkeberechnung und Turniermodus folgen in den nächsten Etappen.
+                Matchsimulation und Turniermodus folgen in den nächsten Etappen.
               </p>
             </section>
           </div>

@@ -1,6 +1,6 @@
 {
   "id": "prime-xi-rules-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "provenance": "original_game_design",
   "builder": {
     "drawSize": 12,
@@ -156,6 +156,18 @@
     {
       "id": "simulation-calibration",
       "description": "Poisson-Parameter sind Eingangsdaten für die noch zu bauende Engine. Ziel-Siegchancen sind erst mit deren Tests nachgewiesen."
+    },
+    {
+      "id": "strength-v1-rounding",
+      "description": "Basis und einzelne Boni werden auf zwei Dezimalstellen gerundet, die Chemie auf chemistry.roundDecimals. Der Matchwert ist die gerundete Summe dieser Komponenten und wird nicht auf 99 gekappt."
+    },
+    {
+      "id": "tactical-player-share",
+      "description": "Taktikbonus = Obergrenze mal Anteil der elf Spieler, die mindestens einen Stil-Tag der Taktik teilen. preferredFormations der Taktik sind Empfehlungen, kein zusätzlicher Bonus."
+    },
+    {
+      "id": "coach-rating-factor",
+      "description": "Coachbonus = Obergrenze mal (formationShare bei passender Formation plus styleShare mal abgedecktem Anteil der Taktik-Tags) mal tacticalRating / ratingMax. Fehlender Coach ergibt null."
     }
   ]
 }

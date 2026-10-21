@@ -11,7 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 import { catalogStats, featuredTeamIds, teams } from '../app/catalog.ts';
 import { ClubBadge, Step, TeamCard } from '../components/ui.tsx';
-import { formatNumber, initials } from '../utils/display.ts';
+import { formatNumber, formatStrength, initials } from '../utils/display.ts';
 import { builder, useDraft } from '../app/DraftProvider.tsx';
 
 function HeroCards() {
@@ -70,7 +70,7 @@ function HeroCards() {
 }
 
 export default function DashboardPage() {
-  const { draft } = useDraft();
+  const { draft, currentTeam, teamPersisted, teamMatchesDraft } = useDraft();
   const draftStatus = draft ? builder.status(draft) : null;
   return (
     <>
@@ -219,6 +219,27 @@ export default function DashboardPage() {
           <Link className="text-link" to="/team-builder">
             Aufstellung ansehen <ArrowRight size={15} aria-hidden="true" />
           </Link>
+          {currentTeam && (
+            <div className="saved-team-summary">
+              <p className="eyebrow">{teamPersisted ? 'GESPEICHERTE ELF' : 'ELF DIESER SITZUNG'}</p>
+              <div>
+                <span>
+                  {currentTeam.name}
+                  <small>
+                    {currentTeam.formationId} · {currentTeam.coach.name}
+                  </small>
+                </span>
+                <strong data-testid="saved-match-strength">
+                  {formatStrength(currentTeam.strength.matchStrength)}
+                </strong>
+              </div>
+              <p>
+                {teamMatchesDraft
+                  ? 'Entspricht deiner aktuellen Aufstellung.'
+                  : 'Dein aktueller Draft verändert diese Elf erst beim erneuten Speichern.'}
+              </p>
+            </div>
+          )}
         </section>
       </div>
       <section className="featured-teams">

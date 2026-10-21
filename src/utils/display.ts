@@ -9,3 +9,5 @@ export function initials(name: string): string {
 }
 
 export const formatNumber = (value: number): string => value.toLocaleString('de-DE');
+export const formatStrength = (value: number): string =>
+  value.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });

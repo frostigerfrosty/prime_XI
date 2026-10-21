@@ -4,7 +4,8 @@ Die Werte stehen in `data/editorial/game-rules.json` und werden mit dem Datensat
 exportiert. Sie sind konkrete V1-Eingangsdaten für die spätere Engine, keine bereits
 implementierte Matchsimulation. Eigene Entscheidungen stehen zusätzlich unter
 `designDecisions`; die Spezifikationswerte sind von kalibrierbaren Startwerten
-unterschieden.
+unterschieden. Teamstärke und Boni sind in Regelversion 1.1.0 umgesetzt;
+[Formeln und Snapshot-Verhalten](TEAMSTAERKE.md) sind separat dokumentiert.
 
 ## Team Builder
 
@@ -39,7 +40,9 @@ Vereinsidentität Gewicht 0,5. Verschiedene Saisons desselben Vereins zählen zu
 gleichen Verein. Über alle möglichen Paare auf das theoretische Maximum normieren
 und mit der Chemiegrenze multiplizieren. Taktik bewertet die Spieler-Stil-Tags gegen
 die gewählte Taktik. Beim Trainer entfallen 60 % auf die Formation und 40 % auf
-Stilpassung. Das sind eigene, begrenzte und zentral änderbare V1-Startwerte.
+Stilpassung. Der Traineranteil wird zusätzlich mit `tacticalRating / ratingMax`
+gewichtet. Beim Taktikbonus zählt der Anteil der elf Spieler mit mindestens einem
+passenden Taktik-Tag. Das sind eigene, begrenzte und zentral änderbare V1-Startwerte.
 
 ## Matchparameter
 

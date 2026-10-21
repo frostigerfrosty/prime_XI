@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { useSettings } from '../app/SettingsProvider.tsx';
 import { EmptyState, PageHeading } from '../components/ui.tsx';
 import { builder, useDraft } from '../app/DraftProvider.tsx';
+import { formatStrength } from '../utils/display.ts';
 
 export function TournamentPage() {
-  const { draft } = useDraft();
-  const ready = draft ? builder.status(draft).complete : false;
+  const { draft, currentTeam, teamPersisted } = useDraft();
+  const ready = Boolean(currentTeam) || (draft ? builder.status(draft).complete : false);
   return (
     <>
       <PageHeading
@@ -24,7 +25,9 @@ export function TournamentPage() {
         }
         description={
           ready
-            ? 'Deine Aufstellung ist vollständig und bleibt im Team Builder erhalten. Stärkeberechnung und Turniersimulation kommen in den nächsten Etappen.'
+            ? currentTeam
+              ? `Deine Elf hat eine Matchstärke von ${formatStrength(currentTeam.strength.matchStrength)} und ist ${teamPersisted ? 'im Browser gespeichert' : 'für diese Sitzung vorhanden'}. Matchsimulation und Turniermodus folgen in den nächsten Etappen.`
+              : 'Deine Aufstellung und ihre Matchstärke sind vollständig. Speichere die Elf im Team Builder. Matchsimulation und Turniermodus folgen in den nächsten Etappen.'
             : 'Hier erscheinen später Spielplan, Tabelle und Ergebnisse. Vervollständige zuerst deine Elf mit Coach und Captain. Der Turniermodus folgt in einer kommenden Etappe.'
         }
       />
@@ -109,11 +112,11 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.4 · Team Builder</dd>
+              <dd>0.5 · Teamstärke & Boni</dd>
             </div>
             <div>
               <dt>Stand</dt>
-              <dd>Team Builder, Draft & Teamkatalog</dd>
+              <dd>Team Builder, Teamstärke & gespeicherte Elf</dd>
             </div>
             <div>
               <dt>Bilder</dt>
