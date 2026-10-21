@@ -2,8 +2,11 @@ import { ArrowLeft, ArrowUpRight, History, Shield, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../app/SettingsProvider.tsx';
 import { EmptyState, PageHeading } from '../components/ui.tsx';
+import { builder, useDraft } from '../app/DraftProvider.tsx';
 
 export function TournamentPage() {
+  const { draft } = useDraft();
+  const ready = draft ? builder.status(draft).complete : false;
   return (
     <>
       <PageHeading
@@ -14,8 +17,16 @@ export function TournamentPage() {
       <EmptyState
         icon={Trophy}
         eyebrow="NOCH KEIN ANPFIFF"
-        title="Große Spiele brauchen eine vollständige Elf."
-        description="Hier erscheinen später Spielplan, Tabelle und Ergebnisse. Erst mit elf Spielern und einem Coach kann dein Turnier beginnen."
+        title={
+          ready
+            ? 'Deine Elf steht. Die große Bühne folgt.'
+            : 'Große Spiele brauchen eine vollständige Elf.'
+        }
+        description={
+          ready
+            ? 'Deine Aufstellung ist vollständig und bleibt im Team Builder erhalten. Stärkeberechnung und Turniersimulation kommen in den nächsten Etappen.'
+            : 'Hier erscheinen später Spielplan, Tabelle und Ergebnisse. Vervollständige zuerst deine Elf mit Coach und Captain. Der Turniermodus folgt in einer kommenden Etappe.'
+        }
       />
       <div className="format-strip panel">
         <span>
@@ -98,11 +109,11 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.3 · Etappe 1</dd>
+              <dd>0.4 · Team Builder</dd>
             </div>
             <div>
               <dt>Stand</dt>
-              <dd>Grundlayout & Teamkatalog</dd>
+              <dd>Team Builder, Draft & Teamkatalog</dd>
             </div>
             <div>
               <dt>Bilder</dt>

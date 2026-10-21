@@ -1,5 +1,8 @@
 # Etappe 1 — Projektsetup und Oberfläche
 
+Dieses Dokument beschreibt den abgeschlossenen Stand von Version 0.3.
+Der danach umgesetzte [Team Builder](TEAM_BUILDER.md) erweitert diese Grundlage.
+
 Etappe 1 umfasst React, TypeScript, Vite, Routing, das gemeinsame Grundlayout und
 das Designsystem. Die zuvor erstellte Datenbasis ist eingebunden. Der Teamkatalog
 bietet bereits eine echte Möglichkeit, diese Daten in der Anwendung zu prüfen.

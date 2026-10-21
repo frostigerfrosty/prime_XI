@@ -1,9 +1,9 @@
 import { getDatabase, getDevelopmentTeams } from '../data/index.ts';
 
-// Browsing deliberately uses the editorial catalog. The historical release gate
-// in src/data/index.ts remains unchanged; this is not a playable-team release.
+// UI development deliberately uses the editorial catalog. The historical release
+// gate in src/data/index.ts remains unchanged; no historical release is asserted.
 export const teams = getDevelopmentTeams();
-export const { formations, clubs, targetYears, countries, positions } = getDatabase();
+export const { formations, clubs, targetYears, countries, positions, tactics } = getDatabase();
 export const catalogStats = {
   teams: teams.length,
   years: targetYears.length,

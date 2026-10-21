@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { catalogStats, featuredTeamIds, teams } from '../app/catalog.ts';
 import { ClubBadge, Step, TeamCard } from '../components/ui.tsx';
 import { formatNumber, initials } from '../utils/display.ts';
+import { builder, useDraft } from '../app/DraftProvider.tsx';
 
 function HeroCards() {
   const cards = [
@@ -69,6 +70,8 @@ function HeroCards() {
 }
 
 export default function DashboardPage() {
+  const { draft } = useDraft();
+  const draftStatus = draft ? builder.status(draft) : null;
   return (
     <>
       <div className="dashboard-intro">
@@ -161,7 +164,8 @@ export default function DashboardPage() {
             <Step
               number="02"
               title="Deine Elf zusammenstellen"
-              text="Der Draft und die Spielerauswahl folgen in der nächsten Etappe."
+              text="Ziehe zwölf Teams und wähle elf Spieler, einen Coach und deinen Captain."
+              done={Boolean(draftStatus?.complete)}
             />
             <Step
               number="03"
@@ -173,15 +177,31 @@ export default function DashboardPage() {
         <section className="panel current-status">
           <div className="section-heading">
             <h2>Dein Spielstand</h2>
-            <span className="subtle-chip">Noch nicht gestartet</span>
+            <span className="subtle-chip">
+              {draftStatus?.complete
+                ? 'Aufstellung vollständig'
+                : draft
+                  ? 'Draft aktiv'
+                  : 'Noch nicht gestartet'}
+            </span>
           </div>
           <div className="status-row">
             <span className="stat-icon">
               <UsersRound size={20} aria-hidden="true" />
             </span>
             <div>
-              <h3>Deine Elf wartet auf dich</h3>
-              <p>Noch kein Team zusammengestellt</p>
+              <h3>
+                {draft
+                  ? draftStatus?.complete
+                    ? 'Deine Elf steht bereit'
+                    : 'Dein Draft läuft'
+                  : 'Deine Elf wartet auf dich'}
+              </h3>
+              <p>
+                {draft
+                  ? `${draft.picks.length} / 11 Spieler · ${draft.coachCardId ? 'Coach gewählt' : 'Coach offen'} · ${draft.formationId}`
+                  : 'Noch kein Team zusammengestellt'}
+              </p>
             </div>
             <Link to="/team-builder" aria-label="Aufstellung öffnen">
               <ChevronRight size={18} />

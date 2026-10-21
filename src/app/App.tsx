@@ -2,6 +2,7 @@ import { Component, lazy, Suspense, type ReactNode } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../components/Layout.tsx';
 import { SettingsProvider } from './SettingsProvider.tsx';
+import { DraftProvider } from './DraftProvider.tsx';
 
 const DashboardPage = lazy(() => import('../pages/DashboardPage.tsx'));
 const BuilderPage = lazy(() => import('../pages/BuilderPage.tsx'));
@@ -45,29 +46,31 @@ export function App() {
   return (
     <AppErrorBoundary>
       <SettingsProvider>
-        <HashRouter>
-          <Suspense
-            fallback={
-              <div className="page-loading" role="status">
-                <span className="loading-mark">XI</span>
-                <p>Dein Spielfeld wird vorbereitet …</p>
-              </div>
-            }
-          >
-            <Routes>
-              <Route element={<Layout />}>
-                <Route index element={<DashboardPage />} />
-                <Route path="team-builder" element={<BuilderPage />} />
-                <Route path="teams" element={<TeamsPage />} />
-                <Route path="teams/:teamId" element={<TeamDetailPage />} />
-                <Route path="tournament" element={<TournamentPage />} />
-                <Route path="history" element={<HistoryPage />} />
-                <Route path="settings" element={<SettingsPage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Route>
-            </Routes>
-          </Suspense>
-        </HashRouter>
+        <DraftProvider>
+          <HashRouter>
+            <Suspense
+              fallback={
+                <div className="page-loading" role="status">
+                  <span className="loading-mark">XI</span>
+                  <p>Dein Spielfeld wird vorbereitet …</p>
+                </div>
+              }
+            >
+              <Routes>
+                <Route element={<Layout />}>
+                  <Route index element={<DashboardPage />} />
+                  <Route path="team-builder" element={<BuilderPage />} />
+                  <Route path="teams" element={<TeamsPage />} />
+                  <Route path="teams/:teamId" element={<TeamDetailPage />} />
+                  <Route path="tournament" element={<TournamentPage />} />
+                  <Route path="history" element={<HistoryPage />} />
+                  <Route path="settings" element={<SettingsPage />} />
+                  <Route path="*" element={<NotFoundPage />} />
+                </Route>
+              </Routes>
+            </Suspense>
+          </HashRouter>
+        </DraftProvider>
       </SettingsProvider>
     </AppErrorBoundary>
   );
