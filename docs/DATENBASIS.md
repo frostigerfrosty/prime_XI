@@ -134,9 +134,12 @@ kein falsches Aggregatergebnis erzeugen.
 kein Team, kein Draft, kein Turnier und keine erfundene History. Die Speicherschlüssel
 sind in der Spielkonfiguration versioniert. Einstellungen, aktiver Draft,
 vollständige Teams und die laufende Ligaphase werden defensiv im Browser gespeichert.
+Seit Version 0.8 umfasst der Turnierstand auch Playoffs, K.-o.-Runden und das
+beendete Finale. Er führt eine eigene `knockoutVersion`; bei älteren bekannten
+Liga-Spielständen darf dieses Feld bis zur ersten K.-o.-Auslosung fehlen.
 Der Turnieradapter prüft eingebettete Kader und Matchstärken, die Auslosung des
 Spielplans, Ergebnisse der gespielten Runden und die neu berechnete Tabelle.
-Archivierung und Migrationen weiterer Turnierphasen folgen in ihren Etappen.
+Das Archiv mehrerer Turniere und weitere Formatmigrationen folgen in Etappe 8.
 Der Draft-Adapter prüft Version,
 Identitäten, Positionen und Vervollständigbarkeit. Team-Snapshots betten zusätzlich
 Vereins-IDs pro Pick, Regelversion und berechnete Stärkewerte ein. Sie werden aus

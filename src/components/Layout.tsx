@@ -72,7 +72,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.7 · Ligaphase</span>
+          PRIME XI <span>v0.8 · Turniermodus</span>
         </p>
       </div>
     </>

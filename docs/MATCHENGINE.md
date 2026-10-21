@@ -1,5 +1,8 @@
 # Matchengine und Testspiele — Version 0.6
 
+Die unveränderte Matchengine 1.0.0 wird seit Version 0.8 auch für den vollständigen
+[Turnierablauf mit Hin-/Rückspielen und Finale](KNOCKOUT.md) verwendet.
+
 In **Testspiel** können zwei der 60 Katalogteams oder die gespeicherte eigene Elf
 antreten. Wählbar sind 90 Minuten mit möglichem Remis und ein einzelnes K.-o.-Spiel
 mit Verlängerung und Elfmeterschießen. Die eigene Elf verwendet ihren letzten

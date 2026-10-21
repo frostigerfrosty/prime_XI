@@ -14,7 +14,9 @@ import { ClubBadge, Step, TeamCard } from '../components/ui.tsx';
 import { formatNumber, formatStrength, initials } from '../utils/display.ts';
 import { builder, useDraft } from '../app/DraftProvider.tsx';
 import { useTournament } from '../app/TournamentProvider.tsx';
-import { tournamentEngine } from '../app/game.ts';
+import { gameRules, tournamentEngine } from '../app/game.ts';
+import { roundLabels, userTournamentStatus } from '../utils/tournament-display.ts';
+import type { TournamentRound } from '../types/application.ts';
 
 function HeroCards() {
   const cards = [
@@ -222,14 +224,20 @@ export default function DashboardPage() {
             <div>
               <h3>
                 {tournament
-                  ? progress?.complete
-                    ? 'Ligaphase beendet'
-                    : 'Dein Turnier läuft'
+                  ? tournament.phase === 'completed'
+                    ? 'Turnier beendet'
+                    : tournament.phase !== 'league'
+                      ? roundLabels[tournament.phase as TournamentRound]
+                      : progress?.complete
+                        ? 'Ligaphase beendet'
+                        : 'Dein Turnier läuft'
                   : 'Noch kein Turnier'}
               </h3>
               <p>
                 {tournamentRow && progress
-                  ? `${progress.completedRounds} / ${progress.totalRounds} Spieltage · ${tournamentRow.points} Punkte${tournamentRow.played ? ` · Platz ${tournamentRow.rank}` : ''}`
+                  ? tournament && tournament.phase !== 'league'
+                    ? userTournamentStatus(tournament, gameRules.tournament.league)
+                    : `${progress.completedRounds} / ${progress.totalRounds} Spieltage · ${tournamentRow.points} Punkte${tournamentRow.played ? ` · Platz ${tournamentRow.rank}` : ''}`
                   : 'Beginnt mit deinem vollständigen Team'}
               </p>
             </div>

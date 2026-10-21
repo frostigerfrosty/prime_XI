@@ -208,6 +208,8 @@ export interface GameRules {
       playoffRanks: [number, number]; eliminatedRanks: [number, number];
     };
     knockout: {
+      engineVersion: string;
+      drawPolicy: 'seeded-playoffs-open-redraw';
       rounds: { id: string; teams: number; legs: number }[]; awayGoalsRule: boolean;
       resolveDraw: 'extra-time-then-penalties'; finalNeutralVenue: boolean;
     };

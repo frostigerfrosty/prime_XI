@@ -586,7 +586,7 @@ export default function BuilderPage() {
                 {saved
                   ? 'Dein Draft bleibt beim Neuladen erhalten.'
                   : 'Dein Draft ist momentan nur für diese Sitzung gesichert.'}{' '}
-                Die Ligaphase ist spielbar. Playoffs und K.-o.-Runden folgen in Etappe 7.
+                Liga, Playoffs und K.-o.-Runden bis zum Finale sind spielbar.
               </p>
             </section>
           </div>

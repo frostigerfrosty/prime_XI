@@ -4,8 +4,8 @@ Die Werte stehen in `data/editorial/game-rules.json` und werden mit dem Datensat
 exportiert. Teamstärke und Matchsimulation verwenden diese zentralen Parameter.
 Eigene Entscheidungen stehen zusätzlich unter
 `designDecisions`; die Spezifikationswerte sind von kalibrierbaren Startwerten
-unterschieden. Die Gesamtregeln haben Version 1.3.0, das unveränderte Stärkemodell
-Version 1.1.0, die Matchengine Version 1.0.0 und die Ligaengine Version 1.0.0. Bestehende Team-Snapshots bleiben
+unterschieden. Die Gesamtregeln haben Version 1.4.0, das unveränderte Stärkemodell
+Version 1.1.0, Match-, Liga- und K.-o.-Engine jeweils Version 1.0.0. Bestehende Team-Snapshots bleiben
 gültig: `SavedTeam.rulesVersion` bezeichnet die Version des Stärkemodells.
 [Formeln und Snapshot-Verhalten](TEAMSTAERKE.md) sind separat dokumentiert.
 
@@ -88,11 +88,25 @@ Außer dem einzelnen neutralen Finale haben die K.-o.-Runden Hin- und Rückspiel
 Keine Auswärtstorregel; ein ungelöster Gleichstand wird durch Verlängerung und
 gegebenenfalls Elfmeterschießen aufgelöst.
 
+Seit Version 0.8 sind diese Runden bis zu einem eindeutigen Turniersieger spielbar.
+Die Plätze 9–16 werden den Plätzen 17–24 zufällig zugeordnet. Im Achtelfinale
+treffen die Plätze 1–8 auf die acht Playoff-Sieger. Gesetzte Teams haben jeweils
+das Rückspiel zu Hause. Ab dem Viertelfinale werden die verbliebenen Teams frei
+neu ausgelost. Diese eigene V1-Paarungsregel ist unter
+`tournament.knockout.drawPolicy` zentral festgelegt.
+
+Hinspiele enden nach 90 Minuten. Im Rückspiel entscheidet die Summe beider
+Partien; nur ein ausgeglichenes Aggregat führt zu Verlängerung und Elfmetern.
+Elfmeter werden weder zu Gesamttoren noch zu Ligatoren addiert. Die Ligatabelle
+bleibt nach ihrem Abschluss unverändert. Details: [K.-o.-Runden](KNOCKOUT.md).
+
 ## Speichern
 
 Eigene versionierte Schlüssel sind für Draft, Team, laufendes Turnier, abgeschlossene
 Turniere und Einstellungen festgelegt. Die Anwendungszustände besitzen passende
-TypeScript-Verträge. Einstellungen, Draft, Team und laufende Ligaphase werden
-bereits defensiv im Browser gespeichert. Archivierung und Migrationen weiterer
-Turnierphasen folgen in ihren Etappen. Die statische Datenbasis selbst führt keine
+TypeScript-Verträge. Einstellungen, Draft, Team und das vollständige laufende oder
+zuletzt beendete Turnier werden defensiv im Browser gespeichert. Bekannte
+Liga-Spielstände mit Gesamtregeln 1.3.0 bleiben lesbar und werden beim ersten
+K.-o.-Schritt verlustfrei auf 1.4.0 erweitert. Das Archiv mehrerer Turniere und
+weitere Migrationen folgen in Etappe 8. Die statische Datenbasis selbst führt keine
 Speicherzugriffe aus.

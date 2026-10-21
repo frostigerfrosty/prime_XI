@@ -1,13 +1,13 @@
 # PRIME XI — Football Simulator
 
 React-/TypeScript-Anwendung mit Vite und einer eigenen statischen Datenbasis.
-Grundlayout, Team Builder, Teamstärke, Matchengine und Ligaphase sind umgesetzt: Navigation, Dashboard,
+Grundlayout, Team Builder, Teamstärke, Matchengine und vollständiger Turniermodus sind umgesetzt: Navigation, Dashboard,
 Teamkatalog, Draft, Spieler-/Coach-/Captain-Auswahl, Formationswechsel sowie
 nachvollziehbare Basisstärke, Chemie, Taktik-, Coach- und Captain-Boni.
 Draft und vollständige Teams werden getrennt im Browser gespeichert. Im Testspiel
 treten deine gespeicherte Elf oder zwei Katalogteams gegeneinander an.
 Im Turnier spielt deine Elf gegen 35 Saisonmannschaften. Auslosung, Spielplan,
-Ergebnisse und Tabelle bleiben beim Neuladen erhalten.
+Ergebnisse, Tabelle und K.-o.-Runden bis zum Finale bleiben beim Neuladen erhalten.
 Die Anwendung benötigt kein Backend, API-Abo oder geheime Schlüssel.
 
 ## Starten
@@ -35,8 +35,13 @@ Mit **Team speichern & Turnier starten** beginnt deine 36-Team-Ligaphase:
 acht verschiedene Gegner, vier Heim- und vier Auswärtsspiele. Simuliere einen
 Spieltag mit allen 18 Begegnungen oder bestätige den Abschluss der gesamten
 Ligaphase. Die Tabelle zeigt die Plätze für Achtelfinale, Playoffs und Ausscheiden.
-Playoffs und K.-o.-Runden folgen als nächste Etappe; ein Turniersieger wird noch
-nicht ermittelt und kein abgeschlossener Turnierverlauf erfunden.
+Danach folgen Playoffs, Achtel-, Viertel- und Halbfinale mit Hin- und Rückspiel
+sowie ein einzelnes neutrales Finale. Lose jede Runde aus und spiele die beiden
+Partien nacheinander, oder bestätige die Simulation bis zum Turniersieger.
+Gesamttore entscheiden ohne Auswärtstorregel; bei Gleichstand gibt es Verlängerung
+und gegebenenfalls Elfmeter. Auch nach dem Ausscheiden deiner Elf kannst du den
+Rest des Turniers verfolgen. Das zuletzt beendete Turnier bleibt gespeichert;
+ein Archiv für mehrere Turniere folgt in Etappe 8.
 
 [Umfang, Architektur, Prüfungen und Commit-Grenze von Etappe 1](docs/ETAPPE_1.md)
 
@@ -47,6 +52,8 @@ nicht ermittelt und kein abgeschlossener Turnierverlauf erfunden.
 [Matchengine: Simulation, Spielcodes und Kalibrierung](docs/MATCHENGINE.md)
 
 [36-Team-Turnier: Ligaphase, Tabelle und Fortsetzen](docs/LIGAPHASE.md)
+
+[Playoffs und K.-o.-Runden: Auslosung, Gesamttore und Finale](docs/KNOCKOUT.md)
 
 ## Datenbestand
 

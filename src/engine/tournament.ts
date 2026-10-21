@@ -11,6 +11,8 @@ import { createMatchEngine } from './match.ts';
 import { primeMatchTeam } from './match-team.ts';
 import { seededRandom, shuffled } from './random.ts';
 import { calculateLeagueTable, createLeagueSchedule, leagueQualification } from './league.ts';
+import { createKnockoutEngine } from './knockout.ts';
+import { equalValues as equal, equalMatchResults } from './comparison.ts';
 
 function check(value: unknown, message: string): asserts value {
   if (!value) throw new Error(message);
@@ -22,21 +24,6 @@ const strings = (value: unknown): value is string[] =>
   value.length > 0 &&
   value.every(isText) &&
   new Set(value).size === value.length;
-/** Structural comparison, independent of JSON key order. xG may differ by one platform ULP. */
-function equal(a: unknown, b: unknown, tolerant = false): boolean {
-  if (a === b) return true;
-  if (tolerant && typeof a === 'number' && typeof b === 'number')
-    return Number.isFinite(a) && Number.isFinite(b) && Math.abs(a - b) < 1e-10;
-  if (Array.isArray(a) && Array.isArray(b))
-    return a.length === b.length && a.every((item, i) => equal(item, b[i], tolerant));
-  if (!isRecord(a) || !isRecord(b)) return false;
-  const keys = Object.keys(a).sort();
-  return (
-    keys.length === Object.keys(b).length &&
-    keys.every((key) => Object.hasOwn(b, key) && equal(a[key], b[key], tolerant))
-  );
-}
-
 /** Stateful UI uses immutable outputs from this browser-independent league controller. */
 export function createTournamentEngine(input: {
   teams: PrimeTeam[];
@@ -51,6 +38,7 @@ export function createTournamentEngine(input: {
     config = rules.tournament,
     league = config.league;
   const matchEngine = createMatchEngine(rules);
+  const knockout = createKnockoutEngine(rules);
   const { datasetVersion, defaultTactic } = input;
   check(
     isText(config.engineVersion) &&
@@ -138,7 +126,9 @@ export function createTournamentEngine(input: {
 
   function progress(state: TournamentState) {
     const completedRounds =
-      state.matches.filter((match) => match.status === 'played').length / (config.totalTeams / 2);
+      state.matches.filter((match) => match.phase === 'league' && match.status === 'played')
+        .length /
+      (config.totalTeams / 2);
     return {
       completedRounds,
       totalRounds: league.matchesPerTeam,
@@ -181,6 +171,7 @@ export function createTournamentEngine(input: {
       rulesVersion: rules.version,
       leagueVersion: config.engineVersion,
       matchEngineVersion: rules.match.engineVersion,
+      knockoutVersion: knockout.version,
       opponentTacticId: defaultTactic,
       completedAt: null,
       phase: 'league',
@@ -213,20 +204,30 @@ export function createTournamentEngine(input: {
         !date(value['createdAt']) ||
         !isText(value['datasetVersion']) ||
         value['id'] !== tournamentId(value['seed'], value['createdAt']) ||
-        value['rulesVersion'] !== rules.version ||
+        !(
+          (value['rulesVersion'] === rules.version &&
+            value['knockoutVersion'] === knockout.version) ||
+          (value['rulesVersion'] === '1.3.0' &&
+            value['phase'] === 'league' &&
+            !Object.hasOwn(value, 'knockoutVersion'))
+        ) ||
         value['leagueVersion'] !== config.engineVersion ||
         value['matchEngineVersion'] !== rules.match.engineVersion ||
         !isText(value['opponentTacticId']) ||
-        value['phase'] !== 'league' ||
-        value['completedAt'] !== null ||
-        value['championParticipantId'] !== null ||
+        !['league', 'completed', ...config.knockout.rounds.map((r) => r.id)].includes(
+          value['phase'] as string,
+        ) ||
         value['userParticipantId'] !== 'user' ||
         !Array.isArray(value['knockoutTies']) ||
-        value['knockoutTies'].length !== 0 ||
+        value['knockoutTies'].length >
+          config.knockout.rounds.reduce((sum, r) => sum + r.teams / 2, 0) ||
         !Array.isArray(value['participants']) ||
         value['participants'].length !== config.totalTeams ||
         !Array.isArray(value['matches']) ||
-        value['matches'].length !== (config.totalTeams * league.matchesPerTeam) / 2
+        value['matches'].length < (config.totalTeams * league.matchesPerTeam) / 2 ||
+        value['matches'].length >
+          (config.totalTeams * league.matchesPerTeam) / 2 +
+            config.knockout.rounds.reduce((sum, r) => sum + (r.teams / 2) * r.legs, 0)
       )
         return false;
       const participants = value['participants'];
@@ -261,7 +262,8 @@ export function createTournamentEngine(input: {
       if (new Set(ids).size !== ids.length) return false;
       const state = value as unknown as TournamentState;
       const schedule = createLeagueSchedule(ids, state.seed, league);
-      const playedCount = state.matches.filter((match) => match.status === 'played').length;
+      const leagueMatches = state.matches.slice(0, schedule.length);
+      const playedCount = leagueMatches.filter((match) => match.status === 'played').length;
       if (playedCount % (config.totalTeams / 2) !== 0) return false;
       for (let index = 0; index < schedule.length; index++) {
         const expected = schedule[index]!,
@@ -273,12 +275,15 @@ export function createTournamentEngine(input: {
         if (index < playedCount) {
           if (
             actual['status'] !== 'played' ||
-            !equal(actual['result'], simulate(state, expected), true)
+            !equalMatchResults(actual['result'], simulate(state, expected))
           )
             return false;
         } else if (actual['status'] !== 'scheduled' || actual['result'] !== null) return false;
       }
-      return equal(state.standings, calculateLeagueTable(ids, state.matches, league));
+      return (
+        equal(state.standings, calculateLeagueTable(ids, leagueMatches, league)) &&
+        knockout.isValidProgress(state)
+      );
     } catch {
       return false;
     }
@@ -286,10 +291,12 @@ export function createTournamentEngine(input: {
   function advance(state: TournamentState, all = false): TournamentState {
     check(isValid(state), 'Der Turnierstand ist beschädigt oder verwendet andere Spielregeln.');
     const nextRound = progress(state).nextRound;
-    check(nextRound !== null, 'Die Ligaphase ist bereits beendet.');
+    check(nextRound !== null && state.phase === 'league', 'Die Ligaphase ist bereits beendet.');
     const next = structuredClone(state);
     next.matches = next.matches.map((match): ScheduledMatch =>
-      match.status === 'scheduled' && (all || match.roundNumber === nextRound)
+      match.phase === 'league' &&
+      match.status === 'scheduled' &&
+      (all || match.roundNumber === nextRound)
         ? { ...match, status: 'played', result: simulate(next, match) }
         : match,
     );
@@ -300,9 +307,28 @@ export function createTournamentEngine(input: {
     );
     return next;
   }
+  function requireValid(state: TournamentState) {
+    check(isValid(state), 'Der Turnierstand ist beschädigt oder verwendet andere Spielregeln.');
+  }
+  function drawNextRound(state: TournamentState) {
+    requireValid(state);
+    return knockout.draw(state);
+  }
+  function nextKnockoutLeg(state: TournamentState, now: string) {
+    requireValid(state);
+    return knockout.step(state, now);
+  }
+  function finishTournament(state: TournamentState, now: string) {
+    requireValid(state);
+    return knockout.finish(state, now);
+  }
   return {
     start,
     isValid,
+    drawNextRound,
+    nextKnockoutLeg,
+    finishTournament,
+    knockoutProgress: knockout.progress,
     progress,
     nextMatchday: (state: TournamentState) => advance(state),
     finishLeague: (state: TournamentState) => advance(state, true),

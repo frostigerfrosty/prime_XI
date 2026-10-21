@@ -13,6 +13,7 @@ interface TournamentContextValue {
   persisted: boolean;
   start: (team: SavedTeam, seed: string, replace?: boolean) => void;
   advance: (expectedRound: number, all?: boolean) => void;
+  knockoutAction: (action: 'draw' | 'leg' | 'finish', expectedToken: string) => void;
 }
 const TournamentContext = createContext<TournamentContextValue | null>(null);
 
@@ -58,8 +59,21 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
         : tournamentEngine.nextMatchday(current.current),
     );
   }
+  function knockoutAction(action: 'draw' | 'leg' | 'finish', expectedToken: string) {
+    if (!current.current) throw new Error('Starte zuerst ein Turnier.');
+    if (tournamentEngine.knockoutProgress(current.current).token !== expectedToken)
+      throw new Error('Dieser Turnierschritt wurde bereits ausgeführt.');
+    const now = new Date().toISOString();
+    commit(
+      action === 'draw'
+        ? tournamentEngine.drawNextRound(current.current)
+        : action === 'leg'
+          ? tournamentEngine.nextKnockoutLeg(current.current, now)
+          : tournamentEngine.finishTournament(current.current, now),
+    );
+  }
   return (
-    <TournamentContext value={{ tournament, warning, persisted, start, advance }}>
+    <TournamentContext value={{ tournament, warning, persisted, start, advance, knockoutAction }}>
       {children}
     </TournamentContext>
   );

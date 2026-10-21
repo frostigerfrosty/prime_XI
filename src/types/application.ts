@@ -126,6 +126,8 @@ export interface TournamentState {
   rulesVersion: string;
   leagueVersion: string;
   matchEngineVersion: string;
+  /** Absent only on compatible Phase-6 league saves. Added at the first K.-o. draw. */
+  knockoutVersion?: string;
   opponentTacticId: string;
   seed: string;
   createdAt: string;

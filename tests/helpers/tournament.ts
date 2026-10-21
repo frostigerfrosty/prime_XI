@@ -38,3 +38,22 @@ export function tournamentFixture() {
   const engine = createTournamentEngine(environment);
   return { data, now, builder, model, draft, team, environment, engine };
 }
+
+/** A valid high-strength snapshot for testing the real winner path, not fixed scores. */
+export function championTestTeam(fixture: ReturnType<typeof tournamentFixture>) {
+  const team = structuredClone(fixture.team);
+  for (const { player } of team.lineup) {
+    player.rating = 99;
+    for (const key of Object.keys(player.attributes) as (keyof typeof player.attributes)[])
+      if (player.attributes[key] !== null) player.attributes[key] = 99;
+    player.nationality = 'ENG';
+    player.styleTags = ['balanced'];
+    if (player.personId === team.captainPersonId) player.naturalCaptain = true;
+  }
+  team.coach.tacticalRating = 99;
+  team.coach.preferredFormations = [team.formationId];
+  team.coach.styleTags = ['balanced'];
+  team.tacticId = 'balanced';
+  team.strength = fixture.model.analyze(team).strength;
+  return team;
+}

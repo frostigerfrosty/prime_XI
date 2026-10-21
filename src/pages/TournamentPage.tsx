@@ -1,72 +1,19 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { ArrowRight, Check, Dices, Shield, Trophy } from 'lucide-react';
+import { ArrowRight, Check, Dices, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDraft } from '../app/DraftProvider.tsx';
 import { useTournament } from '../app/TournamentProvider.tsx';
 import { gameRules, tournamentEngine } from '../app/game.ts';
-import { CatalogNote, ClubBadge, EmptyState, PageHeading } from '../components/ui.tsx';
-import { getClubBadgePath } from '../data/index.ts';
-import type { ScheduledMatch, TournamentParticipant } from '../types/application.ts';
+import { CatalogNote, EmptyState, PageHeading } from '../components/ui.tsx';
 import { formatStrength } from '../utils/display.ts';
+import { TeamName, MatchRow } from '../components/TournamentTeams.tsx';
+import { KnockoutPanel } from '../components/KnockoutPanel.tsx';
 
 const qualificationText = {
   direct: 'Achtelfinale',
   playoff: 'Playoffs',
   eliminated: 'Ausgeschieden',
 };
-function identity(participant: TournamentParticipant) {
-  return participant.kind === 'user'
-    ? { name: participant.team.name, detail: 'Deine Elf', clubId: null }
-    : {
-        name: participant.team.clubName,
-        detail: participant.team.season,
-        clubId: participant.team.clubId,
-      };
-}
-function TeamName({ participant }: { participant: TournamentParticipant }) {
-  const team = identity(participant);
-  return (
-    <span className="tournament-team-name">
-      {team.clubId && getClubBadgePath(team.clubId) ? (
-        <ClubBadge clubId={team.clubId} />
-      ) : (
-        <Shield size={27} aria-hidden="true" />
-      )}
-      <span>
-        <strong>{team.name}</strong>
-        <small>{team.detail}</small>
-      </span>
-    </span>
-  );
-}
-function MatchRow({
-  match,
-  participants,
-  userId,
-}: {
-  match: ScheduledMatch;
-  participants: Map<string, TournamentParticipant>;
-  userId: string;
-}) {
-  const own = match.homeParticipantId === userId || match.awayParticipantId === userId;
-  return (
-    <li className={`league-match ${own ? 'league-match--own' : ''}`}>
-      <TeamName participant={participants.get(match.homeParticipantId)!} />
-      <span className="league-match-score">
-        {match.status === 'played' ? (
-          <strong>
-            {match.result.regularTime.home} : {match.result.regularTime.away}
-          </strong>
-        ) : (
-          <strong>– : –</strong>
-        )}
-        <small>{match.status === 'played' ? '90 Min.' : 'Offen'}</small>
-      </span>
-      <TeamName participant={participants.get(match.awayParticipantId)!} />
-    </li>
-  );
-}
-
 export default function TournamentPage() {
   const { currentTeam, teamWarning } = useDraft();
   const { tournament, warning, persisted, start, advance } = useTournament();
@@ -107,7 +54,13 @@ export default function TournamentPage() {
           : `Spieltag ${progress.nextRound} simuliert. Alle 18 Ergebnisse sind eingetragen.`,
       );
       setError('');
-      requestAnimationFrame(() => overview.current?.focus());
+      requestAnimationFrame(() => {
+        const destination =
+          all || progress.nextRound === progress.totalRounds
+            ? document.getElementById('knockout-panel')
+            : overview.current;
+        destination?.focus();
+      });
     } catch (reason) {
       setError(
         reason instanceof Error ? reason.message : 'Der Spieltag konnte nicht simuliert werden.',
@@ -129,8 +82,9 @@ export default function TournamentPage() {
   const ownMatches =
     tournament?.matches.filter(
       (m) =>
-        m.homeParticipantId === tournament.userParticipantId ||
-        m.awayParticipantId === tournament.userParticipantId,
+        m.phase === 'league' &&
+        (m.homeParticipantId === tournament.userParticipantId ||
+          m.awayParticipantId === tournament.userParticipantId),
     ) ?? [];
   const nextMatch = ownMatches.find((m) => m.status === 'scheduled');
   const lastMatch = ownMatches.filter((m) => m.status === 'played').at(-1);
@@ -144,7 +98,7 @@ export default function TournamentPage() {
         <PageHeading
           eyebrow="DIE GRÖSSTE BÜHNE"
           title="Dein Turnier"
-          description="Deine Elf. 35 Gegner. Acht Spiele bis zur Entscheidung."
+          description="Deine Elf. 35 Gegner. Ein Weg bis zum Pokal."
         />
         {tournament && (
           <button
@@ -243,6 +197,9 @@ export default function TournamentPage() {
         ownRow &&
         progress && (
           <>
+            {complete && (
+              <KnockoutPanel tournament={tournament} onMessage={setMessage} onError={setError} />
+            )}
             <section
               className="panel tournament-overview"
               ref={overview}
@@ -260,7 +217,7 @@ export default function TournamentPage() {
               </div>
               <div className="league-stats">
                 <div>
-                  <span>Dein Platz</span>
+                  <span>Dein Ligaplatz</span>
                   <strong data-testid="user-league-rank">
                     {ownRow.played ? ownRow.rank : '–'}
                   </strong>
@@ -321,8 +278,8 @@ export default function TournamentPage() {
                       : 'Dein Platz in der nächsten Runde steht fest.'}
                   </p>
                   <p>
-                    Playoffs und K.-o.-Runden folgen in Etappe 7. Es wurde noch kein Turniersieger
-                    ermittelt.
+                    Die K.-o.-Runden sind spielbereit. Du kannst das Turnier auch nach dem
+                    Ausscheiden deiner Elf weiterverfolgen.
                   </p>
                 </div>
               </section>
@@ -371,167 +328,177 @@ export default function TournamentPage() {
                 </ul>
               </section>
             )}
-            <section className="panel league-table-panel" aria-labelledby="league-table-title">
-              <div className="section-heading">
-                <h2 id="league-table-title">Ligatabelle</h2>
-                <span className="subtle-chip">
-                  36 Teams · {tournament.matches.filter((m) => m.status === 'played').length} / 144
-                  Spiele
-                </span>
-              </div>
-              <div className="league-legend">
-                <span>1–8 · Achtelfinale</span>
-                <span>9–24 · Playoffs</span>
-                <span>25–36 · Aus</span>
-              </div>
-              <div
-                className="league-table-scroll"
-                tabIndex={0}
-                role="region"
-                aria-label="Vollständige Ligatabelle horizontal scrollen"
-              >
-                <table aria-label="Ligatabelle">
-                  <caption className="sr-only">
-                    {complete ? 'Endstand' : 'Zwischenstand'} nach {progress.completedRounds}{' '}
-                    Spieltagen. Sortierung: Punkte, Tordifferenz, Tore, Siege, Teilnehmer-ID.
-                  </caption>
-                  <thead>
-                    <tr>
-                      <th scope="col">Pl.</th>
-                      <th scope="col">Mannschaft</th>
-                      <th scope="col">
-                        <abbr title="Spiele">Sp.</abbr>
-                      </th>
-                      <th scope="col">
-                        <abbr title="Siege">S</abbr>
-                      </th>
-                      <th scope="col">
-                        <abbr title="Unentschieden">U</abbr>
-                      </th>
-                      <th scope="col">
-                        <abbr title="Niederlagen">N</abbr>
-                      </th>
-                      <th scope="col">Tore</th>
-                      <th scope="col">
-                        <abbr title="Tordifferenz">TD</abbr>
-                      </th>
-                      <th scope="col">
-                        <abbr title="Punkte">Pkt.</abbr>
-                      </th>
-                      <th scope="col">Zone</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tournament.standings.map((row) => {
-                      const zone = tournamentEngine.qualification(row.rank);
-                      return (
-                        <tr
-                          key={row.participantId}
-                          data-testid={`league-row-${row.participantId}`}
-                          className={
-                            row.participantId === tournament.userParticipantId
-                              ? 'league-row--own'
-                              : ''
-                          }
-                        >
-                          <td
+            <details className="league-archive" open={tournament.phase === 'league'}>
+              <summary>Ligatabelle und Spielplan ansehen</summary>
+              <section className="panel league-table-panel" aria-labelledby="league-table-title">
+                <div className="section-heading">
+                  <h2 id="league-table-title">Ligatabelle</h2>
+                  <span className="subtle-chip">
+                    36 Teams ·{' '}
+                    {
+                      tournament.matches.filter(
+                        (m) => m.phase === 'league' && m.status === 'played',
+                      ).length
+                    }{' '}
+                    / 144 Spiele
+                  </span>
+                </div>
+                <div className="league-legend">
+                  <span>1–8 · Achtelfinale</span>
+                  <span>9–24 · Playoffs</span>
+                  <span>25–36 · Aus</span>
+                </div>
+                <div
+                  className="league-table-scroll"
+                  tabIndex={0}
+                  role="region"
+                  aria-label="Vollständige Ligatabelle horizontal scrollen"
+                >
+                  <table aria-label="Ligatabelle">
+                    <caption className="sr-only">
+                      {complete ? 'Endstand' : 'Zwischenstand'} nach {progress.completedRounds}{' '}
+                      Spieltagen. Sortierung: Punkte, Tordifferenz, Tore, Siege, Teilnehmer-ID.
+                    </caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Pl.</th>
+                        <th scope="col">Mannschaft</th>
+                        <th scope="col">
+                          <abbr title="Spiele">Sp.</abbr>
+                        </th>
+                        <th scope="col">
+                          <abbr title="Siege">S</abbr>
+                        </th>
+                        <th scope="col">
+                          <abbr title="Unentschieden">U</abbr>
+                        </th>
+                        <th scope="col">
+                          <abbr title="Niederlagen">N</abbr>
+                        </th>
+                        <th scope="col">Tore</th>
+                        <th scope="col">
+                          <abbr title="Tordifferenz">TD</abbr>
+                        </th>
+                        <th scope="col">
+                          <abbr title="Punkte">Pkt.</abbr>
+                        </th>
+                        <th scope="col">Zone</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tournament.standings.map((row) => {
+                        const zone = tournamentEngine.qualification(row.rank);
+                        return (
+                          <tr
+                            key={row.participantId}
+                            data-testid={`league-row-${row.participantId}`}
                             className={
-                              progress.completedRounds
-                                ? `league-rank league-rank--${zone}`
-                                : 'league-rank'
+                              row.participantId === tournament.userParticipantId
+                                ? 'league-row--own'
+                                : ''
                             }
                           >
-                            {row.rank}
-                          </td>
-                          <th scope="row">
-                            <TeamName participant={participants.get(row.participantId)!} />
-                          </th>
-                          <td>{row.played}</td>
-                          <td>{row.wins}</td>
-                          <td>{row.draws}</td>
-                          <td>{row.losses}</td>
-                          <td>
-                            {row.goalsFor}:{row.goalsAgainst}
-                          </td>
-                          <td>
-                            {row.goalDifference > 0 ? '+' : ''}
-                            {row.goalDifference}
-                          </td>
-                          <td className="league-points">{row.points}</td>
-                          <td className="league-zone">
-                            {progress.completedRounds ? qualificationText[zone] : '–'}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-              <p className="tournament-caption">
-                {complete
-                  ? 'Die Qualifikationsplätze sind endgültig.'
-                  : 'Die Zonen zeigen den aktuellen Stand. Qualifiziert wird erst nach allen acht Spieltagen.'}{' '}
-                Bei Punktgleichheit zählen Tordifferenz, Tore, Siege und zuletzt die stabile
-                Teilnehmer-ID.
-              </p>
-            </section>
-            <div className="league-fixture-grid">
-              <section className="panel league-fixtures">
-                <div className="section-heading">
-                  <h2>Dein Spielplan</h2>
-                  <span className="subtle-chip">4 Heim · 4 Auswärts</span>
+                            <td
+                              className={
+                                progress.completedRounds
+                                  ? `league-rank league-rank--${zone}`
+                                  : 'league-rank'
+                              }
+                            >
+                              {row.rank}
+                            </td>
+                            <th scope="row">
+                              <TeamName participant={participants.get(row.participantId)!} />
+                            </th>
+                            <td>{row.played}</td>
+                            <td>{row.wins}</td>
+                            <td>{row.draws}</td>
+                            <td>{row.losses}</td>
+                            <td>
+                              {row.goalsFor}:{row.goalsAgainst}
+                            </td>
+                            <td>
+                              {row.goalDifference > 0 ? '+' : ''}
+                              {row.goalDifference}
+                            </td>
+                            <td className="league-points">{row.points}</td>
+                            <td className="league-zone">
+                              {progress.completedRounds ? qualificationText[zone] : '–'}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
                 </div>
-                <ol className="league-match-list own-league-fixtures">
-                  {ownMatches.map((match) => (
-                    <li key={match.id}>
-                      <p className="eyebrow">
-                        Spieltag {match.roundNumber} ·{' '}
-                        {match.homeParticipantId === tournament.userParticipantId
-                          ? 'Heimspiel'
-                          : 'Auswärtsspiel'}
-                      </p>
-                      <ul>
+                <p className="tournament-caption">
+                  {complete
+                    ? 'Die Qualifikationsplätze sind endgültig.'
+                    : 'Die Zonen zeigen den aktuellen Stand. Qualifiziert wird erst nach allen acht Spieltagen.'}{' '}
+                  Bei Punktgleichheit zählen Tordifferenz, Tore, Siege und zuletzt die stabile
+                  Teilnehmer-ID.
+                </p>
+              </section>
+              <div className="league-fixture-grid">
+                <section className="panel league-fixtures">
+                  <div className="section-heading">
+                    <h2>Dein Spielplan</h2>
+                    <span className="subtle-chip">4 Heim · 4 Auswärts</span>
+                  </div>
+                  <ol className="league-match-list own-league-fixtures">
+                    {ownMatches.map((match) => (
+                      <li key={match.id}>
+                        <p className="eyebrow">
+                          Spieltag {match.roundNumber} ·{' '}
+                          {match.homeParticipantId === tournament.userParticipantId
+                            ? 'Heimspiel'
+                            : 'Auswärtsspiel'}
+                        </p>
+                        <ul>
+                          <MatchRow
+                            match={match}
+                            participants={participants}
+                            userId={tournament.userParticipantId}
+                          />
+                        </ul>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+                <section className="panel league-fixtures">
+                  <div className="section-heading">
+                    <h2>Alle Begegnungen</h2>
+                    <label className="league-round-select">
+                      <span>Spieltag anzeigen</span>
+                      <select
+                        value={selectedRound}
+                        onChange={(event) => setSelectedRound(Number(event.target.value))}
+                      >
+                        {Array.from({ length: progress.totalRounds }, (_, i) => (
+                          <option key={i + 1} value={i + 1}>
+                            Spieltag {i + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                  </div>
+                  <ul className="league-match-list all-league-fixtures">
+                    {tournament.matches
+                      .filter(
+                        (match) => match.phase === 'league' && match.roundNumber === selectedRound,
+                      )
+                      .map((match) => (
                         <MatchRow
+                          key={match.id}
                           match={match}
                           participants={participants}
                           userId={tournament.userParticipantId}
                         />
-                      </ul>
-                    </li>
-                  ))}
-                </ol>
-              </section>
-              <section className="panel league-fixtures">
-                <div className="section-heading">
-                  <h2>Alle Begegnungen</h2>
-                  <label className="league-round-select">
-                    <span>Spieltag anzeigen</span>
-                    <select
-                      value={selectedRound}
-                      onChange={(event) => setSelectedRound(Number(event.target.value))}
-                    >
-                      {Array.from({ length: progress.totalRounds }, (_, i) => (
-                        <option key={i + 1} value={i + 1}>
-                          Spieltag {i + 1}
-                        </option>
                       ))}
-                    </select>
-                  </label>
-                </div>
-                <ul className="league-match-list all-league-fixtures">
-                  {tournament.matches
-                    .filter((match) => match.roundNumber === selectedRound)
-                    .map((match) => (
-                      <MatchRow
-                        key={match.id}
-                        match={match}
-                        participants={participants}
-                        userId={tournament.userParticipantId}
-                      />
-                    ))}
-                </ul>
-              </section>
-            </div>
+                  </ul>
+                </section>
+              </div>
+            </details>
             <details className="panel tournament-code-details">
               <summary>Turniercode und Spielregeln</summary>
               <p>

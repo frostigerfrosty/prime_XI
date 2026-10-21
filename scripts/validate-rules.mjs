@@ -24,6 +24,8 @@ export function validateRules(rules) {
   assert(directFirst === 1 && playoffFirst === directLast + 1 && outFirst === playoffLast + 1 && outLast === tournament.totalTeams,
     'qualification ranges must cover every rank without overlap');
   const rounds = tournament.knockout.rounds;
+  assert(tournament.knockout.drawPolicy === 'seeded-playoffs-open-redraw' && !tournament.knockout.awayGoalsRule,
+    'unknown knockout draw policy or away-goals rule');
   const playoffTeams = playoffLast - playoffFirst + 1;
   assert(rounds[0]?.teams === playoffTeams && playoffTeams % 2 === 0, 'playoff participants disagree with league ranks');
   assert(rounds[1]?.teams === directLast + playoffTeams / 2, 'round-of-16 participants do not follow from playoffs');

@@ -1,5 +1,9 @@
 # 36-Team-Turnier und Ligaphase — Version 0.7
 
+Seit Version 0.8 kann die Ligaphase in [Playoffs und K.-o.-Runden](KNOCKOUT.md)
+bis zum Turniersieger fortgesetzt werden. Vorhandene Version-0.7-Ligastände
+bleiben kompatibel; die folgenden Abschnitte dokumentieren den damaligen Stand.
+
 Die eigene vollständige Elf spielt gegen 35 zufällig gezogene Saisonmannschaften.
 **Team speichern & Turnier starten** übernimmt die aktuelle Builder-Aufstellung,
 speichert sie und öffnet das Turnier. Alternativ startet die Turnierseite mit der

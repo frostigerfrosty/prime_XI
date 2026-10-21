@@ -5,6 +5,8 @@ Die Gesamtregeln 1.2.0 und Matchengine 1.0.0 haben eigene Versionsangaben, damit
 ein Match-Update bestehende gespeicherte Teams nicht ungültig macht.
 Seit Version 0.7 sind die Gesamtregeln 1.3.0. Das Stärkemodell bleibt 1.1.0 und
 gespeicherte Teams können eine [Ligaphase](LIGAPHASE.md) starten.
+Seit Version 0.8 führen die Gesamtregeln 1.4.0 das Turnier bis zum Finale fort;
+Stärkemodell 1.1.0 und alle bestehenden Elf-Snapshots bleiben kompatibel.
 
 Diese Etappe setzt Phase 4 der Master-Spezifikation um. Die Matchstärke ist ein
 berechneter Eingangswert für die spätere Matchengine. Es werden noch keine Spiele

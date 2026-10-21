@@ -588,13 +588,22 @@
                 "finalNeutralVenue": {
                   "type": "boolean",
                   "const": true
+                },
+                "engineVersion": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "drawPolicy": {
+                  "const": "seeded-playoffs-open-redraw"
                 }
               },
               "required": [
                 "rounds",
                 "awayGoalsRule",
                 "resolveDraw",
-                "finalNeutralVenue"
+                "finalNeutralVenue",
+                "engineVersion",
+                "drawPolicy"
               ]
             },
             "engineVersion": {

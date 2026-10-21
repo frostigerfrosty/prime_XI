@@ -49671,7 +49671,7 @@
   ],
   "rules": {
     "id": "prime-xi-rules-v1",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "provenance": "original_game_design",
     "builder": {
       "drawSize": 12,
@@ -49769,6 +49769,8 @@
         ]
       },
       "knockout": {
+        "engineVersion": "1.0.0",
+        "drawPolicy": "seeded-playoffs-open-redraw",
         "rounds": [
           {
             "id": "playoffs",
@@ -49846,7 +49848,7 @@
       },
       {
         "id": "separate-model-versions",
-        "description": "Gesamtregeln 1.3.0, unverändertes Stärkemodell 1.1.0 und Matchengine 1.0.0 sind separat versioniert. SavedTeam.rulesVersion bezeichnet das Stärkemodell; bestehende Teams aus Regelstand 1.1.0 bleiben gültig."
+        "description": "Gesamtregeln 1.4.0, unverändertes Stärkemodell 1.1.0 und Matchengine 1.0.0 sind separat versioniert. SavedTeam.rulesVersion bezeichnet das Stärkemodell; bestehende Teams aus Regelstand 1.1.0 bleiben gültig."
       },
       {
         "id": "match-v1-formula",
@@ -49859,6 +49861,14 @@
       {
         "id": "league-v1-snapshots",
         "description": "36 Teilnehmer inklusive eigener Elf, Gegnerkarten, Standardtaktik und berechnete Matchstärken werden bei Turnierbeginn eingefroren. Ein Spieltag simuliert alle 18 Begegnungen. Gesamtregeln 1.3.0, Stärkemodell 1.1.0, Matchengine 1.0.0, Ligaengine 1.0.0."
+      },
+      {
+        "id": "knockout-v1-draw",
+        "description": "Playoffs: Plätze 9–16 gegen zufällig zugeordnete Plätze 17–24; Achtelfinale: Plätze 1–8 gegen Playoff-Sieger. Gesetzte Teams haben das Rückspiel zu Hause. Viertelfinale und Halbfinale werden frei neu ausgelost. Das Finale ist ein einzelnes neutrales Spiel. Keine Auswärtstorregel."
+      },
+      {
+        "id": "league-v1-compatibility",
+        "description": "Bekannte Liga-Spielstände aus Gesamtregeln 1.3.0 ohne knockoutVersion bleiben gültig. Die erste K.-o.-Auslosung ergänzt knockoutVersion 1.0.0 und übernimmt Gesamtregeln 1.4.0, ohne Ligaauslosung, Karten, Stärke oder Ergebnisse zu verändern."
       }
     ]
   },
