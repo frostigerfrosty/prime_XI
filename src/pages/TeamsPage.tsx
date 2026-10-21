@@ -1,4 +1,5 @@
 import { Search, SlidersHorizontal, X } from 'lucide-react';
+import { useLayoutEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { clubs, targetYears } from '../app/catalog.ts';
 import { CatalogNote, PageHeading, TeamCard } from '../components/ui.tsx';
@@ -6,6 +7,10 @@ import { searchPrimeTeams } from '../data/index.ts';
 
 export default function TeamsPage() {
   const [params, setParams] = useSearchParams();
+  const latestParams = useRef(params);
+  useLayoutEffect(() => {
+    latestParams.current = params;
+  }, [params]);
   const query = params.get('q') ?? '';
   const year = params.get('year') ?? '';
   const clubId = params.get('club') ?? '';
@@ -14,11 +19,16 @@ export default function TeamsPage() {
     ...(year ? { year: Number(year) } : {}),
     ...(clubId ? { clubId } : {}),
   });
+  function setFilters(next: URLSearchParams, replace = false) {
+    // Router transitions may still be pending when the next filter action arrives.
+    latestParams.current = next;
+    setParams(next, { replace });
+  }
   function update(key: string, value: string) {
-    const next = new URLSearchParams(params);
+    const next = new URLSearchParams(latestParams.current);
     if (value) next.set(key, value);
     else next.delete(key);
-    setParams(next, { replace: true });
+    setFilters(next, true);
   }
   return (
     <>
@@ -70,7 +80,7 @@ export default function TeamsPage() {
           <span>im Katalog</span>
         </p>
         {(query || year || clubId) && (
-          <button className="text-link" onClick={() => setParams({})}>
+          <button className="text-link" onClick={() => setFilters(new URLSearchParams())}>
             <X size={15} aria-hidden="true" /> Filter zurücksetzen
           </button>
         )}
@@ -86,7 +96,10 @@ export default function TeamsPage() {
           <SlidersHorizontal size={30} aria-hidden="true" />
           <h2>Kein Team gefunden.</h2>
           <p>Versuche einen anderen Namen oder setze deine Filter zurück.</p>
-          <button className="button button--secondary" onClick={() => setParams({})}>
+          <button
+            className="button button--secondary"
+            onClick={() => setFilters(new URLSearchParams())}
+          >
             Alle Teams anzeigen
           </button>
         </section>

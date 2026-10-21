@@ -76,12 +76,50 @@ test('catalog filters survive detail navigation and reload; the roster uses real
   await expect(page.getByRole('searchbox')).toHaveValue('guardiola');
   await expect(page.getByRole('combobox', { name: 'Jahrgang' })).toHaveValue('2011');
   await page.getByRole('button', { name: 'Filter zurücksetzen' }).click();
+  await expect(page).toHaveURL(/#\/teams$/);
+  await expect(page.getByRole('searchbox')).toHaveValue('');
+  await expect(page.getByRole('combobox', { name: 'Jahrgang' })).toHaveValue('');
+  await expect(page.getByRole('combobox', { name: 'Verein' })).toHaveValue('');
+  await expect(page.locator('.team-card')).toHaveCount(60);
   await page.getByRole('combobox', { name: 'Verein' }).selectOption('milan');
   await expect(page.locator('.team-card')).toHaveCount(1);
   await page.getByRole('searchbox').fill('Kein existierendes Team');
   await expect(page.getByRole('heading', { name: 'Kein Team gefunden.' })).toBeVisible();
   await page.getByRole('button', { name: 'Alle Teams anzeigen' }).click();
   await expect(page.locator('.team-card')).toHaveCount(60);
+});
+
+test('an immediate club selection after either reset keeps the other filters cleared', async ({
+  page,
+}) => {
+  for (const reset of ['Filter zurücksetzen', 'Alle Teams anzeigen']) {
+    await page.goto('#/teams?q=guardiola&year=2011&club=milan');
+    await expect(page.getByRole('searchbox')).toHaveValue('guardiola');
+    await expect(page.getByRole('heading', { name: 'Kein Team gefunden.' })).toBeVisible();
+    // Run both actions before React can commit the router transition from the reset.
+    await page.getByRole('button', { name: reset }).evaluate(
+      (button, club) => {
+        if (!(button instanceof HTMLButtonElement) || !(club instanceof HTMLSelectElement))
+          throw new Error('Catalog filter controls are missing');
+        button.click();
+        club.value = 'milan';
+        club.dispatchEvent(new Event('change', { bubbles: true }));
+      },
+      await page.getByRole('combobox', { name: 'Verein' }).elementHandle(),
+    );
+    await expect(page).toHaveURL(/#\/teams\?club=milan$/);
+    await expect(page.getByRole('searchbox')).toHaveValue('');
+    await expect(page.getByRole('combobox', { name: 'Jahrgang' })).toHaveValue('');
+    await expect(page.getByRole('combobox', { name: 'Verein' })).toHaveValue('milan');
+    await expect(page.locator('.team-card')).toHaveCount(1);
+    await expect(page.locator('.team-card')).toContainText('Milan');
+    await page.goBack();
+    await expect(page.getByRole('searchbox')).toHaveValue('guardiola');
+    await expect(page.getByRole('combobox', { name: 'Jahrgang' })).toHaveValue('2011');
+    await page.getByRole('combobox', { name: 'Verein' }).selectOption('barcelona');
+    await expect(page.locator('.team-card')).toHaveCount(1);
+    await expect(page.locator('.team-card')).toContainText('Barcelona');
+  }
 });
 
 test('formation preview changes while the incomplete team cannot start a tournament', async ({
