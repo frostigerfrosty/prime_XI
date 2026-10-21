@@ -1,5 +1,9 @@
 # Teamstärke, Boni und gespeicherte Elf — Version 0.5
 
+Ab Version 0.6 bleibt dieses Stärkemodell unverändert auf Version 1.1.0.
+Die Gesamtregeln 1.2.0 und Matchengine 1.0.0 haben eigene Versionsangaben, damit
+ein Match-Update bestehende gespeicherte Teams nicht ungültig macht.
+
 Diese Etappe setzt Phase 4 der Master-Spezifikation um. Die Matchstärke ist ein
 berechneter Eingangswert für die spätere Matchengine. Es werden noch keine Spiele
 oder Siegwahrscheinlichkeiten simuliert. Die Regeln tragen Version `1.1.0` und
@@ -94,7 +98,8 @@ Sitzungsstand und behaupten keine dauerhafte Speicherung. Beschädigte Teamdaten
 blockieren weder den Draft noch seine Bearbeitung und werden beim Lesen nicht gelöscht.
 
 `currentTournament` und History werden nicht angelegt. Der Turnierstart bleibt bis
-zur Umsetzung von Matchengine und Turniersystem gesperrt. Die historische Freigabe
+zur Umsetzung des Turniersystems gesperrt. Die Matchengine ist seit Version 0.6
+im [Testspiel](MATCHENGINE.md) verfügbar. Die historische Freigabe
 des redaktionellen Entwicklungskatalogs bleibt ebenfalls unverändert offen.
 
 ## Module und Prüfung

@@ -263,7 +263,7 @@ test('a complete development package does not claim historical release readiness
   assert.equal(getDataReadiness(db).developmentCatalogComplete, true);
   assert.ok(db.teams.some((team) => team.verificationStatus === 'pending'));
   assert.equal(getDataReadiness(db).fullCatalogReady, false);
-  assert.equal(getGameRules().match.calibrationStatus, 'requires_engine_validation');
+  assert.equal(getGameRules().match.calibrationStatus, 'validated_v1');
   const rules = getGameRules(); rules.strength.bonusCaps.coach = 99;
   assert.equal(getGameRules().strength.bonusCaps.coach, 2);
 });

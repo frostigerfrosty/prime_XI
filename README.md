@@ -1,10 +1,11 @@
 # PRIME XI — Football Simulator
 
 React-/TypeScript-Anwendung mit Vite und einer eigenen statischen Datenbasis.
-Grundlayout, Team Builder und Teamstärke sind umgesetzt: Navigation, Dashboard,
+Grundlayout, Team Builder, Teamstärke und Matchengine sind umgesetzt: Navigation, Dashboard,
 Teamkatalog, Draft, Spieler-/Coach-/Captain-Auswahl, Formationswechsel sowie
 nachvollziehbare Basisstärke, Chemie, Taktik-, Coach- und Captain-Boni.
-Draft und vollständige Teams werden getrennt im Browser gespeichert.
+Draft und vollständige Teams werden getrennt im Browser gespeichert. Im Testspiel
+treten deine gespeicherte Elf oder zwei Katalogteams gegeneinander an.
 Die Anwendung benötigt kein Backend, API-Abo oder geheime Schlüssel.
 
 ## Starten
@@ -25,14 +26,19 @@ Ziehe zwölf verschiedene Saisonmannschaften, wähle elf Spieler aus verschieden
 Quellteams sowie Coach und Captain. Der Draft wird im Browser gespeichert.
 Mit elf Spielern erscheinen die berechnete Basis und alle Boni. Vollständige Teams
 speichern ihre damaligen Spielerwerte und Matchstärke als Snapshot. Das sichtbare
-Ø Kartenrating bleibt davon getrennt. Matchsimulation und Turnierablauf sind die
-nächsten Etappen; der Turnierstart bleibt bis zu deren Umsetzung gesperrt.
+Ø Kartenrating bleibt davon getrennt. Öffne **Testspiel** in der Navigation:
+90 Minuten mit möglichem Remis oder K.-o. mit Verlängerung und Elfmeterschießen,
+wahlweise auf neutralem Platz. Derselbe Spielcode reproduziert dieselbe Begegnung.
+Der vollständige Turnierablauf folgt als nächste Etappe; der Turnierstart bleibt
+bis zu dessen Umsetzung gesperrt.
 
 [Umfang, Architektur, Prüfungen und Commit-Grenze von Etappe 1](docs/ETAPPE_1.md)
 
 [Team Builder: Ablauf, Regeln und Speicherung](docs/TEAM_BUILDER.md)
 
 [Teamstärke: Formeln, Boni und gespeicherte Elf](docs/TEAMSTAERKE.md)
+
+[Matchengine: Simulation, Spielcodes und Kalibrierung](docs/MATCHENGINE.md)
 
 ## Datenbestand
 
@@ -50,8 +56,9 @@ Ungeprüfte Angaben tragen weiterhin `pending`; keine Quelle wurde bloß aufgrun
 ihrer URL als gelesen markiert.
 
 Die Ratings und individuellen Saisonattribute sind eigene, feste V1-Spielwerte.
-Sie sind keine historischen Messwerte oder EA/FIFA-Ratings. Die spätere Engine
-muss ihre Simulationswirkung noch kalibrieren.
+Sie sind keine historischen Messwerte oder EA/FIFA-Ratings. Die Matchengine wurde
+an den Stärke-Beispielen der Spezifikation kalibriert; der historische Prüfstand
+der Kader bleibt davon unabhängig.
 
 ## Prüfen und pflegen
 
@@ -61,6 +68,7 @@ Node.js 24 verwenden:
 npm ci --ignore-scripts
 npm run check
 npm run data:report
+npm run match:report
 npm run build
 ```
 
@@ -96,7 +104,10 @@ wahr: Die Datenstruktur ist vollständig für die weitere Entwicklung befüllt.
 
 ```ts
 import {
-  getDevelopmentTeams, getDefaultLineup, getGameRules, getClubBadgePath,
+  getDevelopmentTeams,
+  getDefaultLineup,
+  getGameRules,
+  getClubBadgePath,
 } from './src/data/index.ts';
 import { createInitialAppState } from './src/data/initial-state.ts';
 
@@ -110,7 +121,9 @@ const badge = getClubBadgePath('milan', '/prime_XI/');
 `getReleasedTeams()` bleibt bis zum Abschluss der historischen Prüfung leer.
 Die Entwicklung darf Entwürfe ausdrücklich über `getDevelopmentTeams()` verwenden.
 Die Oberfläche nutzt diesen Entwicklungskatalog ausdrücklich zum Durchsehen.
-Die Simulationsengine ist noch nicht implementiert.
+Die reine Simulationsengine steht in `src/engine/match.ts`; sie benötigt weder
+React noch Browser-APIs. Kataloggegner verwenden dieselbe Stärkeberechnung wie die
+eigene Elf, mit Standardaufstellung und der ausdrücklich gewählten Standardtaktik.
 
 [Datenmodell und API](docs/DATENBASIS.md) ·
 [Alle 60 Teams und Prüfstand](docs/DATENSTAND.md) ·

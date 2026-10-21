@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Check,
   Dices,
@@ -551,6 +552,11 @@ export default function BuilderPage() {
                     : 'Du bearbeitest einen anderen Stand. Deine zuletzt gespeicherte Elf bleibt erhalten, bis du erneut speicherst.'}
                 </p>
               )}
+              {currentTeam && (
+                <Link className="text-link" to="/test-match">
+                  Gespeicherte Elf im Testspiel ausprobieren
+                </Link>
+              )}
               <button className="button button--locked" disabled>
                 <LockKeyhole size={15} aria-hidden="true" />
                 Team speichern & Turnier starten
@@ -559,7 +565,7 @@ export default function BuilderPage() {
                 {saved
                   ? 'Dein Draft bleibt beim Neuladen erhalten.'
                   : 'Dein Draft ist momentan nur für diese Sitzung gesichert.'}{' '}
-                Matchsimulation und Turniermodus folgen in den nächsten Etappen.
+                Testspiele sind verfügbar. Der Turniermodus folgt in der nächsten Etappe.
               </p>
             </section>
           </div>

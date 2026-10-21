@@ -266,6 +266,10 @@
               "type": "integer",
               "minimum": 0,
               "maximum": 2
+            },
+            "modelVersion": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "required": [
@@ -274,7 +278,8 @@
             "positionGroupWeights",
             "positionFit",
             "bonusCaps",
-            "naturalCaptainBonus"
+            "naturalCaptainBonus",
+            "modelVersion"
           ]
         },
         "chemistry": {
@@ -389,7 +394,16 @@
             "calibrationStatus": {
               "type": "string",
               "minLength": 1,
-              "const": "requires_engine_validation"
+              "const": "validated_v1"
+            },
+            "engineVersion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "penaltyConversionProbability": {
+              "type": "number",
+              "minimum": 0.5,
+              "maximum": 0.9
             }
           },
           "required": [
@@ -406,7 +420,9 @@
             "penaltiesInitialKicks",
             "penaltiesSuddenDeath",
             "seedSupported",
-            "calibrationStatus"
+            "calibrationStatus",
+            "engineVersion",
+            "penaltyConversionProbability"
           ]
         },
         "tournament": {

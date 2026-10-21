@@ -1,10 +1,12 @@
 # Zentrale Spielkonfiguration
 
 Die Werte stehen in `data/editorial/game-rules.json` und werden mit dem Datensatz
-exportiert. Sie sind konkrete V1-Eingangsdaten für die spätere Engine, keine bereits
-implementierte Matchsimulation. Eigene Entscheidungen stehen zusätzlich unter
+exportiert. Teamstärke und Matchsimulation verwenden diese zentralen Parameter.
+Eigene Entscheidungen stehen zusätzlich unter
 `designDecisions`; die Spezifikationswerte sind von kalibrierbaren Startwerten
-unterschieden. Teamstärke und Boni sind in Regelversion 1.1.0 umgesetzt;
+unterschieden. Die Gesamtregeln haben Version 1.2.0, das unveränderte Stärkemodell
+Version 1.1.0 und die Matchengine Version 1.0.0. Bestehende Team-Snapshots bleiben
+gültig: `SavedTeam.rulesVersion` bezeichnet die Version des Stärkemodells.
 [Formeln und Snapshot-Verhalten](TEAMSTAERKE.md) sind separat dokumentiert.
 
 ## Team Builder
@@ -23,16 +25,16 @@ und 35 % Angriff. Innerhalb jeder Gruppe auf die tatsächlich zugewiesenen Slots
 normalisieren. Eine Hauptposition hat Faktor 1, eine Nebenposition als eigener
 V1-Startwert Faktor 0,95. Ungültige Positionen sind unzulässig.
 
-| Bonus | Obergrenze |
-| --- | --- |
-| Chemie | +7 |
-| Taktik | +3 |
-| Trainer | +2 |
-| Natural Captain | +2 |
+| Bonus           | Obergrenze |
+| --------------- | ---------- |
+| Chemie          | +7         |
+| Taktik          | +3         |
+| Trainer         | +2         |
+| Natural Captain | +2         |
 
 Der Matchwert addiert die begrenzten Boni zur Basis. Die Ratingskala 0–99 betrifft
-Spielerwerte; die spätere Engine soll einen addierten Matchwert nicht stillschweigend
-als neuen Spielerwert behandeln. Der Katalogdurchschnitt `teamRating` ersetzt keine
+Spielerwerte; die Engine verarbeitet addierte Matchwerte bis 113 ohne 99er-Kappung.
+Der Katalogdurchschnitt `teamRating` ersetzt keine
 dieser Berechnungen.
 
 Für die Chemie hat ein Paar gleicher Länder-/Verbandszuordnung Gewicht 1, gleicher
@@ -46,15 +48,20 @@ passenden Taktik-Tag. Das sind eigene, begrenzte und zentral änderbare V1-Start
 
 ## Matchparameter
 
-Poisson-Torverteilung mit Basis-xG 1,35, Stärkeempfindlichkeit 0,08, optionalem
+Poisson-Torverteilung mit Basis-xG 1,35, Stärkeempfindlichkeit 0,048, optionalem
 Heimvorteil von 1,5 Ratingpunkten und höchstens 8 % Matchvarianz. xG-Bereich 0,15–4,5.
 Neutraler Platz hat keinen Heimvorteil. Regulär 90 Minuten, gegebenenfalls 30 Minuten
-Verlängerung und fünf erste Elfmeter je Team, anschließend Sudden Death.
+Verlängerung und bis zu fünf erste Elfmeter je Team, anschließend Sudden Death.
+Ein entschiedener Shootout endet sofort. Elfmeter-Trefferchance ist für beide
+Teams 0,76; die Teamstärke wirkt zuvor über 90 beziehungsweise 120 Minuten.
 
-Diese Parameter müssen von einer zentralen, seedfähigen Engine umgesetzt und anhand
-der Ziel-Siegchancen der Spezifikation getestet werden. `calibrationStatus` bleibt
-deshalb `requires_engine_validation`. Datenprüfungen oder Draft-Tests belegen keine
-bereits funktionierende Matchsimulation.
+Die Engine ist unabhängig von React und mit einem Spielcode reproduzierbar.
+`calibrationStatus` ist `validated_v1`: Ein reproduzierbarer Bericht mit jeweils
+100.000 neutralen Spielen weist für 94/87 rund 72 % K.-o.-Siege, für 94/93 rund 53 %
+aus. Die Zielwerte der Spezifikation werden als ungefähre K.-o.-Siegchancen
+interpretiert; die separaten 90-Minuten-Chancen enthalten ausdrücklich Remis.
+Das ist keine historische Datenfreigabe. Formel, vollständige Tabelle und Grenzen:
+[Matchengine](MATCHENGINE.md).
 
 ## Turnierformat
 

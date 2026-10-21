@@ -32,6 +32,12 @@ export function validateRules(rules) {
   assert(new Set(rounds.map((round) => round.id)).size === rounds.length, 'duplicate knockout round');
   assert(match.expectedGoalsMin > 0 && match.expectedGoalsMin <= match.baseExpectedGoals && match.baseExpectedGoals <= match.expectedGoalsMax,
     'invalid expected-goals bounds');
+  assert(match.expectedGoalsMax <= 10 && match.strengthSensitivity >= 0 && match.strengthSensitivity <= 1,
+    'invalid Poisson parameters');
+  assert(match.matchVarianceFraction >= 0 && match.matchVarianceFraction <= 0.3 && match.neutralVenueHomeAdvantage === 0,
+    'invalid match variance or neutral advantage');
+  assert(match.penaltyConversionProbability >= 0.5 && match.penaltyConversionProbability <= 0.9,
+    'invalid penalty conversion probability');
   assert(new Set(Object.values(storage.keys)).size === Object.keys(storage.keys).length, 'storage keys must be distinct');
   assert(new Set(league.tiebreakers).size === league.tiebreakers.length && league.tiebreakers[0] === 'points' && league.tiebreakers.at(-1) === 'teamId',
     'table ordering needs points first and a stable final tie-breaker');

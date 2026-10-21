@@ -96,6 +96,7 @@ export function createStrengthModel(environment: {
   const tactics = new Map(config.tactics.map((item) => [item.id, item]));
   const finite = (value: number, min = 0, max = Infinity) =>
     Number.isFinite(value) && value >= min && value <= max;
+  check(isText(strength.modelVersion), 'Ungültige Stärkemodell-Version.');
   check(strength.ratingMin === 0 && finite(strength.ratingMax, 1), 'Ungültige Ratingskala.');
   check(
     groups.every((group) => finite(strength.positionGroupWeights[group], 0, 1)) &&
@@ -383,7 +384,7 @@ export function createStrengthModel(environment: {
     calculatePlayerContribution,
     isPlayer,
     isCoach,
-    rulesVersion: rules.version,
+    rulesVersion: strength.modelVersion,
     caps: { ...strength.bonusCaps },
     rules: structuredClone(rules),
     maximumStrength:

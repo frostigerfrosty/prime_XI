@@ -9,6 +9,7 @@ import {
   Menu,
   Settings,
   Shield,
+  Swords,
   Trophy,
   UsersRound,
   X,
@@ -19,6 +20,7 @@ import { Brand } from './ui.tsx';
 const navigation = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/team-builder', label: 'Team Builder', icon: UsersRound },
+  { to: '/test-match', label: 'Testspiel', icon: Swords },
   { to: '/tournament', label: 'Turnier', icon: Trophy },
   { to: '/teams', label: 'Prime-Teams', icon: Shield },
   { to: '/history', label: 'Historie', icon: History },
@@ -74,7 +76,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.5 · Teamstärke</span>
+          PRIME XI <span>v0.6 · Matchengine</span>
         </p>
       </div>
     </>

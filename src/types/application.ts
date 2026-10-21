@@ -61,15 +61,27 @@ export interface Score {
 }
 
 export interface MatchResult {
+  engineVersion: string;
   regularTime: Score;
   /** Cumulative score after 120 minutes, not just goals in the extra-time segment. */
   afterExtraTime: Score | null;
   /** Separate shootout score; never added to table goals or aggregate match goals. */
   penalties: Score | null;
+  shootoutKicks: ShootoutKick[];
+  /** In knockout context this is the advancing team, including prior legs. */
   winnerParticipantId: string | null;
   decidedBy: 'regular-time' | 'extra-time' | 'penalties' | 'draw';
   expectedGoals: { home: number; away: number };
+  extraTimeExpectedGoals: Score | null;
+  /** Prior legs plus the current 90/120-minute score; excludes shootout goals. */
+  aggregateScore: Score | null;
   seed: string;
+}
+
+export interface ShootoutKick {
+  side: 'home' | 'away';
+  round: number;
+  scored: boolean;
 }
 
 export type ScheduledMatch = {

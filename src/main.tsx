@@ -8,6 +8,7 @@ import '@fontsource/barlow-condensed/latin-700.css';
 import { App } from './app/App.tsx';
 import './styles/app.css';
 import './styles/strength.css';
+import './styles/match.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -179,6 +179,7 @@ export interface GameRules {
     playerIdentityKey: 'personId'; maxPlayersPerPrimeTeam: number; coachConsumesPlayerPick: boolean;
   };
   strength: {
+    modelVersion: string;
     ratingMin: number; ratingMax: number;
     positionGroupWeights: Record<PositionGroup, number>;
     positionFit: { primaryMultiplier: number; secondaryMultiplier: number; invalidPositionAllowed: boolean };
@@ -188,11 +189,13 @@ export interface GameRules {
   chemistry: { sameNationalityPairWeight: number; sameClubPairWeight: number; normalization: string; roundDecimals: number };
   coach: { formationShare: number; styleShare: number };
   match: {
+    engineVersion: string;
     distribution: 'poisson'; baseExpectedGoals: number; strengthSensitivity: number;
     homeAdvantageRating: number; neutralVenueHomeAdvantage: number;
     expectedGoalsMin: number; expectedGoalsMax: number; matchVarianceFraction: number;
     regularMinutes: number; extraTimeMinutes: number; penaltiesInitialKicks: number;
-    penaltiesSuddenDeath: boolean; seedSupported: boolean; calibrationStatus: 'requires_engine_validation';
+    penaltyConversionProbability: number;
+    penaltiesSuddenDeath: boolean; seedSupported: boolean; calibrationStatus: 'validated_v1';
   };
   tournament: {
     totalTeams: number; userTeams: number; opponentTeams: number;

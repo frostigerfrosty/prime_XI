@@ -60,7 +60,7 @@ test('saving requires a valid complete team and embeds independent player, coach
   const { data, builder, model, draft, team } = fixture();
   assert.equal(isSavedTeam(team, model), true);
   assert.deepEqual(team.strength, model.analyze(strengthInput(draft, builder)).strength);
-  assert.equal(team.rulesVersion, data.rules.version);
+  assert.equal(team.rulesVersion, data.rules.strength.modelVersion);
   assert.equal(team.drawnPrimeTeamIds.length, 12);
   assert.equal(savedTeamMatchesDraft(team, draft, builder, model, data.datasetVersion), true);
   const partial = builder.change(draft, { type: 'remove', slotId: draft.picks[0]!.slotId });
@@ -98,6 +98,20 @@ test('a saved team survives later catalog versions because validation uses its o
   const restored = readSavedTeam(storage, model).team!;
   restored.lineup[0]!.player.attributes.passing = 0;
   assert.notDeepEqual(readSavedTeam(storage, model).team, restored);
+});
+
+test('Phase 4 strength-version 1.1.0 saves survive the match-only rules update', () => {
+  const { team, model, data } = fixture();
+  assert.equal(data.rules.version, '1.2.0');
+  assert.equal(team.rulesVersion, '1.1.0');
+  assert.equal(isSavedTeam(JSON.parse(JSON.stringify(team)), model), true);
+  const next = structuredClone(data);
+  next.rules.version = '1.3.0';
+  next.rules.match.strengthSensitivity = 0.06;
+  const nextModel = createStrengthModel(next);
+  assert.equal(isSavedTeam(team, nextModel), true);
+  next.rules.strength.modelVersion = '2.0.0';
+  assert.equal(isSavedTeam(team, createStrengthModel(next)), false);
 });
 
 test('corrupt scores, cards, coach, captain, source IDs and unknown rule versions are rejected', () => {

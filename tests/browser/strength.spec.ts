@@ -129,7 +129,7 @@ test('saving freezes player values and derived strength; editing the draft canno
   );
   const saved = await readTeam(page);
   expect(saved.lineup).toHaveLength(11);
-  expect(saved.rulesVersion).toBe(data.rules.version);
+  expect(saved.rulesVersion).toBe(data.rules.strength.modelVersion);
   expect(saved.strength.captainBonus).toBe(2);
   const other = builder.lineup(draft).find((pick) => !pick.player.naturalCaptain)!.player;
   await page.getByRole('combobox', { name: 'Captain wählen' }).selectOption(other.personId);

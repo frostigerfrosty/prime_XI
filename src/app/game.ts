@@ -1,9 +1,11 @@
 import { getDefaultSettings, getGameRules } from '../data/index.ts';
 import { createBuilder } from '../engine/builder.ts';
 import { createStrengthModel } from '../engine/strength.ts';
+import { createMatchEngine } from '../engine/match.ts';
 import { formations, positions, tactics, teams } from './catalog.ts';
 
 export const gameRules = getGameRules();
+export const matchEngine = createMatchEngine(gameRules);
 export const builder = createBuilder({
   teams,
   formations,

@@ -49671,7 +49671,7 @@
   ],
   "rules": {
     "id": "prime-xi-rules-v1",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "provenance": "original_game_design",
     "builder": {
       "drawSize": 12,
@@ -49684,6 +49684,7 @@
       "coachConsumesPlayerPick": false
     },
     "strength": {
+      "modelVersion": "1.1.0",
       "ratingMin": 0,
       "ratingMax": 99,
       "positionGroupWeights": {
@@ -49716,9 +49717,10 @@
       "styleShare": 0.4
     },
     "match": {
+      "engineVersion": "1.0.0",
       "distribution": "poisson",
       "baseExpectedGoals": 1.35,
-      "strengthSensitivity": 0.08,
+      "strengthSensitivity": 0.048,
       "homeAdvantageRating": 1.5,
       "neutralVenueHomeAdvantage": 0,
       "expectedGoalsMin": 0.15,
@@ -49729,7 +49731,8 @@
       "penaltiesInitialKicks": 5,
       "penaltiesSuddenDeath": true,
       "seedSupported": true,
-      "calibrationStatus": "requires_engine_validation"
+      "calibrationStatus": "validated_v1",
+      "penaltyConversionProbability": 0.76
     },
     "tournament": {
       "totalTeams": 36,
@@ -49826,7 +49829,7 @@
       },
       {
         "id": "simulation-calibration",
-        "description": "Poisson-Parameter sind Eingangsdaten für die noch zu bauende Engine. Ziel-Siegchancen sind erst mit deren Tests nachgewiesen."
+        "description": "Engine 1.0.0: neutrale Einzel-K.-o.-Spiele mit 94 gegen 87 gewinnen ungefähr 72 %, 94 gegen 93 ungefähr 53 %. Sieg/Remis/Niederlage nach 90 Minuten werden getrennt ausgewiesen. Reproduzierbarer Bericht: npm run match:report."
       },
       {
         "id": "strength-v1-rounding",
@@ -49839,6 +49842,14 @@
       {
         "id": "coach-rating-factor",
         "description": "Coachbonus = Obergrenze mal (formationShare bei passender Formation plus styleShare mal abgedecktem Anteil der Taktik-Tags) mal tacticalRating / ratingMax. Fehlender Coach ergibt null."
+      },
+      {
+        "id": "separate-model-versions",
+        "description": "Gesamtregeln 1.2.0, unverändertes Stärkemodell 1.1.0 und Matchengine 1.0.0 sind separat versioniert. SavedTeam.rulesVersion bezeichnet das Stärkemodell; bestehende Teams aus Regelstand 1.1.0 bleiben gültig."
+      },
+      {
+        "id": "match-v1-formula",
+        "description": "xG = clamp(1.35 * exp(+/-0.048 * (Heimstärke - Gaststärke + Heimvorteil)) * gleichverteilte Form 0.92–1.08, 0.15, 4.5). Zwei unabhängige Poisson-Torwerte. Verlängerung verwendet ein Drittel dieser xG. Beide Teams haben bei Elfmetern dieselbe Trefferchance 0.76; keine erfundenen Schützenwerte."
       }
     ]
   },

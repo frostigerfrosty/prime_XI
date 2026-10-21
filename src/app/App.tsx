@@ -8,6 +8,7 @@ const DashboardPage = lazy(() => import('../pages/DashboardPage.tsx'));
 const BuilderPage = lazy(() => import('../pages/BuilderPage.tsx'));
 const TeamsPage = lazy(() => import('../pages/TeamsPage.tsx'));
 const TeamDetailPage = lazy(() => import('../pages/TeamDetailPage.tsx'));
+const MatchPage = lazy(() => import('../pages/MatchPage.tsx'));
 const TournamentPage = lazy(() =>
   import('../pages/StatusPages.tsx').then((module) => ({ default: module.TournamentPage })),
 );
@@ -63,6 +64,7 @@ export function App() {
                   <Route path="teams" element={<TeamsPage />} />
                   <Route path="teams/:teamId" element={<TeamDetailPage />} />
                   <Route path="tournament" element={<TournamentPage />} />
+                  <Route path="test-match" element={<MatchPage />} />
                   <Route path="history" element={<HistoryPage />} />
                   <Route path="settings" element={<SettingsPage />} />
                   <Route path="*" element={<NotFoundPage />} />

@@ -15,6 +15,15 @@ export function TournamentPage() {
         title="Dein Turnier"
         description="Deine Elf. 35 Gegner. Ein gemeinsames Ziel."
       />
+      <section className="panel test-match-entry">
+        <div>
+          <h2>Bereit für ein Testspiel?</h2>
+          <p>Deine gespeicherte Elf oder zwei Prime-Teams können schon antreten.</p>
+        </div>
+        <Link className="button button--primary" to="/test-match">
+          Testspiel öffnen <ArrowUpRight size={16} aria-hidden="true" />
+        </Link>
+      </section>
       <EmptyState
         icon={Trophy}
         eyebrow="NOCH KEIN ANPFIFF"
@@ -26,8 +35,8 @@ export function TournamentPage() {
         description={
           ready
             ? currentTeam
-              ? `Deine Elf hat eine Matchstärke von ${formatStrength(currentTeam.strength.matchStrength)} und ist ${teamPersisted ? 'im Browser gespeichert' : 'für diese Sitzung vorhanden'}. Matchsimulation und Turniermodus folgen in den nächsten Etappen.`
-              : 'Deine Aufstellung und ihre Matchstärke sind vollständig. Speichere die Elf im Team Builder. Matchsimulation und Turniermodus folgen in den nächsten Etappen.'
+              ? `Deine Elf hat eine Matchstärke von ${formatStrength(currentTeam.strength.matchStrength)} und ist ${teamPersisted ? 'im Browser gespeichert' : 'für diese Sitzung vorhanden'}. Du kannst bereits Testspiele bestreiten. Der Turniermodus folgt in der nächsten Etappe.`
+              : 'Deine Aufstellung und ihre Matchstärke sind vollständig. Speichere die Elf im Team Builder für ein Testspiel. Der Turniermodus folgt in der nächsten Etappe.'
             : 'Hier erscheinen später Spielplan, Tabelle und Ergebnisse. Vervollständige zuerst deine Elf mit Coach und Captain. Der Turniermodus folgt in einer kommenden Etappe.'
         }
       />
@@ -112,11 +121,11 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.5 · Teamstärke & Boni</dd>
+              <dd>0.6 · Matchengine</dd>
             </div>
             <div>
               <dt>Stand</dt>
-              <dd>Team Builder, Teamstärke & gespeicherte Elf</dd>
+              <dd>Team Builder, Teamstärke & Testspiele</dd>
             </div>
             <div>
               <dt>Bilder</dt>
