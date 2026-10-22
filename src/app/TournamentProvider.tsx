@@ -7,6 +7,7 @@ import {
   tournamentStorageWarning,
 } from '../utils/tournament-storage.ts';
 import { tournamentEngine } from './game.ts';
+import { getGameStorage } from '../utils/game-storage.ts';
 
 interface TournamentContextValue {
   tournament: TournamentState | null;
@@ -22,7 +23,7 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
   const { archive } = useHistory();
   const [loaded] = useState(() => {
     try {
-      return readTournament(window.localStorage, tournamentEngine);
+      return readTournament(getGameStorage(), tournamentEngine);
     } catch {
       return {
         tournament: null,
@@ -41,7 +42,7 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
   function commit(next: TournamentState) {
     let success = false;
     try {
-      success = writeTournament(window.localStorage, next, tournamentEngine);
+      success = writeTournament(getGameStorage(), next, tournamentEngine);
     } catch {
       /* Keep session state. */
     }

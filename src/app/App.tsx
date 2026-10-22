@@ -1,10 +1,11 @@
-import { Component, lazy, Suspense, type ReactNode } from 'react';
+import { Component, lazy, Suspense, useState, type ReactNode } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../components/Layout.tsx';
 import { SettingsProvider } from './SettingsProvider.tsx';
 import { DraftProvider } from './DraftProvider.tsx';
 import { TournamentProvider } from './TournamentProvider.tsx';
 import { HistoryProvider } from './HistoryProvider.tsx';
+import { SessionContext } from './SessionContext.ts';
 
 const DashboardPage = lazy(() => import('../pages/DashboardPage.tsx'));
 const BuilderPage = lazy(() => import('../pages/BuilderPage.tsx'));
@@ -42,41 +43,54 @@ class AppErrorBoundary extends Component<{ children: ReactNode }, { failed: bool
 }
 
 export function App() {
+  const [session, setSession] = useState(0);
+  const [restored, setRestored] = useState(false);
   return (
     <AppErrorBoundary>
-      <SettingsProvider>
-        <DraftProvider>
-          <HistoryProvider>
-            <TournamentProvider>
-              <HashRouter>
-                <Suspense
-                  fallback={
-                    <div className="page-loading" role="status">
-                      <span className="loading-mark">XI</span>
-                      <p>Dein Spielfeld wird vorbereitet …</p>
-                    </div>
-                  }
-                >
-                  <Routes>
-                    <Route element={<Layout />}>
-                      <Route index element={<DashboardPage />} />
-                      <Route path="team-builder" element={<BuilderPage />} />
-                      <Route path="teams" element={<TeamsPage />} />
-                      <Route path="teams/:teamId" element={<TeamDetailPage />} />
-                      <Route path="tournament" element={<TournamentPage />} />
-                      <Route path="test-match" element={<MatchPage />} />
-                      <Route path="history" element={<HistoryPage />} />
-                      <Route path="history/:entryId" element={<HistoryPage />} />
-                      <Route path="settings" element={<SettingsPage />} />
-                      <Route path="*" element={<NotFoundPage />} />
-                    </Route>
-                  </Routes>
-                </Suspense>
-              </HashRouter>
-            </TournamentProvider>
-          </HistoryProvider>
-        </DraftProvider>
-      </SettingsProvider>
+      <SessionContext
+        value={{
+          restored,
+          acknowledgeRestore: () => setRestored(false),
+          restoreCompleted: () => {
+            setRestored(true);
+            setSession((value) => value + 1);
+          },
+        }}
+      >
+        <SettingsProvider key={session}>
+          <DraftProvider>
+            <HistoryProvider>
+              <TournamentProvider>
+                <HashRouter>
+                  <Suspense
+                    fallback={
+                      <div className="page-loading" role="status">
+                        <span className="loading-mark">XI</span>
+                        <p>Dein Spielfeld wird vorbereitet …</p>
+                      </div>
+                    }
+                  >
+                    <Routes>
+                      <Route element={<Layout />}>
+                        <Route index element={<DashboardPage />} />
+                        <Route path="team-builder" element={<BuilderPage />} />
+                        <Route path="teams" element={<TeamsPage />} />
+                        <Route path="teams/:teamId" element={<TeamDetailPage />} />
+                        <Route path="tournament" element={<TournamentPage />} />
+                        <Route path="test-match" element={<MatchPage />} />
+                        <Route path="history" element={<HistoryPage />} />
+                        <Route path="history/:entryId" element={<HistoryPage />} />
+                        <Route path="settings" element={<SettingsPage />} />
+                        <Route path="*" element={<NotFoundPage />} />
+                      </Route>
+                    </Routes>
+                  </Suspense>
+                </HashRouter>
+              </TournamentProvider>
+            </HistoryProvider>
+          </DraftProvider>
+        </SettingsProvider>
+      </SessionContext>
     </AppErrorBoundary>
   );
 }

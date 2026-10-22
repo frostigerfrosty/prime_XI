@@ -8,6 +8,7 @@ import type { FormationId } from '../types/database.ts';
 import { readDraft, writeDraft, draftStorageWarning } from '../utils/draft-storage.ts';
 import { readSavedTeam, writeSavedTeam, teamStorageWarning } from '../utils/team-storage.ts';
 import { builder, strengthModel } from './game.ts';
+import { getGameStorage } from '../utils/game-storage.ts';
 
 export { builder } from './game.ts';
 interface DraftContextValue {
@@ -29,7 +30,7 @@ const DraftContext = createContext<DraftContextValue | null>(null);
 export function DraftProvider({ children }: { children: ReactNode }) {
   const [loaded] = useState(() => {
     try {
-      return readDraft(window.localStorage, builder);
+      return readDraft(getGameStorage(), builder);
     } catch {
       return { draft: null, warning: draftStorageWarning };
     }
@@ -40,7 +41,7 @@ export function DraftProvider({ children }: { children: ReactNode }) {
   const [saved, setSaved] = useState(Boolean(loaded.draft));
   const [loadedTeam] = useState(() => {
     try {
-      return readSavedTeam(window.localStorage, strengthModel);
+      return readSavedTeam(getGameStorage(), strengthModel);
     } catch {
       return { team: null, warning: 'Dein gespeichertes Team konnte nicht gelesen werden.' };
     }
@@ -65,7 +66,7 @@ export function DraftProvider({ children }: { children: ReactNode }) {
   function persist(next: DraftState) {
     let success = false;
     try {
-      success = writeDraft(window.localStorage, next, builder);
+      success = writeDraft(getGameStorage(), next, builder);
     } catch {
       /* Session remains usable. */
     }
@@ -92,7 +93,7 @@ export function DraftProvider({ children }: { children: ReactNode }) {
     const draftSuccess = persist(current.current);
     let teamSuccess = false;
     try {
-      teamSuccess = writeSavedTeam(window.localStorage, team, strengthModel);
+      teamSuccess = writeSavedTeam(getGameStorage(), team, strengthModel);
     } catch {
       /* Keep the session snapshot. */
     }

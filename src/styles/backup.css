@@ -1,0 +1,75 @@
+.backup-panel {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.backup-panel > p {
+  color: var(--muted);
+}
+.backup-panel > .button {
+  margin: 20px 0;
+}
+.backup-import {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.backup-import label {
+  font-weight: 600;
+}
+.backup-import input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  font-size: 12px;
+}
+.backup-import input::file-selector-button {
+  color: var(--text);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.backup-feedback {
+  min-height: 22px;
+  margin: 16px 0;
+}
+.backup-preview {
+  margin-top: 20px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.backup-preview h3 {
+  font-size: 18px;
+}
+.backup-file-name {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+.backup-preview dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+.backup-preview dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.backup-preview dd {
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .backup-preview dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

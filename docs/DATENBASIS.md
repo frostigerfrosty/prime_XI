@@ -152,6 +152,14 @@ ihren eigenen Karten validiert und nicht auf aktuelle Katalogratings umgeschrieb
 Details: [Team Builder](TEAM_BUILDER.md) und [Teamstärke](TEAMSTAERKE.md).
 Zur laufenden Ligaphase: [Turnierablauf und Speicherung](LIGAPHASE.md).
 
+Seit Version 0.10 wird `AppState` außerdem als Inhalt einer versionierten
+[Backup-Datei](BACKUPS.md) verwendet. Drafts werden gegen den aktuellen Katalog,
+Teams und Turniere gegen ihre eingebetteten Snapshots und bekannte Spielregeln
+geprüft. Ein bestätigter Import ersetzt alle Komponenten zusammen in einem
+Speichereintrag; die bisherigen Adapter lesen und aktualisieren ihre logischen
+Schlüssel über `src/utils/game-storage.ts`. Bestehende Einzelstände bleiben bis
+zu einem ausdrücklich bestätigten Import in ihrem bisherigen Format erhalten.
+
 ## Pflege
 
 1. Identitäten und Vereinsdaten in den redaktionellen Dateien bearbeiten. Bestehende

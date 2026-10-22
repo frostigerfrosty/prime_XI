@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowUpRight, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../app/SettingsProvider.tsx';
 import { PageHeading } from '../components/ui.tsx';
+import { BackupPanel } from '../components/BackupPanel.tsx';
 
 export function SettingsPage() {
   const { reduceMotion, setReduceMotion, storageAvailable } = useSettings();
@@ -50,7 +51,7 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.9 · Turnierarchiv</dd>
+              <dd>0.10 · Spielstand-Backups</dd>
             </div>
             <div>
               <dt>Stand</dt>
@@ -69,6 +70,7 @@ export function SettingsPage() {
             Zum Prime-Katalog <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
         </section>
+        <BackupPanel />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { getDefaultSettings } from '../data/index.ts';
 import { readSettings, saveSettings } from '../utils/settings.ts';
+import { getGameStorage } from '../utils/game-storage.ts';
 
 interface SettingsContextValue {
   reduceMotion: boolean;
@@ -12,7 +13,7 @@ const SettingsContext = createContext<SettingsContextValue | null>(null);
 export function SettingsProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState(() => {
     try {
-      return readSettings(window.localStorage);
+      return readSettings(getGameStorage());
     } catch {
       return getDefaultSettings();
     }
@@ -25,7 +26,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     const next = { ...settings, reduceMotion };
     setSettings(next);
     try {
-      setStorageAvailable(saveSettings(window.localStorage, next));
+      setStorageAvailable(saveSettings(getGameStorage(), next));
     } catch {
       setStorageAvailable(false);
     }

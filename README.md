@@ -49,6 +49,13 @@ beim ersten Laden automatisch übernommen, ohne den ursprünglichen Spielstand
 umzuschreiben. Scheitert das Archivieren, bleibt der Abschluss vor einem neuen
 Turnier geschützt und für diese Sitzung sichtbar.
 
+Unter **Einstellungen** kannst du den geladenen Spielstand als JSON-Datei sichern
+und auf einem anderen Browser wiederherstellen. Der Export enthält auch noch
+nicht dauerhaft gespeicherte Änderungen dieser Sitzung. Eine ausgewählte Datei
+wird lokal geprüft und als Vorschau angezeigt. Erst nach Bestätigung ersetzt sie
+Draft, Elf, Turnier, Archiv und Einstellungen; Archive werden dabei nicht
+zusammengeführt. Schlägt die Speicherung fehl, bleibt der bisherige Stand erhalten.
+
 [Umfang, Architektur, Prüfungen und Commit-Grenze von Etappe 1](docs/ETAPPE_1.md)
 
 [Team Builder: Ablauf, Regeln und Speicherung](docs/TEAM_BUILDER.md)
@@ -62,6 +69,8 @@ Turnier geschützt und für diese Sitzung sichtbar.
 [Playoffs und K.-o.-Runden: Auslosung, Gesamttore und Finale](docs/KNOCKOUT.md)
 
 [Etappe 8: Turnierarchiv, Statistiken und bestehende Spielstände](docs/HISTORIE.md)
+
+[Etappe 9: Spielstände exportieren und wiederherstellen](docs/BACKUPS.md)
 
 ## Datenbestand
 

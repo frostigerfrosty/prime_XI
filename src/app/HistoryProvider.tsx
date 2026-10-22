@@ -9,6 +9,7 @@ import {
   historyStorageWarning,
 } from '../utils/history-storage.ts';
 import { strengthModel, tournamentEngine } from './game.ts';
+import { getGameStorage } from '../utils/game-storage.ts';
 
 interface HistoryContextValue {
   entries: HistoryEntry[];
@@ -23,7 +24,7 @@ const HistoryContext = createContext<HistoryContextValue | null>(null);
 export function HistoryProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState(() => {
     try {
-      return { ...readHistory(window.localStorage, strengthModel), persisted: true };
+      return { ...readHistory(getGameStorage(), strengthModel), persisted: true };
     } catch {
       return {
         entries: [] as HistoryEntry[],
@@ -48,7 +49,7 @@ export function HistoryProvider({ children }: { children: ReactNode }) {
     );
     let persisted = false;
     try {
-      if (previous.writable) persisted = writeHistory(window.localStorage, entries, strengthModel);
+      if (previous.writable) persisted = writeHistory(getGameStorage(), entries, strengthModel);
     } catch {
       /* Keep the in-memory entry and the previous persisted archive. */
     }
@@ -68,7 +69,7 @@ export function HistoryProvider({ children }: { children: ReactNode }) {
   }, []);
   const reset = useCallback(() => {
     try {
-      if (writeHistory(window.localStorage, [], strengthModel)) {
+      if (writeHistory(getGameStorage(), [], strengthModel)) {
         const next = {
           entries: [],
           warning: null,

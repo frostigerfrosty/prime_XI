@@ -12,6 +12,7 @@ import './styles/match.css';
 import './styles/tournament.css';
 import './styles/knockout.css';
 import './styles/history.css';
+import './styles/backup.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

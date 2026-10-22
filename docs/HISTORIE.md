@@ -51,6 +51,12 @@ wird erst für einen echten Abschluss geschrieben. Es gibt keine erfundene
 Migration eines früheren Archivformats, da ältere Versionen keine Archive
 gespeichert haben.
 
+Version 0.10 ergänzt die [Sicherung und Wiederherstellung als Datei](BACKUPS.md).
+Nach einem bestätigten Import liegen die bisherigen logischen Speicherschlüssel
+gemeinsam in einem vollständig ersetzten Spielstand-Snapshot. Die Archivadapter
+verwenden weiterhin denselben versionierten Archivumschlag; laufende Änderungen
+und das Zurücksetzen eines beschädigten Archivs erhalten die anderen Komponenten.
+
 Der bestehende aktuelle Turnierumschlag und dessen Schlüssel bleiben unverändert.
 Die Übernahme eines vollständigen Version-0.8-Abschlusses liest diesen Spielstand,
 prüft ihn mit dem bestehenden Turniercontroller und erzeugt einen unabhängigen
