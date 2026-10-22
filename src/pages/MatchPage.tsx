@@ -1,6 +1,6 @@
 import { useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, Dices, Shield, Swords } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { teams } from '../app/catalog.ts';
 import { useDraft } from '../app/DraftProvider.tsx';
 import { matchEngine, strengthModel } from '../app/game.ts';
@@ -44,6 +44,50 @@ function TeamIdentity({ team, side }: { team: Choice; side: string }) {
 }
 
 export default function MatchPage() {
+  const [params] = useSearchParams();
+  const homeId = params.get('home');
+  const awayId = params.get('away');
+  const requested = homeId !== null || awayId !== null;
+  if (
+    requested &&
+    (!catalog.some((team) => team.id === homeId) ||
+      !catalog.some((team) => team.id === awayId) ||
+      homeId === awayId)
+  )
+    return (
+      <>
+        <PageHeading
+          eyebrow="DEINE BEGEGNUNG"
+          title="Testspiel"
+          description="Wähle zwei Teams für dein Testspiel."
+        />
+        <section className="panel match-setup">
+          <h2>Diese Paarung ist nicht verfügbar.</h2>
+          <p role="status">
+            Der Link muss zwei verschiedene Teams aus dem Prime-Katalog enthalten.
+          </p>
+          <Link className="button button--primary" to="/test-match">
+            Teams neu wählen
+          </Link>
+        </section>
+      </>
+    );
+  return (
+    <MatchSession
+      key={JSON.stringify([homeId, awayId])}
+      initialHomeId={homeId}
+      initialAwayId={awayId}
+    />
+  );
+}
+
+function MatchSession({
+  initialHomeId,
+  initialAwayId,
+}: {
+  initialHomeId: string | null;
+  initialAwayId: string | null;
+}) {
   const resultPanel = useRef<HTMLElement>(null);
   const { currentTeam, teamMatchesDraft, teamWarning } = useDraft();
   const choices: Choice[] = currentTeam
@@ -57,8 +101,8 @@ export default function MatchPage() {
         ...catalog,
       ]
     : catalog;
-  const [homeId, setHomeId] = useState(currentTeam?.id ?? 'real-madrid-2016-2017');
-  const [awayId, setAwayId] = useState('barcelona-2010-2011');
+  const [homeId, setHomeId] = useState(initialHomeId ?? currentTeam?.id ?? 'real-madrid-2016-2017');
+  const [awayId, setAwayId] = useState(initialAwayId ?? 'barcelona-2010-2011');
   const [mode, setMode] = useState<'regular' | 'knockout'>('regular');
   const [neutral, setNeutral] = useState(true);
   const [seed, setSeed] = useState<string>(newCode);

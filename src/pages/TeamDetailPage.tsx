@@ -46,6 +46,9 @@ export default function TeamDetailPage() {
         </div>
       </div>
       <CatalogNote />
+      <Link className="text-link back-link" to={`/compare?left=${team.id}`}>
+        {team.clubName} {team.season} vergleichen
+      </Link>
       <div className="detail-summary">
         <span>
           <UserRound size={16} aria-hidden="true" />

@@ -1,6 +1,6 @@
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { clubs, targetYears } from '../app/catalog.ts';
 import { CatalogNote, PageHeading, TeamCard } from '../components/ui.tsx';
 import { searchPrimeTeams } from '../data/index.ts';
@@ -38,6 +38,9 @@ export default function TeamsPage() {
         description="60 Saisonmannschaften. 20 Jahrgänge. Entdecke die Teams hinter deiner zukünftigen Traumelf."
       />
       <CatalogNote />
+      <Link className="text-link back-link" to="/compare">
+        Zwei Prime-Teams vergleichen
+      </Link>
       <section className="catalog-filters panel" aria-label="Teamfilter">
         <label className="search-input">
           <Search size={18} aria-hidden="true" />

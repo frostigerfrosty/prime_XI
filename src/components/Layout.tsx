@@ -3,6 +3,7 @@ import {
   ArrowUpRight,
   ChevronRight,
   CircleHelp,
+  Columns2,
   History,
   LayoutDashboard,
   Menu,
@@ -22,6 +23,7 @@ const navigation = [
   { to: '/test-match', label: 'Testspiel', icon: Swords },
   { to: '/tournament', label: 'Turnier', icon: Trophy },
   { to: '/teams', label: 'Prime-Teams', icon: Shield },
+  { to: '/compare', label: 'Teamvergleich', icon: Columns2 },
   { to: '/history', label: 'Historie', icon: History },
 ];
 
@@ -72,7 +74,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.11 · Optimierter Start</span>
+          PRIME XI <span>v0.12 · Teamvergleich</span>
         </p>
       </div>
     </>

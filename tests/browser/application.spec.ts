@@ -6,6 +6,7 @@ const viewTitles: Record<string, string> = {
   '': 'Willkommen am Spielfeldrand.',
   '#/team-builder': 'Team Builder',
   '#/teams': 'Die Besten ihrer Zeit.',
+  '#/compare': 'Teamvergleich',
   '#/teams/milan-2006-2007': 'AC Milan',
   '#/teams/barcelona-2010-2011': 'Barcelona',
   '#/tournament': 'Dein Turnier',
@@ -40,9 +41,7 @@ async function navigate(page: Page, label: string) {
     .click();
 }
 
-test('all five pages navigate to real initial states without an invented game', async ({
-  page,
-}) => {
+test('primary pages navigate to real initial states without an invented game', async ({ page }) => {
   await page.goto('');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Willkommen am Spielfeldrand.');
   await expect(page.getByText('Noch kein Team zusammengestellt')).toBeVisible();
@@ -58,6 +57,9 @@ test('all five pages navigate to real initial states without an invented game', 
   await expect(page.getByRole('table')).toHaveCount(0);
   await navigate(page, 'Prime-Teams');
   await expect(page.locator('.team-card')).toHaveCount(60);
+  await navigate(page, 'Teamvergleich');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Teamvergleich');
+  await expect(page.getByRole('table')).toBeVisible();
   await navigate(page, 'Historie');
   await expect(
     page.getByRole('heading', { name: 'Jede Legende fängt bei null an.' }),
@@ -185,6 +187,7 @@ test('all primary views fit small screens and local images and fonts load', asyn
     '',
     '#/team-builder',
     '#/teams',
+    '#/compare',
     '#/teams/milan-2006-2007',
     '#/tournament',
     '#/history',
@@ -229,6 +232,7 @@ test('core views pass automated accessibility checks', async ({ page }) => {
     '',
     '#/team-builder',
     '#/teams/barcelona-2010-2011',
+    '#/compare',
     '#/settings',
     '#/tournament',
   ]) {

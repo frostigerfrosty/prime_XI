@@ -30,6 +30,12 @@ Der Browser lädt den Katalog als separate JSON-Datei. Währenddessen zeigt die
 Anwendung eine Ladeanzeige; bei einem Ladefehler kannst du erneut laden.
 Vorhandene Spielstände bleiben dabei erhalten.
 
+Unter **Teamvergleich** kannst du zwei der 60 Saisonmannschaften mit ihrer
+Standardelf gegenüberstellen. Die Übersicht trennt Kartenrating, Basisstärke,
+Boni und die vier Positionsgruppen. Deine Auswahl steht im teilbaren Link und
+bleibt beim Neuladen erhalten. **Diese Paarung spielen** übernimmt die Teams
+ins Testspiel; der Anpfiff erfolgt erst auf deinen Klick.
+
 Ziehe zwölf verschiedene Saisonmannschaften, wähle elf Spieler aus verschiedenen
 Quellteams sowie Coach und Captain. Der Draft wird im Browser gespeichert.
 Mit elf Spielern erscheinen die berechnete Basis und alle Boni. Vollständige Teams
@@ -79,6 +85,8 @@ zusammengeführt. Schlägt die Speicherung fehl, bleibt der bisherige Stand erha
 [Etappe 9: Spielstände exportieren und wiederherstellen](docs/BACKUPS.md)
 
 [Etappe 10: Optimierter Start und geprüfte statische Builds](docs/START_UND_BUILD.md)
+
+[Etappe 11: Teams vergleichen und die Paarung spielen](docs/TEAMVERGLEICH.md)
 
 ## Datenbestand
 

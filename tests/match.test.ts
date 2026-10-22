@@ -7,7 +7,7 @@ import {
   simulateShootout,
   type MatchContext,
 } from '../src/engine/match.ts';
-import { primeMatchTeam, savedMatchTeam } from '../src/engine/match-team.ts';
+import { analyzePrimeTeam, primeMatchTeam, savedMatchTeam } from '../src/engine/match-team.ts';
 import { createStrengthModel } from '../src/engine/strength.ts';
 import { seededRandom } from '../src/engine/random.ts';
 import type { Score } from '../src/types/application.ts';
@@ -209,8 +209,33 @@ test('all catalog opponents use the same strength formula rather than the arithm
     if (!input.lineup.some((pick) => pick.player.personId === input.captainPersonId))
       input.captainPersonId = null;
     assert.equal(result.strength, model.analyze(input).strength.matchStrength);
+    assert.deepEqual(
+      analyzePrimeTeam(team, model, data.defaults.defaultTactic),
+      model.analyze(input),
+    );
   }
   assert.deepEqual(data.teams, before);
+});
+
+test('catalog assessments exclude a captain outside the XI and reject missing lineup data', () => {
+  const model = createStrengthModel(data);
+  const team = structuredClone(data.teams[0]!);
+  const starterIds = new Set(team.defaultLineup.map((pick) => pick.playerId));
+  const bench = team.players.find((player) => !starterIds.has(player.id))!;
+  team.captainPersonId = bench.personId;
+  const assessment = analyzePrimeTeam(team, model, data.defaults.defaultTactic);
+  assert.deepEqual(assessment.captain, { name: null, natural: false });
+  assert.equal(assessment.strength.captainBonus, 0);
+  assert.equal(
+    primeMatchTeam(team, model, data.defaults.defaultTactic).strength,
+    assessment.strength.matchStrength,
+  );
+  assert.throws(() =>
+    analyzePrimeTeam({ ...team, coach: null }, model, data.defaults.defaultTactic),
+  );
+  const broken = structuredClone(team);
+  broken.defaultLineup[0]!.playerId = 'missing-card';
+  assert.throws(() => analyzePrimeTeam(broken, model, data.defaults.defaultTactic));
 });
 
 test('malformed participants, contexts and numerical rules fail before simulation', () => {

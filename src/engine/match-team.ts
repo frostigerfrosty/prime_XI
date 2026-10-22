@@ -9,8 +9,8 @@ export function savedMatchTeam(team: SavedTeam, model: StrengthModel): MatchTeam
   return { id: team.id, strength: team.strength.matchStrength };
 }
 
-/** Historical opponents use the SAME formulas, their curated XI and explicit tactic. */
-export function primeMatchTeam(team: PrimeTeam, model: StrengthModel, tacticId: string): MatchTeam {
+/** Comparison and simulation share the curated XI, captain policy and explicit tactic. */
+export function analyzePrimeTeam(team: PrimeTeam, model: StrengthModel, tacticId: string) {
   if (!team.formation || !team.coach) throw new Error('Dem Gegner fehlen Aufstellung oder Coach.');
   const lineup = team.defaultLineup.map((pick) => {
     const player = team.players.find((card) => card.id === pick.playerId);
@@ -20,12 +20,16 @@ export function primeMatchTeam(team: PrimeTeam, model: StrengthModel, tacticId: 
   const captainPersonId = lineup.some((pick) => pick.player.personId === team.captainPersonId)
     ? team.captainPersonId
     : null;
-  const strength = model.analyze({
+  return model.analyze({
     formationId: team.formation,
     tacticId,
     lineup,
     coach: team.coach,
     captainPersonId,
-  }).strength.matchStrength;
-  return { id: team.id, strength };
+  });
+}
+
+/** Historical opponents use the SAME formulas, their curated XI and explicit tactic. */
+export function primeMatchTeam(team: PrimeTeam, model: StrengthModel, tacticId: string): MatchTeam {
+  return { id: team.id, strength: analyzePrimeTeam(team, model, tacticId).strength.matchStrength };
 }

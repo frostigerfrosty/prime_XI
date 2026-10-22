@@ -11,6 +11,7 @@ const DashboardPage = lazy(() => import('../pages/DashboardPage.tsx'));
 const BuilderPage = lazy(() => import('../pages/BuilderPage.tsx'));
 const TeamsPage = lazy(() => import('../pages/TeamsPage.tsx'));
 const TeamDetailPage = lazy(() => import('../pages/TeamDetailPage.tsx'));
+const ComparePage = lazy(() => import('../pages/ComparePage.tsx'));
 const MatchPage = lazy(() => import('../pages/MatchPage.tsx'));
 const TournamentPage = lazy(() => import('../pages/TournamentPage.tsx'));
 const HistoryPage = lazy(() => import('../pages/HistoryPage.tsx'));
@@ -76,6 +77,7 @@ export function App() {
                         <Route path="team-builder" element={<BuilderPage />} />
                         <Route path="teams" element={<TeamsPage />} />
                         <Route path="teams/:teamId" element={<TeamDetailPage />} />
+                        <Route path="compare" element={<ComparePage />} />
                         <Route path="tournament" element={<TournamentPage />} />
                         <Route path="test-match" element={<MatchPage />} />
                         <Route path="history" element={<HistoryPage />} />
