@@ -21,8 +21,14 @@ npm run dev
 
 `npm run build` erzeugt die statische Anwendung in `dist/`. `npm run preview`
 startet die Vorschau dieses Builds. Die Basis ist `/prime_XI/`; Hash-Routing
-unterstützt direkte Links und Neuladen auf GitHub Pages. Es wurde noch keine
-Veröffentlichung eingerichtet oder ausgeführt.
+unterstützt direkte Links und Neuladen auf GitHub Pages. Ein manuell gestarteter
+Workflow für eine Entwicklungsvorschau ist vorbereitet; eine Veröffentlichung
+wurde nicht ausgeführt. [Start, Build-Prüfung und Veröffentlichung](docs/START_UND_BUILD.md)
+beschreibt Ablauf und Voraussetzungen.
+
+Der Browser lädt den Katalog als separate JSON-Datei. Währenddessen zeigt die
+Anwendung eine Ladeanzeige; bei einem Ladefehler kannst du erneut laden.
+Vorhandene Spielstände bleiben dabei erhalten.
 
 Ziehe zwölf verschiedene Saisonmannschaften, wähle elf Spieler aus verschiedenen
 Quellteams sowie Coach und Captain. Der Draft wird im Browser gespeichert.
@@ -72,6 +78,8 @@ zusammengeführt. Schlägt die Speicherung fehl, bleibt der bisherige Stand erha
 
 [Etappe 9: Spielstände exportieren und wiederherstellen](docs/BACKUPS.md)
 
+[Etappe 10: Optimierter Start und geprüfte statische Builds](docs/START_UND_BUILD.md)
+
 ## Datenbestand
 
 Der Bestand enthält **60 Saisonmannschaften für 2007–2026**, jeweils drei pro Endjahr,
@@ -115,6 +123,9 @@ npm run test:e2e
 In der Cloud kann der vorhandene Browser mit
 `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e` verwendet
 werden. Die GitHub-Actions-Konfiguration führt diese Prüfungen nach einem Push aus.
+Der Build prüft außerdem Dateipfade, den separaten Katalog und feste JavaScript-
+Größengrenzen. Nach erfolgreicher CI steht `dist/` als Artefakt
+`prime-xi-static-build` für sieben Tage zum Herunterladen bereit.
 
 Nach Änderungen in `data/editorial/`:
 

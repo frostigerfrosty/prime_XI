@@ -12,7 +12,8 @@ bash scripts/setup.sh
 
 Das getestete Setup installiert über `npm ci --ignore-scripts` mit einem
 beschreibbaren Cache unter `/workspace/.cache/prime-xi/npm` und prüft Daten,
-TypeScript, Node-Tests sowie den Produktionsbuild. Keine Zugangsdaten nötig.
+TypeScript, Node-Tests sowie den Produktionsbuild einschließlich Asset- und
+Größenprüfung (`build:check`). Keine Zugangsdaten nötig.
 
 Für die Entwicklung im Repository einen laufenden Terminalprozess starten:
 
@@ -31,11 +32,14 @@ Interne Bereitschaftsprüfung:
 ```sh
 curl --fail --silent --show-error http://127.0.0.1:5173/prime_XI/
 curl --fail --silent --show-error http://127.0.0.1:5173/prime_XI/src/main.tsx
+curl --fail --silent --show-error http://127.0.0.1:5173/prime_XI/src/data/database.json
 ```
 
 Die erste Antwort muss die HTML-Seite mit `id="root"` und dem Verweis auf
 `src/main.tsx` enthalten. Die zweite muss das transformierte React-Einstiegsmodul
-enthalten. Für funktionelle Änderungen außerdem die betroffenen Seiten in Chromium
+mit `createRoot` und `/prime_XI/src/app/Startup.tsx` enthalten. Die dritte muss
+den JSON-Katalog mit `schemaVersion: 2` und 60 Einträgen in `teams` liefern.
+Für funktionelle Änderungen außerdem die betroffenen Seiten in Chromium
 prüfen oder die vorhandenen Browsertests gegen den Produktionsbuild ausführen:
 
 ```sh
@@ -53,3 +57,7 @@ zur Prüfung verwenden und Ergebnisse in Text berichten.
 Die historische Katalogfreigabe ist weiterhin offen. `data:release-check` prüft
 diesen separaten Inhaltsstatus; die Entwicklung verwendet ausdrücklich den
 redaktionellen Katalog. Statusmarkierungen nicht zum Erzwingen einer Freigabe ändern.
+
+[Etappe 10](START_UND_BUILD.md) beschreibt den asynchronen Katalogstart und die
+manuelle GitHub-Pages-Vorschau. Das Veröffentlichen der Cloud-Konfiguration und
+das Veröffentlichen der Website sind getrennte Vorgänge.

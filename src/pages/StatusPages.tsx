@@ -51,7 +51,7 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.10 · Spielstand-Backups</dd>
+              <dd>0.11 · Optimierter Start</dd>
             </div>
             <div>
               <dt>Stand</dt>

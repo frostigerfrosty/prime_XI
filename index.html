@@ -9,10 +9,35 @@
       content="Deine Elf. Deine Ära. Entdecke historische Prime-Teams und baue dein Fußball-Dream-Team."
     />
     <link rel="icon" type="image/svg+xml" href="/assets/brand.svg" />
+    <link rel="stylesheet" href="/src/styles/startup.css" />
     <title>PRIME XI · Football Simulator</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main class="startup-screen">
+        <section>
+          <div class="startup-fallback">
+            <p class="startup-brand">PRIME XI</p>
+            <h1>Dein Spielfeld wird vorbereitet.</h1>
+            <p role="status">Die Anwendung wird geladen …</p>
+          </div>
+          <noscript>
+            <style>
+              .startup-fallback {
+                display: none;
+              }
+              .startup-without-js {
+                display: block;
+              }
+            </style>
+          </noscript>
+          <div class="startup-without-js">
+            <h1>JavaScript aktivieren</h1>
+            <p>PRIME XI benötigt JavaScript für Team Builder, Spiele und lokale Spielstände.</p>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

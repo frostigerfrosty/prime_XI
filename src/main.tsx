@@ -5,7 +5,7 @@ import '@fontsource/dm-sans/latin-500.css';
 import '@fontsource/dm-sans/latin-600.css';
 import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/barlow-condensed/latin-700.css';
-import { App } from './app/App.tsx';
+import { Startup } from './app/Startup.tsx';
 import './styles/app.css';
 import './styles/strength.css';
 import './styles/match.css';
@@ -16,6 +16,6 @@ import './styles/backup.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <Startup />
   </StrictMode>,
 );

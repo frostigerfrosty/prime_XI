@@ -21,6 +21,12 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - uses: actions/upload-artifact@v4
+        with:
+          name: prime-xi-static-build
+          path: dist/
+          include-hidden-files: true
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: browser-test-results

@@ -2,6 +2,16 @@ import { expect, test, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const appErrors = new WeakMap<Page, string[]>();
+const viewTitles: Record<string, string> = {
+  '': 'Willkommen am Spielfeldrand.',
+  '#/team-builder': 'Team Builder',
+  '#/teams': 'Die Besten ihrer Zeit.',
+  '#/teams/milan-2006-2007': 'AC Milan',
+  '#/teams/barcelona-2010-2011': 'Barcelona',
+  '#/tournament': 'Dein Turnier',
+  '#/history': 'Die Spiele bleiben.',
+  '#/settings': 'Einstellungen',
+};
 
 test.beforeEach(async ({ page }) => {
   const errors: string[] = [];
@@ -181,7 +191,7 @@ test('all primary views fit small screens and local images and fonts load', asyn
     '#/settings',
   ]) {
     await page.goto(route);
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(viewTitles[route]!);
     await page.evaluate(() => document.fonts.ready);
     await expect
       .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth))
@@ -223,7 +233,7 @@ test('core views pass automated accessibility checks', async ({ page }) => {
     '#/tournament',
   ]) {
     await page.goto(route);
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(viewTitles[route]!);
     await page.evaluate(() => document.fonts.ready);
     const { violations } = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])

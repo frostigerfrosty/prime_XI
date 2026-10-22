@@ -72,7 +72,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.10 · Spielstand-Backups</span>
+          PRIME XI <span>v0.11 · Optimierter Start</span>
         </p>
       </div>
     </>
