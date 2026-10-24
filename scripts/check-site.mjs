@@ -7,6 +7,8 @@ import { createStrengthModel } from '../src/engine/strength.ts';
 import { primeMatchTeam } from '../src/engine/match-team.ts';
 
 const address = new URL(process.argv[2]);
+// GitHub can return an HTTP Pages URL while secure browser APIs require HTTPS.
+if (address.hostname.endsWith('.github.io')) address.protocol = 'https:';
 if (
   !['http:', 'https:'].includes(address.protocol) ||
   address.username ||
