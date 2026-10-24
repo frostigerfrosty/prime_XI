@@ -1,0 +1,23 @@
+{
+  "repository": "frostigerfrosty/prime_XI",
+  "commit": "51c1bf5239cd6a05e1931a0dfe56b77b00d1013b",
+  "checkedAt": "2026-10-24T13:47:04.954Z",
+  "pages": {
+    "httpStatus": 404,
+    "available": false,
+    "url": null,
+    "buildType": null,
+    "status": "404",
+    "message": "Not Found"
+  },
+  "enablement": {
+    "attempted": true,
+    "method": "POST",
+    "httpStatus": 403,
+    "available": false,
+    "url": null,
+    "buildType": null,
+    "status": "403",
+    "message": "Resource not accessible by integration"
+  }
+}
