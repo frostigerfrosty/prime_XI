@@ -1,9 +1,62 @@
 [
-  { "id": "reference-maldini-career", "url": "https://en.wikipedia.org/wiki/Paolo_Maldini", "purpose": "Milan captaincy period and player positions" },
-  { "id": "reference-lahm-career", "url": "https://en.wikipedia.org/wiki/Philipp_Lahm", "purpose": "Bayern captaincy period covering 2013/14 and 2014/15" },
-  { "id": "reference-de-ligt-career", "url": "https://en.wikipedia.org/wiki/Matthijs_de_Ligt", "purpose": "Ajax captaincy in 2018/19" },
-  { "id": "reference-fernandinho-career", "url": "https://en.wikipedia.org/wiki/Fernandinho_%28footballer%2C_born_May_1985%29", "purpose": "Manchester City captaincy from 2020 to 2022; the earlier born-1985 URL resolved to a disambiguation page and was not used as evidence" },
-  { "id": "reference-laporte-career", "url": "https://en.wikipedia.org/wiki/Aymeric_Laporte", "purpose": "Date of international allegiance change to Spain" },
-  { "id": "reference-munir-career", "url": "https://en.wikipedia.org/wiki/Munir_El_Haddadi", "purpose": "Retrospective Morocco flag versus Spain representation in 2015/16" },
-  { "id": "reference-bouna-sarr-career", "url": "https://en.wikipedia.org/wiki/Bouna_Sarr", "purpose": "Senegal call-up timing and the 2020/21 season nationality" }
+  {
+    "id": "reference-maldini-career",
+    "url": "https://en.wikipedia.org/wiki/Paolo_Maldini",
+    "purpose": "Milan captaincy period and player positions"
+  },
+  {
+    "id": "reference-lahm-career",
+    "url": "https://en.wikipedia.org/wiki/Philipp_Lahm",
+    "purpose": "Bayern captaincy period covering 2013/14 and 2014/15"
+  },
+  {
+    "id": "reference-de-ligt-career",
+    "url": "https://en.wikipedia.org/wiki/Matthijs_de_Ligt",
+    "purpose": "Ajax captaincy in 2018/19"
+  },
+  {
+    "id": "reference-fernandinho-career",
+    "url": "https://en.wikipedia.org/wiki/Fernandinho_%28footballer%2C_born_May_1985%29",
+    "purpose": "Manchester City captaincy from 2020 to 2022; the earlier born-1985 URL resolved to a disambiguation page and was not used as evidence"
+  },
+  {
+    "id": "reference-laporte-career",
+    "url": "https://en.wikipedia.org/wiki/Aymeric_Laporte",
+    "purpose": "Date of international allegiance change to Spain"
+  },
+  {
+    "id": "reference-munir-career",
+    "url": "https://en.wikipedia.org/wiki/Munir_El_Haddadi",
+    "purpose": "Retrospective Morocco flag versus Spain representation in 2015/16"
+  },
+  {
+    "id": "reference-bouna-sarr-career",
+    "url": "https://en.wikipedia.org/wiki/Bouna_Sarr",
+    "purpose": "Senegal call-up timing and the 2020/21 season nationality"
+  },
+  {
+    "id": "reference-barcelona-2011-2012-benchmark",
+    "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_FC_Barcelona_season",
+    "purpose": "Club-only historical rating benchmark: Messi 73 competitive club goals; not an additional playable team"
+  },
+  {
+    "id": "reference-messi-rating",
+    "url": "https://en.wikipedia.org/wiki/Lionel_Messi",
+    "purpose": "Club-season production and historical peak comparisons for editorial rating anchors"
+  },
+  {
+    "id": "reference-cristiano-rating",
+    "url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo",
+    "purpose": "Club-season production and Champions League records for editorial rating anchors"
+  },
+  {
+    "id": "reference-neuer-rating",
+    "url": "https://en.wikipedia.org/wiki/Manuel_Neuer",
+    "purpose": "Goalkeeper role and club-only seasons; World Cup performances must remain separate"
+  },
+  {
+    "id": "reference-lewandowski-rating",
+    "url": "https://en.wikipedia.org/wiki/Robert_Lewandowski",
+    "purpose": "2019/20 and 2020/21 club-season scoring benchmarks"
+  }
 ]
