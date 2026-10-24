@@ -29,6 +29,7 @@ class SeasonPage(HTMLParser):
         self.ignored = 0
         self.paragraph = None
         self.captain_notes = []
+        self.rating_notes = []
         self.international_notes = []
 
     def handle_starttag(self, tag, attrs):
@@ -63,6 +64,8 @@ class SeasonPage(HTMLParser):
                 self.captain_notes.append(paragraph)
             if re.search(r"\b(international|allegiance|citizenship|nationality|switch)\b", paragraph, re.I):
                 self.international_notes.append(paragraph)
+            if re.search(r"\b(goals?|record|saves?|clean sheets?|injur|appearances?|assists?)\b", paragraph, re.I):
+                self.rating_notes.append(paragraph)
             self.paragraph = None
         if not self.stack:
             return
@@ -99,7 +102,7 @@ class SeasonPage(HTMLParser):
             if "infobox" in table["class"]:
                 staff.extend(row for row in table["rows"] if re.search(r"\b(manager|head coach|captain)\b", " ".join(row), re.I))
                 positions.extend(row for row in table["rows"] if row and re.match(r"position", row[0], re.I))
-        return {"title": "".join(self.title).strip(), "squadTables": squads, "staffRows": staff, "positionRows": positions, "captainNotes": self.captain_notes[:15], "internationalNotes": self.international_notes[:40]}
+        return {"title": "".join(self.title).strip(), "squadTables": squads, "staffRows": staff, "positionRows": positions, "captainNotes": self.captain_notes[:15], "internationalNotes": self.international_notes[:40], "ratingNotes": self.rating_notes[:160]}
 
 
 def inspect_html(raw, expected_names=()):
@@ -140,11 +143,13 @@ def main():
     people = {person["id"]: person["name"] for person in json.loads((ROOT / "data/editorial/people.json").read_text())}
     teams = json.loads((ROOT / "data/editorial/teams.json").read_text())
     for source in selected:
-        team = next(team for team in teams if source["id"] in team["sourceIds"])
-        source["expectedNames"] = [people[player["personId"]] for player in team["players"]]
+        team = next((team for team in teams if source["id"] in team["sourceIds"]), None)
+        if team:
+            source["expectedNames"] = [people[player["personId"]] for player in team["players"]]
     extra_file = ROOT / "data/research/additional-references.json"
     if extra_file.exists():
-        selected.extend(json.loads(extra_file.read_text()))
+        known = {source["id"] for source in selected}
+        selected.extend(source for source in json.loads(extra_file.read_text()) if source["id"] not in known)
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         results = list(executor.map(retrieve, selected))
     report = {
