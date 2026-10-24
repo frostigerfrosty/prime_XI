@@ -29,6 +29,7 @@ class SeasonPage(HTMLParser):
         self.ignored = 0
         self.paragraph = None
         self.captain_notes = []
+        self.international_notes = []
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
@@ -60,6 +61,8 @@ class SeasonPage(HTMLParser):
             paragraph = " ".join("".join(self.paragraph).split())
             if re.search(r"\bcaptain\b", paragraph, re.I):
                 self.captain_notes.append(paragraph)
+            if re.search(r"\b(international|allegiance|citizenship|nationality|switch)\b", paragraph, re.I):
+                self.international_notes.append(paragraph)
             self.paragraph = None
         if not self.stack:
             return
@@ -96,7 +99,7 @@ class SeasonPage(HTMLParser):
             if "infobox" in table["class"]:
                 staff.extend(row for row in table["rows"] if re.search(r"\b(manager|head coach|captain)\b", " ".join(row), re.I))
                 positions.extend(row for row in table["rows"] if row and re.match(r"position", row[0], re.I))
-        return {"title": "".join(self.title).strip(), "squadTables": squads, "staffRows": staff, "positionRows": positions, "captainNotes": self.captain_notes[:15]}
+        return {"title": "".join(self.title).strip(), "squadTables": squads, "staffRows": staff, "positionRows": positions, "captainNotes": self.captain_notes[:15], "internationalNotes": self.international_notes[:40]}
 
 
 def inspect_html(raw, expected_names=()):
