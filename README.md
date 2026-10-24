@@ -43,6 +43,11 @@ speichern ihre damaligen Spielerwerte und Matchstärke als Snapshot. Das sichtba
 Ø Kartenrating bleibt davon getrennt. Öffne **Testspiel** in der Navigation:
 90 Minuten mit möglichem Remis oder K.-o. mit Verlängerung und Elfmeterschießen,
 wahlweise auf neutralem Platz. Derselbe Spielcode reproduziert dieselbe Begegnung.
+Unter **Diese Begegnung teilen** kannst du für zwei Katalogteams den vollständigen
+Testspiellink kopieren. Teams, Modus, Platzwahl und Spielcode bleiben auch beim
+Neuladen erhalten. Der Link prüft den Katalog- und Regelstand; gespielt wird erst
+nach **Anpfiff**. Für Begegnungen mit deiner eigenen Elf bleibt die
+Spielstandsicherung der Weg in einen anderen Browser.
 Mit **Team speichern & Turnier starten** beginnt deine 36-Team-Ligaphase:
 acht verschiedene Gegner, vier Heim- und vier Auswärtsspiele. Simuliere einen
 Spieltag mit allen 18 Begegnungen oder bestätige den Abschluss der gesamten
@@ -87,6 +92,8 @@ zusammengeführt. Schlägt die Speicherung fehl, bleibt der bisherige Stand erha
 [Etappe 10: Optimierter Start und geprüfte statische Builds](docs/START_UND_BUILD.md)
 
 [Etappe 11: Teams vergleichen und die Paarung spielen](docs/TEAMVERGLEICH.md)
+
+[Etappe 12: Testspiele teilen und wiederholen](docs/TESTSPIELLINKS.md)
 
 ## Datenbestand
 

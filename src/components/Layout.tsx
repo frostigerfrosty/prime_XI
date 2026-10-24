@@ -74,7 +74,7 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           Einstellungen
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.12 · Teamvergleich</span>
+          PRIME XI <span>v0.13 · Testspiele teilen</span>
         </p>
       </div>
     </>

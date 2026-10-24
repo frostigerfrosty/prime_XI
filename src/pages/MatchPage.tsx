@@ -1,10 +1,12 @@
 import { useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, Dices, Shield, Swords } from 'lucide-react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { teams } from '../app/catalog.ts';
 import { useDraft } from '../app/DraftProvider.tsx';
 import { matchEngine, strengthModel } from '../app/game.ts';
-import { getDefaultSettings } from '../data/index.ts';
+import { getDatasetVersion, getDefaultSettings } from '../data/index.ts';
+import { matchSetupParams, readMatchSetup, type MatchSetup } from '../engine/match-link.ts';
+import { MatchSharePanel } from '../components/MatchSharePanel.tsx';
 import { primeMatchTeam, savedMatchTeam } from '../engine/match-team.ts';
 import type { MatchTeam } from '../engine/match.ts';
 import type { MatchResult } from '../types/application.ts';
@@ -24,6 +26,12 @@ const catalog: Choice[] = teams.map((team) => ({
 }));
 const label = (team: Choice) => `${team.name} · ${team.detail}`;
 const newCode = () => crypto.randomUUID();
+const versions = {
+  dataset: getDatasetVersion(),
+  engine: matchEngine.engineVersion,
+  strength: strengthModel.rulesVersion,
+};
+const catalogIds = new Set(catalog.map((team) => team.id));
 
 function TeamIdentity({ team, side }: { team: Choice; side: string }) {
   return (
@@ -44,52 +52,10 @@ function TeamIdentity({ team, side }: { team: Choice; side: string }) {
 }
 
 export default function MatchPage() {
-  const [params] = useSearchParams();
-  const homeId = params.get('home');
-  const awayId = params.get('away');
-  const requested = homeId !== null || awayId !== null;
-  if (
-    requested &&
-    (!catalog.some((team) => team.id === homeId) ||
-      !catalog.some((team) => team.id === awayId) ||
-      homeId === awayId)
-  )
-    return (
-      <>
-        <PageHeading
-          eyebrow="DEINE BEGEGNUNG"
-          title="Testspiel"
-          description="Wähle zwei Teams für dein Testspiel."
-        />
-        <section className="panel match-setup">
-          <h2>Diese Paarung ist nicht verfügbar.</h2>
-          <p role="status">
-            Der Link muss zwei verschiedene Teams aus dem Prime-Katalog enthalten.
-          </p>
-          <Link className="button button--primary" to="/test-match">
-            Teams neu wählen
-          </Link>
-        </section>
-      </>
-    );
-  return (
-    <MatchSession
-      key={JSON.stringify([homeId, awayId])}
-      initialHomeId={homeId}
-      initialAwayId={awayId}
-    />
-  );
-}
-
-function MatchSession({
-  initialHomeId,
-  initialAwayId,
-}: {
-  initialHomeId: string | null;
-  initialAwayId: string | null;
-}) {
-  const resultPanel = useRef<HTMLElement>(null);
-  const { currentTeam, teamMatchesDraft, teamWarning } = useDraft();
+  const [params, setParams] = useSearchParams();
+  const location = useLocation();
+  const { currentTeam } = useDraft();
+  const [defaultCode] = useState(newCode);
   const choices: Choice[] = currentTeam
     ? [
         {
@@ -101,25 +67,103 @@ function MatchSession({
         ...catalog,
       ]
     : catalog;
-  const [homeId, setHomeId] = useState(initialHomeId ?? currentTeam?.id ?? 'real-madrid-2016-2017');
-  const [awayId, setAwayId] = useState(initialAwayId ?? 'barcelona-2010-2011');
-  const [mode, setMode] = useState<'regular' | 'knockout'>('regular');
-  const [neutral, setNeutral] = useState(true);
-  const [seed, setSeed] = useState<string>(newCode);
+  let setup: MatchSetup | null = null;
+  let linkError = '';
+  try {
+    setup = readMatchSetup(
+      params,
+      {
+        homeId: currentTeam?.id ?? 'real-madrid-2016-2017',
+        awayId: 'barcelona-2010-2011',
+        mode: 'regular',
+        neutralVenue: true,
+        seed: defaultCode,
+      },
+      new Set(choices.map((team) => team.id)),
+      versions,
+    );
+  } catch (reason) {
+    linkError = reason instanceof Error ? reason.message : 'Der Testspiellink ist ungültig.';
+  }
+  const query = params.toString();
+  const state: unknown = location.state;
+  // Internal URL replacements keep the live form mounted. External links/history start
+  // a new session, including hash edits that retain an old history.state object.
+  const sessionKey =
+    state &&
+    typeof state === 'object' &&
+    'matchQuery' in state &&
+    state.matchQuery === query &&
+    'matchSession' in state &&
+    typeof state.matchSession === 'string'
+      ? state.matchSession
+      : `${location.key}:${query}`;
+  function commit(next: MatchSetup) {
+    const nextParams = matchSetupParams(next, versions);
+    setParams(nextParams, {
+      replace: true,
+      state: { matchSession: sessionKey, matchQuery: nextParams.toString() },
+    });
+  }
+  if (!setup)
+    return (
+      <>
+        <PageHeading
+          eyebrow="DEINE BEGEGNUNG"
+          title="Testspiel"
+          description="Wähle zwei Teams für dein Testspiel."
+        />
+        <section className="panel match-setup match-link-error">
+          <h2>Diese Paarung ist nicht verfügbar.</h2>
+          <p role="status">{linkError}</p>
+          <Link className="button button--primary" to="/test-match">
+            Teams neu wählen
+          </Link>
+        </section>
+      </>
+    );
+  return <MatchSession key={sessionKey} initialSetup={setup} choices={choices} commit={commit} />;
+}
+
+function MatchSession({
+  initialSetup,
+  choices,
+  commit,
+}: {
+  initialSetup: MatchSetup;
+  choices: Choice[];
+  commit: (setup: MatchSetup) => void;
+}) {
+  const resultPanel = useRef<HTMLElement>(null);
+  const { currentTeam, teamMatchesDraft, teamWarning } = useDraft();
+  const [setup, setSetup] = useState(initialSetup);
+  const latestSetup = useRef(initialSetup);
+  const { homeId, awayId, mode, neutralVenue: neutral, seed } = setup;
+  const setupKey = matchSetupParams(setup, versions).toString();
   const [error, setError] = useState('');
-  const [played, setPlayed] = useState<{
+  const [lastPlayed, setPlayed] = useState<{
     result: MatchResult;
     home: Choice;
     away: Choice;
     neutral: boolean;
     mode: string;
+    setupKey: string;
   } | null>(null);
+  const played = lastPlayed?.setupKey === setupKey ? lastPlayed : null;
   const home = choices.find((team) => team.id === homeId)!;
   const away = choices.find((team) => team.id === awayId)!;
   const clear = () => {
     setPlayed(null);
     setError('');
   };
+  function change(patch: Partial<MatchSetup>) {
+    const next = { ...latestSetup.current, ...patch };
+    latestSetup.current = next;
+    // Text input stays synchronous while the router replaces the URL in a transition.
+    setSetup(next);
+    clear();
+    commit(next);
+  }
   function play(event: FormEvent) {
     event.preventDefault();
     try {
@@ -128,7 +172,8 @@ function MatchSession({
         neutralVenue: neutral,
         mode,
       });
-      setPlayed({ result, home: { ...home }, away: { ...away }, neutral, mode });
+      change({});
+      setPlayed({ result, home: { ...home }, away: { ...away }, neutral, mode, setupKey });
       setError('');
       requestAnimationFrame(() => {
         resultPanel.current?.focus({ preventScroll: true });
@@ -169,7 +214,11 @@ function MatchSession({
                 <select
                   value={side === 'home' ? homeId : awayId}
                   onChange={(event) =>
-                    side === 'home' ? setHomeId(event.target.value) : setAwayId(event.target.value)
+                    change(
+                      side === 'home'
+                        ? { homeId: event.target.value }
+                        : { awayId: event.target.value },
+                    )
                   }
                 >
                   {choices.map((team) => (
@@ -186,7 +235,10 @@ function MatchSession({
             ))}
             <label className="match-field">
               <span>Spielmodus</span>
-              <select value={mode} onChange={(event) => setMode(event.target.value as typeof mode)}>
+              <select
+                value={mode}
+                onChange={(event) => change({ mode: event.target.value as typeof mode })}
+              >
                 <option value="regular">90 Minuten · Remis möglich</option>
                 <option value="knockout">K.-o. · Verlängerung & Elfmeter</option>
               </select>
@@ -195,7 +247,7 @@ function MatchSession({
               <input
                 type="checkbox"
                 checked={neutral}
-                onChange={(event) => setNeutral(event.target.checked)}
+                onChange={(event) => change({ neutralVenue: event.target.checked })}
               />
               Neutraler Platz
             </label>
@@ -210,7 +262,7 @@ function MatchSession({
                 value={seed}
                 required
                 maxLength={100}
-                onChange={(event) => setSeed(event.target.value)}
+                onChange={(event) => change({ seed: event.target.value })}
                 aria-describedby="code-help"
               />
             </label>
@@ -222,7 +274,7 @@ function MatchSession({
                 type="button"
                 className="button button--secondary"
                 onClick={() => {
-                  setSeed(newCode());
+                  change({ seed: newCode() });
                   clear();
                 }}
               >
@@ -351,6 +403,12 @@ function MatchSession({
           </p>
         </section>
       </div>
+      <MatchSharePanel
+        key={setupKey}
+        setup={setup}
+        versions={versions}
+        catalogPair={catalogIds.has(homeId) && catalogIds.has(awayId)}
+      />
       <CatalogNote />
     </>
   );

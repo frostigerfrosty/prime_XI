@@ -252,6 +252,33 @@
   color: var(--muted);
   margin-top: 8px;
 }
+.match-share {
+  padding: 25px;
+  margin-top: 22px;
+}
+.match-share > p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-block: 14px;
+  max-width: 760px;
+}
+.match-share .match-field {
+  max-width: 850px;
+  margin-bottom: 16px;
+}
+.match-share > p[role='status'] {
+  color: var(--accent);
+}
+.match-share input {
+  text-overflow: ellipsis;
+}
+.match-link-error > p {
+  margin-block: 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
 @media (max-width: 1050px) {
   .match-layout {
     grid-template-columns: 1fr;
@@ -259,7 +286,8 @@
 }
 @media (max-width: 480px) {
   .match-setup,
-  .match-details {
+  .match-details,
+  .match-share {
     padding: 20px;
   }
   .match-scoreboard {

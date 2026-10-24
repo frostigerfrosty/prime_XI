@@ -58,9 +58,9 @@ der Platz ist zunächst neutral und das Spiel startet erst nach **Anpfiff**.
 Die gewählte Katalogpaarung hat Vorrang vor der üblichen Vorauswahl einer eigenen
 gespeicherten Elf. Diese bleibt im Auswahlfeld weiterhin spielbar.
 
-Neuladen des Paarungslinks übernimmt die Teams erneut; Spielcode, Modus,
-Platzwahl und manuelle Änderungen im Testspielformular gelten weiterhin für die
-geöffnete Sitzung. Ein Link mit einer anderen Paarung setzt die Sitzung zurück. Ungültige,
+Seit [Etappe 12](TESTSPIELLINKS.md) bleiben auch Spielcode, Modus, Platzwahl und
+manuelle Änderungen im Testspielformular über die URL beim Neuladen erhalten.
+Ein Link mit einer anderen Begegnung setzt die Sitzung zurück. Ungültige,
 unvollständige oder doppelte Team-IDs im Testspiellink werden erklärt und erst
 mit **Teams neu wählen** verlassen. Es wird keine Ersatzpaarung simuliert.
 
