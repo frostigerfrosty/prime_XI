@@ -44,7 +44,7 @@ außerhalb der Dateisystem-Sandbox. Eine fehlende gespeicherte Domainfreigabe f�
 diese beiden Ziele wurde damit nicht festgestellt; der laufende Zugriff funktioniert
 trotzdem nicht.
 
-## Tatsächlich gelesene Referenzen
+### Damals tatsächlich gelesene Referenzen
 
 Die vollständig abgerufenen Dateien sind mit Commit, URL, Umfang und SHA-256 in
 `data/research/source-audit.json` dokumentiert. Die großen Rohdateien werden nicht
@@ -62,7 +62,7 @@ bestätigte Coach-Saison-Feld auf `verified`; Personen, Mannschaften und Spieler
 werden dadurch nicht pauschal freigegeben. Eigene Ratings und Attribute werden nicht
 als aus diesen Quellen übernommene Daten ausgegeben.
 
-## Weitere beobachtete Blocker
+### Damals beobachtete weitere Blocker
 
 Die großen öffentlichen Spielerleistungs- und Transferhistorien liegen in Git LFS.
 Der normale lesende Git-Zugriff auf das Repository funktioniert. Der unterstützte
@@ -87,13 +87,13 @@ und UEFA sollen erhalten bleiben; ihr Laufzeitfehler ist weiterhin zu unterschei
 
 1. Die ausgewählten Vereine und Bezugszeiträume prüfen. Die Auswahl ist redaktionell,
    keine extern belegte jährliche Top-3-Rangfolge.
-2. Jeden Spieler im konkreten Saisonkader belegen. Ein heutiger Verein oder ein
-   Aufenthalt in einem anderen Jahr reicht nicht.
-3. Haupt-/Nebenpositionen und Saisonzuordnungen zum Land/Verband überprüfen.
-4. Die vier noch nicht am Register bestätigten Trainer-Zuordnungen belegen.
-5. Die tatsächlichen Saison-Captains prüfen; allgemeine Bekanntheit als Führungsspieler
+2. Die noch fehlenden präzisen Haupt-/Nebenpositionen belegen. Die gefundenen
+   Saisonzeilen bestätigen die Kaderzugehörigkeit, aber allgemeine DF/MF/FW-Angaben
+   ersetzen keine Rollenbelege.
+3. Abweichende Länder-/Verbandszuordnungen mit datierten Belegen klären.
+4. Die tatsächlichen Saison-Captains prüfen; allgemeine Bekanntheit als Führungsspieler
    genügt für diesen historischen Status nicht.
-6. Gelesene Referenzen dokumentieren, nur bestätigte Angaben auf `verified` setzen,
+5. Gelesene Referenzen dokumentieren, nur bestätigte Angaben auf `verified` setzen,
    Export erzeugen und technische Prüfungen wiederholen.
 
 Die Freigabeprüfungen wurden nicht abgeschaltet. Bis zum Abschluss dieser Arbeiten

@@ -29,6 +29,25 @@ Die tatsächliche URL und das Build-/Bereitstellungsergebnis stehen in
 als Artefakt sowie auf `verification/pages-<run-id>` aufbewahrt. Eine fehlende
 Administrationsberechtigung ist dadurch von einem fehlerhaften Build getrennt.
 
+### Tatsächlicher Veröffentlichungslauf am 24. Oktober 2026
+
+Der [GitHub-Lauf 40099318557](https://github.com/frostigerfrosty/prime_XI/actions/runs/40099318557)
+für Commit `51c1bf5239cd6a05e1931a0dfe56b77b00d1013b` hat den vollständigen
+Build einschließlich aller Tests erfolgreich abgeschlossen. Die Bereitstellung
+ist noch blockiert: `GET /pages` ergab 404; die Aktivierung über `POST /pages`
+wurde mit 403 **Resource not accessible by integration** verweigert.
+
+Der [unveränderliche Prüfbericht](https://github.com/frostigerfrosty/prime_XI/tree/18e23a1581bfabc19572aa868d014391cb76b03e/review-results)
+enthält die tatsächlichen Antworten und das getrennte Build-/Deployment-Ergebnis.
+Es gibt daher noch keine bestätigte öffentliche Vorschau-URL und keinen bestandenen
+Browsernachweis der veröffentlichten Website.
+
+Verbleibender Administrationsschritt: unter
+[Settings → Pages](https://github.com/frostigerfrosty/prime_XI/settings/pages)
+die Quelle **GitHub Actions** wählen und danach **Publish PRIME XI preview**
+über **Run workflow** erneut ausführen. Der Workflow prüft dann die tatsächlich
+bereitgestellte Website und erhält einen neuen Prüfbericht.
+
 ## Praxistest
 
 Der zusätzliche durchgehende Test beginnt mit einem leeren Browser. Er zieht
@@ -79,6 +98,11 @@ Alte Testspiellinks mit anderem Katalogstand bleiben gesperrt, da sie ihre
 damaligen Werte nicht als Snapshot enthalten.
 
 ## Verifikation
+
+Am 24. Oktober 2026 bestanden lokal 177 Node-Tests, zehn Python-Quellenprüfungen
+und alle 158 Browserprüfungen. Die zusätzliche Prüfung des gebauten Artefakts
+bestand bei 1.440 und 390 Pixeln. Diese lokalen Ergebnisse ersetzen nicht den
+separaten Nachweis einer tatsächlich veröffentlichten Website.
 
 ```sh
 npm run check
