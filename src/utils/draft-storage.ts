@@ -1,4 +1,5 @@
 import { getDatasetVersion, getGameRules } from '../data/index.ts';
+import { isCompatibleDraftDataset } from '../data/compatibility.ts';
 import type { DraftState } from '../types/application.ts';
 import type { Builder } from '../engine/builder.ts';
 
@@ -21,7 +22,7 @@ export function readDraft(
       !('schemaVersion' in value) ||
       value.schemaVersion !== 1 ||
       !('datasetVersion' in value) ||
-      value.datasetVersion !== getDatasetVersion() ||
+      !isCompatibleDraftDataset(value.datasetVersion) ||
       !('draft' in value) ||
       !builder.isValid(value.draft) ||
       !builder.completion(value.draft)
@@ -32,7 +33,13 @@ export function readDraft(
           'Der gespeicherte Draft passt nicht zum aktuellen Katalog oder ist beschädigt. Du kannst einen neuen Draft starten; andere Spielstände bleiben erhalten.',
       };
     }
-    return { draft: value.draft, warning: null };
+    return {
+      draft: value.draft,
+      warning:
+        value.datasetVersion === getDatasetVersion()
+          ? null
+          : 'Der Katalog wurde aktualisiert. Deine Auswahl bleibt erhalten; korrigierte Länderzuordnungen können die Draft-Chemie ändern. Gespeicherte Teams und laufende Turniere behalten ihre bisherigen Werte.',
+    };
   } catch {
     return {
       draft: null,

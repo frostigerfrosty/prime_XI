@@ -4,16 +4,45 @@ import { validateDatabase } from './validate-data.mjs';
 import { renderClubBadge } from './club-badges.mjs';
 
 const root = new URL('../', import.meta.url);
-const read = async (name) => JSON.parse(await readFile(new URL(`data/editorial/${name}.json`, root), 'utf8'));
+const read = async (name) =>
+  JSON.parse(await readFile(new URL(`data/editorial/${name}.json`, root), 'utf8'));
 
 /** Pure generation: no clock, network, random values, or implicit rating changes. */
 export async function buildDatabase() {
-  const [people, rawClubs, seeds, formations, sources, ratingModel, policy, positions, countries, tactics, rules, defaults] = await Promise.all(
-    ['people', 'clubs', 'teams', 'formations', 'sources', 'rating-model', 'selection-policy', 'positions', 'countries', 'tactics', 'game-rules', 'defaults'].map(read),
+  const [
+    people,
+    rawClubs,
+    seeds,
+    formations,
+    sources,
+    ratingModel,
+    policy,
+    positions,
+    countries,
+    tactics,
+    rules,
+    defaults,
+  ] = await Promise.all(
+    [
+      'people',
+      'clubs',
+      'teams',
+      'formations',
+      'sources',
+      'rating-model',
+      'selection-policy',
+      'positions',
+      'countries',
+      'tactics',
+      'game-rules',
+      'defaults',
+    ].map(read),
   );
   const peopleById = new Map(people.map((p) => [p.id, p]));
   const clubs = rawClubs.map(({ wikipediaSeasonClub: _, ...club }) => ({
-    ...club, logo: `assets/clubs/${club.id}.svg`, badgeKind: 'monogram',
+    ...club,
+    logo: `assets/clubs/${club.id}.svg`,
+    badgeKind: 'monogram',
   }));
   const clubsById = new Map(clubs.map((c) => [c.id, c]));
   const teams = seeds.map((seed) => {
@@ -28,7 +57,8 @@ export async function buildDatabase() {
     }
     const players = seed.players.map((player) => {
       const person = peopleById.get(player.personId);
-      if (!person || !player.attributes) throw new Error(`Missing identity/explicit attributes in ${seed.id}: ${player.personId}`);
+      if (!person || !player.attributes)
+        throw new Error(`Missing identity/explicit attributes in ${seed.id}: ${player.personId}`);
       return {
         id: `${seed.id}:${person.id}`,
         personId: person.id,
@@ -45,7 +75,7 @@ export async function buildDatabase() {
         ratingModelId: ratingModel.id,
         naturalCaptain: seed.captainPersonId === person.id,
         verificationStatus: seed.verificationStatus,
-        sourceIds: seed.sourceIds,
+        sourceIds: player.sourceIds ?? seed.sourceIds,
       };
     });
     const coach = seed.coachPersonId ? peopleById.get(seed.coachPersonId) : null;
@@ -57,29 +87,45 @@ export async function buildDatabase() {
       season,
       year: seed.year,
       logo: club.logo,
-      status: !populated ? 'research_pending' : seed.verificationStatus === 'verified' ? 'reviewed' : 'editorial_draft',
+      status: !populated
+        ? 'research_pending'
+        : seed.verificationStatus === 'verified'
+          ? 'reviewed'
+          : 'editorial_draft',
       rosterScope: populated ? 'curated_squad' : 'not_entered',
       formation: seed.formation,
-      coach: coach ? {
-        id: `${seed.id}:coach:${coach.id}`,
-        personId: coach.id,
-        name: coach.name,
-        primeTeamId: seed.id,
-        preferredFormations: [seed.formation],
-        tacticalRating: seed.coachTacticalRating,
-        styleTags: seed.coachStyleTags,
-        ratingStatus: seed.coachRatingStatus,
-        verificationStatus: seed.coachVerificationStatus ?? seed.verificationStatus,
-        sourceIds: seed.coachSourceIds ?? seed.sourceIds,
-      } : null,
+      coach: coach
+        ? {
+            id: `${seed.id}:coach:${coach.id}`,
+            personId: coach.id,
+            name: coach.name,
+            primeTeamId: seed.id,
+            preferredFormations: [seed.formation],
+            tacticalRating: seed.coachTacticalRating,
+            styleTags: seed.coachStyleTags,
+            ratingStatus: seed.coachRatingStatus,
+            verificationStatus: seed.coachVerificationStatus ?? seed.verificationStatus,
+            sourceIds: seed.coachSourceIds ?? seed.sourceIds,
+          }
+        : null,
       captainPersonId: seed.captainPersonId,
       players,
-      defaultLineup: (seed.startingXI ?? []).map((id, index) => ({ slotId: formation.slots[index].id, playerId: `${seed.id}:${id}` })),
-      teamRating: populated ? Math.round(seed.startingXI.reduce((sum, id) => {
-        const player = players.find((candidate) => candidate.personId === id);
-        if (!player) throw new Error(`${seed.id}: default XI references missing player ${id}`);
-        return sum + player.rating;
-      }, 0) / 11 * 10) / 10 : null,
+      defaultLineup: (seed.startingXI ?? []).map((id, index) => ({
+        slotId: formation.slots[index].id,
+        playerId: `${seed.id}:${id}`,
+      })),
+      teamRating: populated
+        ? Math.round(
+            (seed.startingXI.reduce((sum, id) => {
+              const player = players.find((candidate) => candidate.personId === id);
+              if (!player)
+                throw new Error(`${seed.id}: default XI references missing player ${id}`);
+              return sum + player.rating;
+            }, 0) /
+              11) *
+              10,
+          ) / 10
+        : null,
       verificationStatus: seed.verificationStatus,
       sourceIds: seed.sourceIds,
     };
@@ -87,25 +133,47 @@ export async function buildDatabase() {
 
   const coverage = policy.targetYears.flatMap((year) => {
     const selected = teams.filter((t) => t.year === year);
-    if (selected.length > policy.targetTeamsPerYear) throw new Error(`Too many selected teams for ${year}`);
+    if (selected.length > policy.targetTeamsPerYear)
+      throw new Error(`Too many selected teams for ${year}`);
     return Array.from({ length: policy.targetTeamsPerYear }, (_, index) => ({
-      id: `${year}-${index + 1}`, year, selectionNumber: index + 1, teamId: selected[index]?.id ?? null,
+      id: `${year}-${index + 1}`,
+      year,
+      selectionNumber: index + 1,
+      teamId: selected[index]?.id ?? null,
     }));
   });
   const tasks = coverage.flatMap((slot) => {
     const team = teams.find((t) => t.id === slot.teamId);
-    if (!team) return [{
-      id: `select-${slot.id}`, teamId: null, slotId: slot.id, kind: 'team_selection',
-      description: `${slot.year}: Kandidat ${slot.selectionNumber} recherchieren und begründet auswählen; keinen Vereinsnamen erfinden.`,
-    }];
-    if (!team.players.length) return [{
-      id: `research-${team.id}`, teamId: team.id, slotId: slot.id, kind: 'roster_research',
-      description: `${team.clubName} ${team.season}: Auswahl, Elf, Trainer, Captain und Saisonrollen belegen; danach Spielratings erstellen.`,
-    }];
-    if (team.verificationStatus === 'pending') return [{
-      id: `review-${team.id}`, teamId: team.id, slotId: slot.id, kind: 'historical_review',
-      description: `${team.clubName} ${team.season}: Kaderzugehörigkeit, Saison-Nationalitäten, Captain und Positionsrollen belegen${team.coach?.verificationStatus === 'verified' ? '; Trainername bereits am Saisonregister abgeglichen.' : '; Trainer-Zuordnung noch belegen.'}`,
-    }];
+    if (!team)
+      return [
+        {
+          id: `select-${slot.id}`,
+          teamId: null,
+          slotId: slot.id,
+          kind: 'team_selection',
+          description: `${slot.year}: Kandidat ${slot.selectionNumber} recherchieren und begründet auswählen; keinen Vereinsnamen erfinden.`,
+        },
+      ];
+    if (!team.players.length)
+      return [
+        {
+          id: `research-${team.id}`,
+          teamId: team.id,
+          slotId: slot.id,
+          kind: 'roster_research',
+          description: `${team.clubName} ${team.season}: Auswahl, Elf, Trainer, Captain und Saisonrollen belegen; danach Spielratings erstellen.`,
+        },
+      ];
+    if (team.verificationStatus === 'pending')
+      return [
+        {
+          id: `review-${team.id}`,
+          teamId: team.id,
+          slotId: slot.id,
+          kind: 'historical_review',
+          description: `${team.clubName} ${team.season}: Kaderzugehörigkeit, Saison-Nationalitäten, Captain und Positionsrollen belegen${team.coach?.verificationStatus === 'verified' ? '; Trainerzuordnung anhand gelesener Referenz bestätigt.' : '; Trainer-Zuordnung noch belegen.'}`,
+        },
+      ];
     return [];
   });
   return {
@@ -114,8 +182,19 @@ export async function buildDatabase() {
     status: policy.status,
     targetYears: policy.targetYears,
     targetTeamsPerYear: policy.targetTeamsPerYear,
-    people, clubs, formations, sources, coverage, teams, tasks, ratingModel,
-    positions, countries, tactics, rules, defaults,
+    people,
+    clubs,
+    formations,
+    sources,
+    coverage,
+    teams,
+    tasks,
+    ratingModel,
+    positions,
+    countries,
+    tactics,
+    rules,
+    defaults,
   };
 }
 
@@ -137,11 +216,17 @@ async function main() {
     await mkdir(new URL('src/data/', root), { recursive: true });
     await writeFile(destination, output);
     await mkdir(new URL('public/assets/clubs/', root), { recursive: true });
-    for (const club of db.clubs) await writeFile(new URL(`public/${club.logo}`, root), renderClubBadge(club));
-    console.log(`Built ${db.teams.length} candidates, ${db.teams.reduce((n, t) => n + t.players.length, 0)} cards, ${db.coverage.length} year slots.`);
+    for (const club of db.clubs)
+      await writeFile(new URL(`public/${club.logo}`, root), renderClubBadge(club));
+    console.log(
+      `Built ${db.teams.length} candidates, ${db.teams.reduce((n, t) => n + t.players.length, 0)} cards, ${db.coverage.length} year slots.`,
+    );
   }
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  main().catch((error) => { console.error(error.message); process.exitCode = 1; });
+  main().catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
 }

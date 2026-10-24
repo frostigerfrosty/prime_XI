@@ -1,13 +1,33 @@
 /** Permanent identities are separate from season-specific gameplay records. */
 export type Position =
-  | 'GK' | 'RB' | 'CB' | 'LB' | 'RWB' | 'LWB'
-  | 'CDM' | 'CM' | 'CAM' | 'RM' | 'LM' | 'RW' | 'LW' | 'ST';
+  | 'GK'
+  | 'RB'
+  | 'CB'
+  | 'LB'
+  | 'RWB'
+  | 'LWB'
+  | 'CDM'
+  | 'CM'
+  | 'CAM'
+  | 'RM'
+  | 'LM'
+  | 'RW'
+  | 'LW'
+  | 'ST';
 
 export type FormationId = '4-3-3' | '4-2-3-1' | '4-4-2' | '4-3-1-2' | '4-3-2-1' | '3-4-3' | '3-5-2';
 export type ReviewStatus = 'pending' | 'verified';
 export type RatingStatus = 'provisional' | 'approved';
 export type PositionGroup = 'goalkeeper' | 'defence' | 'midfield' | 'attack';
-export type StyleTag = 'balanced' | 'transition' | 'compact' | 'counter-attack' | 'direct' | 'wide-play' | 'possession' | 'high-press';
+export type StyleTag =
+  | 'balanced'
+  | 'transition'
+  | 'compact'
+  | 'counter-attack'
+  | 'direct'
+  | 'wide-play'
+  | 'possession'
+  | 'high-press';
 
 export interface Person {
   id: string;
@@ -34,7 +54,7 @@ export interface SourceReference {
   id: string;
   title: string;
   url: string;
-  kind: 'season_reference' | 'dataset_reference';
+  kind: 'season_reference' | 'dataset_reference' | 'player_reference';
   accessStatus: 'not_retrieved' | 'retrieved';
   checkedAt: string | null;
   intendedCoverage: string[];
@@ -160,11 +180,20 @@ export interface Database {
   };
   positions: { id: Position; label: string; group: PositionGroup }[];
   countries: { id: string; label: string }[];
-  tactics: { id: string; label: string; styleTags: StyleTag[]; preferredFormations: FormationId[] }[];
+  tactics: {
+    id: string;
+    label: string;
+    styleTags: StyleTag[];
+    preferredFormations: FormationId[];
+  }[];
   rules: GameRules;
   defaults: {
-    locale: 'de'; theme: 'dark'; defaultTactic: string; reduceMotion: boolean;
-    soundEnabled: boolean; historyLimit: number;
+    locale: 'de';
+    theme: 'dark';
+    defaultTactic: string;
+    reduceMotion: boolean;
+    soundEnabled: boolean;
+    historyLimit: number;
   };
 }
 
@@ -174,49 +203,91 @@ export interface GameRules {
   version: string;
   provenance: 'original_game_design';
   builder: {
-    drawSize: number; playersRequired: number; coachRequired: boolean;
-    defaultFormation: FormationId; distinctPrimeTeams: boolean;
-    playerIdentityKey: 'personId'; maxPlayersPerPrimeTeam: number; coachConsumesPlayerPick: boolean;
+    drawSize: number;
+    playersRequired: number;
+    coachRequired: boolean;
+    defaultFormation: FormationId;
+    distinctPrimeTeams: boolean;
+    playerIdentityKey: 'personId';
+    maxPlayersPerPrimeTeam: number;
+    coachConsumesPlayerPick: boolean;
   };
   strength: {
     modelVersion: string;
-    ratingMin: number; ratingMax: number;
+    ratingMin: number;
+    ratingMax: number;
     positionGroupWeights: Record<PositionGroup, number>;
-    positionFit: { primaryMultiplier: number; secondaryMultiplier: number; invalidPositionAllowed: boolean };
+    positionFit: {
+      primaryMultiplier: number;
+      secondaryMultiplier: number;
+      invalidPositionAllowed: boolean;
+    };
     bonusCaps: { chemistry: number; tactical: number; coach: number; captain: number };
     naturalCaptainBonus: number;
   };
-  chemistry: { sameNationalityPairWeight: number; sameClubPairWeight: number; normalization: string; roundDecimals: number };
+  chemistry: {
+    sameNationalityPairWeight: number;
+    sameClubPairWeight: number;
+    normalization: string;
+    roundDecimals: number;
+  };
   coach: { formationShare: number; styleShare: number };
   match: {
     engineVersion: string;
-    distribution: 'poisson'; baseExpectedGoals: number; strengthSensitivity: number;
-    homeAdvantageRating: number; neutralVenueHomeAdvantage: number;
-    expectedGoalsMin: number; expectedGoalsMax: number; matchVarianceFraction: number;
-    regularMinutes: number; extraTimeMinutes: number; penaltiesInitialKicks: number;
+    distribution: 'poisson';
+    baseExpectedGoals: number;
+    strengthSensitivity: number;
+    homeAdvantageRating: number;
+    neutralVenueHomeAdvantage: number;
+    expectedGoalsMin: number;
+    expectedGoalsMax: number;
+    matchVarianceFraction: number;
+    regularMinutes: number;
+    extraTimeMinutes: number;
+    penaltiesInitialKicks: number;
     penaltyConversionProbability: number;
-    penaltiesSuddenDeath: boolean; seedSupported: boolean; calibrationStatus: 'validated_v1';
+    penaltiesSuddenDeath: boolean;
+    seedSupported: boolean;
+    calibrationStatus: 'validated_v1';
   };
   tournament: {
     engineVersion: string;
-    totalTeams: number; userTeams: number; opponentTeams: number;
-    uniquePrimeTeamIds: boolean; differentSeasonsOfSameClubAllowed: boolean;
+    totalTeams: number;
+    userTeams: number;
+    opponentTeams: number;
+    uniquePrimeTeamIds: boolean;
+    differentSeasonsOfSameClubAllowed: boolean;
     league: {
-      matchesPerTeam: number; homeMatches: number; awayMatches: number;
-      winPoints: number; drawPoints: number; lossPoints: number;
-      tiebreakers: string[]; directQualificationRanks: [number, number];
-      playoffRanks: [number, number]; eliminatedRanks: [number, number];
+      matchesPerTeam: number;
+      homeMatches: number;
+      awayMatches: number;
+      winPoints: number;
+      drawPoints: number;
+      lossPoints: number;
+      tiebreakers: string[];
+      directQualificationRanks: [number, number];
+      playoffRanks: [number, number];
+      eliminatedRanks: [number, number];
     };
     knockout: {
       engineVersion: string;
       drawPolicy: 'seeded-playoffs-open-redraw';
-      rounds: { id: string; teams: number; legs: number }[]; awayGoalsRule: boolean;
-      resolveDraw: 'extra-time-then-penalties'; finalNeutralVenue: boolean;
+      rounds: { id: string; teams: number; legs: number }[];
+      awayGoalsRule: boolean;
+      resolveDraw: 'extra-time-then-penalties';
+      finalNeutralVenue: boolean;
     };
   };
   storage: {
     version: number;
-    keys: Record<'currentDraft' | 'currentTeam' | 'currentTournament' | 'completedTournaments' | 'userSettings', string>;
+    keys: Record<
+      | 'currentDraft'
+      | 'currentTeam'
+      | 'currentTournament'
+      | 'completedTournaments'
+      | 'userSettings',
+      string
+    >;
   };
   designDecisions: { id: string; description: string }[];
 }

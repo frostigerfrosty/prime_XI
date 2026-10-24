@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-19",
+  "checkedAt": "2026-10-24",
   "status": "partial_historical_audit",
   "retrieved": [
     {
@@ -22,6 +22,542 @@
       "sha256": "ab205347c3fda767730ef8dd01c7d8b52b6efc725975feedf5392da5f217ec48",
       "bytes": 12976128,
       "usedFor": "Secondary research of 2025/26 club participation. Its match-squad table covers Arsenal 2006/07 only and cannot verify the 60 selected squads. Raw database is not distributed with PRIME XI."
+    },
+    {
+      "id": "reference-milan-2006-2007",
+      "url": "https://en.wikipedia.org/wiki/2006%E2%80%9307_AC_Milan_season",
+      "sha256": "cdf2a359b93c23883aa135357e58e45a720f5431c7f532488e59d80baa38b0b8",
+      "bytes": 939671,
+      "wikipediaRevision": 1371384301,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-liverpool-2006-2007",
+      "url": "https://en.wikipedia.org/wiki/2006%E2%80%9307_Liverpool_F.C._season",
+      "sha256": "7b6aa31164c09638a5115e0828e7239ceb8e27df3aef75d776547cd91e4a7648",
+      "bytes": 886964,
+      "wikipediaRevision": 1362430967,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-united-2006-2007",
+      "url": "https://en.wikipedia.org/wiki/2006%E2%80%9307_Manchester_United_F.C._season",
+      "sha256": "ccf8910336f282311061bf5a2bd366a3e0f846ed3a4855b2ff9c074d9bc60079",
+      "bytes": 560287,
+      "wikipediaRevision": 1374669330,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-united-2007-2008",
+      "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Manchester_United_F.C._season",
+      "sha256": "3fa1df2056467be087b0c4c506aa82494cd56d2c850dfcd88e1cf2407fab6087",
+      "bytes": 635210,
+      "wikipediaRevision": 1370468096,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-chelsea-2007-2008",
+      "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Chelsea_F.C._season",
+      "sha256": "ca86dcb0ba403c9e87ec4d9c2ae099d71e032709bbf2754709b629681512e498",
+      "bytes": 1245817,
+      "wikipediaRevision": 1376158045,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2007-2008",
+      "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Real_Madrid_CF_season",
+      "sha256": "4110047d21e53f4edb2de613fc0a12aa2a46a3a1fb7bcd5a67cadc36996ee063",
+      "bytes": 1237574,
+      "wikipediaRevision": 1368177214,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2008-2009",
+      "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_FC_Barcelona_season",
+      "sha256": "8160fdcf0d5160dfd47a3e7c6e713481de2ebe2f45afe7a04f032a16b9f61a08",
+      "bytes": 1193379,
+      "wikipediaRevision": 1376806765,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-united-2008-2009",
+      "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_Manchester_United_F.C._season",
+      "sha256": "390e21895502740d2daf2d130b371aa2217c7fb6577edb5bd1a91c29f7fd5f2c",
+      "bytes": 860953,
+      "wikipediaRevision": 1368059680,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-chelsea-2008-2009",
+      "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_Chelsea_F.C._season",
+      "sha256": "f5c3e74512ba3b2bc9861c10766038d8bb3ab10ed50d578495963a45d751c508",
+      "bytes": 1499340,
+      "wikipediaRevision": 1357478263,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-inter-2009-2010",
+      "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_Inter_Milan_season",
+      "sha256": "12879c9b8189e1ef9326b2c90098c43d353dd967d5cfece0857290358992a848",
+      "bytes": 1453700,
+      "wikipediaRevision": 1376806981,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2009-2010",
+      "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_FC_Bayern_Munich_season",
+      "sha256": "ae6718338cec22ba42437dcbad07c98c330d96bb04675c4a6e599a84bf4e4bf6",
+      "bytes": 1179064,
+      "wikipediaRevision": 1381665682,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2009-2010",
+      "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_FC_Barcelona_season",
+      "sha256": "8448ccc35b4da5f95985735166a65f44514ce8474039b2e46526dcc479a9afcf",
+      "bytes": 1231543,
+      "wikipediaRevision": 1376190605,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2010-2011",
+      "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_FC_Barcelona_season",
+      "sha256": "593bd91fb5f38968ba251213d4740a65ad87fd2a171f11ad07427fc9191c7547",
+      "bytes": 1437775,
+      "wikipediaRevision": 1381304075,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-united-2010-2011",
+      "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Manchester_United_F.C._season",
+      "sha256": "0c0c3fa401ffc3723864b5f23af8b704dee9db01a91c71f8c20d069e8ca05b8c",
+      "bytes": 810344,
+      "wikipediaRevision": 1376275382,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2010-2011",
+      "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Real_Madrid_CF_season",
+      "sha256": "ff4abc89b1877d554a2e917e5fa8ae2db094fd36ae148beebf23e8a4f7c261f8",
+      "bytes": 1572018,
+      "wikipediaRevision": 1371688591,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-chelsea-2011-2012",
+      "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_Chelsea_F.C._season",
+      "sha256": "8466dfce3ed8aab1cd3aec4b7556d10513f3ebeb4120992362848953b94f5101",
+      "bytes": 1843341,
+      "wikipediaRevision": 1376275503,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2011-2012",
+      "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_FC_Bayern_Munich_season",
+      "sha256": "d051deca775ab40507ae5ab5d940acc1b50b608734169b9dea70ef074dc27d6a",
+      "bytes": 1163052,
+      "wikipediaRevision": 1381355970,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2011-2012",
+      "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_Real_Madrid_CF_season",
+      "sha256": "c552db8f55e0107f17271b258f4e2e81b57cd56643c1544699023b30ab1df7eb",
+      "bytes": 2691446,
+      "wikipediaRevision": 1376884202,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2012-2013",
+      "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_FC_Bayern_Munich_season",
+      "sha256": "0cfd2794b4a7070aa48bea245f849bb768f0be03f5f20f180ad44ce3a7bf2889",
+      "bytes": 1597041,
+      "wikipediaRevision": 1381356194,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-dortmund-2012-2013",
+      "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Borussia_Dortmund_season",
+      "sha256": "26d6ad4e39b1b9ace144646fb7eed00339280d407afae9039f934753a8a19ff2",
+      "bytes": 1067682,
+      "wikipediaRevision": 1376697664,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2012-2013",
+      "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_FC_Barcelona_season",
+      "sha256": "1066d32e78c3f83834925ded1cba4d908e88ac4f5f2705e3e59b5c74d6fc2e3a",
+      "bytes": 1546471,
+      "wikipediaRevision": 1375676975,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2013-2014",
+      "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_Real_Madrid_CF_season",
+      "sha256": "6df5e14700c0e4694dd722976917cc86ef99102074e7b5804c9a8bb99debcdfc",
+      "bytes": 1431889,
+      "wikipediaRevision": 1373547822,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-atletico-2013-2014",
+      "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_Atl%C3%A9tico_Madrid_season",
+      "sha256": "74656dd2a34ada72715c7c0cdb9e4507c4798d7a608fb3f3b6ee02e36e3fae39",
+      "bytes": 1115102,
+      "wikipediaRevision": 1376704905,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2013-2014",
+      "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_FC_Bayern_Munich_season",
+      "sha256": "798d32584b790c3877b0f1c3d88af32bf6fa4f7bada708f03c52d5a5c30164b9",
+      "bytes": 2099231,
+      "wikipediaRevision": 1381356299,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2014-2015",
+      "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_FC_Barcelona_season",
+      "sha256": "5c680dde294c55e583c787c807d90c31c5e173890f45ecd152d7a2f65fca2abd",
+      "bytes": 1523038,
+      "wikipediaRevision": 1381304335,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-juventus-2014-2015",
+      "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Juventus_FC_season",
+      "sha256": "cd51f5df41d6fdf07e671f8388ef5fc8b2f1782f1cd1b32789043c65330e98d6",
+      "bytes": 1824156,
+      "wikipediaRevision": 1376277323,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2014-2015",
+      "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_FC_Bayern_Munich_season",
+      "sha256": "ff0910b2f7fdeeb7e7fc45d12695731b2d774bfc190712773de5d0aaa56f2dd5",
+      "bytes": 2313220,
+      "wikipediaRevision": 1381356663,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2015-2016",
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Real_Madrid_CF_season",
+      "sha256": "064cc924067d43fb4cb8a72b1d74f00a55aa0328e16a566b40bcb5cc5a7b9264",
+      "bytes": 1405528,
+      "wikipediaRevision": 1376278386,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-atletico-2015-2016",
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Atl%C3%A9tico_Madrid_season",
+      "sha256": "3e89c0de4968c2de239feba6a6c0481a8cc74f0298323db02d2101027990a108",
+      "bytes": 1490087,
+      "wikipediaRevision": 1376278265,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2015-2016",
+      "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_FC_Barcelona_season",
+      "sha256": "8d41865054417af327cd913f7d831482f2786c92f18feae84c262e1ceb506c6a",
+      "bytes": 1539264,
+      "wikipediaRevision": 1381304460,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2016-2017",
+      "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Real_Madrid_CF_season",
+      "sha256": "9db88c368659a448b6a6afe32c5f6b6ad7bbeb257c4786be701e7326c7aae56a",
+      "bytes": 1438528,
+      "wikipediaRevision": 1376278724,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-juventus-2016-2017",
+      "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Juventus_FC_season",
+      "sha256": "a0283f9534777484c81091015230d2cd1f665964dffdc035ccea217dc0020e03",
+      "bytes": 1885716,
+      "wikipediaRevision": 1377453567,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-chelsea-2016-2017",
+      "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Chelsea_F.C._season",
+      "sha256": "4cee354732f52c1124732c1e5f1f88db89d87fd879b495f5a06f6ba2c628c63a",
+      "bytes": 2031385,
+      "wikipediaRevision": 1376538199,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2017-2018",
+      "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Real_Madrid_CF_season",
+      "sha256": "d2b0b5d51767aa38db88717854cbf3b7f9e9ed2f66df3618c328ba174b04a260",
+      "bytes": 1449449,
+      "wikipediaRevision": 1376278993,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-liverpool-2017-2018",
+      "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Liverpool_F.C._season",
+      "sha256": "cce8727fd6f498e23509648ba5239b28d9df799e5082786718c3563492a1b9ad",
+      "bytes": 1492722,
+      "wikipediaRevision": 1372797101,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-city-2017-2018",
+      "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Manchester_City_F.C._season",
+      "sha256": "4f64f2925f59abab249b9d8ee062d67b57845acf19e7733ab4d780711ef8c35a",
+      "bytes": 1685129,
+      "wikipediaRevision": 1377701525,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-liverpool-2018-2019",
+      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Liverpool_F.C._season",
+      "sha256": "a1f43f415b8e10b3f94b22430d56a08dc458e693acc2f0112edbe0bd1ac5284b",
+      "bytes": 1592608,
+      "wikipediaRevision": 1380504317,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-city-2018-2019",
+      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Manchester_City_F.C._season",
+      "sha256": "bd503c1b020a74644c2cf242a9fe6db608d4bbba8161d828d841d92b26d329b2",
+      "bytes": 1670865,
+      "wikipediaRevision": 1377701409,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-ajax-2018-2019",
+      "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_AFC_Ajax_season",
+      "sha256": "3766094b6f45320f3e76467fad9e744504ecaeef3b510852e81ccf09e0c3c3e0",
+      "bytes": 1326592,
+      "wikipediaRevision": 1377662187,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2019-2020",
+      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_FC_Bayern_Munich_season",
+      "sha256": "cb42117c6623d740b1e7936402738aa855e8465a1d1ede2e009960e563c2c977",
+      "bytes": 1200801,
+      "wikipediaRevision": 1381665167,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-psg-2019-2020",
+      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Paris_Saint-Germain_FC_season",
+      "sha256": "11271f3ac572fbd980620caf79f7a6312a44238f76ce89fbbc1f4fdc1d4271ad",
+      "bytes": 1258636,
+      "wikipediaRevision": 1375343122,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-liverpool-2019-2020",
+      "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Liverpool_F.C._season",
+      "sha256": "5db7e69dd0260e48098b117246bc624aa184094f93bb448cade0efe354bf2cf5",
+      "bytes": 1484160,
+      "wikipediaRevision": 1374509598,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-chelsea-2020-2021",
+      "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Chelsea_F.C._season",
+      "sha256": "b758c7b3d593750df637935e685f09256528ae9640d1f82cd9688480ce83d616",
+      "bytes": 1987095,
+      "wikipediaRevision": 1375740542,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-city-2020-2021",
+      "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Manchester_City_F.C._season",
+      "sha256": "1ac597d137fdb72ec27be0ecff6fb1664e11ca98d0ded38b8009ea177fa32e9d",
+      "bytes": 1844433,
+      "wikipediaRevision": 1377701309,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2020-2021",
+      "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_FC_Bayern_Munich_season",
+      "sha256": "5efc9395c100d65079cf17c56b6d381ef62a70177580dadcddc105300a692c01",
+      "bytes": 1181141,
+      "wikipediaRevision": 1381665151,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2021-2022",
+      "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Real_Madrid_CF_season",
+      "sha256": "7295606bbe9435dc3d8dcbed141702c1bba36af7d66e3af2d2cccdfb1fa4a8b5",
+      "bytes": 1265125,
+      "wikipediaRevision": 1358017318,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-liverpool-2021-2022",
+      "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Liverpool_F.C._season",
+      "sha256": "bd583292e687e37f4752f55e0a3fe0cf74380e3c4a01824312d372b53df4c500",
+      "bytes": 1454855,
+      "wikipediaRevision": 1376279936,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-city-2021-2022",
+      "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Manchester_City_F.C._season",
+      "sha256": "085b0e8a1344dff85554f845796aae71b7dbb38e6f6b08be69088080e840a00c",
+      "bytes": 1857393,
+      "wikipediaRevision": 1377701209,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-city-2022-2023",
+      "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_Manchester_City_F.C._season",
+      "sha256": "2f0c5f4634625cbda96e8af4fe639af6cfc5c845e2e965ae44014431fa5bc171",
+      "bytes": 2028321,
+      "wikipediaRevision": 1377685224,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-inter-2022-2023",
+      "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_Inter_Milan_season",
+      "sha256": "3df4486406dfb7d7291190855d3c90e3c343c5b4b7972410d2989df16c21381e",
+      "bytes": 1825525,
+      "wikipediaRevision": 1376835009,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-napoli-2022-2023",
+      "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_SSC_Napoli_season",
+      "sha256": "78f6878876b4717db3ae101a1bcd6dd0b38e4e2e5b6cd094a7e2a95892a95ba4",
+      "bytes": 1121367,
+      "wikipediaRevision": 1380237442,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-real-madrid-2023-2024",
+      "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Real_Madrid_CF_season",
+      "sha256": "4ba12cc040f1927a718d812e306918ab71fe03525bd5838c9b6051133efc7c37",
+      "bytes": 1402604,
+      "wikipediaRevision": 1376295426,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-manchester-city-2023-2024",
+      "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Manchester_City_F.C._season",
+      "sha256": "020dfcf211a25f8ab4ebbaab26ed8e3be939abdb49f1c87536ef4290a02582e9",
+      "bytes": 1883084,
+      "wikipediaRevision": 1377701081,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-leverkusen-2023-2024",
+      "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Bayer_04_Leverkusen_season",
+      "sha256": "5c4c434ee4a3e674aca45e57e12f387a0e619e83b97525ee85ecd2478b68d80c",
+      "bytes": 1114858,
+      "wikipediaRevision": 1377435551,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-psg-2024-2025",
+      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Paris_Saint-Germain_FC_season",
+      "sha256": "d413f6844fd9f18ca2fed7a60c0bd9395baddb8c8b95d7f4c4a0b4c56e2cce46",
+      "bytes": 1354589,
+      "wikipediaRevision": 1381451747,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-inter-2024-2025",
+      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Inter_Milan_season",
+      "sha256": "aadf0d046d1de5bebd21487ae36bd6526494b8143637ee696e718ed67396d4e9",
+      "bytes": 2251386,
+      "wikipediaRevision": 1378077871,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-barcelona-2024-2025",
+      "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_FC_Barcelona_season",
+      "sha256": "b25e23f1663ea5215cbaa6e398e008cc34a78c878532dd80b275e614775a16ef",
+      "bytes": 2369263,
+      "wikipediaRevision": 1381363581,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-psg-2025-2026",
+      "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Paris_Saint-Germain_FC_season",
+      "sha256": "c3eac6491996f4842ef30c10882b55967133d0be47193613d2b487c999d05723",
+      "bytes": 1199721,
+      "wikipediaRevision": 1381451969,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-arsenal-2025-2026",
+      "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Arsenal_F.C._season",
+      "sha256": "ff3e12de31d1ecea47b581d6a85cf0d99d87a1b70d0087c910fbb8e4220f3f56",
+      "bytes": 3330716,
+      "wikipediaRevision": 1381716024,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bayern-2025-2026",
+      "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_FC_Bayern_Munich_season",
+      "sha256": "ae63bdea319df649df395e8d2fb0510d9b929cb251a075bdb916cf75de0a19e0",
+      "bytes": 1623733,
+      "wikipediaRevision": 1373829927,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-maldini-career",
+      "url": "https://en.wikipedia.org/wiki/Paolo_Maldini",
+      "sha256": "e648dc6b0b1de3a7e2ba36aea2b744f774f6c310f48d2233b85c4c58bc9dd2f2",
+      "bytes": 1421396,
+      "wikipediaRevision": 1376815456,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-lahm-career",
+      "url": "https://en.wikipedia.org/wiki/Philipp_Lahm",
+      "sha256": "3079c70aba5f01dfe8a7ebd6a7f2ed4d6d0074b89101c9a3e0cc2be317efcbb2",
+      "bytes": 1001123,
+      "wikipediaRevision": 1368917675,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-de-ligt-career",
+      "url": "https://en.wikipedia.org/wiki/Matthijs_de_Ligt",
+      "sha256": "a325729cdb419e2999387c50ad1b7e4af5ac3ae3db8eb828a5e77caa4f6bf4e3",
+      "bytes": 708975,
+      "wikipediaRevision": 1377871286,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-fernandinho-career",
+      "url": "https://en.wikipedia.org/wiki/Fernandinho_%28footballer%2C_born_May_1985%29",
+      "sha256": "69f8d03894fda9a05ed1311e116c857bc8b067e20aaaf2dcec1ca418d7823958",
+      "bytes": 666194,
+      "wikipediaRevision": 1379842523,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-laporte-career",
+      "url": "https://en.wikipedia.org/wiki/Aymeric_Laporte",
+      "sha256": "2edeb6c4e0a9bcd83fc41e81e922f9e41c6b72c8d3c1f8b1a8c57a413d5f1925",
+      "bytes": 557889,
+      "wikipediaRevision": 1381483654,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-munir-career",
+      "url": "https://en.wikipedia.org/wiki/Munir_El_Haddadi",
+      "sha256": "435500106d3b6b402a9b0cedf2773edbdf5db28a92bfc70fc90f2fb8a0b6f7d9",
+      "bytes": 426137,
+      "wikipediaRevision": 1376286765,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
+    },
+    {
+      "id": "reference-bouna-sarr-career",
+      "url": "https://en.wikipedia.org/wiki/Bouna_Sarr",
+      "sha256": "467355f7d1c6741c3720766d9845c3c9ba3ed4aa223ae6cae83f315058f23e79",
+      "bytes": 245240,
+      "wikipediaRevision": 1376554681,
+      "usedFor": "Season-row, coach and dated captain/international-allegiance evidence. Precise roles remain subject to field review; no blanket historical approval."
     }
   ],
   "blocked": [
@@ -52,11 +588,21 @@
     }
   ],
   "requiredHistoricalWork": [
-    "season squad membership",
-    "captain status",
-    "season-specific nationality and position checks",
-    "four remaining coach-season references"
+    "Precise primary and secondary season roles beyond broad DF/MF/FW labels",
+    "Remaining nationality source gaps and retrospective flag conflicts",
+    "Complete field-level person, club and season approval before full catalog release"
   ],
   "rawDataRedistributed": false,
-  "note": "Read references and field-level checks are recorded separately from original editorial game ratings. No unread reference or missing field has been marked verified."
+  "note": "Read references and field-level checks are recorded separately from original editorial game ratings. No unread reference or missing field has been marked verified.",
+  "latestAccess": {
+    "cloud": "GitHub API, Pages, Wikipedia and UEFA still return Proxy CONNECT HTTP 403 on 2026-10-24, even after network permission was granted.",
+    "githubRunner": {
+      "runUrl": "https://github.com/frostigerfrosty/prime_XI/actions/runs/40097224212",
+      "reportCommit": "9abbbbfb107eb54fa5b619f0e08273c6379322ed",
+      "reportPath": "review-results/historical-sources.json",
+      "references": 67,
+      "retrieved": 67
+    }
+  },
+  "attribution": "Wikipedia contributors, linked articles and revision histories, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/). No raw HTML is distributed with the application."
 }

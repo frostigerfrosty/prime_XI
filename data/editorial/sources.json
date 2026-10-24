@@ -1,903 +1,903 @@
 [
   {
     "id": "reference-milan-2006-2007",
-    "title": "AC Milan 2006/07 — Saisonreferenz (ungeprüft)",
+    "title": "AC Milan 2006/07 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2006%E2%80%9307_AC_Milan_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "cdf2a359b93c23883aa135357e58e45a720f5431c7f532488e59d80baa38b0b8"
   },
   {
     "id": "reference-liverpool-2006-2007",
-    "title": "Liverpool 2006/07 — Saisonreferenz (ungeprüft)",
+    "title": "Liverpool 2006/07 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2006%E2%80%9307_Liverpool_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "7b6aa31164c09638a5115e0828e7239ceb8e27df3aef75d776547cd91e4a7648"
   },
   {
     "id": "reference-manchester-united-2006-2007",
-    "title": "Manchester United 2006/07 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester United 2006/07 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2006%E2%80%9307_Manchester_United_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ccf8910336f282311061bf5a2bd366a3e0f846ed3a4855b2ff9c074d9bc60079"
   },
   {
     "id": "reference-manchester-united-2007-2008",
-    "title": "Manchester United 2007/08 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester United 2007/08 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Manchester_United_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "3fa1df2056467be087b0c4c506aa82494cd56d2c850dfcd88e1cf2407fab6087"
   },
   {
     "id": "reference-chelsea-2007-2008",
-    "title": "Chelsea 2007/08 — Saisonreferenz (ungeprüft)",
+    "title": "Chelsea 2007/08 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Chelsea_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ca86dcb0ba403c9e87ec4d9c2ae099d71e032709bbf2754709b629681512e498"
   },
   {
     "id": "reference-real-madrid-2007-2008",
-    "title": "Real Madrid 2007/08 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2007/08 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "4110047d21e53f4edb2de613fc0a12aa2a46a3a1fb7bcd5a67cadc36996ee063"
   },
   {
     "id": "reference-barcelona-2008-2009",
-    "title": "Barcelona 2008/09 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2008/09 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "8160fdcf0d5160dfd47a3e7c6e713481de2ebe2f45afe7a04f032a16b9f61a08"
   },
   {
     "id": "reference-manchester-united-2008-2009",
-    "title": "Manchester United 2008/09 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester United 2008/09 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_Manchester_United_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "390e21895502740d2daf2d130b371aa2217c7fb6577edb5bd1a91c29f7fd5f2c"
   },
   {
     "id": "reference-chelsea-2008-2009",
-    "title": "Chelsea 2008/09 — Saisonreferenz (ungeprüft)",
+    "title": "Chelsea 2008/09 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2008%E2%80%9309_Chelsea_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "f5c3e74512ba3b2bc9861c10766038d8bb3ab10ed50d578495963a45d751c508"
   },
   {
     "id": "reference-inter-2009-2010",
-    "title": "Inter Milan 2009/10 — Saisonreferenz (ungeprüft)",
+    "title": "Inter Milan 2009/10 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_Inter_Milan_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "12879c9b8189e1ef9326b2c90098c43d353dd967d5cfece0857290358992a848"
   },
   {
     "id": "reference-bayern-2009-2010",
-    "title": "Bayern München 2009/10 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2009/10 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ae6718338cec22ba42437dcbad07c98c330d96bb04675c4a6e599a84bf4e4bf6"
   },
   {
     "id": "reference-barcelona-2009-2010",
-    "title": "Barcelona 2009/10 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2009/10 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2009%E2%80%9310_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "8448ccc35b4da5f95985735166a65f44514ce8474039b2e46526dcc479a9afcf"
   },
   {
     "id": "reference-barcelona-2010-2011",
-    "title": "Barcelona 2010/11 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2010/11 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "593bd91fb5f38968ba251213d4740a65ad87fd2a171f11ad07427fc9191c7547"
   },
   {
     "id": "reference-manchester-united-2010-2011",
-    "title": "Manchester United 2010/11 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester United 2010/11 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Manchester_United_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "0c0c3fa401ffc3723864b5f23af8b704dee9db01a91c71f8c20d069e8ca05b8c"
   },
   {
     "id": "reference-real-madrid-2010-2011",
-    "title": "Real Madrid 2010/11 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2010/11 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ff4abc89b1877d554a2e917e5fa8ae2db094fd36ae148beebf23e8a4f7c261f8"
   },
   {
     "id": "reference-chelsea-2011-2012",
-    "title": "Chelsea 2011/12 — Saisonreferenz (ungeprüft)",
+    "title": "Chelsea 2011/12 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_Chelsea_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "8466dfce3ed8aab1cd3aec4b7556d10513f3ebeb4120992362848953b94f5101"
   },
   {
     "id": "reference-bayern-2011-2012",
-    "title": "Bayern München 2011/12 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2011/12 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "d051deca775ab40507ae5ab5d940acc1b50b608734169b9dea70ef074dc27d6a"
   },
   {
     "id": "reference-real-madrid-2011-2012",
-    "title": "Real Madrid 2011/12 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2011/12 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "c552db8f55e0107f17271b258f4e2e81b57cd56643c1544699023b30ab1df7eb"
   },
   {
     "id": "reference-bayern-2012-2013",
-    "title": "Bayern München 2012/13 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2012/13 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "0cfd2794b4a7070aa48bea245f849bb768f0be03f5f20f180ad44ce3a7bf2889"
   },
   {
     "id": "reference-dortmund-2012-2013",
-    "title": "Borussia Dortmund 2012/13 — Saisonreferenz (ungeprüft)",
+    "title": "Borussia Dortmund 2012/13 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Borussia_Dortmund_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "26d6ad4e39b1b9ace144646fb7eed00339280d407afae9039f934753a8a19ff2"
   },
   {
     "id": "reference-barcelona-2012-2013",
-    "title": "Barcelona 2012/13 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2012/13 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "1066d32e78c3f83834925ded1cba4d908e88ac4f5f2705e3e59b5c74d6fc2e3a"
   },
   {
     "id": "reference-real-madrid-2013-2014",
-    "title": "Real Madrid 2013/14 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2013/14 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "6df5e14700c0e4694dd722976917cc86ef99102074e7b5804c9a8bb99debcdfc"
   },
   {
     "id": "reference-atletico-2013-2014",
-    "title": "Atlético Madrid 2013/14 — Saisonreferenz (ungeprüft)",
+    "title": "Atlético Madrid 2013/14 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_Atl%C3%A9tico_Madrid_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "74656dd2a34ada72715c7c0cdb9e4507c4798d7a608fb3f3b6ee02e36e3fae39"
   },
   {
     "id": "reference-bayern-2013-2014",
-    "title": "Bayern München 2013/14 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2013/14 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "798d32584b790c3877b0f1c3d88af32bf6fa4f7bada708f03c52d5a5c30164b9"
   },
   {
     "id": "reference-barcelona-2014-2015",
-    "title": "Barcelona 2014/15 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2014/15 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "5c680dde294c55e583c787c807d90c31c5e173890f45ecd152d7a2f65fca2abd"
   },
   {
     "id": "reference-juventus-2014-2015",
-    "title": "Juventus 2014/15 — Saisonreferenz (ungeprüft)",
+    "title": "Juventus 2014/15 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Juventus_FC_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "cd51f5df41d6fdf07e671f8388ef5fc8b2f1782f1cd1b32789043c65330e98d6"
   },
   {
     "id": "reference-bayern-2014-2015",
-    "title": "Bayern München 2014/15 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2014/15 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ff0910b2f7fdeeb7e7fc45d12695731b2d774bfc190712773de5d0aaa56f2dd5"
   },
   {
     "id": "reference-real-madrid-2015-2016",
-    "title": "Real Madrid 2015/16 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2015/16 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "064cc924067d43fb4cb8a72b1d74f00a55aa0328e16a566b40bcb5cc5a7b9264"
   },
   {
     "id": "reference-atletico-2015-2016",
-    "title": "Atlético Madrid 2015/16 — Saisonreferenz (ungeprüft)",
+    "title": "Atlético Madrid 2015/16 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_Atl%C3%A9tico_Madrid_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "3e89c0de4968c2de239feba6a6c0481a8cc74f0298323db02d2101027990a108"
   },
   {
     "id": "reference-barcelona-2015-2016",
-    "title": "Barcelona 2015/16 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2015/16 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2015%E2%80%9316_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "8d41865054417af327cd913f7d831482f2786c92f18feae84c262e1ceb506c6a"
   },
   {
     "id": "reference-real-madrid-2016-2017",
-    "title": "Real Madrid 2016/17 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2016/17 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "9db88c368659a448b6a6afe32c5f6b6ad7bbeb257c4786be701e7326c7aae56a"
   },
   {
     "id": "reference-juventus-2016-2017",
-    "title": "Juventus 2016/17 — Saisonreferenz (ungeprüft)",
+    "title": "Juventus 2016/17 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Juventus_FC_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "a0283f9534777484c81091015230d2cd1f665964dffdc035ccea217dc0020e03"
   },
   {
     "id": "reference-chelsea-2016-2017",
-    "title": "Chelsea 2016/17 — Saisonreferenz (ungeprüft)",
+    "title": "Chelsea 2016/17 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2016%E2%80%9317_Chelsea_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "4cee354732f52c1124732c1e5f1f88db89d87fd879b495f5a06f6ba2c628c63a"
   },
   {
     "id": "reference-real-madrid-2017-2018",
-    "title": "Real Madrid 2017/18 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2017/18 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "d2b0b5d51767aa38db88717854cbf3b7f9e9ed2f66df3618c328ba174b04a260"
   },
   {
     "id": "reference-liverpool-2017-2018",
-    "title": "Liverpool 2017/18 — Saisonreferenz (ungeprüft)",
+    "title": "Liverpool 2017/18 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Liverpool_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "cce8727fd6f498e23509648ba5239b28d9df799e5082786718c3563492a1b9ad"
   },
   {
     "id": "reference-manchester-city-2017-2018",
-    "title": "Manchester City 2017/18 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester City 2017/18 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2017%E2%80%9318_Manchester_City_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "4f64f2925f59abab249b9d8ee062d67b57845acf19e7733ab4d780711ef8c35a"
   },
   {
     "id": "reference-liverpool-2018-2019",
-    "title": "Liverpool 2018/19 — Saisonreferenz (ungeprüft)",
+    "title": "Liverpool 2018/19 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Liverpool_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "a1f43f415b8e10b3f94b22430d56a08dc458e693acc2f0112edbe0bd1ac5284b"
   },
   {
     "id": "reference-manchester-city-2018-2019",
-    "title": "Manchester City 2018/19 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester City 2018/19 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_Manchester_City_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "bd503c1b020a74644c2cf242a9fe6db608d4bbba8161d828d841d92b26d329b2"
   },
   {
     "id": "reference-ajax-2018-2019",
-    "title": "Ajax 2018/19 — Saisonreferenz (ungeprüft)",
+    "title": "Ajax 2018/19 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2018%E2%80%9319_AFC_Ajax_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "3766094b6f45320f3e76467fad9e744504ecaeef3b510852e81ccf09e0c3c3e0"
   },
   {
     "id": "reference-bayern-2019-2020",
-    "title": "Bayern München 2019/20 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2019/20 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "cb42117c6623d740b1e7936402738aa855e8465a1d1ede2e009960e563c2c977"
   },
   {
     "id": "reference-psg-2019-2020",
-    "title": "Paris Saint-Germain 2019/20 — Saisonreferenz (ungeprüft)",
+    "title": "Paris Saint-Germain 2019/20 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Paris_Saint-Germain_FC_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "11271f3ac572fbd980620caf79f7a6312a44238f76ce89fbbc1f4fdc1d4271ad"
   },
   {
     "id": "reference-liverpool-2019-2020",
-    "title": "Liverpool 2019/20 — Saisonreferenz (ungeprüft)",
+    "title": "Liverpool 2019/20 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2019%E2%80%9320_Liverpool_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "5db7e69dd0260e48098b117246bc624aa184094f93bb448cade0efe354bf2cf5"
   },
   {
     "id": "reference-chelsea-2020-2021",
-    "title": "Chelsea 2020/21 — Saisonreferenz (ungeprüft)",
+    "title": "Chelsea 2020/21 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Chelsea_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "b758c7b3d593750df637935e685f09256528ae9640d1f82cd9688480ce83d616"
   },
   {
     "id": "reference-manchester-city-2020-2021",
-    "title": "Manchester City 2020/21 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester City 2020/21 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Manchester_City_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "1ac597d137fdb72ec27be0ecff6fb1664e11ca98d0ded38b8009ea177fa32e9d"
   },
   {
     "id": "reference-bayern-2020-2021",
-    "title": "Bayern München 2020/21 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2020/21 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "5efc9395c100d65079cf17c56b6d381ef62a70177580dadcddc105300a692c01"
   },
   {
     "id": "reference-real-madrid-2021-2022",
-    "title": "Real Madrid 2021/22 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2021/22 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "7295606bbe9435dc3d8dcbed141702c1bba36af7d66e3af2d2cccdfb1fa4a8b5"
   },
   {
     "id": "reference-liverpool-2021-2022",
-    "title": "Liverpool 2021/22 — Saisonreferenz (ungeprüft)",
+    "title": "Liverpool 2021/22 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Liverpool_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "bd583292e687e37f4752f55e0a3fe0cf74380e3c4a01824312d372b53df4c500"
   },
   {
     "id": "reference-manchester-city-2021-2022",
-    "title": "Manchester City 2021/22 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester City 2021/22 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2021%E2%80%9322_Manchester_City_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "085b0e8a1344dff85554f845796aae71b7dbb38e6f6b08be69088080e840a00c"
   },
   {
     "id": "reference-manchester-city-2022-2023",
-    "title": "Manchester City 2022/23 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester City 2022/23 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_Manchester_City_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "2f0c5f4634625cbda96e8af4fe639af6cfc5c845e2e965ae44014431fa5bc171"
   },
   {
     "id": "reference-inter-2022-2023",
-    "title": "Inter Milan 2022/23 — Saisonreferenz (ungeprüft)",
+    "title": "Inter Milan 2022/23 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_Inter_Milan_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "3df4486406dfb7d7291190855d3c90e3c343c5b4b7972410d2989df16c21381e"
   },
   {
     "id": "reference-napoli-2022-2023",
-    "title": "Napoli 2022/23 — Saisonreferenz (ungeprüft)",
+    "title": "Napoli 2022/23 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2022%E2%80%9323_SSC_Napoli_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "78f6878876b4717db3ae101a1bcd6dd0b38e4e2e5b6cd094a7e2a95892a95ba4"
   },
   {
     "id": "reference-real-madrid-2023-2024",
-    "title": "Real Madrid 2023/24 — Saisonreferenz (ungeprüft)",
+    "title": "Real Madrid 2023/24 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Real_Madrid_CF_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "4ba12cc040f1927a718d812e306918ab71fe03525bd5838c9b6051133efc7c37"
   },
   {
     "id": "reference-manchester-city-2023-2024",
-    "title": "Manchester City 2023/24 — Saisonreferenz (ungeprüft)",
+    "title": "Manchester City 2023/24 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Manchester_City_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "020dfcf211a25f8ab4ebbaab26ed8e3be939abdb49f1c87536ef4290a02582e9"
   },
   {
     "id": "reference-leverkusen-2023-2024",
-    "title": "Bayer Leverkusen 2023/24 — Saisonreferenz (ungeprüft)",
+    "title": "Bayer Leverkusen 2023/24 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Bayer_04_Leverkusen_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "5c4c434ee4a3e674aca45e57e12f387a0e619e83b97525ee85ecd2478b68d80c"
   },
   {
     "id": "reference-psg-2024-2025",
-    "title": "Paris Saint-Germain 2024/25 — Saisonreferenz (ungeprüft)",
+    "title": "Paris Saint-Germain 2024/25 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Paris_Saint-Germain_FC_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "d413f6844fd9f18ca2fed7a60c0bd9395baddb8c8b95d7f4c4a0b4c56e2cce46"
   },
   {
     "id": "reference-inter-2024-2025",
-    "title": "Inter Milan 2024/25 — Saisonreferenz (ungeprüft)",
+    "title": "Inter Milan 2024/25 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_Inter_Milan_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "aadf0d046d1de5bebd21487ae36bd6526494b8143637ee696e718ed67396d4e9"
   },
   {
     "id": "reference-barcelona-2024-2025",
-    "title": "Barcelona 2024/25 — Saisonreferenz (ungeprüft)",
+    "title": "Barcelona 2024/25 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2024%E2%80%9325_FC_Barcelona_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "b25e23f1663ea5215cbaa6e398e008cc34a78c878532dd80b275e614775a16ef"
   },
   {
     "id": "reference-psg-2025-2026",
-    "title": "Paris Saint-Germain 2025/26 — Saisonreferenz (ungeprüft)",
+    "title": "Paris Saint-Germain 2025/26 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Paris_Saint-Germain_FC_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "c3eac6491996f4842ef30c10882b55967133d0be47193613d2b487c999d05723"
   },
   {
     "id": "reference-arsenal-2025-2026",
-    "title": "Arsenal 2025/26 — Saisonreferenz (ungeprüft)",
+    "title": "Arsenal 2025/26 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_Arsenal_F.C._season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ff3e12de31d1ecea47b581d6a85cf0d99d87a1b70d0087c910fbb8e4220f3f56"
   },
   {
     "id": "reference-bayern-2025-2026",
-    "title": "Bayern München 2025/26 — Saisonreferenz (ungeprüft)",
+    "title": "Bayern München 2025/26 — Saisonreferenz (abgerufen; Feldprüfung separat)",
     "url": "https://en.wikipedia.org/wiki/2025%E2%80%9326_FC_Bayern_Munich_season",
     "kind": "season_reference",
-    "accessStatus": "not_retrieved",
-    "checkedAt": null,
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
     "intendedCoverage": [
       "club-season",
       "selected-players",
       "coach",
       "captain"
     ],
-    "contentSha256": null
+    "contentSha256": "ae63bdea319df649df395e8d2fb0510d9b929cb251a075bdb916cf75de0a19e0"
   },
   {
     "id": "dataset-coach-seasons-2025",
@@ -910,5 +910,18 @@
     "intendedCoverage": [
       "coach-season-name-only; see data/research/coach-audit.json"
     ]
+  },
+  {
+    "id": "reference-laporte-career",
+    "title": "Aymeric Laporte — Verbandswechsel zu Spanien im Mai 2021",
+    "url": "https://en.wikipedia.org/wiki/Aymeric_Laporte",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "international-allegiance",
+      "May-2021-association-change"
+    ],
+    "contentSha256": "2edeb6c4e0a9bcd83fc41e81e922f9e41c6b72c8d3c1f8b1a8c57a413d5f1925"
   }
 ]

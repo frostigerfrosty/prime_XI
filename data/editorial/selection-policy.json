@@ -1,5 +1,5 @@
 {
-  "datasetVersion": "0.2.0",
+  "datasetVersion": "0.2.1",
   "targetYears": [
     2007,
     2008,
@@ -26,6 +26,6 @@
   "yearMeaning": "Saison-Endjahr: 2007 entspricht der europäischen Vereinssaison 2006/07.",
   "status": "editorial_draft",
   "selectionMethod": "Redaktionelle Kandidatenauswahl aus CL-Finalisten, starken CL-Teilnehmern und nationalen Spitzenmannschaften; keine objektiv belegte Top-3-Rangliste.",
-  "verificationNote": "Historische Freigabe weiterhin offen. Wikipedia/UEFA trotz gespeicherter Domains in der laufenden Instanz mit Proxy-403 gesperrt. Zusätzliche öffentliche GitHub-Referenzen wurden gelesen und als Recherchebelege erfasst; sie ersetzen keine vollständige Feldprüfung.",
+  "verificationNote": "60 Saisonreferenzen über den GitHub-Prüfworkflow abgerufen; alle Trainerzuordnungen und Spielerzugehörigkeiten abgeglichen. Präzise Haupt-/Nebenpositionen und weitere saisonbezogene Detailprüfungen bleiben offen. Keine pauschale historische Freigabe.",
   "rosterScope": "Je Mannschaft ein redaktionell ausgewählter 18er-Kader mit separater Standardelf; keine Behauptung eines vollständigen Registrierungs- oder Finalkaders."
 }

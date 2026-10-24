@@ -21,10 +21,10 @@ npm run dev
 
 `npm run build` erzeugt die statische Anwendung in `dist/`. `npm run preview`
 startet die Vorschau dieses Builds. Die Basis ist `/prime_XI/`; Hash-Routing
-unterstützt direkte Links und Neuladen auf GitHub Pages. Ein manuell gestarteter
-Workflow für eine Entwicklungsvorschau ist vorbereitet; eine Veröffentlichung
-wurde nicht ausgeführt. [Start, Build-Prüfung und Veröffentlichung](docs/START_UND_BUILD.md)
-beschreibt Ablauf und Voraussetzungen.
+unterstützt direkte Links und Neuladen auf GitHub Pages. Der Veröffentlichungsworkflow
+läuft nach Änderungen auf `main`, manuell oder mit einem Tag `preview-v*`, prüft den Build und die veröffentlichte
+Website und protokolliert das Ergebnis. [Abschluss und Freigabestand](docs/ABSCHLUSS.md)
+enthält die Nachweise und gegebenenfalls noch nötige Repository-Einstellungen.
 
 Der Browser lädt den Katalog als separate JSON-Datei. Währenddessen zeigt die
 Anwendung eine Ladeanzeige; bei einem Ladefehler kannst du erneut laden.
@@ -95,6 +95,8 @@ zusammengeführt. Schlägt die Speicherung fehl, bleibt der bisherige Stand erha
 
 [Etappe 12: Testspiele teilen und wiederholen](docs/TESTSPIELLINKS.md)
 
+[Etappen 13–15: Veröffentlichung, Praxistest und historische Prüfung](docs/ABSCHLUSS.md)
+
 ## Datenbestand
 
 Der Bestand enthält **60 Saisonmannschaften für 2007–2026**, jeweils drei pro Endjahr,
@@ -103,12 +105,18 @@ Saisonkarten für 554 Spieleridentitäten. Dazu kommen sieben Formationen mit
 Spielfeldkoordinaten, fünf Taktiken, Positions-/Länderlabels, eigene Vereinsmonogramme
 und zentrale Daten für Stärke, Chemie, Boni, Match- und Turnierregeln.
 
-**Der historische Daten-Release ist noch gesperrt.** 56 Trainer-Saison-Zuordnungen
-wurden mit einem tatsächlich gelesenen Register abgeglichen. Die vollständige
-Prüfung der Kaderzugehörigkeit, Captains und Saisonrollen bleibt offen, weil weitere
-Referenzen und größere Quelldateien aus dieser Laufzeit nicht erreichbar sind.
-Ungeprüfte Angaben tragen weiterhin `pending`; keine Quelle wurde bloß aufgrund
-ihrer URL als gelesen markiert.
+**Der historische Daten-Release ist noch gesperrt.** Über einen GitHub-Prüfworkflow
+wurden alle 60 Saisonreferenzen und ergänzende Personenartikel abgerufen.
+Alle 60 Trainerzuordnungen und die Saisonzugehörigkeit der 1.080 Karten wurden
+abgeglichen. Nur 237 Karten haben in den gelesenen Saisontabellen alle präzisen
+Rollen ausdrücklich aufgeführt; 843 benötigen weitere Rollenbelege. Dazu kommen
+offene Länder- und Detailprüfungen. Diese Befunde führen zu keiner pauschalen Freigabe.
+
+Katalog **0.2.1** korrigiert Laportes Verbandszuordnung ab Mai 2021 auf Spanien.
+Drafts und Sicherungen aus 0.2.0 bleiben verwendbar. Die Aufstellung verwendet die
+aktuelle Katalogchemie; gespeicherte Teams, Turniere und Archive behalten ihre
+eingefrorenen Werte. Alte Testspiellinks werden bei abweichendem Katalogstand
+weiterhin ausdrücklich abgelehnt.
 
 Die Ratings und individuellen Saisonattribute sind eigene, feste V1-Spielwerte.
 Sie sind keine historischen Messwerte oder EA/FIFA-Ratings. Die Matchengine wurde
@@ -125,6 +133,7 @@ npm run check
 npm run data:report
 npm run match:report
 npm run build
+python3 -m unittest discover -s tests/research
 ```
 
 Die zusätzlichen Browsertests starten den Produktionsbuild und prüfen Desktop

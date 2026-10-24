@@ -25,6 +25,8 @@ jobs:
         run: python3 -m unittest discover -s tests/research
       - name: Read public historical season references
         run: python3 scripts/review-historical-sources.py --output review-results/historical-sources.json
+      - name: Classify candidate field evidence without approval
+        run: python3 scripts/audit-season-cards.py review-results/historical-sources.json review-results/season-card-audit.json
       - name: Inspect Pages access
         if: always()
         env:

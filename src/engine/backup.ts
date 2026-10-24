@@ -6,7 +6,8 @@ import { isRecord, isText } from './strength.ts';
 import { isSavedTeam } from './saved-team.ts';
 import { historyLimit, isHistoryEntry } from './history.ts';
 import { equalValues } from './comparison.ts';
-import { getDatasetVersion, getDefaultSettings, getGameRules } from '../data/index.ts';
+import { getDefaultSettings, getGameRules } from '../data/index.ts';
+import { isCompatibleDraftDataset } from '../data/compatibility.ts';
 import type { SnapshotRecords } from '../utils/game-storage.ts';
 
 export interface BackupServices {
@@ -30,7 +31,7 @@ function isAppState(value: unknown, services: BackupServices): value is AppState
   const draft = value['currentDraft'];
   if (
     draft !== null &&
-    (value['datasetVersion'] !== getDatasetVersion() ||
+    (!isCompatibleDraftDataset(value['datasetVersion']) ||
       !builder.isValid(draft) ||
       !builder.completion(draft))
   )

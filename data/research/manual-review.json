@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-24",
+  "datasetVersion": "0.2.1",
+  "reviewedCorrections": [
+    {
+      "personId": "laporte",
+      "teamIds": [
+        "manchester-city-2020-2021",
+        "manchester-city-2021-2022",
+        "manchester-city-2022-2023"
+      ],
+      "before": "FRA",
+      "after": "ESP",
+      "sourceId": "reference-laporte-career",
+      "reason": "Spanish citizenship and FIFA approval of the association change in May 2021, before the end of the 2020/21 campaign. Earlier 2017/18 and 2018/19 cards remain FRA."
+    }
+  ],
+  "retainedDespiteCurrentSeasonTableFlag": [
+    {
+      "teamId": "barcelona-2015-2016",
+      "personId": "munir",
+      "retained": "ESP",
+      "sourceId": "reference-munir-career",
+      "reason": "Spain senior debut in 2014; requests to switch were rejected in 2018 and 2020. Approval for Morocco came in January 2021. The retrospectively updated MAR flag does not apply to 2015/16."
+    }
+  ],
+  "unresolvedExamples": [
+    {
+      "teamId": "bayern-2020-2021",
+      "personId": "bouna-sarr",
+      "issue": "Season row shows FRA while the editorial card uses SEN; the current biography excerpt does not establish the season-specific allegiance. Not changed or approved without dated evidence."
+    }
+  ],
+  "releaseDecision": "blocked",
+  "reason": "Roster membership and coach assignment do not establish every precise primary/secondary position or all season-nationality fields. All 60 historical team gates remain pending."
+}

@@ -171,6 +171,13 @@ export function BackupPanel() {
       {backup && imported && (
         <div className="backup-preview" role="region" aria-label="Sicherungsvorschau">
           <h3>Geprüfte Sicherung</h3>
+          {imported.datasetVersion !== getDatasetVersion() && imported.currentDraft && (
+            <p className="settings-caption">
+              Die Auswahl dieses älteren Drafts bleibt gültig. Die aktuelle Länderkorrektur kann
+              seine Chemie ändern. Gespeicherte Teams, Turniere und Archive behalten ihre bisherigen
+              Werte.
+            </p>
+          )}
           <p className="backup-file-name">
             {fileName} · {dateLabel(backup.exportedAt)}
           </p>

@@ -1014,7 +1014,8 @@
         "kind": {
           "enum": [
             "season_reference",
-            "dataset_reference"
+            "dataset_reference",
+            "player_reference"
           ]
         },
         "accessStatus": {

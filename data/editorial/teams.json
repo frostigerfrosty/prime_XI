@@ -445,7 +445,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-milan-2006-2007"
     ]
   },
   {
@@ -898,7 +899,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-liverpool-2006-2007"
     ]
   },
   {
@@ -1361,7 +1363,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-united-2006-2007"
     ]
   },
   {
@@ -1825,7 +1828,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-united-2007-2008"
     ]
   },
   {
@@ -2274,7 +2278,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-chelsea-2007-2008"
     ]
   },
   {
@@ -2722,7 +2727,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2007-2008"
     ]
   },
   {
@@ -3188,7 +3194,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2008-2009"
     ]
   },
   {
@@ -3653,7 +3660,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-united-2008-2009"
     ]
   },
   {
@@ -4102,7 +4110,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-chelsea-2008-2009"
     ]
   },
   {
@@ -4556,7 +4565,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-inter-2009-2010"
     ]
   },
   {
@@ -5022,7 +5032,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2009-2010"
     ]
   },
   {
@@ -5487,7 +5498,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2009-2010"
     ]
   },
   {
@@ -5948,7 +5960,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2010-2011"
     ]
   },
   {
@@ -6412,7 +6425,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-united-2010-2011"
     ]
   },
   {
@@ -6872,7 +6886,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2010-2011"
     ]
   },
   {
@@ -7325,7 +7340,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-chelsea-2011-2012"
     ]
   },
   {
@@ -7792,7 +7808,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2011-2012"
     ]
   },
   {
@@ -8250,7 +8267,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2011-2012"
     ]
   },
   {
@@ -8716,7 +8734,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2012-2013"
     ]
   },
   {
@@ -9166,7 +9185,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-dortmund-2012-2013"
     ]
   },
   {
@@ -9624,7 +9644,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2012-2013"
     ]
   },
   {
@@ -10079,7 +10100,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2013-2014"
     ]
   },
   {
@@ -10541,7 +10563,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-atletico-2013-2014"
     ]
   },
   {
@@ -11013,7 +11036,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2013-2014"
     ]
   },
   {
@@ -11478,7 +11502,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2014-2015"
     ]
   },
   {
@@ -11931,7 +11956,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-juventus-2014-2015"
     ]
   },
   {
@@ -12390,7 +12416,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2014-2015"
     ]
   },
   {
@@ -12851,7 +12878,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2015-2016"
     ]
   },
   {
@@ -13317,7 +13345,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-atletico-2015-2016"
     ]
   },
   {
@@ -13780,7 +13809,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2015-2016"
     ]
   },
   {
@@ -14245,7 +14275,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2016-2017"
     ]
   },
   {
@@ -14698,7 +14729,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-juventus-2016-2017"
     ]
   },
   {
@@ -15157,7 +15189,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-chelsea-2016-2017"
     ]
   },
   {
@@ -15621,7 +15654,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2017-2018"
     ]
   },
   {
@@ -16087,7 +16121,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-liverpool-2017-2018"
     ]
   },
   {
@@ -16539,7 +16574,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-city-2017-2018"
     ]
   },
   {
@@ -17002,7 +17038,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-liverpool-2018-2019"
     ]
   },
   {
@@ -17457,7 +17494,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-city-2018-2019"
     ]
   },
   {
@@ -17913,7 +17951,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-ajax-2018-2019"
     ]
   },
   {
@@ -18372,7 +18411,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2019-2020"
     ]
   },
   {
@@ -18824,6 +18864,10 @@
       "di-maria",
       "mbappe",
       "neymar"
+    ],
+    "coachVerificationStatus": "verified",
+    "coachSourceIds": [
+      "reference-psg-2019-2020"
     ]
   },
   {
@@ -19286,7 +19330,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-liverpool-2019-2020"
     ]
   },
   {
@@ -19752,7 +19797,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-chelsea-2020-2021"
     ]
   },
   {
@@ -20056,7 +20102,7 @@
         "secondaryPositions": [],
         "rating": 90,
         "ratingStatus": "approved",
-        "nationality": "FRA",
+        "nationality": "ESP",
         "attributes": {
           "pace": 75,
           "shooting": 50,
@@ -20070,6 +20116,10 @@
         },
         "styleTags": [
           "compact"
+        ],
+        "sourceIds": [
+          "reference-manchester-city-2020-2021",
+          "reference-laporte-career"
         ]
       },
       {
@@ -20210,7 +20260,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-city-2020-2021"
     ]
   },
   {
@@ -20665,7 +20716,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-bayern-2020-2021"
     ]
   },
   {
@@ -21128,7 +21180,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2021-2022"
     ]
   },
   {
@@ -21591,7 +21644,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-liverpool-2021-2022"
     ]
   },
   {
@@ -21894,7 +21948,7 @@
         "secondaryPositions": [],
         "rating": 92,
         "ratingStatus": "approved",
-        "nationality": "FRA",
+        "nationality": "ESP",
         "attributes": {
           "pace": 77,
           "shooting": 52,
@@ -21908,6 +21962,10 @@
         },
         "styleTags": [
           "compact"
+        ],
+        "sourceIds": [
+          "reference-manchester-city-2021-2022",
+          "reference-laporte-career"
         ]
       },
       {
@@ -22044,7 +22102,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-city-2021-2022"
     ]
   },
   {
@@ -22347,7 +22406,7 @@
         "secondaryPositions": [],
         "rating": 90,
         "ratingStatus": "approved",
-        "nationality": "FRA",
+        "nationality": "ESP",
         "attributes": {
           "pace": 75,
           "shooting": 50,
@@ -22361,6 +22420,10 @@
         },
         "styleTags": [
           "compact"
+        ],
+        "sourceIds": [
+          "reference-manchester-city-2022-2023",
+          "reference-laporte-career"
         ]
       },
       {
@@ -22498,7 +22561,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-city-2022-2023"
     ]
   },
   {
@@ -22955,7 +23019,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-inter-2022-2023"
     ]
   },
   {
@@ -23397,6 +23462,10 @@
       "lozano",
       "osimhen",
       "kvaratskhelia"
+    ],
+    "coachVerificationStatus": "verified",
+    "coachSourceIds": [
+      "reference-napoli-2022-2023"
     ]
   },
   {
@@ -23854,7 +23923,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-real-madrid-2023-2024"
     ]
   },
   {
@@ -24311,7 +24381,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-manchester-city-2023-2024"
     ]
   },
   {
@@ -24774,7 +24845,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-leverkusen-2023-2024"
     ]
   },
   {
@@ -25239,7 +25311,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-psg-2024-2025"
     ]
   },
   {
@@ -25692,7 +25765,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-inter-2024-2025"
     ]
   },
   {
@@ -26151,7 +26225,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-barcelona-2024-2025"
     ]
   },
   {
@@ -26616,7 +26691,8 @@
     ],
     "coachVerificationStatus": "verified",
     "coachSourceIds": [
-      "dataset-coach-seasons-2025"
+      "dataset-coach-seasons-2025",
+      "reference-psg-2025-2026"
     ]
   },
   {
@@ -27080,6 +27156,10 @@
       "odegaard",
       "eze",
       "gyokeres"
+    ],
+    "coachVerificationStatus": "verified",
+    "coachSourceIds": [
+      "reference-arsenal-2025-2026"
     ]
   },
   {
@@ -27531,6 +27611,10 @@
       "musiala",
       "luis-diaz",
       "harry-kane"
+    ],
+    "coachVerificationStatus": "verified",
+    "coachSourceIds": [
+      "reference-bayern-2025-2026"
     ]
   }
 ]

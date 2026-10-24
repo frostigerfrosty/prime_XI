@@ -1,5 +1,42 @@
 # Quellenprüfung und konkrete Zugriffssperren
 
+## Aktueller Stand am 24. Oktober 2026
+
+Der Workflow **Review historical references** hat alle 60 Saisonartikel sowie
+sieben ergänzende Personenreferenzen vom GitHub-Runner abgerufen. Direkter
+Cloud-Zugriff auf Wikipedia, UEFA, GitHub API und Pages bleibt mit Proxy-403
+blockiert. Der Runner-Zugriff löst diese Recherchegrenze für die Quellenprüfung.
+
+Die tatsächlichen Auszüge, Titel, Byteumfänge, SHA-256 und Revisions-IDs stehen im
+[Nachweis-Commit](https://github.com/frostigerfrosty/prime_XI/blob/9abbbbfb107eb54fa5b619f0e08273c6379322ed/review-results/historical-sources.json).
+Quellenauszüge: Wikipedia-Autoren, verlinkte Artikel und Versionsgeschichten,
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Die Anwendung verteilt keine rohen HTML-Seiten.
+
+`data/research/coach-audit.json` bestätigt nun alle 60 ausgewählten Trainer und
+erhält den früheren Registerabgleich. `season-card-audit.json` enthält die
+Zeilentreffer je Karte; `manual-review.json` erklärt datierte Korrekturen und
+Konflikte. Alle 1.080 Karten haben einen Saisonzeilentreffer. Nur bei 237 sind
+alle präzisen Rollen in den gelesenen Tabellen ausdrücklich genannt; 843 benötigen
+weitere Rollenbelege. Keine Referenz und kein Treffer erteilt automatisch eine
+vollständige historische Freigabe.
+
+```sh
+python3 -m unittest discover -s tests/research
+python3 scripts/review-historical-sources.py --output /tmp/prime-xi-sources.json
+python3 scripts/audit-season-cards.py /tmp/prime-xi-sources.json /tmp/prime-xi-cards.json
+```
+
+Bei blockiertem Cloud-Zugriff den Quellenworkflow in GitHub Actions starten. Er
+erhält das Ergebnis als Artefakt und auf `verification/source-review-<run-id>`.
+Aktuelle Details: [Datenstand](DATENSTAND.md) und [Abschluss](ABSCHLUSS.md).
+
+## Archiviertes Zugriffsprotokoll vom 19. Oktober 2026
+
+Die folgenden Aussagen zum damaligen Quellenstatus bleiben als historisches
+Protokoll erhalten. Die neu abgerufenen Quellen sind oben und in den Prüfdateien
+gesondert nachgewiesen.
+
 Die gespeicherte Umgebungskonfiguration enthält bereits `en.wikipedia.org` und
 `www.uefa.com`. Lesende Abrufe von Saison-/Finalreferenzen wurden in der laufenden
 Instanz erneut mit Proxy-CONNECT HTTP 403 abgewiesen, einschließlich eines Versuchs
@@ -13,11 +50,11 @@ Die vollständig abgerufenen Dateien sind mit Commit, URL, Umfang und SHA-256 in
 `data/research/source-audit.json` dokumentiert. Die großen Rohdateien werden nicht
 mit dem Anwendungsdatensatz verteilt.
 
-| Referenz | Tatsächlicher Prüfumfang |
-| --- | --- |
-| `salimt/football-datasets`, `team_competitions_seasons.csv`, Commit `da9227e…` | 56 exakte Übereinstimmungen von Trainername, Verein und Saison. Einzelheiten in `data/research/coach-audit.json`. Vier Einträge fehlen oder sind leer. |
-| Gleiches Repository, `player_profiles.csv` | Ergänzende Recherche zu Namen, Positionen, aktuellen Vereinen und Beitrittsdaten jüngerer Spieler. Ein heutiges Profil ist kein vollständiger Nachweis früherer Saisonzugehörigkeit. |
-| `brooksryan/arsenal-data`, `root.sqlite`, Commit `ce9591f…` | Sekundäre Recherche zur Saison 2025/26. Dessen Matchkader-Tabelle enthält nur Arsenal 2006/07 und wurde nicht als Nachweis aller ausgewählten Kader ausgegeben. |
+| Referenz                                                                       | Tatsächlicher Prüfumfang                                                                                                                                                             |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `salimt/football-datasets`, `team_competitions_seasons.csv`, Commit `da9227e…` | 56 exakte Übereinstimmungen von Trainername, Verein und Saison. Einzelheiten in `data/research/coach-audit.json`. Vier Einträge fehlen oder sind leer.                               |
+| Gleiches Repository, `player_profiles.csv`                                     | Ergänzende Recherche zu Namen, Positionen, aktuellen Vereinen und Beitrittsdaten jüngerer Spieler. Ein heutiges Profil ist kein vollständiger Nachweis früherer Saisonzugehörigkeit. |
+| `brooksryan/arsenal-data`, `root.sqlite`, Commit `ce9591f…`                    | Sekundäre Recherche zur Saison 2025/26. Dessen Matchkader-Tabelle enthält nur Arsenal 2006/07 und wurde nicht als Nachweis aller ausgewählten Kader ausgegeben.                      |
 
 Die vorgeschlagenen Wikipedia-Saisonlinks bleiben `not_retrieved`. Ihre bloße
 Existenz im Register ist kein Quellenbeleg. Die Trainerprüfung setzt nur das konkret

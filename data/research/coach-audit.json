@@ -1,487 +1,1036 @@
 {
-  "checkedAt": "2026-10-19",
-  "sourceId": "dataset-coach-seasons-2025",
-  "matchedNames": 56,
+  "checkedAt": "2026-10-24",
+  "matchedNames": 60,
+  "sourceReportCommit": "9abbbbfb107eb54fa5b619f0e08273c6379322ed",
+  "sourceReportPath": "review-results/historical-sources.json",
+  "sourceReportSha256": "9e1ce1d48c93d4cd6585ef5cd75246f85f01906f9a0c64acceff33e8be6b8539",
   "records": [
     {
       "teamId": "milan-2006-2007",
       "authoredCoach": "Carlo Ancelotti",
-      "referenceCoach": "Carlo Ancelotti",
-      "referenceClubId": "5",
-      "referenceSeason": 2006,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Carlo Ancelotti",
+      "sourceId": "reference-milan-2006-2007",
+      "contentSha256": "cdf2a359b93c23883aa135357e58e45a720f5431c7f532488e59d80baa38b0b8",
+      "wikipediaRevision": 1371384301,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "liverpool-2006-2007",
       "authoredCoach": "Rafael Benítez",
-      "referenceCoach": "Rafael Benítez",
-      "referenceClubId": "31",
-      "referenceSeason": 2006,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Rafael Benítez",
+      "sourceId": "reference-liverpool-2006-2007",
+      "contentSha256": "7b6aa31164c09638a5115e0828e7239ceb8e27df3aef75d776547cd91e4a7648",
+      "wikipediaRevision": 1362430967,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-united-2006-2007",
       "authoredCoach": "Alex Ferguson",
-      "referenceCoach": "Alex Ferguson",
-      "referenceClubId": "985",
-      "referenceSeason": 2006,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Sir Alex Ferguson",
+      "sourceId": "reference-manchester-united-2006-2007",
+      "contentSha256": "ccf8910336f282311061bf5a2bd366a3e0f846ed3a4855b2ff9c074d9bc60079",
+      "wikipediaRevision": 1374669330,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-united-2007-2008",
       "authoredCoach": "Alex Ferguson",
-      "referenceCoach": "Alex Ferguson",
-      "referenceClubId": "985",
-      "referenceSeason": 2007,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Sir Alex Ferguson",
+      "sourceId": "reference-manchester-united-2007-2008",
+      "contentSha256": "3fa1df2056467be087b0c4c506aa82494cd56d2c850dfcd88e1cf2407fab6087",
+      "wikipediaRevision": 1370468096,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "chelsea-2007-2008",
       "authoredCoach": "Avram Grant",
-      "referenceCoach": "Avram Grant",
-      "referenceClubId": "631",
-      "referenceSeason": 2007,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | José Mourinho | (until 20 September)[1] | Avram Grant | (from 20 September)",
+      "sourceId": "reference-chelsea-2007-2008",
+      "contentSha256": "ca86dcb0ba403c9e87ec4d9c2ae099d71e032709bbf2754709b629681512e498",
+      "wikipediaRevision": 1376158045,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2007-2008",
       "authoredCoach": "Bernd Schuster",
-      "referenceCoach": "Bernd Schuster",
-      "referenceClubId": "418",
-      "referenceSeason": 2007,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Bernd Schuster",
+      "sourceId": "reference-real-madrid-2007-2008",
+      "contentSha256": "4110047d21e53f4edb2de613fc0a12aa2a46a3a1fb7bcd5a67cadc36996ee063",
+      "wikipediaRevision": 1368177214,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2008-2009",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "131",
-      "referenceSeason": 2008,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Pep Guardiola",
+      "sourceId": "reference-barcelona-2008-2009",
+      "contentSha256": "8160fdcf0d5160dfd47a3e7c6e713481de2ebe2f45afe7a04f032a16b9f61a08",
+      "wikipediaRevision": 1376806765,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-united-2008-2009",
       "authoredCoach": "Alex Ferguson",
-      "referenceCoach": "Alex Ferguson",
-      "referenceClubId": "985",
-      "referenceSeason": 2008,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Sir Alex Ferguson",
+      "sourceId": "reference-manchester-united-2008-2009",
+      "contentSha256": "390e21895502740d2daf2d130b371aa2217c7fb6577edb5bd1a91c29f7fd5f2c",
+      "wikipediaRevision": 1368059680,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "chelsea-2008-2009",
       "authoredCoach": "Guus Hiddink",
-      "referenceCoach": "Guus Hiddink",
-      "referenceClubId": "631",
-      "referenceSeason": 2008,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Luiz Felipe Scolari (until 9 February 2009) | Ray Wilkins (caretaker manager) | Guus Hiddink (interim manager)",
+      "sourceId": "reference-chelsea-2008-2009",
+      "contentSha256": "f5c3e74512ba3b2bc9861c10766038d8bb3ab10ed50d578495963a45d751c508",
+      "wikipediaRevision": 1357478263,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "inter-2009-2010",
       "authoredCoach": "José Mourinho",
-      "referenceCoach": "José Mourinho",
-      "referenceClubId": "46",
-      "referenceSeason": 2009,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | José Mourinho",
+      "sourceId": "reference-inter-2009-2010",
+      "contentSha256": "12879c9b8189e1ef9326b2c90098c43d353dd967d5cfece0857290358992a848",
+      "wikipediaRevision": 1376806981,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2009-2010",
       "authoredCoach": "Louis van Gaal",
-      "referenceCoach": "Louis van Gaal",
-      "referenceClubId": "27",
-      "referenceSeason": 2009,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Louis van Gaal",
+      "sourceId": "reference-bayern-2009-2010",
+      "contentSha256": "ae6718338cec22ba42437dcbad07c98c330d96bb04675c4a6e599a84bf4e4bf6",
+      "wikipediaRevision": 1381665682,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2009-2010",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "131",
-      "referenceSeason": 2009,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Pep Guardiola",
+      "sourceId": "reference-barcelona-2009-2010",
+      "contentSha256": "8448ccc35b4da5f95985735166a65f44514ce8474039b2e46526dcc479a9afcf",
+      "wikipediaRevision": 1376190605,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2010-2011",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "131",
-      "referenceSeason": 2010,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Pep Guardiola",
+      "sourceId": "reference-barcelona-2010-2011",
+      "contentSha256": "593bd91fb5f38968ba251213d4740a65ad87fd2a171f11ad07427fc9191c7547",
+      "wikipediaRevision": 1381304075,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-united-2010-2011",
       "authoredCoach": "Alex Ferguson",
-      "referenceCoach": "Alex Ferguson",
-      "referenceClubId": "985",
-      "referenceSeason": 2010,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Sir Alex Ferguson",
+      "sourceId": "reference-manchester-united-2010-2011",
+      "contentSha256": "0c0c3fa401ffc3723864b5f23af8b704dee9db01a91c71f8c20d069e8ca05b8c",
+      "wikipediaRevision": 1376275382,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2010-2011",
       "authoredCoach": "José Mourinho",
-      "referenceCoach": "José Mourinho",
-      "referenceClubId": "418",
-      "referenceSeason": 2010,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | José Mourinho",
+      "sourceId": "reference-real-madrid-2010-2011",
+      "contentSha256": "ff4abc89b1877d554a2e917e5fa8ae2db094fd36ae148beebf23e8a4f7c261f8",
+      "wikipediaRevision": 1371688591,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "chelsea-2011-2012",
       "authoredCoach": "Roberto Di Matteo",
-      "referenceCoach": "Roberto Di Matteo",
-      "referenceClubId": "631",
-      "referenceSeason": 2011,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | André Villas-Boas (until 4 March 2012) | Roberto Di Matteo (caretaker manager)",
+      "sourceId": "reference-chelsea-2011-2012",
+      "contentSha256": "8466dfce3ed8aab1cd3aec4b7556d10513f3ebeb4120992362848953b94f5101",
+      "wikipediaRevision": 1376275503,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2011-2012",
       "authoredCoach": "Jupp Heynckes",
-      "referenceCoach": "Jupp Heynckes",
-      "referenceClubId": "27",
-      "referenceSeason": 2011,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Jupp Heynckes",
+      "sourceId": "reference-bayern-2011-2012",
+      "contentSha256": "d051deca775ab40507ae5ab5d940acc1b50b608734169b9dea70ef074dc27d6a",
+      "wikipediaRevision": 1381355970,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2011-2012",
       "authoredCoach": "José Mourinho",
-      "referenceCoach": "José Mourinho",
-      "referenceClubId": "418",
-      "referenceSeason": 2011,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | José Mourinho",
+      "sourceId": "reference-real-madrid-2011-2012",
+      "contentSha256": "c552db8f55e0107f17271b258f4e2e81b57cd56643c1544699023b30ab1df7eb",
+      "wikipediaRevision": 1376884202,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2012-2013",
       "authoredCoach": "Jupp Heynckes",
-      "referenceCoach": "Jupp Heynckes",
-      "referenceClubId": "27",
-      "referenceSeason": 2012,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Jupp Heynckes",
+      "sourceId": "reference-bayern-2012-2013",
+      "contentSha256": "0cfd2794b4a7070aa48bea245f849bb768f0be03f5f20f180ad44ce3a7bf2889",
+      "wikipediaRevision": 1381356194,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "dortmund-2012-2013",
       "authoredCoach": "Jürgen Klopp",
-      "referenceCoach": "Jürgen Klopp",
-      "referenceClubId": "16",
-      "referenceSeason": 2012,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Jürgen Klopp",
+      "sourceId": "reference-dortmund-2012-2013",
+      "contentSha256": "26d6ad4e39b1b9ace144646fb7eed00339280d407afae9039f934753a8a19ff2",
+      "wikipediaRevision": 1376697664,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2012-2013",
       "authoredCoach": "Tito Vilanova",
-      "referenceCoach": "Tito Vilanova",
-      "referenceClubId": "131",
-      "referenceSeason": 2012,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Tito Vilanova",
+      "sourceId": "reference-barcelona-2012-2013",
+      "contentSha256": "1066d32e78c3f83834925ded1cba4d908e88ac4f5f2705e3e59b5c74d6fc2e3a",
+      "wikipediaRevision": 1375676975,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2013-2014",
       "authoredCoach": "Carlo Ancelotti",
-      "referenceCoach": "Carlo Ancelotti",
-      "referenceClubId": "418",
-      "referenceSeason": 2013,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Carlo Ancelotti",
+      "sourceId": "reference-real-madrid-2013-2014",
+      "contentSha256": "6df5e14700c0e4694dd722976917cc86ef99102074e7b5804c9a8bb99debcdfc",
+      "wikipediaRevision": 1373547822,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "atletico-2013-2014",
       "authoredCoach": "Diego Simeone",
-      "referenceCoach": "Diego Simeone",
-      "referenceClubId": "13",
-      "referenceSeason": 2013,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Diego Simeone",
+      "sourceId": "reference-atletico-2013-2014",
+      "contentSha256": "74656dd2a34ada72715c7c0cdb9e4507c4798d7a608fb3f3b6ee02e36e3fae39",
+      "wikipediaRevision": 1376704905,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2013-2014",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "27",
-      "referenceSeason": 2013,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Pep Guardiola",
+      "sourceId": "reference-bayern-2013-2014",
+      "contentSha256": "798d32584b790c3877b0f1c3d88af32bf6fa4f7bada708f03c52d5a5c30164b9",
+      "wikipediaRevision": 1381356299,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2014-2015",
       "authoredCoach": "Luis Enrique",
-      "referenceCoach": "Luis Enrique",
-      "referenceClubId": "131",
-      "referenceSeason": 2014,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Luis Enrique",
+      "sourceId": "reference-barcelona-2014-2015",
+      "contentSha256": "5c680dde294c55e583c787c807d90c31c5e173890f45ecd152d7a2f65fca2abd",
+      "wikipediaRevision": 1381304335,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "juventus-2014-2015",
       "authoredCoach": "Massimiliano Allegri",
-      "referenceCoach": "Massimiliano Allegri",
-      "referenceClubId": "506",
-      "referenceSeason": 2014,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Massimiliano Allegri",
+      "sourceId": "reference-juventus-2014-2015",
+      "contentSha256": "cd51f5df41d6fdf07e671f8388ef5fc8b2f1782f1cd1b32789043c65330e98d6",
+      "wikipediaRevision": 1376277323,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2014-2015",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "27",
-      "referenceSeason": 2014,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Pep Guardiola",
+      "sourceId": "reference-bayern-2014-2015",
+      "contentSha256": "ff0910b2f7fdeeb7e7fc45d12695731b2d774bfc190712773de5d0aaa56f2dd5",
+      "wikipediaRevision": 1381356663,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2015-2016",
       "authoredCoach": "Zinédine Zidane",
-      "referenceCoach": "Zinédine Zidane",
-      "referenceClubId": "418",
-      "referenceSeason": 2015,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Rafael Benítez | (until 4 January 2016) | Zinedine Zidane | (from 4 January 2016)",
+      "sourceId": "reference-real-madrid-2015-2016",
+      "contentSha256": "064cc924067d43fb4cb8a72b1d74f00a55aa0328e16a566b40bcb5cc5a7b9264",
+      "wikipediaRevision": 1376278386,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "atletico-2015-2016",
       "authoredCoach": "Diego Simeone",
-      "referenceCoach": "Diego Simeone",
-      "referenceClubId": "13",
-      "referenceSeason": 2015,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Diego Simeone",
+      "sourceId": "reference-atletico-2015-2016",
+      "contentSha256": "3e89c0de4968c2de239feba6a6c0481a8cc74f0298323db02d2101027990a108",
+      "wikipediaRevision": 1376278265,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2015-2016",
       "authoredCoach": "Luis Enrique",
-      "referenceCoach": "Luis Enrique",
-      "referenceClubId": "131",
-      "referenceSeason": 2015,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Luis Enrique",
+      "sourceId": "reference-barcelona-2015-2016",
+      "contentSha256": "8d41865054417af327cd913f7d831482f2786c92f18feae84c262e1ceb506c6a",
+      "wikipediaRevision": 1381304460,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2016-2017",
       "authoredCoach": "Zinédine Zidane",
-      "referenceCoach": "Zinédine Zidane",
-      "referenceClubId": "418",
-      "referenceSeason": 2016,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Zinedine Zidane",
+      "sourceId": "reference-real-madrid-2016-2017",
+      "contentSha256": "9db88c368659a448b6a6afe32c5f6b6ad7bbeb257c4786be701e7326c7aae56a",
+      "wikipediaRevision": 1376278724,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "juventus-2016-2017",
       "authoredCoach": "Massimiliano Allegri",
-      "referenceCoach": "Massimiliano Allegri",
-      "referenceClubId": "506",
-      "referenceSeason": 2016,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Massimiliano Allegri",
+      "sourceId": "reference-juventus-2016-2017",
+      "contentSha256": "a0283f9534777484c81091015230d2cd1f665964dffdc035ccea217dc0020e03",
+      "wikipediaRevision": 1377453567,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "chelsea-2016-2017",
       "authoredCoach": "Antonio Conte",
-      "referenceCoach": "Antonio Conte",
-      "referenceClubId": "631",
-      "referenceSeason": 2016,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Antonio Conte",
+      "sourceId": "reference-chelsea-2016-2017",
+      "contentSha256": "4cee354732f52c1124732c1e5f1f88db89d87fd879b495f5a06f6ba2c628c63a",
+      "wikipediaRevision": 1376538199,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2017-2018",
       "authoredCoach": "Zinédine Zidane",
-      "referenceCoach": "Zinédine Zidane",
-      "referenceClubId": "418",
-      "referenceSeason": 2017,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Zinedine Zidane",
+      "sourceId": "reference-real-madrid-2017-2018",
+      "contentSha256": "d2b0b5d51767aa38db88717854cbf3b7f9e9ed2f66df3618c328ba174b04a260",
+      "wikipediaRevision": 1376278993,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "liverpool-2017-2018",
       "authoredCoach": "Jürgen Klopp",
-      "referenceCoach": "Jürgen Klopp",
-      "referenceClubId": "31",
-      "referenceSeason": 2017,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Jürgen Klopp",
+      "sourceId": "reference-liverpool-2017-2018",
+      "contentSha256": "cce8727fd6f498e23509648ba5239b28d9df799e5082786718c3563492a1b9ad",
+      "wikipediaRevision": 1372797101,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-city-2017-2018",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "281",
-      "referenceSeason": 2017,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Pep Guardiola",
+      "sourceId": "reference-manchester-city-2017-2018",
+      "contentSha256": "4f64f2925f59abab249b9d8ee062d67b57845acf19e7733ab4d780711ef8c35a",
+      "wikipediaRevision": 1377701525,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "liverpool-2018-2019",
       "authoredCoach": "Jürgen Klopp",
-      "referenceCoach": "Jürgen Klopp",
-      "referenceClubId": "31",
-      "referenceSeason": 2018,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Jürgen Klopp",
+      "sourceId": "reference-liverpool-2018-2019",
+      "contentSha256": "a1f43f415b8e10b3f94b22430d56a08dc458e693acc2f0112edbe0bd1ac5284b",
+      "wikipediaRevision": 1380504317,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-city-2018-2019",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "281",
-      "referenceSeason": 2018,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Pep Guardiola",
+      "sourceId": "reference-manchester-city-2018-2019",
+      "contentSha256": "bd503c1b020a74644c2cf242a9fe6db608d4bbba8161d828d841d92b26d329b2",
+      "wikipediaRevision": 1377701409,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "ajax-2018-2019",
       "authoredCoach": "Erik ten Hag",
-      "referenceCoach": "Erik ten Hag",
-      "referenceClubId": "610",
-      "referenceSeason": 2018,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Erik ten Hag",
+      "sourceId": "reference-ajax-2018-2019",
+      "contentSha256": "3766094b6f45320f3e76467fad9e744504ecaeef3b510852e81ccf09e0c3c3e0",
+      "wikipediaRevision": 1377662187,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2019-2020",
       "authoredCoach": "Hansi Flick",
-      "referenceCoach": "Hansi Flick",
-      "referenceClubId": "27",
-      "referenceSeason": 2019,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Niko Kovač | (until 3 November) | Hansi Flick | (interim from 4 November to 3 April, permanent from 3 April)",
+      "sourceId": "reference-bayern-2019-2020",
+      "contentSha256": "cb42117c6623d740b1e7936402738aa855e8465a1d1ede2e009960e563c2c977",
+      "wikipediaRevision": 1381665167,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "psg-2019-2020",
       "authoredCoach": "Thomas Tuchel",
-      "referenceCoach": null,
-      "referenceClubId": "583",
-      "referenceSeason": 2019,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Thomas Tuchel",
+      "sourceId": "reference-psg-2019-2020",
+      "contentSha256": "11271f3ac572fbd980620caf79f7a6312a44238f76ce89fbbc1f4fdc1d4271ad",
+      "wikipediaRevision": 1375343122,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "liverpool-2019-2020",
       "authoredCoach": "Jürgen Klopp",
-      "referenceCoach": "Jürgen Klopp",
-      "referenceClubId": "31",
-      "referenceSeason": 2019,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Jürgen Klopp",
+      "sourceId": "reference-liverpool-2019-2020",
+      "contentSha256": "5db7e69dd0260e48098b117246bc624aa184094f93bb448cade0efe354bf2cf5",
+      "wikipediaRevision": 1374509598,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "chelsea-2020-2021",
       "authoredCoach": "Thomas Tuchel",
-      "referenceCoach": "Thomas Tuchel",
-      "referenceClubId": "631",
-      "referenceSeason": 2020,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Frank Lampard | (until 25 January 2021) | Thomas Tuchel | (from 26 January 2021)",
+      "sourceId": "reference-chelsea-2020-2021",
+      "contentSha256": "b758c7b3d593750df637935e685f09256528ae9640d1f82cd9688480ce83d616",
+      "wikipediaRevision": 1375740542,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-city-2020-2021",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "281",
-      "referenceSeason": 2020,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Pep Guardiola",
+      "sourceId": "reference-manchester-city-2020-2021",
+      "contentSha256": "1ac597d137fdb72ec27be0ecff6fb1664e11ca98d0ded38b8009ea177fa32e9d",
+      "wikipediaRevision": 1377701309,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2020-2021",
       "authoredCoach": "Hansi Flick",
-      "referenceCoach": "Hansi Flick",
-      "referenceClubId": "27",
-      "referenceSeason": 2020,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Hansi Flick",
+      "sourceId": "reference-bayern-2020-2021",
+      "contentSha256": "5efc9395c100d65079cf17c56b6d381ef62a70177580dadcddc105300a692c01",
+      "wikipediaRevision": 1381665151,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2021-2022",
       "authoredCoach": "Carlo Ancelotti",
-      "referenceCoach": "Carlo Ancelotti",
-      "referenceClubId": "418",
-      "referenceSeason": 2021,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Carlo Ancelotti",
+      "sourceId": "reference-real-madrid-2021-2022",
+      "contentSha256": "7295606bbe9435dc3d8dcbed141702c1bba36af7d66e3af2d2cccdfb1fa4a8b5",
+      "wikipediaRevision": 1358017318,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "liverpool-2021-2022",
       "authoredCoach": "Jürgen Klopp",
-      "referenceCoach": "Jürgen Klopp",
-      "referenceClubId": "31",
-      "referenceSeason": 2021,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Jürgen Klopp",
+      "sourceId": "reference-liverpool-2021-2022",
+      "contentSha256": "bd583292e687e37f4752f55e0a3fe0cf74380e3c4a01824312d372b53df4c500",
+      "wikipediaRevision": 1376279936,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-city-2021-2022",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "281",
-      "referenceSeason": 2021,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Pep Guardiola",
+      "sourceId": "reference-manchester-city-2021-2022",
+      "contentSha256": "085b0e8a1344dff85554f845796aae71b7dbb38e6f6b08be69088080e840a00c",
+      "wikipediaRevision": 1377701209,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-city-2022-2023",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "281",
-      "referenceSeason": 2022,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Pep Guardiola",
+      "sourceId": "reference-manchester-city-2022-2023",
+      "contentSha256": "2f0c5f4634625cbda96e8af4fe639af6cfc5c845e2e965ae44014431fa5bc171",
+      "wikipediaRevision": 1377685224,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "inter-2022-2023",
       "authoredCoach": "Simone Inzaghi",
-      "referenceCoach": "Simone Inzaghi",
-      "referenceClubId": "46",
-      "referenceSeason": 2022,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Simone Inzaghi",
+      "sourceId": "reference-inter-2022-2023",
+      "contentSha256": "3df4486406dfb7d7291190855d3c90e3c343c5b4b7972410d2989df16c21381e",
+      "wikipediaRevision": 1376835009,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "napoli-2022-2023",
       "authoredCoach": "Luciano Spalletti",
-      "referenceCoach": null,
-      "referenceClubId": "619",
-      "referenceSeason": 2022,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Luciano Spalletti",
+      "sourceId": "reference-napoli-2022-2023",
+      "contentSha256": "78f6878876b4717db3ae101a1bcd6dd0b38e4e2e5b6cd094a7e2a95892a95ba4",
+      "wikipediaRevision": 1380237442,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "real-madrid-2023-2024",
       "authoredCoach": "Carlo Ancelotti",
-      "referenceCoach": "Carlo Ancelotti",
-      "referenceClubId": "418",
-      "referenceSeason": 2023,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Carlo Ancelotti",
+      "sourceId": "reference-real-madrid-2023-2024",
+      "contentSha256": "4ba12cc040f1927a718d812e306918ab71fe03525bd5838c9b6051133efc7c37",
+      "wikipediaRevision": 1376295426,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "manchester-city-2023-2024",
       "authoredCoach": "Pep Guardiola",
-      "referenceCoach": "Pep Guardiola",
-      "referenceClubId": "281",
-      "referenceSeason": 2023,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Pep Guardiola",
+      "sourceId": "reference-manchester-city-2023-2024",
+      "contentSha256": "020dfcf211a25f8ab4ebbaab26ed8e3be939abdb49f1c87536ef4290a02582e9",
+      "wikipediaRevision": 1377701081,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "leverkusen-2023-2024",
       "authoredCoach": "Xabi Alonso",
-      "referenceCoach": "Xabi Alonso",
-      "referenceClubId": "15",
-      "referenceSeason": 2023,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Xabi Alonso",
+      "sourceId": "reference-leverkusen-2023-2024",
+      "contentSha256": "5c4c434ee4a3e674aca45e57e12f387a0e619e83b97525ee85ecd2478b68d80c",
+      "wikipediaRevision": 1377435551,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "psg-2024-2025",
       "authoredCoach": "Luis Enrique",
-      "referenceCoach": "Luis Enrique",
-      "referenceClubId": "583",
-      "referenceSeason": 2024,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Luis Enrique",
+      "sourceId": "reference-psg-2024-2025",
+      "contentSha256": "d413f6844fd9f18ca2fed7a60c0bd9395baddb8c8b95d7f4c4a0b4c56e2cce46",
+      "wikipediaRevision": 1381451747,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "inter-2024-2025",
       "authoredCoach": "Simone Inzaghi",
-      "referenceCoach": "Simone Inzaghi",
-      "referenceClubId": "46",
-      "referenceSeason": 2024,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Simone Inzaghi | (until 3 June) | Cristian Chivu | (from 9 June)",
+      "sourceId": "reference-inter-2024-2025",
+      "contentSha256": "aadf0d046d1de5bebd21487ae36bd6526494b8143637ee696e718ed67396d4e9",
+      "wikipediaRevision": 1378077871,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "barcelona-2024-2025",
       "authoredCoach": "Hansi Flick",
-      "referenceCoach": "Hansi Flick",
-      "referenceClubId": "131",
-      "referenceSeason": 2024,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Hansi Flick",
+      "sourceId": "reference-barcelona-2024-2025",
+      "contentSha256": "b25e23f1663ea5215cbaa6e398e008cc34a78c878532dd80b275e614775a16ef",
+      "wikipediaRevision": 1381363581,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "psg-2025-2026",
       "authoredCoach": "Luis Enrique",
-      "referenceCoach": "Luis Enrique",
-      "referenceClubId": "583",
-      "referenceSeason": 2025,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Luis Enrique",
+      "sourceId": "reference-psg-2025-2026",
+      "contentSha256": "c3eac6491996f4842ef30c10882b55967133d0be47193613d2b487c999d05723",
+      "wikipediaRevision": 1381451969,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "arsenal-2025-2026",
       "authoredCoach": "Mikel Arteta",
-      "referenceCoach": null,
-      "referenceClubId": "11",
-      "referenceSeason": 2025,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Manager | Mikel Arteta",
+      "sourceId": "reference-arsenal-2025-2026",
+      "contentSha256": "ff3e12de31d1ecea47b581d6a85cf0d99d87a1b70d0087c910fbb8e4220f3f56",
+      "wikipediaRevision": 1381716024,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     },
     {
       "teamId": "bayern-2025-2026",
       "authoredCoach": "Vincent Kompany",
-      "referenceCoach": null,
-      "referenceClubId": "27",
-      "referenceSeason": 2025,
-      "scope": "coach-field-only; no roster/captain verification"
+      "referenceCoach": "Head coach | Vincent Kompany",
+      "sourceId": "reference-bayern-2025-2026",
+      "contentSha256": "ae63bdea319df649df395e8d2fb0510d9b929cb251a075bdb916cf75de0a19e0",
+      "wikipediaRevision": 1373829927,
+      "scope": "Selected coach held the role during this season; multiple coaches in one season are preserved in the reference text. Coach assignment only, no blanket team approval."
     }
-  ]
+  ],
+  "previousRegisterAudit": {
+    "checkedAt": "2026-10-19",
+    "sourceId": "dataset-coach-seasons-2025",
+    "matchedNames": 56,
+    "records": [
+      {
+        "teamId": "milan-2006-2007",
+        "authoredCoach": "Carlo Ancelotti",
+        "referenceCoach": "Carlo Ancelotti",
+        "referenceClubId": "5",
+        "referenceSeason": 2006,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "liverpool-2006-2007",
+        "authoredCoach": "Rafael Benítez",
+        "referenceCoach": "Rafael Benítez",
+        "referenceClubId": "31",
+        "referenceSeason": 2006,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-united-2006-2007",
+        "authoredCoach": "Alex Ferguson",
+        "referenceCoach": "Alex Ferguson",
+        "referenceClubId": "985",
+        "referenceSeason": 2006,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-united-2007-2008",
+        "authoredCoach": "Alex Ferguson",
+        "referenceCoach": "Alex Ferguson",
+        "referenceClubId": "985",
+        "referenceSeason": 2007,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "chelsea-2007-2008",
+        "authoredCoach": "Avram Grant",
+        "referenceCoach": "Avram Grant",
+        "referenceClubId": "631",
+        "referenceSeason": 2007,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2007-2008",
+        "authoredCoach": "Bernd Schuster",
+        "referenceCoach": "Bernd Schuster",
+        "referenceClubId": "418",
+        "referenceSeason": 2007,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2008-2009",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "131",
+        "referenceSeason": 2008,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-united-2008-2009",
+        "authoredCoach": "Alex Ferguson",
+        "referenceCoach": "Alex Ferguson",
+        "referenceClubId": "985",
+        "referenceSeason": 2008,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "chelsea-2008-2009",
+        "authoredCoach": "Guus Hiddink",
+        "referenceCoach": "Guus Hiddink",
+        "referenceClubId": "631",
+        "referenceSeason": 2008,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "inter-2009-2010",
+        "authoredCoach": "José Mourinho",
+        "referenceCoach": "José Mourinho",
+        "referenceClubId": "46",
+        "referenceSeason": 2009,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2009-2010",
+        "authoredCoach": "Louis van Gaal",
+        "referenceCoach": "Louis van Gaal",
+        "referenceClubId": "27",
+        "referenceSeason": 2009,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2009-2010",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "131",
+        "referenceSeason": 2009,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2010-2011",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "131",
+        "referenceSeason": 2010,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-united-2010-2011",
+        "authoredCoach": "Alex Ferguson",
+        "referenceCoach": "Alex Ferguson",
+        "referenceClubId": "985",
+        "referenceSeason": 2010,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2010-2011",
+        "authoredCoach": "José Mourinho",
+        "referenceCoach": "José Mourinho",
+        "referenceClubId": "418",
+        "referenceSeason": 2010,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "chelsea-2011-2012",
+        "authoredCoach": "Roberto Di Matteo",
+        "referenceCoach": "Roberto Di Matteo",
+        "referenceClubId": "631",
+        "referenceSeason": 2011,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2011-2012",
+        "authoredCoach": "Jupp Heynckes",
+        "referenceCoach": "Jupp Heynckes",
+        "referenceClubId": "27",
+        "referenceSeason": 2011,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2011-2012",
+        "authoredCoach": "José Mourinho",
+        "referenceCoach": "José Mourinho",
+        "referenceClubId": "418",
+        "referenceSeason": 2011,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2012-2013",
+        "authoredCoach": "Jupp Heynckes",
+        "referenceCoach": "Jupp Heynckes",
+        "referenceClubId": "27",
+        "referenceSeason": 2012,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "dortmund-2012-2013",
+        "authoredCoach": "Jürgen Klopp",
+        "referenceCoach": "Jürgen Klopp",
+        "referenceClubId": "16",
+        "referenceSeason": 2012,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2012-2013",
+        "authoredCoach": "Tito Vilanova",
+        "referenceCoach": "Tito Vilanova",
+        "referenceClubId": "131",
+        "referenceSeason": 2012,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2013-2014",
+        "authoredCoach": "Carlo Ancelotti",
+        "referenceCoach": "Carlo Ancelotti",
+        "referenceClubId": "418",
+        "referenceSeason": 2013,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "atletico-2013-2014",
+        "authoredCoach": "Diego Simeone",
+        "referenceCoach": "Diego Simeone",
+        "referenceClubId": "13",
+        "referenceSeason": 2013,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2013-2014",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "27",
+        "referenceSeason": 2013,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2014-2015",
+        "authoredCoach": "Luis Enrique",
+        "referenceCoach": "Luis Enrique",
+        "referenceClubId": "131",
+        "referenceSeason": 2014,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "juventus-2014-2015",
+        "authoredCoach": "Massimiliano Allegri",
+        "referenceCoach": "Massimiliano Allegri",
+        "referenceClubId": "506",
+        "referenceSeason": 2014,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2014-2015",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "27",
+        "referenceSeason": 2014,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2015-2016",
+        "authoredCoach": "Zinédine Zidane",
+        "referenceCoach": "Zinédine Zidane",
+        "referenceClubId": "418",
+        "referenceSeason": 2015,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "atletico-2015-2016",
+        "authoredCoach": "Diego Simeone",
+        "referenceCoach": "Diego Simeone",
+        "referenceClubId": "13",
+        "referenceSeason": 2015,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2015-2016",
+        "authoredCoach": "Luis Enrique",
+        "referenceCoach": "Luis Enrique",
+        "referenceClubId": "131",
+        "referenceSeason": 2015,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2016-2017",
+        "authoredCoach": "Zinédine Zidane",
+        "referenceCoach": "Zinédine Zidane",
+        "referenceClubId": "418",
+        "referenceSeason": 2016,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "juventus-2016-2017",
+        "authoredCoach": "Massimiliano Allegri",
+        "referenceCoach": "Massimiliano Allegri",
+        "referenceClubId": "506",
+        "referenceSeason": 2016,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "chelsea-2016-2017",
+        "authoredCoach": "Antonio Conte",
+        "referenceCoach": "Antonio Conte",
+        "referenceClubId": "631",
+        "referenceSeason": 2016,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2017-2018",
+        "authoredCoach": "Zinédine Zidane",
+        "referenceCoach": "Zinédine Zidane",
+        "referenceClubId": "418",
+        "referenceSeason": 2017,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "liverpool-2017-2018",
+        "authoredCoach": "Jürgen Klopp",
+        "referenceCoach": "Jürgen Klopp",
+        "referenceClubId": "31",
+        "referenceSeason": 2017,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-city-2017-2018",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "281",
+        "referenceSeason": 2017,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "liverpool-2018-2019",
+        "authoredCoach": "Jürgen Klopp",
+        "referenceCoach": "Jürgen Klopp",
+        "referenceClubId": "31",
+        "referenceSeason": 2018,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-city-2018-2019",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "281",
+        "referenceSeason": 2018,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "ajax-2018-2019",
+        "authoredCoach": "Erik ten Hag",
+        "referenceCoach": "Erik ten Hag",
+        "referenceClubId": "610",
+        "referenceSeason": 2018,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2019-2020",
+        "authoredCoach": "Hansi Flick",
+        "referenceCoach": "Hansi Flick",
+        "referenceClubId": "27",
+        "referenceSeason": 2019,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "psg-2019-2020",
+        "authoredCoach": "Thomas Tuchel",
+        "referenceCoach": null,
+        "referenceClubId": "583",
+        "referenceSeason": 2019,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "liverpool-2019-2020",
+        "authoredCoach": "Jürgen Klopp",
+        "referenceCoach": "Jürgen Klopp",
+        "referenceClubId": "31",
+        "referenceSeason": 2019,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "chelsea-2020-2021",
+        "authoredCoach": "Thomas Tuchel",
+        "referenceCoach": "Thomas Tuchel",
+        "referenceClubId": "631",
+        "referenceSeason": 2020,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-city-2020-2021",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "281",
+        "referenceSeason": 2020,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2020-2021",
+        "authoredCoach": "Hansi Flick",
+        "referenceCoach": "Hansi Flick",
+        "referenceClubId": "27",
+        "referenceSeason": 2020,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2021-2022",
+        "authoredCoach": "Carlo Ancelotti",
+        "referenceCoach": "Carlo Ancelotti",
+        "referenceClubId": "418",
+        "referenceSeason": 2021,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "liverpool-2021-2022",
+        "authoredCoach": "Jürgen Klopp",
+        "referenceCoach": "Jürgen Klopp",
+        "referenceClubId": "31",
+        "referenceSeason": 2021,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-city-2021-2022",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "281",
+        "referenceSeason": 2021,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-city-2022-2023",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "281",
+        "referenceSeason": 2022,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "inter-2022-2023",
+        "authoredCoach": "Simone Inzaghi",
+        "referenceCoach": "Simone Inzaghi",
+        "referenceClubId": "46",
+        "referenceSeason": 2022,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "napoli-2022-2023",
+        "authoredCoach": "Luciano Spalletti",
+        "referenceCoach": null,
+        "referenceClubId": "619",
+        "referenceSeason": 2022,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "real-madrid-2023-2024",
+        "authoredCoach": "Carlo Ancelotti",
+        "referenceCoach": "Carlo Ancelotti",
+        "referenceClubId": "418",
+        "referenceSeason": 2023,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "manchester-city-2023-2024",
+        "authoredCoach": "Pep Guardiola",
+        "referenceCoach": "Pep Guardiola",
+        "referenceClubId": "281",
+        "referenceSeason": 2023,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "leverkusen-2023-2024",
+        "authoredCoach": "Xabi Alonso",
+        "referenceCoach": "Xabi Alonso",
+        "referenceClubId": "15",
+        "referenceSeason": 2023,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "psg-2024-2025",
+        "authoredCoach": "Luis Enrique",
+        "referenceCoach": "Luis Enrique",
+        "referenceClubId": "583",
+        "referenceSeason": 2024,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "inter-2024-2025",
+        "authoredCoach": "Simone Inzaghi",
+        "referenceCoach": "Simone Inzaghi",
+        "referenceClubId": "46",
+        "referenceSeason": 2024,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "barcelona-2024-2025",
+        "authoredCoach": "Hansi Flick",
+        "referenceCoach": "Hansi Flick",
+        "referenceClubId": "131",
+        "referenceSeason": 2024,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "psg-2025-2026",
+        "authoredCoach": "Luis Enrique",
+        "referenceCoach": "Luis Enrique",
+        "referenceClubId": "583",
+        "referenceSeason": 2025,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "arsenal-2025-2026",
+        "authoredCoach": "Mikel Arteta",
+        "referenceCoach": null,
+        "referenceClubId": "11",
+        "referenceSeason": 2025,
+        "scope": "coach-field-only; no roster/captain verification"
+      },
+      {
+        "teamId": "bayern-2025-2026",
+        "authoredCoach": "Vincent Kompany",
+        "referenceCoach": null,
+        "referenceClubId": "27",
+        "referenceSeason": 2025,
+        "scope": "coach-field-only; no roster/captain verification"
+      }
+    ]
+  }
 }
