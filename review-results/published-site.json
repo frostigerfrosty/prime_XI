@@ -1,0 +1,8 @@
+{
+  "url": "http://primexi.io/",
+  "commit": "0811a11fc7f4fdccfcee994de4d598816124a4d0",
+  "checkedAt": "2026-10-24T14:26:23.298Z",
+  "passed": false,
+  "views": [],
+  "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at http://primexi.io/\nCall log:\n  - navigating to \"http://primexi.io/\", waiting until \"load\"\n"
+}
