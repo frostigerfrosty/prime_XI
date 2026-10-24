@@ -18,7 +18,7 @@ const builder = createBuilder({
 const model = createStrengthModel(data);
 const keys = data.rules.storage.keys;
 function completeDraft() {
-  let draft = builder.newDraft('browser-complete', '4-3-3', '2020-01-01T00:00:00.000Z');
+  let draft = builder.newPoolDraft('browser-complete', '4-3-3', '2020-01-01T00:00:00.000Z');
   for (const pick of builder.completion(draft)!)
     draft = builder.change(draft, {
       type: 'player',

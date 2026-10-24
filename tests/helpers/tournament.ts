@@ -15,7 +15,7 @@ export function tournamentFixture() {
     defaultTactic: data.defaults.defaultTactic,
   });
   const model = createStrengthModel(data);
-  let draft = builder.newDraft('browser-complete', '4-3-3', now);
+  let draft = builder.newPoolDraft('browser-complete', '4-3-3', now);
   for (const pick of builder.completion(draft)!)
     draft = builder.change(
       draft,

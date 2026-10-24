@@ -15,7 +15,7 @@ const catalog = {
 };
 const builder = createBuilder(catalog);
 const now = '2026-10-21T12:00:00.000Z';
-const fresh = (seed = 'builder-test') => builder.newDraft(seed, '4-3-3', now);
+const fresh = (seed = 'builder-test') => builder.newPoolDraft(seed, '4-3-3', now);
 const change = (draft: DraftState, action: Parameters<typeof builder.change>[1]) =>
   builder.change(draft, action, now);
 function filled(seed = 'builder-test') {
@@ -29,8 +29,8 @@ test('draws are deterministic, have exactly twelve unique teams and support ever
   const original = JSON.stringify(catalog);
   for (const formation of data.formations)
     for (let seed = 0; seed < 15; seed++) {
-      const first = builder.newDraft(`sample-${seed}`, formation.id, now);
-      assert.deepEqual(first, builder.newDraft(`sample-${seed}`, formation.id, now));
+      const first = builder.newPoolDraft(`sample-${seed}`, formation.id, now);
+      assert.deepEqual(first, builder.newPoolDraft(`sample-${seed}`, formation.id, now));
       assert.equal(new Set(first.drawnPrimeTeamIds).size, 12);
       assert.equal(builder.completion(first)?.length, 11);
       assert.equal(builder.isValid(first), true);
@@ -42,14 +42,18 @@ test('draws are deterministic, have exactly twelve unique teams and support ever
 test('too few valid teams, duplicate catalog IDs and invalid seed fail explicitly', () => {
   assert.throws(
     () =>
-      createBuilder({ ...catalog, teams: data.teams.slice(0, 11) }).newDraft('seed', '4-3-3', now),
+      createBuilder({ ...catalog, teams: data.teams.slice(0, 11) }).newPoolDraft(
+        'seed',
+        '4-3-3',
+        now,
+      ),
     /mindestens 12/,
   );
   const invalid = structuredClone(data.teams[0]!);
   invalid.players[0]!.rating = 100;
   assert.throws(
     () =>
-      createBuilder({ ...catalog, teams: [invalid, ...data.teams.slice(1, 12)] }).newDraft(
+      createBuilder({ ...catalog, teams: [invalid, ...data.teams.slice(1, 12)] }).newPoolDraft(
         'seed',
         '4-3-3',
         now,
@@ -285,7 +289,7 @@ test('a tempting legal-position pick is blocked if it consumes the only remainin
     }
   }
   const constrained = createBuilder({ ...catalog, teams });
-  const draft = constrained.newDraft('bottleneck', '4-3-3', now);
+  const draft = constrained.newPoolDraft('bottleneck', '4-3-3', now);
   const striker = teams[0]!.players[3]!;
   assert.ok(constrained.completion(draft));
   assert.match(constrained.playerIssue(draft, 'st-10', striker.id)!, /übrigen Positionen/);

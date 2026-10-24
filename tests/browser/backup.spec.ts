@@ -197,7 +197,7 @@ test('restoring an explicitly confirmed empty backup clears old game data withou
   expect(await records(page)).toEqual(backupRecords(createInitialAppState()));
   await page.reload();
   await page.goto('#/team-builder');
-  await expect(page.getByRole('button', { name: '12 Teams ziehen', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Draft starten', exact: true })).toBeVisible();
   await page.goto('#/history');
   await expect(
     page.getByRole('heading', { name: 'Jede Legende fängt bei null an.' }),

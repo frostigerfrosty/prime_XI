@@ -173,7 +173,7 @@ export default function DashboardPage() {
             <Step
               number="02"
               title="Deine Elf zusammenstellen"
-              text="Ziehe zwölf Teams und wähle elf Spieler, einen Coach und deinen Captain."
+              text="Entdecke Teams nacheinander und bestätige elf feste Picks. Wähle dazu Coach und Captain."
               done={Boolean(draftStatus?.complete)}
             />
             <Step

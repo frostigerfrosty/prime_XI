@@ -25,6 +25,7 @@ import { formatNumber, formatStrength, initials } from '../utils/display.ts';
 
 type Confirmation =
   | { kind: 'redraw' }
+  | { kind: 'player'; slotId: string; cardId: string }
   | { kind: 'tournament' }
   | { kind: 'formation'; formationId: FormationId; names: string[] };
 const normalize = (value: string) =>
@@ -57,12 +58,24 @@ export default function BuilderPage() {
   const [error, setError] = useState('');
   const [confirmation, setConfirmation] = useState<Confirmation | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  const pickerHeading = useRef<HTMLHeadingElement>(null);
+  const sequential = draft?.mode === 'sequential';
   const formation = formations.find(
     (item) => item.id === (draft?.formationId ?? initialFormation),
   )!;
-  const slot = formation.slots.find((item) => item.id === selectedSlot) ?? formation.slots[0]!;
+  const slot =
+    formation.slots.find(
+      (item) =>
+        item.id === selectedSlot &&
+        (!sequential || !draft?.picks.some((pick) => pick.slotId === item.id)),
+    ) ??
+    formation.slots.find((item) => !draft?.picks.some((pick) => pick.slotId === item.id)) ??
+    formation.slots[0]!;
   const pool = draft?.drawnPrimeTeamIds.map((id) => builder.team(id)!) ?? [];
-  const activeTeam = pool.find((team) => team.id === selectedTeam) ?? pool[0];
+  const activeTeam =
+    draft && sequential
+      ? builder.currentTeam(draft)
+      : (pool.find((team) => team.id === selectedTeam) ?? pool[0]);
   const lineup = draft ? builder.lineup(draft) : [];
   const status = draft ? builder.status(draft) : null;
   const currentPick = lineup.find((entry) => entry.slotId === slot.id)?.player;
@@ -104,7 +117,7 @@ export default function BuilderPage() {
       setSelectedSlot('gk-1');
       setSelectedTeam('');
       setSearch('');
-    }, 'Zwölf unterschiedliche Prime-Teams gezogen. Wähle eine Position und deinen ersten Spieler.');
+    }, 'Dein erstes Team ist aufgedeckt. Wähle einen Spieler und eine freie Position.');
   }
   function changeFormation(id: FormationId) {
     if (!draft) {
@@ -132,6 +145,21 @@ export default function BuilderPage() {
     const pending = confirmation;
     setConfirmation(null);
     if (pending?.kind === 'redraw') draw();
+    else if (pending?.kind === 'player')
+      attempt(
+        () => {
+          dispatch({ type: 'player', slotId: pending.slotId, cardId: pending.cardId });
+          setSearch('');
+          setSelectedSlot(
+            formation.slots.find(
+              (item) =>
+                item.id !== pending.slotId && !draft?.picks.some((pick) => pick.slotId === item.id),
+            )?.id ?? 'gk-1',
+          );
+          requestAnimationFrame(() => pickerHeading.current?.focus());
+        },
+        `${builder.player(pending.cardId)?.name} bestätigt. Dieser Pick ist gesperrt.`,
+      );
     else if (pending?.kind === 'tournament') launchTournament(true);
     else if (pending?.kind === 'formation')
       attempt(() => {
@@ -153,7 +181,7 @@ export default function BuilderPage() {
         <PageHeading
           eyebrow="DEINE IDEEN. DEINE AUFSTELLUNG."
           title="Team Builder"
-          description="Zwölf Prime-Teams. Elf Spieler. Dein Plan für die große Bühne."
+          description="Ein Team nach dem anderen. Elf feste Entscheidungen. Deine Prime XI."
         />
         <button
           className="button button--secondary"
@@ -164,7 +192,7 @@ export default function BuilderPage() {
           }
         >
           <Dices size={17} aria-hidden="true" />
-          {draft ? 'Neuer Draft' : '12 Teams ziehen'}
+          {draft ? 'Neuer Draft' : 'Draft starten'}
         </button>
       </div>
       <CatalogNote />
@@ -189,8 +217,14 @@ export default function BuilderPage() {
             ? saved
               ? 'Dein Draft wird automatisch in diesem Browser gespeichert.'
               : 'Dein Draft ist für diese Sitzung aktiv.'
-            : 'Wähle eine Formation und ziehe anschließend deine Teams.')}
+            : 'Wähle deine Formation und starte den verdeckten Draft.')}
       </p>
+      {draft && !sequential && (
+        <p className="picker-hint">
+          Dieser vorhandene Draft verwendet noch den bisherigen offenen Pool. Ein neuer Draft
+          startet mit verdeckter Teamfolge.
+        </p>
+      )}
       <div className="builder-grid builder-grid--active">
         <section className="panel lineup-panel">
           <div className="section-heading">
@@ -199,6 +233,7 @@ export default function BuilderPage() {
               <span>Formation</span>
               <select
                 value={formation.id}
+                disabled={Boolean(sequential && draft?.picks.length)}
                 onChange={(event) => changeFormation(event.target.value as FormationId)}
               >
                 {formations.map((item) => (
@@ -217,6 +252,7 @@ export default function BuilderPage() {
                 setSelectedSlot(id);
                 setMessage('');
               }}
+              lockedSlots={sequential ? draft.picks.map((pick) => pick.slotId) : []}
             />
           ) : (
             <Pitch formation={formation} />
@@ -262,12 +298,27 @@ export default function BuilderPage() {
             </div>
           )}
         </section>
-        {draft && activeTeam ? (
+        {draft && sequential && lineup.length === 11 ? (
+          <section className="panel draft-panel builder-start">
+            <Check size={34} aria-hidden="true" />
+            <h2 ref={pickerHeading} tabIndex={-1}>
+              Elf Picks bestätigt.
+            </h2>
+            <p>
+              Alle Spieler und Positionen sind fest. Wähle noch Coach und Captain, um deine Prime XI
+              zu speichern.
+            </p>
+          </section>
+        ) : draft && activeTeam ? (
           <section className="panel player-picker" aria-label="Spielerauswahl">
             <div className="section-heading">
               <div>
-                <p className="eyebrow">DEIN NÄCHSTER PICK</p>
-                <h2>Spieler wählen</h2>
+                <p className="eyebrow">
+                  {sequential ? `Team ${lineup.length + 1} von 11` : 'DEIN NÄCHSTER PICK'}
+                </p>
+                <h2 ref={pickerHeading} tabIndex={-1}>
+                  {sequential ? `${activeTeam.clubName} ${activeTeam.season}` : 'Spieler wählen'}
+                </h2>
               </div>
               <span className="subtle-chip">{lineup.length} / 11</span>
             </div>
@@ -277,7 +328,7 @@ export default function BuilderPage() {
                 {formation.slots.map((item, index) => {
                   const player = lineup.find((entry) => entry.slotId === item.id)?.player;
                   return (
-                    <option key={item.id} value={item.id}>
+                    <option key={item.id} value={item.id} disabled={Boolean(sequential && player)}>
                       {item.acceptedPositions[0]} · Position {index + 1}
                       {player ? ` · ${player.name}` : ' · Offen'}
                     </option>
@@ -285,25 +336,27 @@ export default function BuilderPage() {
                 })}
               </select>
             </label>
-            <label className="builder-field">
-              <span>Prime-Team</span>
-              <select
-                value={activeTeam.id}
-                onChange={(event) => {
-                  setSelectedTeam(event.target.value);
-                  setSearch('');
-                }}
-              >
-                {pool.map((team) => (
-                  <option key={team.id} value={team.id}>
-                    {team.clubName} {team.season}
-                    {lineup.some((entry) => entry.player.primeTeamId === team.id)
-                      ? ' · Spieler gewählt'
-                      : ''}
-                  </option>
-                ))}
-              </select>
-            </label>
+            {!sequential && (
+              <label className="builder-field">
+                <span>Prime-Team</span>
+                <select
+                  value={activeTeam.id}
+                  onChange={(event) => {
+                    setSelectedTeam(event.target.value);
+                    setSearch('');
+                  }}
+                >
+                  {pool.map((team) => (
+                    <option key={team.id} value={team.id}>
+                      {team.clubName} {team.season}
+                      {lineup.some((entry) => entry.player.primeTeamId === team.id)
+                        ? ' · Spieler gewählt'
+                        : ''}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
             <label className="search-input builder-search">
               <Search size={16} aria-hidden="true" />
               <span className="sr-only">Spieler suchen</span>
@@ -314,7 +367,7 @@ export default function BuilderPage() {
                 placeholder="Name oder Position …"
               />
             </label>
-            {currentPick && (
+            {currentPick && !sequential && (
               <div className="current-pick">
                 <span>
                   <small>AUF DIESER POSITION</small>
@@ -335,7 +388,9 @@ export default function BuilderPage() {
               </div>
             )}
             <p className="picker-hint">
-              Ein Spieler pro Saisonteam. Wähle eine Karte für{' '}
+              {sequential
+                ? 'Bestätigte Picks und die Formation bleiben fest. Wähle eine Karte für '
+                : 'Ein Spieler pro Saisonteam. Wähle eine Karte für '}
               <strong>{slot.acceptedPositions.join(' / ')}</strong>.
             </p>
             <ul className="player-options" tabIndex={0} aria-label="Spielerkarten">
@@ -371,8 +426,17 @@ export default function BuilderPage() {
                       aria-label={`Wählen: ${player.name}`}
                       onClick={() =>
                         attempt(
-                          () => dispatch({ type: 'player', slotId: slot.id, cardId: player.id }),
-                          `${player.name} auf ${slot.acceptedPositions[0]} gewählt.`,
+                          () =>
+                            sequential
+                              ? setConfirmation({
+                                  kind: 'player',
+                                  slotId: slot.id,
+                                  cardId: player.id,
+                                })
+                              : dispatch({ type: 'player', slotId: slot.id, cardId: player.id }),
+                          sequential
+                            ? ''
+                            : `${player.name} auf ${slot.acceptedPositions[0]} gewählt.`,
                         )
                       }
                     >
@@ -400,12 +464,13 @@ export default function BuilderPage() {
               wartet auf dich.
             </h2>
             <p>
-              Ziehe zwölf unterschiedliche Saisonmannschaften. Aus elf davon wählst du je einen
-              Spieler. Dein Coach ist ein eigener Pick.
+              Entdecke elf unterschiedliche Saisonmannschaften nacheinander. Wähle pro Team einen
+              Spieler und bestätige seine Position. Erst dann erscheint das nächste Team. Dein Coach
+              ist ein separater Pick aus den aufgedeckten Teams.
             </p>
             <button className="button button--primary" onClick={draw}>
               <Dices size={17} aria-hidden="true" />
-              Draft starten
+              Erstes Team aufdecken
             </button>
             <button className="button button--locked" disabled>
               <LockKeyhole size={15} aria-hidden="true" />
@@ -422,13 +487,16 @@ export default function BuilderPage() {
               <div>
                 <p className="eyebrow">DEINE AUSWAHL</p>
                 <h2>
-                  Gezogene Teams <span>({pool.length} / 12)</span>
+                  {sequential ? 'Bestätigte Teams' : 'Gezogene Teams'}{' '}
+                  <span>
+                    ({sequential ? lineup.length : pool.length} / {sequential ? 11 : 12})
+                  </span>
                 </h2>
               </div>
               <span className="subtle-chip">{lineup.length} Spieler gewählt</span>
             </div>
             <div className="drawn-teams">
-              {pool.map((team, index) => {
+              {(sequential ? pool.slice(0, lineup.length) : pool).map((team, index) => {
                 const player = lineup.find((entry) => entry.player.primeTeamId === team.id)?.player;
                 return (
                   <button
@@ -436,6 +504,7 @@ export default function BuilderPage() {
                     className={`drawn-team ${activeTeam?.id === team.id ? 'drawn-team--active' : ''}`}
                     aria-pressed={activeTeam?.id === team.id}
                     aria-label={`${team.clubName} ${team.season}${player ? ` · ${player.name} gewählt` : ' · Noch kein Spieler'}`}
+                    disabled={sequential}
                     onClick={() => {
                       setSelectedTeam(team.id);
                       setSearch('');
@@ -597,8 +666,8 @@ export default function BuilderPage() {
             <p className="eyebrow">DEIN SPIELPLAN</p>
             <h2>Erst die Idee. Dann die Elf.</h2>
             <p>
-              Alle zwölf gezogenen Teams bleiben hier sichtbar. Ein neuer Draft ersetzt deinen
-              bisherigen Pool erst nach Bestätigung.
+              Künftige Teams bleiben verborgen. Bestätigte Spieler und Positionen sind fest. Ein
+              neuer Draft ersetzt deine Auswahl erst nach Bestätigung.
             </p>
           </div>
         </section>
@@ -615,18 +684,22 @@ export default function BuilderPage() {
         <h2 id="draft-confirm-title">
           {confirmation?.kind === 'redraw'
             ? 'Einen neuen Draft starten?'
-            : confirmation?.kind === 'tournament'
-              ? 'Bisheriges Turnier ersetzen?'
-              : 'Formation wirklich ändern?'}
+            : confirmation?.kind === 'player'
+              ? 'Spieler und Position bestätigen?'
+              : confirmation?.kind === 'tournament'
+                ? 'Bisheriges Turnier ersetzen?'
+                : 'Formation wirklich ändern?'}
         </h2>
         <p>
           {confirmation?.kind === 'redraw'
             ? 'Dein bisheriger Pool, Spieler, Coach und Captain werden ersetzt. Dieser Schritt kann nicht rückgängig gemacht werden.'
-            : confirmation?.kind === 'tournament'
-              ? tournament?.phase === 'completed'
-                ? 'Dein abgeschlossener Turnierrückblick bleibt im Archiv erhalten. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
-                : 'Dein bisheriger Spielplan und alle Ergebnisse werden ersetzt. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
-              : `Diese Spieler passen nicht mehr in die neue Aufstellung und werden entfernt: ${confirmation?.kind === 'formation' ? confirmation.names.join(', ') : ''}. Alle anderen Picks bleiben erhalten.`}
+            : confirmation?.kind === 'player'
+              ? `${builder.player(confirmation.cardId)?.name} auf ${formation.slots.find((item) => item.id === confirmation.slotId)?.acceptedPositions.join(' / ')} festlegen? Dieser Pick kann nicht geändert oder entfernt werden. Anschließend wird das nächste Team aufgedeckt; nach dem elften Pick ist deine Auswahl abgeschlossen.`
+              : confirmation?.kind === 'tournament'
+                ? tournament?.phase === 'completed'
+                  ? 'Dein abgeschlossener Turnierrückblick bleibt im Archiv erhalten. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
+                  : 'Dein bisheriger Spielplan und alle Ergebnisse werden ersetzt. Dein aktueller Draft wird als neue Turnier-Elf gespeichert.'
+                : `Diese Spieler passen nicht mehr in die neue Aufstellung und werden entfernt: ${confirmation?.kind === 'formation' ? confirmation.names.join(', ') : ''}. Alle anderen Picks bleiben erhalten.`}
         </p>
         <div>
           <button className="button button--secondary" onClick={() => setConfirmation(null)}>

@@ -83,7 +83,7 @@ export function DraftProvider({ children }: { children: ReactNode }) {
     commit(builder.newDraft(crypto.randomUUID(), formationId));
   }
   function dispatch(action: BuilderAction) {
-    if (!current.current) throw new Error('Ziehe zuerst zwölf Prime-Teams.');
+    if (!current.current) throw new Error('Starte zuerst einen Draft.');
     commit(builder.change(current.current, action));
   }
   function capture() {

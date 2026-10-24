@@ -14,6 +14,8 @@ export interface UserSettings {
 }
 
 export interface DraftState {
+  /** Absent on existing pool drafts; sequential drafts contain only revealed teams. */
+  mode?: 'sequential';
   id: string;
   seed: string;
   createdAt: string;
@@ -37,6 +39,7 @@ export interface StrengthBreakdown {
 
 /** Embed selected card/coach snapshots so future catalog edits do not rewrite a save. */
 export interface SavedTeam {
+  draftMode?: 'sequential';
   id: string;
   draftId: string;
   name: string;

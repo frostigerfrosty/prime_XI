@@ -51,7 +51,7 @@ export function SettingsPage() {
           <dl className="project-info">
             <div>
               <dt>Version</dt>
-              <dd>0.14 · Entwicklungsvorschau</dd>
+              <dd>0.15 · Entwicklungsvorschau</dd>
             </div>
             <div>
               <dt>Stand</dt>

@@ -48,29 +48,32 @@ test('a new player can draft, finish a tournament, inspect its archive and resto
   await page.goto('');
   await expect(page.getByText('Noch kein Team zusammengestellt')).toBeVisible();
   await navigate(page, 'Team Builder');
-  await page.getByRole('button', { name: '12 Teams ziehen', exact: true }).click();
-  const draft: DraftState = await page.evaluate(
+  await page.getByRole('button', { name: 'Draft starten', exact: true }).click();
+  let draft: DraftState = await page.evaluate(
     (key) => JSON.parse(localStorage.getItem(key)!).draft,
     data.rules.storage.keys.currentDraft,
   );
-  const solution = builder.completion(draft);
-  expect(solution).not.toBeNull();
-  for (const pick of solution!) {
+  while (draft.picks.length < 11) {
+    const pick = builder
+      .completion(draft)!
+      .find((p) => builder.player(p.playerCardId)!.primeTeamId === builder.currentTeam(draft)!.id)!;
     const player = builder.player(pick.playerCardId)!;
     await page
       .getByRole('combobox', { name: 'Position wählen', exact: true })
       .selectOption(pick.slotId);
-    await page
-      .getByRole('combobox', { name: 'Prime-Team', exact: true })
-      .selectOption(player.primeTeamId);
     await page.getByRole('button', { name: `Wählen: ${player.name}`, exact: true }).click();
+    await page.getByRole('button', { name: 'Bestätigen', exact: true }).click();
+    draft = await page.evaluate(
+      (key) => JSON.parse(localStorage.getItem(key)!).draft,
+      data.rules.storage.keys.currentDraft,
+    );
   }
   await page
     .getByRole('combobox', { name: 'Coach wählen', exact: true })
     .selectOption(builder.team(draft.drawnPrimeTeamIds[0]!)!.coach!.id);
   await page
     .getByRole('combobox', { name: 'Captain wählen', exact: true })
-    .selectOption(builder.player(solution![0]!.playerCardId)!.personId);
+    .selectOption(builder.player(draft.picks[0]!.playerCardId)!.personId);
   await page.getByRole('button', { name: 'Team speichern & Turnier starten', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Dein Turnier');
   await page.getByRole('button', { name: 'Spieltag 1 simulieren', exact: true }).click();

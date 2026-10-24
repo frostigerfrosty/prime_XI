@@ -146,7 +146,7 @@ test('formation preview changes while the incomplete team cannot start a tournam
     page.getByRole('img', { name: /Leere Aufstellung in Formation 3-5-2/ }),
   ).toBeVisible();
   await expect(page.locator('.pitch-slot')).toHaveCount(11);
-  await expect(page.getByRole('button', { name: '12 Teams ziehen' })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Draft starten', exact: true })).toBeEnabled();
   await expect(
     page.getByRole('button', { name: 'Team speichern & Turnier starten' }),
   ).toBeDisabled();

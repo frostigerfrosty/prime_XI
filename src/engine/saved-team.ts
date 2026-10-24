@@ -37,6 +37,7 @@ export function createSavedTeam(
     createdAt: now,
     datasetVersion,
     rulesVersion: model.rulesVersion,
+    ...(draft.mode === 'sequential' ? { draftMode: 'sequential' as const } : {}),
     drawnPrimeTeamIds: draft.drawnPrimeTeamIds,
     formationId: input.formationId,
     tacticId: input.tacticId,
@@ -64,9 +65,13 @@ export function isSavedTeam(value: unknown, model: StrengthModel): value is Save
     !Number.isFinite(Date.parse(value['createdAt'] as string)) ||
     value['rulesVersion'] !== model.rulesVersion ||
     !Array.isArray(value['drawnPrimeTeamIds']) ||
-    value['drawnPrimeTeamIds'].length !== model.rules.builder.drawSize ||
+    !(value['draftMode'] === undefined || value['draftMode'] === 'sequential') ||
+    value['drawnPrimeTeamIds'].length !==
+      (value['draftMode'] === 'sequential'
+        ? model.rules.builder.playersRequired
+        : model.rules.builder.drawSize) ||
     !value['drawnPrimeTeamIds'].every(isText) ||
-    new Set(value['drawnPrimeTeamIds']).size !== model.rules.builder.drawSize ||
+    new Set(value['drawnPrimeTeamIds']).size !== value['drawnPrimeTeamIds'].length ||
     !Array.isArray(value['lineup']) ||
     !model.isCoach(value['coach']) ||
     !isText(value['captainPersonId']) ||

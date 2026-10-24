@@ -8,12 +8,14 @@ export function Pitch({
   selectedSlotId,
   captainPersonId,
   onSelect,
+  lockedSlots,
 }: {
   formation: Formation;
   lineup?: { slotId: string; player: PlayerSeason }[];
   selectedSlotId?: string | null;
   captainPersonId?: string | null;
   onSelect?: (slotId: string) => void;
+  lockedSlots?: string[];
 }) {
   return (
     <div
@@ -63,6 +65,7 @@ export function Pitch({
               className={`pitch-slot pitch-slot--interactive ${player ? 'pitch-slot--filled' : ''} ${selectedSlotId === slot.id ? 'pitch-slot--selected' : ''}`}
               style={style}
               aria-pressed={selectedSlotId === slot.id}
+              disabled={lockedSlots?.includes(slot.id)}
               aria-label={`${slot.acceptedPositions[0]} · Position ${index + 1} · ${player ? `${player.name}${captainPersonId === player.personId ? ' · Captain' : ''}` : 'Spieler wählen'}`}
               onClick={() => onSelect(slot.id)}
             >

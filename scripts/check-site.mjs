@@ -89,6 +89,19 @@ try {
       await expect(page.getByTestId('match-score')).toContainText(
         `${result.regularTime.home} : ${result.regularTime.away}`,
       );
+      await page.goto(new URL('#/team-builder', address).href);
+      await page.getByRole('button', { name: 'Draft starten', exact: true }).click();
+      await expect(page.getByText('Team 1 von 11', { exact: true })).toBeVisible();
+      await expect(page.getByRole('combobox', { name: 'Prime-Team', exact: true })).toHaveCount(0);
+      await expect(page.locator('.drawn-team')).toHaveCount(0);
+      await page.locator('button.pick-button:not(:disabled)').first().click();
+      await expect(page.getByRole('dialog')).toContainText('Spieler und Position bestätigen?');
+      await page.getByRole('button', { name: 'Bestätigen', exact: true }).click();
+      await expect(page.getByText('Team 2 von 11', { exact: true })).toBeVisible();
+      await expect(page.locator('.pitch-slot--filled')).toBeDisabled();
+      await page.reload();
+      await expect(page.getByText('Team 2 von 11', { exact: true })).toBeVisible();
+      await expect(page.locator('.drawn-team')).toHaveCount(1);
       await page.evaluate(() => document.fonts.ready);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
@@ -102,6 +115,7 @@ try {
         catalog: 60,
         roster: 18,
         seededMatchReplayed: true,
+        sequentialDraftConfirmed: true,
       });
     } finally {
       await context.close();

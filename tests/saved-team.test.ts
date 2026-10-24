@@ -22,7 +22,7 @@ function fixture() {
     defaultTactic: data.defaults.defaultTactic,
   });
   const model = createStrengthModel(data);
-  let draft = builder.newDraft('saved-strength', '4-3-3', '2020-01-01T00:00:00.000Z');
+  let draft = builder.newPoolDraft('saved-strength', '4-3-3', '2020-01-01T00:00:00.000Z');
   for (const pick of builder.completion(draft)!)
     draft = builder.change(draft, {
       type: 'player',
@@ -84,7 +84,7 @@ test('editing or replacing the draft preserves the last saved team until the nex
   assert.equal(savedTeamMatchesDraft(team, edited, builder, model, data.datasetVersion), false);
   const restored = builder.change(edited, { type: 'tactic', tacticId: draft.tacticId });
   assert.equal(savedTeamMatchesDraft(team, restored, builder, model, data.datasetVersion), true);
-  const next = builder.newDraft('another-pool', draft.formationId);
+  const next = builder.newPoolDraft('another-pool', draft.formationId);
   assert.equal(savedTeamMatchesDraft(team, next, builder, model, data.datasetVersion), false);
   assert.deepEqual(team, before);
 });

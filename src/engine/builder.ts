@@ -88,9 +88,13 @@ export function createBuilder(catalog: BuilderCatalog) {
       !date(value['updatedAt']) ||
       Date.parse(value['updatedAt']) < Date.parse(value['createdAt']) ||
       !Array.isArray(value['drawnPrimeTeamIds']) ||
-      value['drawnPrimeTeamIds'].length !== rules.drawSize ||
+      !(value['mode'] === undefined || value['mode'] === 'sequential') ||
+      value['drawnPrimeTeamIds'].length !==
+        (value['mode'] === 'sequential' && Array.isArray(value['picks'])
+          ? Math.min(value['picks'].length + 1, rules.playersRequired)
+          : rules.drawSize) ||
       !value['drawnPrimeTeamIds'].every((id) => text(id) && teamMap.has(id)) ||
-      new Set(value['drawnPrimeTeamIds']).size !== rules.drawSize ||
+      new Set(value['drawnPrimeTeamIds']).size !== value['drawnPrimeTeamIds'].length ||
       !text(value['formationId']) ||
       !formationMap.has(value['formationId'] as FormationId) ||
       !text(value['tacticId']) ||
@@ -105,7 +109,7 @@ export function createBuilder(catalog: BuilderCatalog) {
     const people = new Set<string>();
     const occupied = new Set<string>();
     const sourceCounts = new Map<string, number>();
-    for (const pick of value['picks']) {
+    for (const [index, pick] of value['picks'].entries()) {
       if (!record(pick) || !text(pick['slotId']) || !text(pick['playerCardId'])) return false;
       const player = cardMap.get(pick['playerCardId']);
       const slot = slots.find((candidate) => candidate.id === pick['slotId']);
@@ -115,7 +119,8 @@ export function createBuilder(catalog: BuilderCatalog) {
         !fitsSlot(player, slot) ||
         occupied.has(slot.id) ||
         people.has(player.personId) ||
-        !value['drawnPrimeTeamIds'].includes(player.primeTeamId)
+        !value['drawnPrimeTeamIds'].includes(player.primeTeamId) ||
+        (value['mode'] === 'sequential' && player.primeTeamId !== value['drawnPrimeTeamIds'][index])
       )
         return false;
       const sourceCount = (sourceCounts.get(player.primeTeamId) ?? 0) + 1;
@@ -133,10 +138,14 @@ export function createBuilder(catalog: BuilderCatalog) {
   }
 
   /** Bounded MRV search proves that a pool/pick still permits a legal XI. */
-  function completion(draft: DraftState): DraftState['picks'] | null {
+  function solve(draft: DraftState): DraftState['picks'] | null {
     const formation = formationMap.get(draft.formationId);
     if (!formation) return null;
-    const pool = draft.drawnPrimeTeamIds.flatMap((id) => teamMap.get(id)?.players ?? []);
+    const used = new Set(draft.picks.map((pick) => cardMap.get(pick.playerCardId)?.primeTeamId));
+    const pool =
+      draft.mode === 'sequential'
+        ? eligible.filter((team) => !used.has(team.id)).flatMap((team) => team.players)
+        : draft.drawnPrimeTeamIds.flatMap((id) => teamMap.get(id)?.players ?? []);
     const choices = new Map(
       formation.slots.map((slot) => [slot.id, pool.filter((player) => fitsSlot(player, slot))]),
     );
@@ -181,7 +190,71 @@ export function createBuilder(catalog: BuilderCatalog) {
       : null;
   }
 
+  function currentTeam(draft: DraftState): PrimeTeam | undefined {
+    return draft.mode === 'sequential' && draft.picks.length < rules.playersRequired
+      ? teamMap.get(draft.drawnPrimeTeamIds[draft.picks.length] ?? '')
+      : undefined;
+  }
+
+  function completion(draft: DraftState): DraftState['picks'] | null {
+    const current = currentTeam(draft);
+    if (!current) return solve(draft);
+    const people = new Set(lineup(draft).map(({ player }) => player.personId));
+    for (const slot of formationMap.get(draft.formationId)?.slots ?? []) {
+      if (draft.picks.some((pick) => pick.slotId === slot.id)) continue;
+      for (const player of current.players) {
+        if (people.has(player.personId) || !fitsSlot(player, slot)) continue;
+        const result = solve({
+          ...draft,
+          picks: [...draft.picks, { slotId: slot.id, playerCardId: player.id }],
+        });
+        if (result) return result;
+      }
+    }
+    return null;
+  }
+
+  /** Draw only after a confirmed pick; no future pool or order is stored. */
+  function revealNext(draft: DraftState): DraftState {
+    const candidates = shuffled(
+      eligible.filter((team) => !draft.drawnPrimeTeamIds.includes(team.id)),
+      seededRandom(`${draft.seed}:reveal:${draft.picks.length}`),
+    );
+    for (const team of candidates) {
+      const next = { ...draft, drawnPrimeTeamIds: [...draft.drawnPrimeTeamIds, team.id] };
+      if (completion(next)) return next;
+    }
+    throw new Error('Es konnte kein Team mit einer gültigen Auswahl gezogen werden.');
+  }
+
   function newDraft(
+    seed: string,
+    formationId: FormationId,
+    now = new Date().toISOString(),
+  ): DraftState {
+    if (!text(seed) || seed.length > 100 || !date(now) || !formationMap.has(formationId))
+      throw new Error('Ungültige Angaben für den Draft.');
+    if (eligible.length < rules.playersRequired)
+      throw new Error(
+        `Für einen Draft werden mindestens ${rules.playersRequired} gültige Teams benötigt.`,
+      );
+    return revealNext({
+      mode: 'sequential',
+      id: `draft-${seed}`,
+      seed,
+      createdAt: now,
+      updatedAt: now,
+      drawnPrimeTeamIds: [],
+      formationId,
+      tacticId: catalog.defaultTactic,
+      picks: [],
+      coachCardId: null,
+      captainPersonId: null,
+    });
+  }
+
+  /** Compatibility with saved pool drafts and their integrations. New games use newDraft. */
+  function newPoolDraft(
     seed: string,
     formationId: FormationId,
     now = new Date().toISOString(),
@@ -220,6 +293,12 @@ export function createBuilder(catalog: BuilderCatalog) {
     const slot = formationMap
       .get(draft.formationId)
       ?.slots.find((candidate) => candidate.id === slotId);
+    if (draft.mode === 'sequential') {
+      if (draft.picks.some((pick) => pick.slotId === slotId))
+        return 'Diese Position ist bereits bestätigt und gesperrt.';
+      if (!player || player.primeTeamId !== currentTeam(draft)?.id)
+        return 'Wähle einen Spieler aus dem aktuellen Team.';
+    }
     if (!player || !draft.drawnPrimeTeamIds.includes(player.primeTeamId))
       return 'Dieser Spieler gehört nicht zu deinem Draft.';
     if (!slot || !fitsSlot(player, slot)) return 'Für diese Position nicht geeignet.';
@@ -269,9 +348,13 @@ export function createBuilder(catalog: BuilderCatalog) {
           ...next.picks.filter((pick) => pick.slotId !== action.slotId),
           { slotId: action.slotId, playerCardId: action.cardId },
         ];
+        if (draft.mode === 'sequential' && next.picks.length < rules.playersRequired)
+          next = revealNext(next);
         break;
       }
       case 'remove':
+        if (draft.mode === 'sequential')
+          throw new Error('Bestätigte Spieler können nicht entfernt werden.');
         next.picks = next.picks.filter((pick) => pick.slotId !== action.slotId);
         break;
       case 'coach':
@@ -284,6 +367,12 @@ export function createBuilder(catalog: BuilderCatalog) {
         next.tacticId = action.tacticId;
         break;
       case 'formation': {
+        if (
+          draft.mode === 'sequential' &&
+          draft.picks.length &&
+          action.formationId !== draft.formationId
+        )
+          throw new Error('Die Formation ist nach dem ersten bestätigten Pick gesperrt.');
         const formation = formationMap.get(action.formationId);
         if (!formation) throw new Error('Diese Formation ist nicht verfügbar.');
         // Maximum bipartite matching keeps as many current players as possible.
@@ -344,6 +433,8 @@ export function createBuilder(catalog: BuilderCatalog) {
 
   return {
     newDraft,
+    newPoolDraft,
+    currentTeam,
     change,
     isValid,
     completion,

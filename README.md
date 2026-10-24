@@ -36,8 +36,16 @@ Boni und die vier Positionsgruppen. Deine Auswahl steht im teilbaren Link und
 bleibt beim Neuladen erhalten. **Diese Paarung spielen** übernimmt die Teams
 ins Testspiel; der Anpfiff erfolgt erst auf deinen Klick.
 
-Ziehe zwölf verschiedene Saisonmannschaften, wähle elf Spieler aus verschiedenen
-Quellteams sowie Coach und Captain. Der Draft wird im Browser gespeichert.
+Im Team Builder erscheint immer nur ein zufälliges Saisonteam. Wähle einen Spieler
+auf einer freien, passenden Position und bestätige den Pick. Erst dann wird das
+nächste Team aufgedeckt; jedes Saisonteam kommt höchstens einmal vor. Der Fortschritt
+zeigt „Team 3 von 11“. Bestätigte Spieler, Positionen und die Formation sind fest.
+Künftige Teams und ihre Reihenfolge werden nicht als Pool gespeichert oder angezeigt.
+Die Teamziehung und Positionsprüfung halten die verbleibende Elf besetzbar.
+Coach (aus den aufgedeckten Teams) und Captain bleiben separate Auswahlen.
+Der genaue Draft-Fortschritt wird im Browser gespeichert und in Backups übernommen.
+Vorhandene offene Pool-Drafts und ihre Spielstände bleiben kompatibel; neue Drafts
+verwenden den verdeckten Ablauf. [Details zum Draft](docs/VERDECKTER_DRAFT.md).
 Mit elf Spielern erscheinen die berechnete Basis und alle Boni. Vollständige Teams
 speichern ihre damaligen Spielerwerte und Matchstärke als Snapshot. Das sichtbare
 Ø Kartenrating bleibt davon getrennt. Öffne **Testspiel** in der Navigation:
