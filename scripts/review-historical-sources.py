@@ -7,11 +7,16 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import unicodedata
 import urllib.error
 import urllib.request
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 10 * 1024 * 1024
+
+
+def normalise(value):
+    return re.sub(r"[^a-z0-9]+", " ", "".join(c for c in unicodedata.normalize("NFKD", value.lower()) if not unicodedata.combining(c))).strip()
 
 
 class SeasonPage(HTMLParser):
@@ -80,22 +85,25 @@ class SeasonPage(HTMLParser):
         if self.stack and self.stack[-1]["cell"] is not None:
             self.stack[-1]["cell"].append(text)
 
-    def excerpts(self):
-        squads, staff = [], []
+    def excerpts(self, expected_names=()):
+        squads, staff, positions = [], [], []
         for table in self.tables:
             headers = " ".join(" ".join(row) for row in table["rows"][:5])
-            if re.search(r"\b(player|name)\b", headers, re.I) and re.search(r"\b(pos\.?|position|nat\.?|nationality)\b", headers, re.I):
+            full_text = normalise(" ".join(" ".join(row) for row in table["rows"]))
+            expected_matches = sum((" " + normalise(name) + " ") in (" " + full_text + " ") for name in expected_names)
+            if (re.search(r"\b(player|name)\b", headers, re.I) and re.search(r"\b(pos\.?|position|nat\.?|nation|nationality)\b", headers, re.I)) or expected_matches >= 2:
                 squads.append({"rows": table["rows"][:70], "rowsTotal": len(table["rows"]), "truncated": len(table["rows"]) > 70})
             if "infobox" in table["class"]:
                 staff.extend(row for row in table["rows"] if re.search(r"\b(manager|head coach|captain)\b", " ".join(row), re.I))
-        return {"title": "".join(self.title).strip(), "squadTables": squads, "staffRows": staff, "captainNotes": self.captain_notes[:15]}
+                positions.extend(row for row in table["rows"] if row and re.match(r"position", row[0], re.I))
+        return {"title": "".join(self.title).strip(), "squadTables": squads, "staffRows": staff, "positionRows": positions, "captainNotes": self.captain_notes[:15]}
 
 
-def inspect_html(raw):
+def inspect_html(raw, expected_names=()):
     page = SeasonPage()
     page.feed(raw.decode("utf-8"))
     page.close()
-    result = page.excerpts()
+    result = page.excerpts(expected_names)
     match = re.search(rb'"wgRevisionId"\s*:\s*(\d+)', raw)
     result["wikipediaRevision"] = int(match[1]) if match else None
     return result
@@ -109,7 +117,7 @@ def retrieve(source):
             raw = response.read(MAX_BYTES + 1)
             if response.status != 200 or len(raw) > MAX_BYTES:
                 raise ValueError("Reference is unsuccessful or exceeds 10 MiB")
-            extracted = inspect_html(raw)
+            extracted = inspect_html(raw, source.get("expectedNames", []))
             result.update({"httpStatus": response.status, "finalUrl": response.url, "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest(), **extracted})
             result["retrieved"] = True
             result["hasSquadEvidence"] = bool(extracted["squadTables"])
@@ -126,6 +134,14 @@ def main():
     args = parser.parse_args()
     sources = json.loads((ROOT / "data/editorial/sources.json").read_text())
     selected = [source for source in sources if source["kind"] == "season_reference"]
+    people = {person["id"]: person["name"] for person in json.loads((ROOT / "data/editorial/people.json").read_text())}
+    teams = json.loads((ROOT / "data/editorial/teams.json").read_text())
+    for source in selected:
+        team = next(team for team in teams if source["id"] in team["sourceIds"])
+        source["expectedNames"] = [people[player["personId"]] for player in team["players"]]
+    extra_file = ROOT / "data/research/additional-references.json"
+    if extra_file.exists():
+        selected.extend(json.loads(extra_file.read_text()))
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         results = list(executor.map(retrieve, selected))
     report = {

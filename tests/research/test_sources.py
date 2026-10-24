@@ -44,6 +44,11 @@ class SourceReviewTests(unittest.TestCase):
         self.assertTrue(table["truncated"])
         self.assertEqual(len(table["rows"]), 70)
 
+    def test_squad_tables_without_position_headers_are_kept_for_manual_review(self):
+        raw = b'<table><tr><th>Number</th><th>Nation</th><th>Squad member</th></tr><tr><td>1</td><td>Germany</td><td>Player One</td></tr><tr><td>2</td><td>Germany</td><td>Player Two</td></tr></table>'
+        result = REVIEW.inspect_html(raw, ["Player One", "Player Two"])
+        self.assertEqual(len(result["squadTables"]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,24 @@
+{
+  "note": "Manually reviewed name variants found in the retrieved season tables. Matching remains scoped to the selected club and season; aliases alone do not verify roles or captaincy.",
+  "aliases": {
+    "ronaldo-nazario": ["Ronaldo"],
+    "mikel": ["Mikel John Obi"],
+    "xavi": ["Xavi"],
+    "bojan": ["Bojan"],
+    "pedro": ["Pedro"],
+    "yaya-toure": ["Touré Yaya"],
+    "adriano": ["Adriano"],
+    "thiago": ["Thiago"],
+    "rafael": ["Rafael"],
+    "tiago": ["Tiago"],
+    "aranzubia": ["Daniel Aranzubia"],
+    "rafinha-alcantara": ["Rafinha"],
+    "nacho": ["Nacho"],
+    "jese": ["Jesé"],
+    "gimenez": ["José Giménez"],
+    "saul": ["Saúl"],
+    "robertson": ["Andy Robertson"],
+    "adrian": ["Adrián"],
+    "bisseck": ["Yann Aurel Bisseck"]
+  }
+}
