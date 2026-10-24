@@ -29,7 +29,21 @@ Die tatsächliche URL und das Build-/Bereitstellungsergebnis stehen in
 als Artefakt sowie auf `verification/pages-<run-id>` aufbewahrt. Eine fehlende
 Administrationsberechtigung ist dadurch von einem fehlerhaften Build getrennt.
 
-### Tatsächlicher Veröffentlichungslauf am 24. Oktober 2026
+### Erfolgreiche Veröffentlichung am 24. Oktober 2026
+
+Der [Lauf 40103245894](https://github.com/frostigerfrosty/prime_XI/actions/runs/40103245894)
+für Commit `83ca422f81f238ef758513bb8e2e204bd8a1e74c` hat Build und Deployment
+erfolgreich abgeschlossen. Die öffentliche Vorschau ist unter
+<https://frostigerfrosty.github.io/prime_XI/> erreichbar. Die tatsächliche Website
+bestand die Prüfung bei 1.440 und 390 Pixeln einschließlich Katalog, Teamdetail,
+Vergleich, Testspiel und reproduzierbarem Testspiellink.
+Der [Prüfbericht](https://github.com/frostigerfrosty/prime_XI/tree/c431cbefbd0f71ad5f4111815a5f969f6036dccf/review-results)
+enthält die Nachweise. GitHub lieferte eine HTTP-Adresse zurück; die Prüfung nutzt
+für GitHub-Pages-Adressen ausdrücklich HTTPS, damit sichere Browserfunktionen
+wie `crypto.randomUUID()` verfügbar sind. Die historische Datenfreigabe bleibt
+von dieser erfolgreichen Veröffentlichung getrennt.
+
+### Vorheriger blockierter Veröffentlichungslauf
 
 Der [GitHub-Lauf 40099318557](https://github.com/frostigerfrosty/prime_XI/actions/runs/40099318557)
 für Commit `51c1bf5239cd6a05e1931a0dfe56b77b00d1013b` hat den vollständigen
