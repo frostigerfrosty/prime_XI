@@ -1,0 +1,36 @@
+{
+  "url": "https://frostigerfrosty.github.io/prime_XI/",
+  "commit": "70655435270c26a86e109986979aa7cb0978eaa5",
+  "checkedAt": "2026-10-25T19:42:10.128Z",
+  "passed": true,
+  "views": [
+    {
+      "width": 1440,
+      "passed": true,
+      "catalog": 60,
+      "roster": 18,
+      "seededMatchReplayed": true,
+      "sequentialDraftConfirmed": true,
+      "seasonRatingsConfirmed": true,
+      "languages": [
+        "de",
+        "en",
+        "it"
+      ]
+    },
+    {
+      "width": 390,
+      "passed": true,
+      "catalog": 60,
+      "roster": 18,
+      "seededMatchReplayed": true,
+      "sequentialDraftConfirmed": true,
+      "seasonRatingsConfirmed": true,
+      "languages": [
+        "de",
+        "en",
+        "it"
+      ]
+    }
+  ]
+}
