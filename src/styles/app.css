@@ -2949,3 +2949,39 @@ body:has(.builder-confirm[open]) {
     flex-wrap: wrap;
   }
 }
+
+.rating-explanation {
+  margin-top: 8px;
+  max-width: 420px;
+  white-space: normal;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.rating-explanation summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+.rating-explanation[open] {
+  min-width: 230px;
+}
+.rating-explanation p,
+.rating-explanation dl,
+.rating-explanation ul {
+  margin-top: 10px;
+}
+.rating-explanation dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3ch;
+  gap: 12px;
+}
+.rating-explanation dd {
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.rating-explanation a {
+  text-decoration: underline;
+}

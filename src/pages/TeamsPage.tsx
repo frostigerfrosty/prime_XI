@@ -1,11 +1,12 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { clubs, targetYears } from '../app/catalog.ts';
 import { CatalogNote, PageHeading, TeamCard } from '../components/ui.tsx';
 import { searchPrimeTeams } from '../data/index.ts';
-
 export default function TeamsPage() {
+  useLanguage();
   const [params, setParams] = useSearchParams();
   const latestParams = useRef(params);
   useLayoutEffect(() => {
@@ -33,29 +34,31 @@ export default function TeamsPage() {
   return (
     <>
       <PageHeading
-        eyebrow="DER PRIME-KATALOG"
-        title="Die Besten ihrer Zeit."
-        description="60 Saisonmannschaften. 20 Jahrgänge. Entdecke die Teams hinter deiner zukünftigen Traumelf."
+        eyebrow={t('DER PRIME-KATALOG')}
+        title={t('Die Besten ihrer Zeit.')}
+        description={t(
+          '60 Saisonmannschaften. 20 Jahrgänge. Entdecke die Teams hinter deiner zukünftigen Traumelf.',
+        )}
       />
       <CatalogNote />
       <Link className="text-link back-link" to="/compare">
-        Zwei Prime-Teams vergleichen
+        {t('Zwei Prime-Teams vergleichen')}
       </Link>
-      <section className="catalog-filters panel" aria-label="Teamfilter">
+      <section className="catalog-filters panel" aria-label={t('Teamfilter')}>
         <label className="search-input">
           <Search size={18} aria-hidden="true" />
-          <span className="sr-only">Teams oder Trainer suchen</span>
+          <span className="sr-only">{t('Teams oder Trainer suchen')}</span>
           <input
             type="search"
             value={query}
             onChange={(event) => update('q', event.target.value)}
-            placeholder="Team, Saison oder Trainer suchen …"
+            placeholder={t('Team, Saison oder Trainer suchen …')}
           />
         </label>
         <label className="filter-select">
-          <span className="sr-only">Jahrgang</span>
+          <span className="sr-only">{t('Jahrgang')}</span>
           <select value={year} onChange={(event) => update('year', event.target.value)}>
-            <option value="">Alle Jahrgänge</option>
+            <option value="">{t('Alle Jahrg\u00E4nge')}</option>
             {targetYears.toReversed().map((value) => (
               <option key={value} value={value}>
                 {value}
@@ -64,9 +67,9 @@ export default function TeamsPage() {
           </select>
         </label>
         <label className="filter-select">
-          <span className="sr-only">Verein</span>
+          <span className="sr-only">{t('Verein')}</span>
           <select value={clubId} onChange={(event) => update('club', event.target.value)}>
-            <option value="">Alle Vereine</option>
+            <option value="">{t('Alle Vereine')}</option>
             {clubs
               .toSorted((a, b) => a.name.localeCompare(b.name, 'de'))
               .map((club) => (
@@ -79,12 +82,15 @@ export default function TeamsPage() {
       </section>
       <div className="catalog-results">
         <p role="status">
-          <strong>{filtered.length}</strong> {filtered.length === 1 ? 'Prime-Team' : 'Prime-Teams'}{' '}
-          <span>im Katalog</span>
+          <strong>{filtered.length}</strong>{' '}
+          {t(filtered.length === 1 ? 'Prime-Team' : 'Prime-Teams')}
+          {t(' ')}
+          <span>{t('im Katalog')}</span>
         </p>
         {(query || year || clubId) && (
           <button className="text-link" onClick={() => setFilters(new URLSearchParams())}>
-            <X size={15} aria-hidden="true" /> Filter zurücksetzen
+            <X size={15} aria-hidden="true" />
+            {t(' Filter zur\u00FCcksetzen')}
           </button>
         )}
       </div>
@@ -97,13 +103,13 @@ export default function TeamsPage() {
       ) : (
         <section className="panel no-results">
           <SlidersHorizontal size={30} aria-hidden="true" />
-          <h2>Kein Team gefunden.</h2>
-          <p>Versuche einen anderen Namen oder setze deine Filter zurück.</p>
+          <h2>{t('Kein Team gefunden.')}</h2>
+          <p>{t('Versuche einen anderen Namen oder setze deine Filter zur\u00FCck.')}</p>
           <button
             className="button button--secondary"
             onClick={() => setFilters(new URLSearchParams())}
           >
-            Alle Teams anzeigen
+            {t('Alle Teams anzeigen')}
           </button>
         </section>
       )}

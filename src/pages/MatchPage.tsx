@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, Dices, Shield, Swords } from 'lucide-react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
@@ -12,7 +13,6 @@ import type { MatchTeam } from '../engine/match.ts';
 import type { MatchResult } from '../types/application.ts';
 import { CatalogNote, ClubBadge, PageHeading } from '../components/ui.tsx';
 import { formatStrength } from '../utils/display.ts';
-
 interface Choice extends MatchTeam {
   name: string;
   detail: string;
@@ -32,26 +32,27 @@ const versions = {
   strength: strengthModel.rulesVersion,
 };
 const catalogIds = new Set(catalog.map((team) => team.id));
-
 function TeamIdentity({ team, side }: { team: Choice; side: string }) {
+  useLanguage();
   return (
     <div className="match-identity">
-      <span className="eyebrow">{side}</span>
+      <span className="eyebrow">{t(side)}</span>
       {team.clubId ? (
         <ClubBadge clubId={team.clubId} size="large" />
       ) : (
         <Shield className="own-team-mark" size={52} aria-hidden="true" />
       )}
       <h3>{team.name}</h3>
-      <p>{team.detail}</p>
+      <p>{t(team.detail)}</p>
       <span className="match-strength-label">
-        Matchstärke <strong>{formatStrength(team.strength)}</strong>
+        {t('Matchst\u00E4rke ')}
+        <strong>{t(formatStrength(team.strength))}</strong>
       </span>
     </div>
   );
 }
-
 export default function MatchPage() {
+  useLanguage();
   const [params, setParams] = useSearchParams();
   const location = useLocation();
   const { currentTeam } = useDraft();
@@ -109,22 +110,21 @@ export default function MatchPage() {
     return (
       <>
         <PageHeading
-          eyebrow="DEINE BEGEGNUNG"
-          title="Testspiel"
-          description="Wähle zwei Teams für dein Testspiel."
+          eyebrow={t('DEINE BEGEGNUNG')}
+          title={t('Testspiel')}
+          description={t('Wähle zwei Teams für dein Testspiel.')}
         />
         <section className="panel match-setup match-link-error">
-          <h2>Diese Paarung ist nicht verfügbar.</h2>
-          <p role="status">{linkError}</p>
+          <h2>{t('Diese Paarung ist nicht verf\u00FCgbar.')}</h2>
+          <p role="status">{t(linkError)}</p>
           <Link className="button button--primary" to="/test-match">
-            Teams neu wählen
+            {t('Teams neu w\u00E4hlen')}
           </Link>
         </section>
       </>
     );
   return <MatchSession key={sessionKey} initialSetup={setup} choices={choices} commit={commit} />;
 }
-
 function MatchSession({
   initialSetup,
   choices,
@@ -134,6 +134,7 @@ function MatchSession({
   choices: Choice[];
   commit: (setup: MatchSetup) => void;
 }) {
+  useLanguage();
   const resultPanel = useRef<HTMLElement>(null);
   const { currentTeam, teamMatchesDraft, teamWarning } = useDraft();
   const [setup, setSetup] = useState(initialSetup);
@@ -197,20 +198,22 @@ function MatchSession({
   return (
     <>
       <PageHeading
-        eyebrow="90 MINUTEN. ALLES OFFEN."
-        title="Testspiel"
-        description="Lass zwei Äras aufeinandertreffen – oder schick deine eigene Elf auf den Platz."
+        eyebrow={t('90 MINUTEN. ALLES OFFEN.')}
+        title={t('Testspiel')}
+        description={t(
+          'Lass zwei Äras aufeinandertreffen – oder schick deine eigene Elf auf den Platz.',
+        )}
       />
       <div className="match-layout">
         <section className="panel match-setup" aria-labelledby="match-setup-title">
           <div className="section-heading">
-            <h2 id="match-setup-title">Deine Begegnung</h2>
+            <h2 id="match-setup-title">{t('Deine Begegnung')}</h2>
             <Swords size={21} aria-hidden="true" />
           </div>
           <form onSubmit={play} onChange={clear}>
             {(['home', 'away'] as const).map((side) => (
               <label className="match-field" key={side}>
-                <span>{side === 'home' ? 'Heimteam' : 'Gastteam'}</span>
+                <span>{t(side === 'home' ? 'Heimteam' : 'Gastteam')}</span>
                 <select
                   value={side === 'home' ? homeId : awayId}
                   onChange={(event) =>
@@ -227,20 +230,20 @@ function MatchSession({
                       value={team.id}
                       disabled={team.id === (side === 'home' ? awayId : homeId)}
                     >
-                      {label(team)}
+                      {t(label(team))}
                     </option>
                   ))}
                 </select>
               </label>
             ))}
             <label className="match-field">
-              <span>Spielmodus</span>
+              <span>{t('Spielmodus')}</span>
               <select
                 value={mode}
                 onChange={(event) => change({ mode: event.target.value as typeof mode })}
               >
-                <option value="regular">90 Minuten · Remis möglich</option>
-                <option value="knockout">K.-o. · Verlängerung & Elfmeter</option>
+                <option value="regular">{t('90 Minuten \u00B7 Remis m\u00F6glich')}</option>
+                <option value="knockout">{t('K.-o. \u00B7 Verl\u00E4ngerung & Elfmeter')}</option>
               </select>
             </label>
             <label className="match-check">
@@ -249,15 +252,17 @@ function MatchSession({
                 checked={neutral}
                 onChange={(event) => change({ neutralVenue: event.target.checked })}
               />
-              Neutraler Platz
+              {t('Neutraler Platz')}
             </label>
             <p className="match-help">
-              {neutral
-                ? 'Beide Teams spielen ohne Heimvorteil.'
-                : 'Das Heimteam erhält 1,5 Stärkepunkte Heimvorteil.'}
+              {t(
+                neutral
+                  ? 'Beide Teams spielen ohne Heimvorteil.'
+                  : 'Das Heimteam erhält 1,5 Stärkepunkte Heimvorteil.',
+              )}
             </p>
             <label className="match-field">
-              <span>Spielcode</span>
+              <span>{t('Spielcode')}</span>
               <input
                 value={seed}
                 required
@@ -267,7 +272,7 @@ function MatchSession({
               />
             </label>
             <p className="match-help" id="code-help">
-              Gleiche Teams, Einstellungen und gleicher Code ergeben dasselbe Ergebnis.
+              {t('Gleiche Teams, Einstellungen und gleicher Code ergeben dasselbe Ergebnis.')}
             </p>
             <div className="match-actions">
               <button
@@ -279,35 +284,40 @@ function MatchSession({
                 }}
               >
                 <Dices size={16} aria-hidden="true" />
-                Neuer Code
+                {t('Neuer Code')}
               </button>
               <button type="submit" className="button button--primary">
-                Anpfiff <ArrowRight size={16} aria-hidden="true" />
+                {t('Anpfiff ')}
+                <ArrowRight size={16} aria-hidden="true" />
               </button>
             </div>
             {error && (
               <p className="storage-warning" role="alert">
-                {error}
+                {t(error)}
               </p>
             )}
           </form>
           <div className="match-save-note">
             {currentTeam ? (
               <p>
-                {teamMatchesDraft
-                  ? 'Deine gespeicherte Elf ist spielbereit.'
-                  : 'Für deine Elf gelten die zuletzt gespeicherten Werte. Änderungen im Draft zuerst speichern.'}
+                {t(
+                  teamMatchesDraft
+                    ? 'Deine gespeicherte Elf ist spielbereit.'
+                    : 'Für deine Elf gelten die zuletzt gespeicherten Werte. Änderungen im Draft zuerst speichern.',
+                )}
               </p>
             ) : (
               <p>
-                Deine eigene Elf erscheint hier, sobald du sie im Team Builder vollständig
-                gespeichert hast.
+                {t(
+                  'Deine eigene Elf erscheint hier, sobald du sie im Team Builder vollst\u00E4ndig gespeichert hast.',
+                )}
               </p>
             )}
             <Link className="text-link" to="/team-builder">
-              Zum Team Builder <ArrowRight size={14} aria-hidden="true" />
+              {t('Zum Team Builder ')}
+              <ArrowRight size={14} aria-hidden="true" />
             </Link>
-            {teamWarning && <p role="alert">{teamWarning}</p>}
+            {teamWarning && <p role="alert">{t(teamWarning)}</p>}
           </div>
         </section>
         <section
@@ -317,24 +327,26 @@ function MatchSession({
           aria-labelledby="match-result-title"
         >
           <div className="match-stage-top">
-            <p className="eyebrow">{played ? 'ABPFIFF' : 'DIE BÜHNE IST BEREIT'}</p>
+            <p className="eyebrow">{t(played ? 'ABPFIFF' : 'DIE BÜHNE IST BEREIT')}</p>
             <span className="subtle-chip">
-              {mode === 'regular' ? 'Testspiel · 90 Min.' : 'Testspiel · K.-o.'}
+              {t(mode === 'regular' ? 'Testspiel · 90 Min.' : 'Testspiel · K.-o.')}
             </span>
           </div>
           <h2 className="sr-only" id="match-result-title">
-            Spielergebnis
+            {t('Spielergebnis')}
           </h2>
           <div className="match-scoreboard">
             <TeamIdentity team={played?.home ?? home} side="HEIM" />
             <div className="match-score" data-testid="match-score">
-              {finalScore ? `${finalScore.home} : ${finalScore.away}` : 'VS'}
+              {t(finalScore ? `${finalScore.home} : ${finalScore.away}` : 'VS')}
               <small>
-                {result
-                  ? result.afterExtraTime
-                    ? 'NACH VERLÄNGERUNG'
-                    : 'NACH 90 MINUTEN'
-                  : 'BEREIT FÜR DEN ANPFIFF'}
+                {t(
+                  result
+                    ? result.afterExtraTime
+                      ? 'NACH VERLÄNGERUNG'
+                      : 'NACH 90 MINUTEN'
+                    : 'BEREIT FÜR DEN ANPFIFF',
+                )}
               </small>
             </div>
             <TeamIdentity team={played?.away ?? away} side="GAST" />
@@ -342,23 +354,25 @@ function MatchSession({
           <div className="match-announcement" role="status" aria-live="polite">
             {result ? (
               <>
-                <strong>{winner ? `Sieger: ${winner.name}` : 'Unentschieden'}</strong>
+                <strong>{t(winner ? `Sieger: ${winner.name}` : 'Unentschieden')}</strong>
                 {result.afterExtraTime && (
                   <span>
-                    Nach 90 Minuten {result.regularTime.home} : {result.regularTime.away}
+                    {t('Nach 90 Minuten ')}
+                    {result.regularTime.home} : {result.regularTime.away}
                   </span>
                 )}
                 {result.penalties && (
                   <span>
-                    Elfmeterschießen {result.penalties.home} : {result.penalties.away} · separat vom
-                    Spielstand
+                    {t('Elfmeterschie\u00DFen ')}
+                    {result.penalties.home} : {result.penalties.away}
+                    {t(' \u00B7 separat vom Spielstand')}
                   </span>
                 )}
               </>
             ) : (
               <>
-                <strong>Zwei Teams. Eine Begegnung.</strong>
-                <span>Wähle deine Teams und starte das Spiel.</span>
+                <strong>{t('Zwei Teams. Eine Begegnung.')}</strong>
+                <span>{t('W\u00E4hle deine Teams und starte das Spiel.')}</span>
               </>
             )}
           </div>
@@ -366,40 +380,46 @@ function MatchSession({
             <div className="match-details">
               <dl className="match-xg">
                 <div>
-                  <dt>Erwartete Tore Heim</dt>
-                  <dd>{formatStrength(result.expectedGoals.home)}</dd>
+                  <dt>{t('Erwartete Tore Heim')}</dt>
+                  <dd>{t(formatStrength(result.expectedGoals.home))}</dd>
                 </div>
                 <div>
-                  <dt>Erwartete Tore Gast</dt>
-                  <dd>{formatStrength(result.expectedGoals.away)}</dd>
+                  <dt>{t('Erwartete Tore Gast')}</dt>
+                  <dd>{t(formatStrength(result.expectedGoals.away))}</dd>
                 </div>
               </dl>
               <p>
-                Erwartete Tore beschreiben die Chancen vor dem Anpfiff. Auch das schwächere Team
-                kann gewinnen.
+                {t(
+                  'Erwartete Tore beschreiben die Chancen vor dem Anpfiff. Auch das schw\u00E4chere Team kann gewinnen.',
+                )}
               </p>
               {result.shootoutKicks.length > 0 && (
                 <details className="match-penalties">
-                  <summary>Elfmeterschießen ansehen</summary>
+                  <summary>{t('Elfmeterschie\u00DFen ansehen')}</summary>
                   <ol>
                     {result.shootoutKicks.map((kick, index) => (
                       <li key={index}>
                         <span>
-                          {kick.round}. Runde · {kick.side === 'home' ? 'Heim' : 'Gast'}
+                          {kick.round}
+                          {t('. Runde \u00B7 ')}
+                          {t(kick.side === 'home' ? 'Heim' : 'Gast')}
                         </span>
-                        <strong>{kick.scored ? 'Treffer' : 'Vergeben'}</strong>
+                        <strong>{t(kick.scored ? 'Treffer' : 'Vergeben')}</strong>
                       </li>
                     ))}
                   </ol>
                 </details>
               )}
               <p className="match-code">
-                Spielcode: <code>{result.seed}</code>
+                {t('Spielcode: ')}
+                <code>{result.seed}</code>
               </p>
             </div>
           )}
           <p className="match-stage-foot">
-            Ein einzelnes Testspiel. Die Turniertabelle und Historie bleiben davon unberührt.
+            {t(
+              'Ein einzelnes Testspiel. Die Turniertabelle und Historie bleiben davon unber\u00FChrt.',
+            )}
           </p>
         </section>
       </div>

@@ -10,6 +10,11 @@ Im Turnier spielt deine Elf gegen 35 Saisonmannschaften. Auslosung, Spielplan,
 Ergebnisse, Tabelle und K.-o.-Runden bis zum Finale bleiben beim Neuladen erhalten.
 Die Anwendung benötigt kein Backend, API-Abo oder geheime Schlüssel.
 
+Version 0.16 enthält [strenge positionsgerechte Saisonratings](docs/SAISONRATINGS.md)
+mit fünf Kriterien und gesonderten Hürden für historische Spitzenwerte. Unter
+**Einstellungen → Sprache** kannst du zwischen Deutsch, Englisch und Italienisch
+wechseln. Die [Sprachauswahl](docs/SPRACHEN.md) bleibt gespeichert und ist Teil der Backups.
+
 ## Starten
 
 Node.js 24 verwenden:

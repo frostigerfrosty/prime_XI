@@ -38,7 +38,7 @@ export function readDraft(
       warning:
         value.datasetVersion === getDatasetVersion()
           ? null
-          : 'Der Katalog wurde aktualisiert. Deine Auswahl bleibt erhalten; korrigierte Länderzuordnungen können die Draft-Chemie ändern. Gespeicherte Teams und laufende Turniere behalten ihre bisherigen Werte.',
+          : 'Der Katalog wurde aktualisiert. Deine Auswahl bleibt erhalten; neue Saisonratings und korrigierte Länderzuordnungen können Stärke und Draft-Chemie ändern. Gespeicherte Teams und laufende Turniere behalten ihre bisherigen Werte.',
     };
   } catch {
     return {

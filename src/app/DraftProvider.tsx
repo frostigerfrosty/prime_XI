@@ -1,3 +1,4 @@
+import { useLanguage } from '../i18n/react.ts';
 import { createContext, useContext, useMemo, useRef, useState, type ReactNode } from 'react';
 import { getDatasetVersion } from '../data/index.ts';
 import type { BuilderAction } from '../engine/builder.ts';
@@ -9,7 +10,6 @@ import { readDraft, writeDraft, draftStorageWarning } from '../utils/draft-stora
 import { readSavedTeam, writeSavedTeam, teamStorageWarning } from '../utils/team-storage.ts';
 import { builder, strengthModel } from './game.ts';
 import { getGameStorage } from '../utils/game-storage.ts';
-
 export { builder } from './game.ts';
 interface DraftContextValue {
   draft: DraftState | null;
@@ -26,8 +26,8 @@ interface DraftContextValue {
   saveForTournament: () => SavedTeam;
 }
 const DraftContext = createContext<DraftContextValue | null>(null);
-
 export function DraftProvider({ children }: { children: ReactNode }) {
+  useLanguage();
   const [loaded] = useState(() => {
     try {
       return readDraft(getGameStorage(), builder);
@@ -128,7 +128,6 @@ export function DraftProvider({ children }: { children: ReactNode }) {
     </DraftContext>
   );
 }
-
 export function useDraft() {
   const context = useContext(DraftContext);
   if (!context) throw new Error('DraftProvider is missing');

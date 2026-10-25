@@ -1,3 +1,4 @@
+import { useLanguage } from '../i18n/react.ts';
 import { createContext, useCallback, useContext, useRef, useState, type ReactNode } from 'react';
 import type { HistoryEntry, TournamentState } from '../types/application.ts';
 import { appendHistory, createHistoryEntry } from '../engine/history.ts';
@@ -10,7 +11,6 @@ import {
 } from '../utils/history-storage.ts';
 import { strengthModel, tournamentEngine } from './game.ts';
 import { getGameStorage } from '../utils/game-storage.ts';
-
 interface HistoryContextValue {
   entries: HistoryEntry[];
   warning: string | null;
@@ -20,8 +20,8 @@ interface HistoryContextValue {
   reset: () => boolean;
 }
 const HistoryContext = createContext<HistoryContextValue | null>(null);
-
 export function HistoryProvider({ children }: { children: ReactNode }) {
+  useLanguage();
   const [state, setState] = useState(() => {
     try {
       return { ...readHistory(getGameStorage(), strengthModel), persisted: true };
@@ -101,7 +101,6 @@ export function HistoryProvider({ children }: { children: ReactNode }) {
     </HistoryContext>
   );
 }
-
 export function useHistory() {
   const value = useContext(HistoryContext);
   if (!value) throw new Error('HistoryProvider is missing');

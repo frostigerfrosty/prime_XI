@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Trophy } from 'lucide-react';
 import { useTournament } from '../app/TournamentProvider.tsx';
@@ -14,7 +15,6 @@ import {
   userTournamentStatus,
 } from '../utils/tournament-display.ts';
 import { MatchRow, TeamName } from './TournamentTeams.tsx';
-
 function TieCard({
   tie,
   tournament,
@@ -24,6 +24,7 @@ function TieCard({
   tournament: TournamentState;
   participants: Map<string, TournamentParticipant>;
 }) {
+  useLanguage();
   const matches = tie.matchIds.map((id) => tournament.matches.find((match) => match.id === id)!);
   const played = matches.some((m) => m.status === 'played');
   const last = matches.at(-1)!;
@@ -38,15 +39,17 @@ function TieCard({
     >
       <div className="knockout-tie-heading">
         <span className="eyebrow">
-          {tie.round === 'final'
-            ? 'NEUTRALES FINALE'
-            : played
-              ? matches.every((m) => m.status === 'played')
-                ? 'GESAMTSTAND'
-                : 'NACH DEM HINSPIEL'
-              : 'AUSGELOST'}
+          {t(
+            tie.round === 'final'
+              ? 'NEUTRALES FINALE'
+              : played
+                ? matches.every((m) => m.status === 'played')
+                  ? 'GESAMTSTAND'
+                  : 'NACH DEM HINSPIEL'
+                : 'AUSGELOST',
+          )}
         </span>
-        {own && <span className="subtle-chip">Deine Paarung</span>}
+        {own && <span className="subtle-chip">{t('Deine Paarung')}</span>}
       </div>
       {(
         [
@@ -63,26 +66,29 @@ function TieCard({
         </div>
       ))}
       <p className="knockout-tie-decision">
-        {winner
-          ? `${tie.round === 'final' ? 'Turniersieger' : 'Weiter'}: ${participantIdentity(winner).name} · ${participantIdentity(winner).detail}`
-          : played
-            ? 'Rückspiel noch offen'
-            : 'Noch kein Ergebnis'}
+        {t(
+          winner
+            ? `${tie.round === 'final' ? 'Turniersieger' : 'Weiter'}: ${participantIdentity(winner).name} · ${participantIdentity(winner).detail}`
+            : played
+              ? 'Rückspiel noch offen'
+              : 'Noch kein Ergebnis',
+        )}
       </p>
       {result?.penalties && (
         <p className="knockout-penalty-score">
-          Elfmeterschießen {result.penalties.home} : {result.penalties.away} · separat von den
-          Gesamttoren
+          {t('Elfmeterschie\u00DFen ')}
+          {result.penalties.home} : {result.penalties.away}
+          {t(' \u00B7 separat von den Gesamttoren')}
         </p>
       )}
       <details className="knockout-match-details">
         <summary>
-          {matches.length === 1 ? 'Finalspiel ansehen' : 'Hin- und Rückspiel ansehen'}
+          {t(matches.length === 1 ? 'Finalspiel ansehen' : 'Hin- und Rückspiel ansehen')}
         </summary>
         {matches.map((match) => (
           <div key={match.id}>
             <p className="eyebrow">
-              {match.leg === 1 ? 'HINSPIEL' : match.leg === 2 ? 'RÜCKSPIEL' : 'FINALE'}
+              {t(match.leg === 1 ? 'HINSPIEL' : match.leg === 2 ? 'RÜCKSPIEL' : 'FINALE')}
             </p>
             <ul className="league-match-list">
               <MatchRow
@@ -93,26 +99,32 @@ function TieCard({
             </ul>
             {match.status === 'played' && match.result.afterExtraTime && (
               <p className="tournament-caption">
-                Nach 90 Minuten {match.result.regularTime.home} : {match.result.regularTime.away} ·
-                Der angezeigte Spielstand enthält die Verlängerung.
+                {t('Nach 90 Minuten ')}
+                {match.result.regularTime.home} : {match.result.regularTime.away}
+                {t(' \u00B7 Der angezeigte Spielstand enth\u00E4lt die Verl\u00E4ngerung.')}
               </p>
             )}
           </div>
         ))}
         {result?.shootoutKicks.length ? (
           <details className="match-penalties">
-            <summary>Elfmeterschießen ansehen</summary>
+            <summary>{t('Elfmeterschie\u00DFen ansehen')}</summary>
             <p className="tournament-caption">
-              Heim: {participantIdentity(participants.get(last.homeParticipantId)!).name} · Gast:{' '}
+              {t('Heim: ')}
+              {participantIdentity(participants.get(last.homeParticipantId)!).name}
+              {t(' \u00B7 Gast:')}
+              {t(' ')}
               {participantIdentity(participants.get(last.awayParticipantId)!).name}
             </p>
             <ol>
               {result.shootoutKicks.map((kick, i) => (
                 <li key={i}>
                   <span>
-                    {kick.round}. Runde · {kick.side === 'home' ? 'Heim' : 'Gast'}
+                    {kick.round}
+                    {t('. Runde \u00B7 ')}
+                    {t(kick.side === 'home' ? 'Heim' : 'Gast')}
                   </span>
-                  <strong>{kick.scored ? 'Treffer' : 'Vergeben'}</strong>
+                  <strong>{t(kick.scored ? 'Treffer' : 'Vergeben')}</strong>
                 </li>
               ))}
             </ol>
@@ -122,7 +134,6 @@ function TieCard({
     </article>
   );
 }
-
 export function KnockoutPanel({
   tournament,
   onMessage,
@@ -132,6 +143,7 @@ export function KnockoutPanel({
   onMessage: (message: string) => void;
   onError: (message: string) => void;
 }) {
+  useLanguage();
   const { knockoutAction } = useTournament();
   const info = tournamentEngine.knockoutProgress(tournament);
   const [selected, setSelected] = useState<TournamentRound>(info.round ?? 'playoffs');
@@ -180,51 +192,57 @@ export function KnockoutPanel({
       {champion ? (
         <div className="tournament-champion" data-testid="tournament-champion">
           <Trophy size={42} aria-hidden="true" />
-          <p className="eyebrow">TURNIER BEENDET</p>
+          <p className="eyebrow">{t('TURNIER BEENDET')}</p>
           <h2 id="knockout-title">{participantIdentity(champion).name}</h2>
-          <p>{participantIdentity(champion).detail} · Turniersieger</p>
+          <p>
+            {t(participantIdentity(champion).detail)}
+            {t(' \u00B7 Turniersieger')}
+          </p>
           <TeamName participant={champion} />
         </div>
       ) : (
         <div className="section-heading">
           <div>
-            <p className="eyebrow">DIE ENTSCHEIDUNGSRUNDEN</p>
+            <p className="eyebrow">{t('DIE ENTSCHEIDUNGSRUNDEN')}</p>
             <h2 id="knockout-title">
-              {info.round ? roundLabels[info.round] : 'Dein Weg zum Finale'}
+              {t(info.round ? roundLabels[info.round] : 'Dein Weg zum Finale')}
             </h2>
           </div>
           <Trophy size={24} aria-hidden="true" />
         </div>
       )}
       <p className="knockout-user-status" data-testid="knockout-user-status">
-        {userTournamentStatus(tournament, gameRules.tournament.league)}
+        {t(userTournamentStatus(tournament, gameRules.tournament.league))}
       </p>
       {!info.complete && (
         <div className="league-play-actions knockout-actions">
           {info.nextRound && (
             <button className="button button--primary" onClick={() => act('draw')}>
-              {roundLabels[info.nextRound]} auslosen <ArrowRight size={16} aria-hidden="true" />
+              {t(`${roundLabels[info.nextRound]} auslosen`)}
+              <ArrowRight size={16} aria-hidden="true" />
             </button>
           )}
           {info.nextLeg && info.round && (
             <button className="button button--primary" onClick={() => act('leg')}>
-              {info.round === 'final'
-                ? 'Finale simulieren'
-                : `${roundLabels[info.round]}: ${info.nextLeg === 1 ? 'Hinspiele' : 'Rückspiele'} simulieren`}
+              {t(
+                info.round === 'final'
+                  ? 'Finale simulieren'
+                  : `${roundLabels[info.round]}: ${info.nextLeg === 1 ? 'Hinspiele' : 'Rückspiele'} simulieren`,
+              )}
               <ArrowRight size={16} aria-hidden="true" />
             </button>
           )}
           <button className="button button--secondary" onClick={() => setConfirmFinish(true)}>
-            Bis zum Finale simulieren
+            {t('Bis zum Finale simulieren')}
           </button>
         </div>
       )}
       <p className="tournament-caption">
-        Playoffs und Achtelfinale sind gesetzt; die besser platzierten Ligateams haben das Rückspiel
-        zu Hause. Ab dem Viertelfinale wird frei neu ausgelost. Das Finale findet auf neutralem
-        Platz statt. Keine Auswärtstorregel.
+        {t(
+          'Playoffs und Achtelfinale sind gesetzt; die besser platzierten Ligateams haben das R\u00FCckspiel zu Hause. Ab dem Viertelfinale wird frei neu ausgelost. Das Finale findet auf neutralem Platz statt. Keine Ausw\u00E4rtstorregel.',
+        )}
       </p>
-      <div className="knockout-round-navigation" role="group" aria-label="K.-o.-Runden">
+      <div className="knockout-round-navigation" role="group" aria-label={t('K.-o.-Runden')}>
         {gameRules.tournament.knockout.rounds.map((round) => {
           const ties = tournament.knockoutTies.filter((tie) => tie.round === round.id);
           return (
@@ -235,11 +253,13 @@ export function KnockoutPanel({
               aria-pressed={selected === round.id && ties.length > 0}
               onClick={() => setSelected(round.id as TournamentRound)}
             >
-              <strong>{roundLabels[round.id as TournamentRound]}</strong>
+              <strong>{t(roundLabels[round.id as TournamentRound])}</strong>
               <small>
-                {ties.length
-                  ? `${ties.filter((tie) => tie.winnerParticipantId).length} / ${ties.length} entschieden`
-                  : 'Noch nicht ausgelost'}
+                {t(
+                  ties.length
+                    ? `${ties.filter((tie) => tie.winnerParticipantId).length} / ${ties.length} entschieden`
+                    : 'Noch nicht ausgelost',
+                )}
               </small>
             </button>
           );
@@ -247,7 +267,10 @@ export function KnockoutPanel({
       </div>
       {currentTies.length > 0 && (
         <>
-          <h3 className="knockout-round-title">{roundLabels[selected]} · Paarungen</h3>
+          <h3 className="knockout-round-title">
+            {t(roundLabels[selected])}
+            {t(' \u00B7 Paarungen')}
+          </h3>
           <div className="knockout-ties">
             {currentTies.map((tie) => (
               <TieCard key={tie.id} tie={tie} tournament={tournament} participants={participants} />
@@ -257,8 +280,9 @@ export function KnockoutPanel({
       )}
       {info.complete && (
         <p className="tournament-caption">
-          Alle 189 Spiele sind abgeschlossen. Das vollständige Turnier bleibt hier gespeichert. In
-          der Historie findest du zusätzlich den Rückblick mit deiner Elf und ihren Spielen.
+          {t(
+            'Alle 189 Spiele sind abgeschlossen. Das vollst\u00E4ndige Turnier bleibt hier gespeichert. In der Historie findest du zus\u00E4tzlich den R\u00FCckblick mit deiner Elf und ihren Spielen.',
+          )}
         </p>
       )}
       <dialog
@@ -268,14 +292,15 @@ export function KnockoutPanel({
         onCancel={() => setConfirmFinish(false)}
         onClose={() => setConfirmFinish(false)}
       >
-        <h2 id="knockout-confirm-title">Turnier vollständig simulieren?</h2>
+        <h2 id="knockout-confirm-title">{t('Turnier vollst\u00E4ndig simulieren?')}</h2>
         <p>
-          Alle noch offenen K.-o.-Runden werden ausgelost und ausgespielt. Danach steht der
-          Turniersieger fest. Bereits gespielte Ergebnisse bleiben erhalten.
+          {t(
+            'Alle noch offenen K.-o.-Runden werden ausgelost und ausgespielt. Danach steht der Turniersieger fest. Bereits gespielte Ergebnisse bleiben erhalten.',
+          )}
         </p>
         <div>
           <button className="button button--secondary" onClick={() => setConfirmFinish(false)}>
-            Abbrechen
+            {t('Abbrechen')}
           </button>
           <button
             className="button button--primary"
@@ -284,7 +309,7 @@ export function KnockoutPanel({
               act('finish');
             }}
           >
-            Bestätigen
+            {t('Best\u00E4tigen')}
           </button>
         </div>
       </dialog>

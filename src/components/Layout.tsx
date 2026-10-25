@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { useEffect, useRef } from 'react';
 import {
   ArrowUpRight,
@@ -16,7 +17,6 @@ import {
 } from 'lucide-react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Brand } from './ui.tsx';
-
 const navigation = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/team-builder', label: 'Team Builder', icon: UsersRound },
@@ -26,14 +26,14 @@ const navigation = [
   { to: '/compare', label: 'Teamvergleich', icon: Columns2 },
   { to: '/history', label: 'Historie', icon: History },
 ];
-
 function Navigation({ onNavigate }: { onNavigate?: () => void }) {
+  useLanguage();
   return (
     <>
       <div className="sidebar-top">
         <Brand />
-        <p className="nav-label">DEIN SPIEL</p>
-        <nav aria-label="Hauptnavigation">
+        <p className="nav-label">{t('DEIN SPIEL')}</p>
+        <nav aria-label={t('Hauptnavigation')}>
           {navigation.map(({ to, label, icon: Icon }) => (
             <NavLink
               key={to}
@@ -43,26 +43,27 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
               className={({ isActive }) => `nav-item ${isActive ? 'nav-item--active' : ''}`}
             >
               <Icon size={19} strokeWidth={1.6} aria-hidden="true" />
-              <span>{label}</span>
+              <span>{t(label)}</span>
             </NavLink>
           ))}
         </nav>
       </div>
       <div className="sidebar-bottom">
         <div className="sidebar-callout">
-          <span className="eyebrow">EINE NEUE ÄRA</span>
+          <span className="eyebrow">{t('EINE NEUE \u00C4RA')}</span>
           <h3>
-            Dein Team.
+            {t('Dein Team.')}
             <br />
-            Deine Geschichte.
+            {t('Deine Geschichte.')}
           </h3>
           <p>
-            Die Besten ihrer Zeit.
+            {t('Die Besten ihrer Zeit.')}
             <br />
-            Vereint in deiner Elf.
+            {t('Vereint in deiner Elf.')}
           </p>
           <Link to="/team-builder" onClick={onNavigate}>
-            Zur Aufstellung <ArrowUpRight size={16} aria-hidden="true" />
+            {t('Zur Aufstellung ')}
+            <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>
         <NavLink
@@ -71,17 +72,18 @@ function Navigation({ onNavigate }: { onNavigate?: () => void }) {
           className={({ isActive }) => `nav-item ${isActive ? 'nav-item--active' : ''}`}
         >
           <Settings size={18} aria-hidden="true" />
-          Einstellungen
+          {t('Einstellungen')}
         </NavLink>
         <p className="sidebar-footer">
-          PRIME XI <span>v0.15 · Entwicklungsvorschau</span>
+          {t('PRIME XI ')}
+          <span>{t('v0.16 \u00B7 Entwicklungsvorschau')}</span>
         </p>
       </div>
     </>
   );
 }
-
 export function Layout() {
+  const language = useLanguage();
   const { pathname } = useLocation();
   const dialog = useRef<HTMLDialogElement>(null);
   const main = useRef<HTMLElement>(null);
@@ -96,14 +98,14 @@ export function Layout() {
           ? 'Einstellungen'
           : 'Seite nicht gefunden');
   useEffect(() => {
-    document.title = `${title} · PRIME XI`;
+    document.title = `${t(title)} · PRIME XI`;
     if (previousPath.current !== pathname) {
       dialog.current?.close();
       window.scrollTo({ top: 0, behavior: 'instant' });
       main.current?.focus({ preventScroll: true });
       previousPath.current = pathname;
     }
-  }, [pathname, title]);
+  }, [pathname, title, language]);
   return (
     <div className="app-shell">
       <a
@@ -114,7 +116,7 @@ export function Layout() {
           main.current?.focus();
         }}
       >
-        Zum Inhalt springen
+        {t('Zum Inhalt springen')}
       </a>
       <aside className="sidebar">
         <Navigation />
@@ -122,7 +124,7 @@ export function Layout() {
       <dialog
         className="mobile-drawer"
         ref={dialog}
-        aria-label="Navigation"
+        aria-label={t('Navigation')}
         onClick={(event) => {
           if (event.target === event.currentTarget) dialog.current?.close();
         }}
@@ -130,7 +132,7 @@ export function Layout() {
         <div className="mobile-drawer-content">
           <button
             className="icon-button drawer-close"
-            aria-label="Menü schließen"
+            aria-label={t('Menü schließen')}
             onClick={() => dialog.current?.close()}
           >
             <X size={20} />
@@ -143,20 +145,21 @@ export function Layout() {
           <div className="topbar-breadcrumb">
             <button
               className="icon-button mobile-menu"
-              aria-label="Menü öffnen"
+              aria-label={t('Menü öffnen')}
               onClick={() => dialog.current?.showModal()}
             >
               <Menu size={21} />
             </button>
-            <span className="topbar-product">PRIME XI</span>
+            <span className="topbar-product">{t('PRIME XI')}</span>
             <ChevronRight size={13} aria-hidden="true" />
-            <span>{title}</span>
+            <span>{t(title)}</span>
           </div>
           <div className="topbar-actions">
             <span className="status-pill">
-              <span className="status-dot" /> ENTWICKLUNGSVERSION
+              <span className="status-dot" />
+              {t(' ENTWICKLUNGSVERSION')}
             </span>
-            <Link className="icon-button" to="/settings" aria-label="Einstellungen öffnen">
+            <Link className="icon-button" to="/settings" aria-label={t('Einstellungen öffnen')}>
               <Settings size={18} />
             </Link>
           </div>
@@ -165,9 +168,10 @@ export function Layout() {
           <Outlet />
         </main>
         <footer className="page-footer">
-          <span>Große Teams. Unendliche Möglichkeiten.</span>
+          <span>{t('Gro\u00DFe Teams. Unendliche M\u00F6glichkeiten.')}</span>
           <Link to="/settings">
-            <CircleHelp size={14} aria-hidden="true" /> Über PRIME XI
+            <CircleHelp size={14} aria-hidden="true" />
+            {t(' \u00DCber PRIME XI')}
           </Link>
         </footer>
       </div>

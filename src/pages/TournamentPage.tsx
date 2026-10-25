@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { ArrowRight, Check, Dices, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,13 +10,13 @@ import { formatStrength } from '../utils/display.ts';
 import { TeamName, MatchRow } from '../components/TournamentTeams.tsx';
 import { KnockoutPanel } from '../components/KnockoutPanel.tsx';
 import { useHistory } from '../app/HistoryProvider.tsx';
-
 const qualificationText = {
   direct: 'Achtelfinale',
   playoff: 'Playoffs',
   eliminated: 'Ausgeschieden',
 };
 export default function TournamentPage() {
+  useLanguage();
   const { currentTeam, teamWarning } = useDraft();
   const { tournament, warning, persisted, start, advance } = useTournament();
   const { warning: historyWarning } = useHistory();
@@ -93,14 +94,13 @@ export default function TournamentPage() {
   const complete = progress?.complete ?? false;
   const status = ownRow ? tournamentEngine.qualification(ownRow.rank) : null;
   const qualification = complete && status ? qualificationText[status] : null;
-
   return (
     <>
       <div className="tournament-heading">
         <PageHeading
-          eyebrow="DIE GRÖSSTE BÜHNE"
-          title="Dein Turnier"
-          description="Deine Elf. 35 Gegner. Ein Weg bis zum Pokal."
+          eyebrow={t('DIE GRÖSSTE BÜHNE')}
+          title={t('Dein Turnier')}
+          description={t('Deine Elf. 35 Gegner. Ein Weg bis zum Pokal.')}
         />
         {tournament && (
           <button
@@ -112,46 +112,48 @@ export default function TournamentPage() {
             }}
           >
             <Dices size={16} aria-hidden="true" />
-            Neues Turnier
+            {t('Neues Turnier')}
           </button>
         )}
       </div>
       {warning && (
         <p className="builder-alert" role="alert">
-          {warning}
+          {t(warning)}
         </p>
       )}
       {tournament?.phase === 'completed' && (
         <>
           {historyWarning && (
             <p className="builder-alert" role="alert">
-              {historyWarning}
+              {t(historyWarning)}
             </p>
           )}
           <Link className="button button--secondary" to="/history">
-            Zum Turnierarchiv
+            {t('Zum Turnierarchiv')}
           </Link>
         </>
       )}
       {error && (
         <p className="builder-alert builder-alert--error" role="alert">
-          {error}
+          {t(error)}
         </p>
       )}
       <p className="tournament-feedback" role="status">
-        {message}
+        {t(message)}
       </p>
       {!tournament ? (
         <>
           {currentTeam ? (
             <section className="panel tournament-start">
               <Trophy size={36} aria-hidden="true" />
-              <p className="eyebrow">DEINE ELF IST BEREIT</p>
-              <h2>Die große Bühne wartet.</h2>
+              <p className="eyebrow">{t('DEINE ELF IST BEREIT')}</p>
+              <h2>{t('Die gro\u00DFe B\u00FChne wartet.')}</h2>
               <p>
-                {currentTeam.name} · Matchstärke{' '}
-                {formatStrength(currentTeam.strength.matchStrength)}. Du spielst gegen 35
-                verschiedene Saisonmannschaften aus dem Prime-Katalog.
+                {currentTeam.name}
+                {t(' \u00B7 Matchst\u00E4rke')}
+                {t(' ')}
+                {t(formatStrength(currentTeam.strength.matchStrength))}
+                {t('. Du spielst gegen 35 verschiedene Saisonmannschaften aus dem Prime-Katalog.')}
               </p>
               <form
                 onSubmit={(event) => {
@@ -160,7 +162,7 @@ export default function TournamentPage() {
                 }}
               >
                 <label className="match-field">
-                  <span>Turniercode</span>
+                  <span>{t('Turniercode')}</span>
                   <input
                     required
                     maxLength={100}
@@ -170,40 +172,53 @@ export default function TournamentPage() {
                   />
                 </label>
                 <p className="match-help" id="tournament-code-help">
-                  Gleicher Code und gleiche gespeicherte Elf wiederholen Auslosung und Ergebnisse.
+                  {t(
+                    'Gleicher Code und gleiche gespeicherte Elf wiederholen Auslosung und Ergebnisse.',
+                  )}
                 </p>
                 <button type="submit" className="button button--primary">
-                  Turnier starten <ArrowRight size={16} aria-hidden="true" />
+                  {t('Turnier starten ')}
+                  <ArrowRight size={16} aria-hidden="true" />
                 </button>
               </form>
             </section>
           ) : (
             <EmptyState
               icon={Trophy}
-              eyebrow="NOCH KEIN ANPFIFF"
-              title="Große Spiele brauchen eine vollständige Elf."
-              description="Vervollständige deine Aufstellung mit Coach und Captain im Team Builder und speichere sie. Danach startet hier deine Ligaphase."
+              eyebrow={t('NOCH KEIN ANPFIFF')}
+              title={t('Große Spiele brauchen eine vollständige Elf.')}
+              description={t(
+                'Vervollständige deine Aufstellung mit Coach und Captain im Team Builder und speichere sie. Danach startet hier deine Ligaphase.',
+              )}
             />
           )}
           {!currentTeam && teamWarning && (
             <p className="builder-alert" role="alert">
-              {teamWarning}
+              {t(teamWarning)}
             </p>
           )}
           <div className="format-strip panel">
             <span>
-              <strong>36</strong> Teilnehmer
+              <strong>36</strong>
+              {t(' Teilnehmer')}
             </span>
             <span>
-              <strong>8</strong> Ligaspiele pro Team
+              <strong>8</strong>
+              {t(' Ligaspiele pro Team')}
             </span>
             <span>
-              <strong>4 + 4</strong> Heim- und Auswärtsspiele
+              <strong>4 + 4</strong>
+              {t(' Heim- und Ausw\u00E4rtsspiele')}
             </span>
-            <p>Plätze 1–8 direkt ins Achtelfinale · 9–24 Playoffs · 25–36 ausgeschieden</p>
+            <p>
+              {t(
+                'Pl\u00E4tze 1\u20138 direkt ins Achtelfinale \u00B7 9\u201324 Playoffs \u00B7 25\u201336 ausgeschieden',
+              )}
+            </p>
           </div>
           <Link className="text-link" to="/test-match">
-            Oder zuerst ein Testspiel spielen <ArrowRight size={15} aria-hidden="true" />
+            {t('Oder zuerst ein Testspiel spielen ')}
+            <ArrowRight size={15} aria-hidden="true" />
           </Link>
         </>
       ) : (
@@ -218,51 +233,58 @@ export default function TournamentPage() {
               className="panel tournament-overview"
               ref={overview}
               tabIndex={-1}
-              aria-label="Dein Ligastand"
+              aria-label={t('Dein Ligastand')}
             >
               <div className="section-heading">
                 <div>
-                  <p className="eyebrow">{complete ? 'ABSCHLUSSTABELLE' : 'LIGAPHASE'}</p>
-                  <h2>{complete ? 'Acht Spiele. Dein Ergebnis.' : 'Jeder Punkt zählt.'}</h2>
+                  <p className="eyebrow">{t(complete ? 'ABSCHLUSSTABELLE' : 'LIGAPHASE')}</p>
+                  <h2>{t(complete ? 'Acht Spiele. Dein Ergebnis.' : 'Jeder Punkt zählt.')}</h2>
                 </div>
                 <span className="subtle-chip">
-                  {persisted ? 'Im Browser gespeichert' : 'Nur in dieser Sitzung'}
+                  {t(persisted ? 'Im Browser gespeichert' : 'Nur in dieser Sitzung')}
                 </span>
               </div>
               <div className="league-stats">
                 <div>
-                  <span>Dein Ligaplatz</span>
+                  <span>{t('Dein Ligaplatz')}</span>
                   <strong data-testid="user-league-rank">
                     {ownRow.played ? ownRow.rank : '–'}
                   </strong>
                   <small>{complete ? qualification : 'Aktueller Stand'}</small>
                 </div>
                 <div>
-                  <span>Punkte</span>
+                  <span>{t('Punkte')}</span>
                   <strong data-testid="user-league-points">{ownRow.points}</strong>
                   <small>
-                    {ownRow.wins} Siege · {ownRow.draws} Remis
+                    {ownRow.wins}
+                    {t(' Siege \u00B7 ')}
+                    {ownRow.draws}
+                    {t(' Remis')}
                   </small>
                 </div>
                 <div>
-                  <span>Deine Spiele</span>
+                  <span>{t('Deine Spiele')}</span>
                   <strong>
                     {ownRow.played}
                     <small> / {progress.totalRounds}</small>
                   </strong>
                   <small>
-                    {ownRow.goalsFor} : {ownRow.goalsAgainst} Tore
+                    {ownRow.goalsFor} : {ownRow.goalsAgainst}
+                    {t(' Tore')}
                   </small>
                 </div>
                 <div>
-                  <span>Matchstärke</span>
-                  <strong>{formatStrength(own.matchStrength)}</strong>
-                  <small>Elf vom Turnierstart</small>
+                  <span>{t('Matchst\u00E4rke')}</span>
+                  <strong>{t(formatStrength(own.matchStrength))}</strong>
+                  <small>{t('Elf vom Turnierstart')}</small>
                 </div>
               </div>
               <div className="league-progress">
                 <label htmlFor="league-progress">
-                  {progress.completedRounds} von {progress.totalRounds} Spieltagen abgeschlossen
+                  {progress.completedRounds}
+                  {t(' von ')}
+                  {progress.totalRounds}
+                  {t(' Spieltagen abgeschlossen')}
                 </label>
                 <progress
                   id="league-progress"
@@ -271,8 +293,9 @@ export default function TournamentPage() {
                 />
               </div>
               <p className="tournament-caption">
-                Aufstellung, Gegner und Spielwerte bleiben für dieses Turnier erhalten, auch wenn du
-                dein Team im Builder veränderst.
+                {t(
+                  'Aufstellung, Gegner und Spielwerte bleiben f\u00FCr dieses Turnier erhalten, auch wenn du dein Team im Builder ver\u00E4nderst.',
+                )}
               </p>
             </section>
             {complete ? (
@@ -282,18 +305,26 @@ export default function TournamentPage() {
               >
                 <Check size={25} aria-hidden="true" />
                 <div>
-                  <p className="eyebrow">LIGAPHASE BEENDET</p>
+                  <p className="eyebrow">{t('LIGAPHASE BEENDET')}</p>
                   <h2 id="qualification-title">{qualification}</h2>
                   <p>
-                    Deine Elf beendet die Ligaphase auf Platz {ownRow.rank} mit {ownRow.points}{' '}
-                    Punkten.{' '}
-                    {status === 'eliminated'
-                      ? 'Damit verpasst sie die K.-o.-Runden.'
-                      : 'Dein Platz in der nächsten Runde steht fest.'}
+                    {t('Deine Elf beendet die Ligaphase auf Platz ')}
+                    {ownRow.rank}
+                    {t(' mit ')}
+                    {ownRow.points}
+                    {t(' ')}
+                    {t('Punkten.')}
+                    {t(' ')}
+                    {t(
+                      status === 'eliminated'
+                        ? 'Damit verpasst sie die K.-o.-Runden.'
+                        : 'Dein Platz in der nächsten Runde steht fest.',
+                    )}
                   </p>
                   <p>
-                    Die K.-o.-Runden sind spielbereit. Du kannst das Turnier auch nach dem
-                    Ausscheiden deiner Elf weiterverfolgen.
+                    {t(
+                      'Die K.-o.-Runden sind spielbereit. Du kannst das Turnier auch nach dem Ausscheiden deiner Elf weiterverfolgen.',
+                    )}
                   </p>
                 </div>
               </section>
@@ -301,8 +332,11 @@ export default function TournamentPage() {
               nextMatch && (
                 <section className="panel next-league-match">
                   <div className="section-heading">
-                    <h2>Nächstes Spiel</h2>
-                    <span className="subtle-chip">Spieltag {progress.nextRound}</span>
+                    <h2>{t('N\u00E4chstes Spiel')}</h2>
+                    <span className="subtle-chip">
+                      {t('Spieltag ')}
+                      {progress.nextRound}
+                    </span>
                   </div>
                   <ul className="league-match-list">
                     <MatchRow
@@ -313,26 +347,31 @@ export default function TournamentPage() {
                   </ul>
                   <div className="league-play-actions">
                     <button className="button button--primary" onClick={() => play()}>
-                      Spieltag {progress.nextRound} simulieren{' '}
+                      {t(`Spieltag ${progress.nextRound} simulieren`)}
+                      {t(' ')}
                       <ArrowRight size={16} aria-hidden="true" />
                     </button>
                     <button
                       className="button button--secondary"
                       onClick={() => setPending('finish')}
                     >
-                      Restliche Ligaphase simulieren
+                      {t('Restliche Ligaphase simulieren')}
                     </button>
                   </div>
                   <p className="tournament-caption">
-                    Ein Spieltag spielt alle 18 Begegnungen aus. Deine Tabelle bleibt dadurch auf
-                    demselben Stand wie die Ergebnisse der anderen Teams.
+                    {t(
+                      'Ein Spieltag spielt alle 18 Begegnungen aus. Deine Tabelle bleibt dadurch auf demselben Stand wie die Ergebnisse der anderen Teams.',
+                    )}
                   </p>
                 </section>
               )
             )}
             {lastMatch && (
               <section className="panel last-league-match">
-                <p className="eyebrow">DEIN LETZTES ERGEBNIS · SPIELTAG {lastMatch.roundNumber}</p>
+                <p className="eyebrow">
+                  {t('DEIN LETZTES ERGEBNIS \u00B7 SPIELTAG ')}
+                  {lastMatch.roundNumber}
+                </p>
                 <ul className="league-match-list">
                   <MatchRow
                     match={lastMatch}
@@ -343,60 +382,67 @@ export default function TournamentPage() {
               </section>
             )}
             <details className="league-archive" open={tournament.phase === 'league'}>
-              <summary>Ligatabelle und Spielplan ansehen</summary>
+              <summary>{t('Ligatabelle und Spielplan ansehen')}</summary>
               <section className="panel league-table-panel" aria-labelledby="league-table-title">
                 <div className="section-heading">
-                  <h2 id="league-table-title">Ligatabelle</h2>
+                  <h2 id="league-table-title">{t('Ligatabelle')}</h2>
                   <span className="subtle-chip">
-                    36 Teams ·{' '}
+                    {t('36 Teams \u00B7')}
+                    {t(' ')}
                     {
                       tournament.matches.filter(
                         (m) => m.phase === 'league' && m.status === 'played',
                       ).length
-                    }{' '}
-                    / 144 Spiele
+                    }
+                    {t(' ')}
+                    {t('/ 144 Spiele')}
                   </span>
                 </div>
                 <div className="league-legend">
-                  <span>1–8 · Achtelfinale</span>
-                  <span>9–24 · Playoffs</span>
-                  <span>25–36 · Aus</span>
+                  <span>{t('1\u20138 \u00B7 Achtelfinale')}</span>
+                  <span>{t('9\u201324 \u00B7 Playoffs')}</span>
+                  <span>{t('25\u201336 \u00B7 Aus')}</span>
                 </div>
                 <div
                   className="league-table-scroll"
                   tabIndex={0}
                   role="region"
-                  aria-label="Vollständige Ligatabelle horizontal scrollen"
+                  aria-label={t('Vollständige Ligatabelle horizontal scrollen')}
                 >
-                  <table aria-label="Ligatabelle">
+                  <table aria-label={t('Ligatabelle')}>
                     <caption className="sr-only">
-                      {complete ? 'Endstand' : 'Zwischenstand'} nach {progress.completedRounds}{' '}
-                      Spieltagen. Sortierung: Punkte, Tordifferenz, Tore, Siege, Teilnehmer-ID.
+                      {t(complete ? 'Endstand' : 'Zwischenstand')}
+                      {t(' nach ')}
+                      {progress.completedRounds}
+                      {t(' ')}
+                      {t(
+                        'Spieltagen. Sortierung: Punkte, Tordifferenz, Tore, Siege, Teilnehmer-ID.',
+                      )}
                     </caption>
                     <thead>
                       <tr>
-                        <th scope="col">Pl.</th>
-                        <th scope="col">Mannschaft</th>
+                        <th scope="col">{t('Pl.')}</th>
+                        <th scope="col">{t('Mannschaft')}</th>
                         <th scope="col">
-                          <abbr title="Spiele">Sp.</abbr>
+                          <abbr title={t('Spiele')}>{t('Sp.')}</abbr>
                         </th>
                         <th scope="col">
-                          <abbr title="Siege">S</abbr>
+                          <abbr title={t('Siege')}>{t('S')}</abbr>
                         </th>
                         <th scope="col">
-                          <abbr title="Unentschieden">U</abbr>
+                          <abbr title={t('Unentschieden')}>{t('U')}</abbr>
                         </th>
                         <th scope="col">
-                          <abbr title="Niederlagen">N</abbr>
+                          <abbr title={t('Niederlagen')}>{t('N')}</abbr>
                         </th>
-                        <th scope="col">Tore</th>
+                        <th scope="col">{t('Tore')}</th>
                         <th scope="col">
-                          <abbr title="Tordifferenz">TD</abbr>
+                          <abbr title={t('Tordifferenz')}>{t('TD')}</abbr>
                         </th>
                         <th scope="col">
-                          <abbr title="Punkte">Pkt.</abbr>
+                          <abbr title={t('Punkte')}>{t('Pkt.')}</abbr>
                         </th>
-                        <th scope="col">Zone</th>
+                        <th scope="col">{t('Zone')}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -432,12 +478,12 @@ export default function TournamentPage() {
                               {row.goalsFor}:{row.goalsAgainst}
                             </td>
                             <td>
-                              {row.goalDifference > 0 ? '+' : ''}
+                              {t(row.goalDifference > 0 ? '+' : '')}
                               {row.goalDifference}
                             </td>
                             <td className="league-points">{row.points}</td>
                             <td className="league-zone">
-                              {progress.completedRounds ? qualificationText[zone] : '–'}
+                              {t(progress.completedRounds ? qualificationText[zone] : '–')}
                             </td>
                           </tr>
                         );
@@ -446,27 +492,34 @@ export default function TournamentPage() {
                   </table>
                 </div>
                 <p className="tournament-caption">
-                  {complete
-                    ? 'Die Qualifikationsplätze sind endgültig.'
-                    : 'Die Zonen zeigen den aktuellen Stand. Qualifiziert wird erst nach allen acht Spieltagen.'}{' '}
-                  Bei Punktgleichheit zählen Tordifferenz, Tore, Siege und zuletzt die stabile
-                  Teilnehmer-ID.
+                  {t(
+                    complete
+                      ? 'Die Qualifikationsplätze sind endgültig.'
+                      : 'Die Zonen zeigen den aktuellen Stand. Qualifiziert wird erst nach allen acht Spieltagen.',
+                  )}
+                  {t(' ')}
+                  {t(
+                    'Bei Punktgleichheit z\u00E4hlen Tordifferenz, Tore, Siege und zuletzt die stabile Teilnehmer-ID.',
+                  )}
                 </p>
               </section>
               <div className="league-fixture-grid">
                 <section className="panel league-fixtures">
                   <div className="section-heading">
-                    <h2>Dein Spielplan</h2>
-                    <span className="subtle-chip">4 Heim · 4 Auswärts</span>
+                    <h2>{t('Dein Spielplan')}</h2>
+                    <span className="subtle-chip">{t('4 Heim \u00B7 4 Ausw\u00E4rts')}</span>
                   </div>
                   <ol className="league-match-list own-league-fixtures">
                     {ownMatches.map((match) => (
                       <li key={match.id}>
                         <p className="eyebrow">
-                          Spieltag {match.roundNumber} ·{' '}
-                          {match.homeParticipantId === tournament.userParticipantId
-                            ? 'Heimspiel'
-                            : 'Auswärtsspiel'}
+                          {t('Spieltag ')}
+                          {match.roundNumber} ·{t(' ')}
+                          {t(
+                            match.homeParticipantId === tournament.userParticipantId
+                              ? 'Heimspiel'
+                              : 'Auswärtsspiel',
+                          )}
                         </p>
                         <ul>
                           <MatchRow
@@ -481,16 +534,17 @@ export default function TournamentPage() {
                 </section>
                 <section className="panel league-fixtures">
                   <div className="section-heading">
-                    <h2>Alle Begegnungen</h2>
+                    <h2>{t('Alle Begegnungen')}</h2>
                     <label className="league-round-select">
-                      <span>Spieltag anzeigen</span>
+                      <span>{t('Spieltag anzeigen')}</span>
                       <select
                         value={selectedRound}
                         onChange={(event) => setSelectedRound(Number(event.target.value))}
                       >
                         {Array.from({ length: progress.totalRounds }, (_, i) => (
                           <option key={i + 1} value={i + 1}>
-                            Spieltag {i + 1}
+                            {t('Spieltag ')}
+                            {i + 1}
                           </option>
                         ))}
                       </select>
@@ -514,18 +568,28 @@ export default function TournamentPage() {
               </div>
             </details>
             <details className="panel tournament-code-details">
-              <summary>Turniercode und Spielregeln</summary>
+              <summary>{t('Turniercode und Spielregeln')}</summary>
               <p>
-                Turniercode: <code>{tournament.seed}</code>
+                {t('Turniercode: ')}
+                <code>{tournament.seed}</code>
               </p>
               <p>
-                {gameRules.tournament.totalTeams} Teilnehmer ·{' '}
-                {gameRules.tournament.league.matchesPerTeam} verschiedene Gegner · Sieg{' '}
-                {gameRules.tournament.league.winPoints}, Remis{' '}
-                {gameRules.tournament.league.drawPoints}, Niederlage{' '}
-                {gameRules.tournament.league.lossPoints} Punkte. Verschiedene Saisons desselben
-                Vereins dürfen teilnehmen. Die Auslosung verwendet keine UEFA-Töpfe oder
-                Länderbeschränkungen.
+                {gameRules.tournament.totalTeams}
+                {t(' Teilnehmer \u00B7')}
+                {t(' ')}
+                {gameRules.tournament.league.matchesPerTeam}
+                {t(' verschiedene Gegner \u00B7 Sieg')}
+                {t(' ')}
+                {gameRules.tournament.league.winPoints}
+                {t(', Remis')}
+                {t(' ')}
+                {gameRules.tournament.league.drawPoints}
+                {t(', Niederlage')}
+                {t(' ')}
+                {gameRules.tournament.league.lossPoints}
+                {t(
+                  ' Punkte. Verschiedene Saisons desselben Vereins d\u00FCrfen teilnehmen. Die Auslosung verwendet keine UEFA-T\u00F6pfe oder L\u00E4nderbeschr\u00E4nkungen.',
+                )}
               </p>
             </details>
           </>
@@ -541,23 +605,27 @@ export default function TournamentPage() {
       >
         <form onSubmit={confirm}>
           <p className="eyebrow">
-            {pending === 'restart' ? 'NEUE AUSLOSUNG' : 'BIS ZUM ACHTEN SPIELTAG'}
+            {t(pending === 'restart' ? 'NEUE AUSLOSUNG' : 'BIS ZUM ACHTEN SPIELTAG')}
           </p>
           <h2 id="tournament-confirm-title">
-            {pending === 'restart'
-              ? 'Bisheriges Turnier ersetzen?'
-              : 'Restliche Ligaphase simulieren?'}
+            {t(
+              pending === 'restart'
+                ? 'Bisheriges Turnier ersetzen?'
+                : 'Restliche Ligaphase simulieren?',
+            )}
           </h2>
           <p>
-            {pending === 'restart'
-              ? tournament?.phase === 'completed'
-                ? 'Dein abgeschlossener Turnierrückblick bleibt im Archiv erhalten. Das neue Turnier verwendet deine zuletzt gespeicherte Elf. Dein Draft bleibt erhalten.'
-                : 'Dein bisheriger Spielplan und alle Ergebnisse werden durch ein neues Turnier mit deiner zuletzt gespeicherten Elf ersetzt. Dein Draft bleibt erhalten.'
-              : 'Alle noch offenen Spiele werden simuliert. Danach steht deine endgültige Ligaplatzierung fest.'}
+            {t(
+              pending === 'restart'
+                ? tournament?.phase === 'completed'
+                  ? 'Dein abgeschlossener Turnierrückblick bleibt im Archiv erhalten. Das neue Turnier verwendet deine zuletzt gespeicherte Elf. Dein Draft bleibt erhalten.'
+                  : 'Dein bisheriger Spielplan und alle Ergebnisse werden durch ein neues Turnier mit deiner zuletzt gespeicherten Elf ersetzt. Dein Draft bleibt erhalten.'
+                : 'Alle noch offenen Spiele werden simuliert. Danach steht deine endgültige Ligaplatzierung fest.',
+            )}
           </p>
           {pending === 'restart' && (
             <label className="match-field">
-              <span>Turniercode</span>
+              <span>{t('Turniercode')}</span>
               <input
                 required
                 maxLength={100}
@@ -572,10 +640,10 @@ export default function TournamentPage() {
               className="button button--secondary"
               onClick={() => setPending(null)}
             >
-              Abbrechen
+              {t('Abbrechen')}
             </button>
             <button type="submit" className="button button--primary">
-              Bestätigen
+              {t('Best\u00E4tigen')}
             </button>
           </div>
         </form>

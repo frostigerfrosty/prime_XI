@@ -15,7 +15,7 @@ const complete = (seed: string, team = f.team) =>
   f.engine.finishTournament(f.engine.finishLeague(f.engine.start(team, seed, f.now)), f.now);
 const state = complete('knockout-0');
 const entry = createHistoryEntry(state, f.engine);
-const winner = createHistoryEntry(complete('user-champion-0', championTestTeam(f)), f.engine);
+const winner = createHistoryEntry(complete('user-champion-1', championTestTeam(f)), f.engine);
 
 test('completed tournaments produce independent, compact snapshots of the real XI and own matches', () => {
   assert.equal(isHistoryEntry(entry, f.model), true);

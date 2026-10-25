@@ -4,15 +4,34 @@ import { createTournamentEngine } from '../../src/engine/tournament.ts';
 import { createSavedTeam } from '../../src/engine/saved-team.ts';
 import { createInitialAppState } from '../../src/data/initial-state.ts';
 import { createHistoryEntry } from '../../src/engine/history.ts';
+import previousRatings from '../fixtures/legacy-ratings.json' with { type: 'json' };
 
 /** Previous gameplay values, before the three dated Laporte nationality corrections. */
 export function legacyCatalogFixture() {
   const f = tournamentFixture();
   const data = structuredClone(f.data);
   data.datasetVersion = '0.2.0';
+  data.ratingModel.id = previousRatings.ratingModelId;
   for (const team of data.teams)
-    for (const player of team.players)
+    for (const player of team.players) {
+      const old = previousRatings.cards[player.id as keyof typeof previousRatings.cards];
+      player.rating = old.rating;
+      player.attributes = structuredClone(old.attributes);
+      player.ratingModelId = previousRatings.ratingModelId;
+      player.ratingStatus = 'approved';
+      delete player.ratingAssessment;
       if (player.personId === 'laporte' && team.year >= 2021) player.nationality = 'FRA';
+    }
+  for (const team of data.teams)
+    team.teamRating =
+      Math.round(
+        (team.defaultLineup.reduce(
+          (sum, pick) => sum + team.players.find((player) => player.id === pick.playerId)!.rating,
+          0,
+        ) /
+          11) *
+          10,
+      ) / 10;
   const builder = createBuilder({
     teams: data.teams,
     formations: data.formations,

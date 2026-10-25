@@ -57,3 +57,27 @@ export function championTestTeam(fixture: ReturnType<typeof tournamentFixture>) 
   team.strength = fixture.model.analyze(team).strength;
   return team;
 }
+
+/** Find a real shoot-out under the current catalogue; never fabricate a result. */
+export function playoffShootoutFixture(fixture: ReturnType<typeof tournamentFixture>) {
+  for (let index = 0; index < 32; index++) {
+    const league = fixture.engine.finishLeague(
+      fixture.engine.start(fixture.team, `shootout-fixture-${index}`, fixture.now),
+    );
+    const drawn = fixture.engine.drawNextRound(league);
+    const state = fixture.engine.nextKnockoutLeg(
+      fixture.engine.nextKnockoutLeg(drawn, fixture.now),
+      fixture.now,
+    );
+    const tie = state.knockoutTies.find((tie) =>
+      state.matches.some(
+        (match) =>
+          tie.matchIds.includes(match.id) &&
+          match.status === 'played' &&
+          match.result.penalties !== null,
+      ),
+    );
+    if (tie) return { state, tie };
+  }
+  throw new Error('No deterministic playoff shoot-out fixture found.');
+}

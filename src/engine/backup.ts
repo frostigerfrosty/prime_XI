@@ -8,6 +8,7 @@ import { historyLimit, isHistoryEntry } from './history.ts';
 import { equalValues } from './comparison.ts';
 import { getDefaultSettings, getGameRules } from '../data/index.ts';
 import { isCompatibleDraftDataset } from '../data/compatibility.ts';
+import { isLanguage } from '../i18n/locale.ts';
 import type { SnapshotRecords } from '../utils/game-storage.ts';
 
 export interface BackupServices {
@@ -51,9 +52,11 @@ function isAppState(value: unknown, services: BackupServices): value is AppState
   if (!isRecord(settings)) return false;
   const defaults = getDefaultSettings();
   return Object.entries(defaults).every(([key, expected]) =>
-    key === 'reduceMotion'
-      ? typeof settings[key] === 'boolean'
-      : equalValues(settings[key], expected),
+    key === 'locale'
+      ? isLanguage(settings[key])
+      : key === 'reduceMotion'
+        ? typeof settings[key] === 'boolean'
+        : equalValues(settings[key], expected),
   );
 }
 

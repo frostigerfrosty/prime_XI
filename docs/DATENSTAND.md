@@ -1,4 +1,9 @@
-# Datenstand am 24. Oktober 2026
+# Datenstand am 25. Oktober 2026
+
+Katalog 0.3.0 nutzt die neue [Saisonbewertung](SAISONRATINGS.md): 1.080 explizite
+Bewertungen anhand fünf gewichteter Kriterien, 250 Karten ab 90, fünf 98er-Karten
+und keine spielbare 99. Teilurteile und Quellen sind im Teamdetail einsehbar.
+Die historische Freigabe wird dadurch nicht automatisch erteilt.
 
 Der Entwicklungsbestand ist vollständig befüllt: 60 Saisonmannschaften mit 1.080
 Spielerkarten, 60 Trainerkarten, 60 Standardelfen und Captain-Zuordnungen. Es gibt

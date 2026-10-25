@@ -1,11 +1,12 @@
 import type { CoachSeason, FormationId, PlayerSeason, PrimeTeam } from './database.ts';
+import type { Language } from '../i18n/locale.ts';
 
 export type TournamentRound =
   'playoffs' | 'round-of-16' | 'quarter-finals' | 'semi-finals' | 'final';
 export type TournamentPhase = 'league' | TournamentRound | 'completed';
 
 export interface UserSettings {
-  locale: 'de';
+  locale: Language;
   theme: 'dark';
   defaultTactic: string;
   reduceMotion: boolean;

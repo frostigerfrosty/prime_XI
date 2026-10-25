@@ -1,7 +1,7 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { Plus } from 'lucide-react';
 import type { Formation, PlayerSeason } from '../types/database.ts';
 import { initials } from '../utils/display.ts';
-
 export function Pitch({
   formation,
   lineup,
@@ -11,23 +11,27 @@ export function Pitch({
   lockedSlots,
 }: {
   formation: Formation;
-  lineup?: { slotId: string; player: PlayerSeason }[];
+  lineup?: {
+    slotId: string;
+    player: PlayerSeason;
+  }[];
   selectedSlotId?: string | null;
   captainPersonId?: string | null;
   onSelect?: (slotId: string) => void;
   lockedSlots?: string[];
 }) {
+  useLanguage();
   return (
     <div
       className={`pitch ${lineup ? 'pitch--roster' : ''}`}
       role={onSelect ? 'group' : 'img'}
-      aria-label={
+      aria-label={t(
         onSelect
           ? `Deine Aufstellung in Formation ${formation.id}`
           : lineup
             ? `Standardelf in Formation ${formation.id}: ${lineup.map(({ player }) => player.name).join(', ')}`
-            : `Leere Aufstellung in Formation ${formation.id}, elf unbesetzte Positionen`
-      }
+            : `Leere Aufstellung in Formation ${formation.id}, elf unbesetzte Positionen`,
+      )}
     >
       <div className="pitch-lines" aria-hidden="true">
         <span className="pitch-half" />
@@ -44,9 +48,11 @@ export function Pitch({
             {player ? (
               <>
                 <span className="pitch-player-rating">{player.rating}</span>
-                <span className="pitch-player-initials">{initials(player.name)}</span>
+                <span className="pitch-player-initials">{t(initials(player.name))}</span>
                 <span className="pitch-player-name">{player.name}</span>
-                {captainPersonId === player.personId && <span className="pitch-captain">C</span>}
+                {captainPersonId === player.personId && (
+                  <span className="pitch-captain">{t('C')}</span>
+                )}
               </>
             ) : (
               <span className="pitch-slot-plus">
@@ -66,7 +72,9 @@ export function Pitch({
               style={style}
               aria-pressed={selectedSlotId === slot.id}
               disabled={lockedSlots?.includes(slot.id)}
-              aria-label={`${slot.acceptedPositions[0]} · Position ${index + 1} · ${player ? `${player.name}${captainPersonId === player.personId ? ' · Captain' : ''}` : 'Spieler wählen'}`}
+              aria-label={t(
+                `${slot.acceptedPositions[0]} · Position ${index + 1} · ${player ? `${player.name}${captainPersonId === player.personId ? t(' · Captain') : ''}` : t('Spieler wählen')}`,
+              )}
               onClick={() => onSelect(slot.id)}
             >
               {content}

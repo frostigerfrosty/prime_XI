@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { ArrowLeftRight, ArrowRight } from 'lucide-react';
 import { useLayoutEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -11,7 +12,6 @@ import type { StrengthAnalysis } from '../engine/strength.ts';
 import type { PrimeTeam } from '../types/database.ts';
 import { formatStrength } from '../utils/display.ts';
 import '../styles/compare.css';
-
 const defaultLeft = 'milan-2006-2007';
 const defaultRight = 'barcelona-2010-2011';
 const tacticId = getDefaultSettings().defaultTactic;
@@ -33,15 +33,15 @@ const strengthMetrics = [
   ['coachBonus', 'Coach-Bonus'],
   ['captainBonus', 'Captain-Bonus'],
 ] as const;
-
 function TeamLineup({ team, analysis }: { team: PrimeTeam; analysis: StrengthAnalysis }) {
+  useLanguage();
   const formation = formations.find((item) => item.id === team.formation)!;
   const lineup = team.defaultLineup.map((pick) => ({
     slotId: pick.slotId,
     player: team.players.find((player) => player.id === pick.playerId)!,
   }));
   return (
-    <section className="panel compare-lineup" aria-label={`Standardelf ${label(team)}`}>
+    <section className="panel compare-lineup" aria-label={t(`Standardelf ${label(team)}`)}>
       <div className="compare-identity">
         <ClubBadge clubId={team.clubId} size="large" />
         <div>
@@ -52,12 +52,12 @@ function TeamLineup({ team, analysis }: { team: PrimeTeam; analysis: StrengthAna
       </div>
       <dl className="compare-team-info">
         <div>
-          <dt>Coach</dt>
+          <dt>{t('Coach')}</dt>
           <dd>{team.coach!.name}</dd>
         </div>
         <div>
-          <dt>Captain der Standardelf</dt>
-          <dd>{analysis.captain.name ?? 'Nicht zugewiesen'}</dd>
+          <dt>{t('Captain der Standardelf')}</dt>
+          <dd>{t(analysis.captain.name ?? 'Nicht zugewiesen')}</dd>
         </div>
       </dl>
       <Pitch
@@ -66,31 +66,35 @@ function TeamLineup({ team, analysis }: { team: PrimeTeam; analysis: StrengthAna
         captainPersonId={analysis.captain.name ? team.captainPersonId : null}
       />
       <p className="compare-caption">
-        Redaktionelle Spielaufstellung; keine historische Matchaufstellung.
+        {t('Redaktionelle Spielaufstellung; keine historische Matchaufstellung.')}
       </p>
       <details className="compare-lineup-details">
-        <summary>Standardelf als Liste ansehen</summary>
+        <summary>{t('Standardelf als Liste ansehen')}</summary>
         <ul>
           {analysis.contributions.map((player) => (
             <li key={player.slotId}>
               <span>{player.position}</span>
               <strong>
                 {player.name}
-                {player.personId === team.captainPersonId ? ' (C)' : ''}
+                {t(player.personId === team.captainPersonId ? ' (C)' : '')}
               </strong>
-              <span>{player.rating} OVR</span>
+              <span>
+                {player.rating}
+                {t(' OVR')}
+              </span>
             </li>
           ))}
         </ul>
       </details>
       <Link className="text-link" to={`/teams/${team.id}`}>
-        Kader und Teamdetails <ArrowRight size={14} aria-hidden="true" />
+        {t('Kader und Teamdetails ')}
+        <ArrowRight size={14} aria-hidden="true" />
       </Link>
     </section>
   );
 }
-
 export default function ComparePage() {
+  useLanguage();
   const [params, setParams] = useSearchParams();
   const latestParams = useRef(params);
   useLayoutEffect(() => {
@@ -139,21 +143,23 @@ export default function ComparePage() {
   return (
     <>
       <PageHeading
-        eyebrow="ZWEI ÄREN. EIN VERGLEICH."
-        title="Teamvergleich"
-        description="Vergleiche Standardelf, Positionsgruppen und Matchstärke zweier Prime-Teams."
+        eyebrow={t('ZWEI ÄREN. EIN VERGLEICH.')}
+        title={t('Teamvergleich')}
+        description={t(
+          'Vergleiche Standardelf, Positionsgruppen und Matchstärke zweier Prime-Teams.',
+        )}
       />
       <CatalogNote />
-      <section className="panel compare-controls" aria-label="Teams für den Vergleich">
+      <section className="panel compare-controls" aria-label={t('Teams für den Vergleich')}>
         {(['left', 'right'] as const).map((side) => (
           <label className="match-field" key={side}>
-            <span>{side === 'left' ? 'Erstes Team' : 'Zweites Team'}</span>
+            <span>{t(side === 'left' ? 'Erstes Team' : 'Zweites Team')}</span>
             <select
               value={(side === 'left' ? left?.id : right?.id) ?? ''}
               onChange={(event) => select(side, event.target.value)}
             >
               <option value="" disabled>
-                Team auswählen
+                {t('Team ausw\u00E4hlen')}
               </option>
               {options.map((team) => (
                 <option
@@ -161,7 +167,7 @@ export default function ComparePage() {
                   value={team.id}
                   disabled={team.id === (side === 'left' ? rightId : leftId)}
                 >
-                  {label(team)}
+                  {t(label(team))}
                 </option>
               ))}
             </select>
@@ -181,23 +187,27 @@ export default function ComparePage() {
             setParams(next);
           }}
         >
-          <ArrowLeftRight size={16} aria-hidden="true" /> Teams tauschen
+          <ArrowLeftRight size={16} aria-hidden="true" />
+          {t(' Teams tauschen')}
         </button>
       </section>
       <p className="compare-caption">
-        Kopiere die Adresse, um diesen Vergleich zu teilen. Deine Auswahl bleibt beim Neuladen
-        erhalten.
+        {t(
+          'Kopiere die Adresse, um diesen Vergleich zu teilen. Deine Auswahl bleibt beim Neuladen erhalten.',
+        )}
       </p>
       {!valid ? (
         <section className="panel compare-invalid">
-          <h2>Diese Paarung ist nicht verfügbar.</h2>
+          <h2>{t('Diese Paarung ist nicht verf\u00FCgbar.')}</h2>
           <p role="status">
-            {!left || !right
-              ? 'Mindestens ein Team aus dem Link ist nicht im Katalog.'
-              : 'Wähle zwei verschiedene Saisonmannschaften.'}
+            {t(
+              !left || !right
+                ? 'Mindestens ein Team aus dem Link ist nicht im Katalog.'
+                : 'Wähle zwei verschiedene Saisonmannschaften.',
+            )}
           </p>
           <button className="button button--secondary" onClick={reset}>
-            Vergleich zurücksetzen
+            {t('Vergleich zur\u00FCcksetzen')}
           </button>
         </section>
       ) : (
@@ -206,27 +216,31 @@ export default function ComparePage() {
           <>
             <section className="panel compare-values" aria-labelledby="compare-values-title">
               <div className="section-heading">
-                <h2 id="compare-values-title">Die Werte im Vergleich</h2>
+                <h2 id="compare-values-title">{t('Die Werte im Vergleich')}</h2>
               </div>
               <p className="compare-caption">
-                Beide Teams mit Standardtaktik „{leftAnalysis.tactic.label}“. Höhere Werte sind
-                hervorgehoben.
+                {t('Beide Teams mit Standardtaktik \u201E')}
+                {t(leftAnalysis.tactic.label)}
+                {t('\u201C. H\u00F6here Werte sind hervorgehoben.')}
               </p>
               <table className="compare-table">
                 <caption className="sr-only">
-                  Spielwerte von {label(left)} und {label(right)}
+                  {t('Spielwerte von ')}
+                  {t(label(left))}
+                  {t(' und ')}
+                  {t(label(right))}
                 </caption>
                 <thead>
                   <tr>
-                    <th scope="col">Spielwert</th>
-                    <th scope="col">{label(left)}</th>
-                    <th scope="col">{label(right)}</th>
+                    <th scope="col">{t('Spielwert')}</th>
+                    <th scope="col">{t(label(left))}</th>
+                    <th scope="col">{t(label(right))}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {metrics.map((metric) => (
                     <tr key={metric.label}>
-                      <th scope="row">{metric.label}</th>
+                      <th scope="row">{t(metric.label)}</th>
                       {(['left', 'right'] as const).map((side) => (
                         <td key={side}>
                           <span
@@ -236,7 +250,7 @@ export default function ComparePage() {
                                 : ''
                             }
                           >
-                            {formatStrength(metric[side])}
+                            {t(formatStrength(metric[side]))}
                           </span>
                         </td>
                       ))}
@@ -245,18 +259,21 @@ export default function ComparePage() {
                 </tbody>
               </table>
               <p className="compare-caption">
-                Matchstärke = positionsgewichtete Basis + begrenzte Boni. Die Positionsgruppen
-                berücksichtigen Haupt- und Nebenpositionen. Das Ø Kartenrating bleibt davon
-                getrennt. Ein höherer Wert garantiert keinen Sieg.
+                {t(
+                  'Matchst\u00E4rke = positionsgewichtete Basis + begrenzte Boni. Die Positionsgruppen ber\u00FCcksichtigen Haupt- und Nebenpositionen. Das \u00D8 Kartenrating bleibt davon getrennt. Ein h\u00F6herer Wert garantiert keinen Sieg.',
+                )}
               </p>
               <div className="compare-actions">
                 <Link
                   className="button button--primary"
                   to={`/test-match?home=${left.id}&away=${right.id}`}
                 >
-                  Diese Paarung spielen <ArrowRight size={16} aria-hidden="true" />
+                  {t('Diese Paarung spielen ')}
+                  <ArrowRight size={16} aria-hidden="true" />
                 </Link>
-                <p>Erstes Team spielt als Heimteam. Das Testspiel startet auf neutralem Platz.</p>
+                <p>
+                  {t('Erstes Team spielt als Heimteam. Das Testspiel startet auf neutralem Platz.')}
+                </p>
               </div>
             </section>
             <div className="compare-lineups">

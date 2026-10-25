@@ -73,6 +73,7 @@ export async function buildDatabase() {
         styleTags: player.styleTags,
         ratingStatus: player.ratingStatus,
         ratingModelId: ratingModel.id,
+        ratingAssessment: player.ratingAssessment,
         naturalCaptain: seed.captainPersonId === person.id,
         verificationStatus: seed.verificationStatus,
         sourceIds: player.sourceIds ?? seed.sourceIds,

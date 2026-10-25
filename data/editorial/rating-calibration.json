@@ -1,0 +1,1896 @@
+{
+  "version": "1.0.0",
+  "scope": "club-season",
+  "authorship": "explicit_editorial_season_profiles",
+  "note": "Alle 1080 Profilzuordnungen wurden für diese Kalibrierung je Saisonkarte explizit festgelegt. Teilurteile sind redaktionelle Einordnungen, keine aus Statistiken automatisch ermittelten Messwerte; vorhandene Ratings werden nicht als Eingabe verwendet. Gelesene Saisonquellen liefern Kontext und nachgewiesene Kaderzugehörigkeit, keine objektive Bestätigung jeder Teilnote.",
+  "profiles": {
+    "backup": {
+      "scores": {
+        "performance": 74,
+        "influence": 68,
+        "consistency": 70,
+        "bigGames": 68,
+        "historical": 67
+      },
+      "rationale": "Begrenzter Saisonbeitrag als Reserve; keine Hochrechnung auf Stammspielerniveau."
+    },
+    "reserve": {
+      "scores": {
+        "performance": 79,
+        "influence": 72,
+        "consistency": 74,
+        "bigGames": 72,
+        "historical": 70
+      },
+      "rationale": "Reserveeinsatz und begrenzter Einfluss auf die gesamte Vereinssaison."
+    },
+    "development": {
+      "scores": {
+        "performance": 80,
+        "influence": 74,
+        "consistency": 73,
+        "bigGames": 74,
+        "historical": 70
+      },
+      "rationale": "Entwicklungs- oder Ergänzungssaison; zukünftiges Potenzial wird nicht vorweggenommen."
+    },
+    "rotation": {
+      "scores": {
+        "performance": 81,
+        "influence": 77,
+        "consistency": 78,
+        "bigGames": 75,
+        "historical": 73
+      },
+      "rationale": "Nützlicher Rotationsbeitrag, aber keine durchgehende Spitzenrolle."
+    },
+    "useful": {
+      "scores": {
+        "performance": 83,
+        "influence": 80,
+        "consistency": 80,
+        "bigGames": 78,
+        "historical": 75
+      },
+      "rationale": "Solider Saisonbeitrag mit klaren Grenzen bei Einfluss und historischer Besonderheit."
+    },
+    "partial": {
+      "scores": {
+        "performance": 88,
+        "influence": 83,
+        "consistency": 70,
+        "bigGames": 82,
+        "historical": 80
+      },
+      "rationale": "Gute Leistungen in einem begrenzten Saisonabschnitt; die Saisonabdeckung begrenzt die Konstanz."
+    },
+    "regular": {
+      "scores": {
+        "performance": 84,
+        "influence": 82,
+        "consistency": 83,
+        "bigGames": 79,
+        "historical": 77
+      },
+      "rationale": "Starke Profisaison; wichtiger Beitrag ohne belegten Weltklasseanspruch."
+    },
+    "limited-elite": {
+      "scores": {
+        "performance": 90,
+        "influence": 86,
+        "consistency": 72,
+        "bigGames": 88,
+        "historical": 86
+      },
+      "rationale": "Hohe Qualität in begrenzter Einsatzzeit; Ausfälle und geringe Saisonabdeckung bleiben berücksichtigt."
+    },
+    "reliable": {
+      "scores": {
+        "performance": 86,
+        "influence": 84,
+        "consistency": 85,
+        "bigGames": 81,
+        "historical": 80
+      },
+      "rationale": "Sehr verlässliche Saison auf hohem Niveau, unterhalb einer Weltklasse-Einordnung."
+    },
+    "interrupted-elite": {
+      "scores": {
+        "performance": 94,
+        "influence": 91,
+        "consistency": 72,
+        "bigGames": 88,
+        "historical": 90
+      },
+      "rationale": "Herausragende Phasen, aber deutlich eingeschränkte Saisonabdeckung; kein Karrierebonus für fehlende Spiele."
+    },
+    "strong": {
+      "scores": {
+        "performance": 87,
+        "influence": 86,
+        "consistency": 87,
+        "bigGames": 84,
+        "historical": 81
+      },
+      "rationale": "Internationale Spitzenklasse mit starkem und überwiegend konstantem Rollenbeitrag."
+    },
+    "big-game-specialist": {
+      "scores": {
+        "performance": 87,
+        "influence": 86,
+        "consistency": 84,
+        "bigGames": 96,
+        "historical": 84
+      },
+      "rationale": "Besonders starker Beitrag in wichtigen Partien; einzelne Höhepunkte ersetzen keine gesamte Ausnahmesaison."
+    },
+    "elite": {
+      "scores": {
+        "performance": 89,
+        "influence": 89,
+        "consistency": 88,
+        "bigGames": 86,
+        "historical": 85
+      },
+      "rationale": "Sehr starke internationale Saison, deren Gesamtbeitrag unterhalb klarer Weltklasse bleibt."
+    },
+    "breakthrough": {
+      "scores": {
+        "performance": 92,
+        "influence": 90,
+        "consistency": 87,
+        "bigGames": 89,
+        "historical": 84
+      },
+      "rationale": "Außergewöhnlich starke Entwicklung innerhalb dieser Saison; bewertet wird Leistung, nicht Alter oder Zukunft."
+    },
+    "leading-world-class": {
+      "scores": {
+        "performance": 93,
+        "influence": 93,
+        "consistency": 92,
+        "bigGames": 90,
+        "historical": 90
+      },
+      "rationale": "Führende Weltklasse in dieser Vereinssaison, auch bei Konstanz und Einfluss."
+    },
+    "dominant-world-class": {
+      "scores": {
+        "performance": 94,
+        "influence": 94,
+        "consistency": 93,
+        "bigGames": 91,
+        "historical": 91
+      },
+      "rationale": "Dominante Weltklassesaison; hohe Leistung ohne automatische historische Höchstwertung."
+    },
+    "world-class-peak": {
+      "scores": {
+        "performance": 95,
+        "influence": 95,
+        "consistency": 94,
+        "bigGames": 93,
+        "historical": 93
+      },
+      "rationale": "Sehr starke Weltklasse über nahezu alle Kriterien; historische Einordnung bleibt unter Ausnahme-Niveau."
+    },
+    "exceptional": {
+      "scores": {
+        "performance": 96,
+        "influence": 95,
+        "consistency": 95,
+        "bigGames": 94,
+        "historical": 95
+      },
+      "rationale": "Eine herausragende Saison der Position mit entsprechend hoher historischer Einordnung."
+    },
+    "exceptional-influence": {
+      "scores": {
+        "performance": 97,
+        "influence": 97,
+        "consistency": 95,
+        "bigGames": 95,
+        "historical": 96
+      },
+      "rationale": "Außergewöhnliche Rollenleistung und Spielprägung über eine weitgehend konstante Saison."
+    },
+    "landmark": {
+      "scores": {
+        "performance": 98,
+        "influence": 98,
+        "consistency": 96,
+        "bigGames": 96,
+        "historical": 97
+      },
+      "rationale": "Historisch herausragende Positionssaison; eine gesonderte Freigabe für 98/99 folgt daraus nicht."
+    },
+    "historical-exception": {
+      "scores": {
+        "performance": 99,
+        "influence": 98,
+        "consistency": 98,
+        "bigGames": 97,
+        "historical": 99
+      },
+      "rationale": "Historische Ausnahmesaison; nur mit zusätzlicher Einzelbegründung und Referenzprüfung für 98 zugelassen."
+    },
+    "benchmark-99": {
+      "scores": {
+        "performance": 99,
+        "influence": 99,
+        "consistency": 99,
+        "bigGames": 94,
+        "historical": 99
+      },
+      "rationale": "Externer historischer Referenzmaßstab; keine Pflicht, eine spielbare Karte auf 99 zu setzen."
+    },
+    "elite-role": {
+      "scores": {
+        "performance": 91,
+        "influence": 91,
+        "consistency": 90,
+        "bigGames": 88,
+        "historical": 87
+      },
+      "rationale": "Sehr starker Rollenbeitrag; die historische Einordnung bleibt unterhalb einer klaren Weltklasse-Referenzsaison."
+    },
+    "sustained-elite": {
+      "scores": {
+        "performance": 92,
+        "influence": 92,
+        "consistency": 92,
+        "bigGames": 89,
+        "historical": 89
+      },
+      "rationale": "Sehr konstante internationale Spitzenleistung; die zusätzliche Weltklassehürde wird nicht allein durch den gewichteten Wert überschritten."
+    }
+  },
+  "teams": {
+    "milan-2006-2007": {
+      "dida": "strong",
+      "oddo": "reliable",
+      "nesta": "leading-world-class",
+      "maldini": "elite",
+      "jankulovski": "strong",
+      "gattuso": "elite",
+      "pirlo": "world-class-peak",
+      "ambrosini": "strong",
+      "kaka": "landmark",
+      "seedorf": "leading-world-class",
+      "inzaghi": "sustained-elite",
+      "kalac": "reserve",
+      "cafu": "partial",
+      "bonera": "useful",
+      "serginho": "rotation",
+      "gourcuff": "development",
+      "gilardino": "reliable",
+      "ronaldo-nazario": "partial"
+    },
+    "liverpool-2006-2007": {
+      "reina": "elite",
+      "finnan": "reliable",
+      "carragher": "sustained-elite",
+      "agger": "elite",
+      "riise": "reliable",
+      "mascherano": "elite",
+      "xabi-alonso": "elite",
+      "pennant": "regular",
+      "gerrard": "world-class-peak",
+      "zenden": "useful",
+      "kuyt": "reliable",
+      "dudek": "backup",
+      "hyypia": "reliable",
+      "arbeloa": "rotation",
+      "aurelio": "partial",
+      "sissoko": "strong",
+      "crouch": "strong",
+      "bellamy": "regular"
+    },
+    "manchester-united-2006-2007": {
+      "van-der-sar": "elite",
+      "gary-neville": "reliable",
+      "ferdinand": "leading-world-class",
+      "vidic": "sustained-elite",
+      "evra": "elite",
+      "cristiano-ronaldo": "dominant-world-class",
+      "carrick": "elite",
+      "scholes": "world-class-peak",
+      "giggs": "sustained-elite",
+      "rooney": "leading-world-class",
+      "saha": "reliable",
+      "kuszczak": "reserve",
+      "wes-brown": "reliable",
+      "oshea": "reliable",
+      "fletcher": "regular",
+      "park": "reliable",
+      "solskjaer": "reliable",
+      "richardson": "development"
+    },
+    "manchester-united-2007-2008": {
+      "van-der-sar": "sustained-elite",
+      "wes-brown": "strong",
+      "ferdinand": "world-class-peak",
+      "vidic": "world-class-peak",
+      "evra": "sustained-elite",
+      "cristiano-ronaldo": "landmark",
+      "carrick": "sustained-elite",
+      "scholes": "elite",
+      "giggs": "strong",
+      "rooney": "leading-world-class",
+      "tevez": "sustained-elite",
+      "kuszczak": "reserve",
+      "gary-neville": "partial",
+      "pique": "rotation",
+      "fletcher": "reliable",
+      "anderson": "reliable",
+      "nani": "regular",
+      "saha": "partial"
+    },
+    "chelsea-2007-2008": {
+      "cech": "sustained-elite",
+      "essien": "leading-world-class",
+      "carvalho": "sustained-elite",
+      "terry": "leading-world-class",
+      "ashley-cole": "sustained-elite",
+      "ballack": "elite",
+      "makelele": "sustained-elite",
+      "lampard": "leading-world-class",
+      "joe-cole": "elite",
+      "drogba": "elite",
+      "malouda": "regular",
+      "cudicini": "reserve",
+      "belletti": "regular",
+      "alex": "reliable",
+      "wayne-bridge": "useful",
+      "mikel": "reliable",
+      "kalou": "reliable",
+      "anelka": "regular"
+    },
+    "real-madrid-2007-2008": {
+      "casillas": "leading-world-class",
+      "sergio-ramos": "elite",
+      "pepe": "elite",
+      "cannavaro": "reliable",
+      "marcelo": "regular",
+      "diarra": "strong",
+      "guti": "elite",
+      "robben": "limited-elite",
+      "sneijder": "elite",
+      "robinho": "elite",
+      "raul": "sustained-elite",
+      "dudek": "backup",
+      "salgado": "rotation",
+      "metzelder": "rotation",
+      "heinze": "reliable",
+      "gago": "regular",
+      "baptista": "regular",
+      "van-nistelrooy": "elite"
+    },
+    "barcelona-2008-2009": {
+      "valdes": "elite",
+      "dani-alves": "leading-world-class",
+      "pique": "elite",
+      "puyol": "leading-world-class",
+      "abidal": "strong",
+      "xavi": "exceptional-influence",
+      "busquets": "elite",
+      "iniesta": "world-class-peak",
+      "messi": "landmark",
+      "etoo": "world-class-peak",
+      "henry": "leading-world-class",
+      "pinto": "reserve",
+      "rafa-marquez": "elite",
+      "sylvinho": "reliable",
+      "keita": "strong",
+      "hleb": "rotation",
+      "gudjohnsen": "regular",
+      "bojan": "rotation"
+    },
+    "manchester-united-2008-2009": {
+      "van-der-sar": "leading-world-class",
+      "oshea": "reliable",
+      "ferdinand": "leading-world-class",
+      "vidic": "exceptional",
+      "evra": "sustained-elite",
+      "cristiano-ronaldo": "world-class-peak",
+      "carrick": "sustained-elite",
+      "scholes": "strong",
+      "giggs": "elite",
+      "rooney": "leading-world-class",
+      "berbatov": "elite",
+      "foster": "rotation",
+      "gary-neville": "regular",
+      "jonny-evans": "reliable",
+      "fletcher": "elite",
+      "anderson": "regular",
+      "nani": "regular",
+      "tevez": "elite"
+    },
+    "chelsea-2008-2009": {
+      "cech": "elite",
+      "bosingwa": "strong",
+      "ivanovic": "elite",
+      "terry": "leading-world-class",
+      "ashley-cole": "sustained-elite",
+      "ballack": "strong",
+      "essien": "sustained-elite",
+      "lampard": "world-class-peak",
+      "anelka": "leading-world-class",
+      "drogba": "elite",
+      "malouda": "elite",
+      "hilario": "reserve",
+      "alex": "elite",
+      "belletti": "regular",
+      "mikel": "strong",
+      "deco": "partial",
+      "joe-cole": "limited-elite",
+      "kalou": "regular"
+    },
+    "inter-2009-2010": {
+      "julio-cesar": "sustained-elite",
+      "maicon": "exceptional",
+      "lucio": "leading-world-class",
+      "samuel": "sustained-elite",
+      "chivu": "limited-elite",
+      "cambiasso": "sustained-elite",
+      "motta": "strong",
+      "etoo": "elite-role",
+      "sneijder": "exceptional",
+      "pandev": "reliable",
+      "milito": "exceptional",
+      "toldo": "backup",
+      "cordoba": "regular",
+      "materazzi": "useful",
+      "santon": "development",
+      "zanetti": "sustained-elite",
+      "stankovic": "elite",
+      "balotelli": "regular"
+    },
+    "bayern-2009-2010": {
+      "butt": "reliable",
+      "lahm": "sustained-elite",
+      "van-buyten": "reliable",
+      "demichelis": "regular",
+      "badstuber": "regular",
+      "van-bommel": "reliable",
+      "schweinsteiger": "elite",
+      "robben": "exceptional",
+      "muller": "elite",
+      "ribery": "interrupted-elite",
+      "olic": "elite",
+      "rensing": "reserve",
+      "contento": "rotation",
+      "breno": "development",
+      "tymoshchuk": "regular",
+      "altintop": "strong",
+      "pranjic": "regular",
+      "gomez": "partial"
+    },
+    "barcelona-2009-2010": {
+      "valdes": "elite",
+      "dani-alves": "sustained-elite",
+      "pique": "sustained-elite",
+      "puyol": "sustained-elite",
+      "abidal": "strong",
+      "xavi": "exceptional-influence",
+      "busquets": "elite",
+      "iniesta": "leading-world-class",
+      "messi": "landmark",
+      "ibrahimovic": "reliable",
+      "pedro": "reliable",
+      "pinto": "reserve",
+      "rafa-marquez": "regular",
+      "maxwell": "regular",
+      "keita": "strong",
+      "yaya-toure": "elite",
+      "bojan": "regular",
+      "henry": "partial"
+    },
+    "barcelona-2010-2011": {
+      "valdes": "elite",
+      "dani-alves": "leading-world-class",
+      "pique": "sustained-elite",
+      "puyol": "limited-elite",
+      "abidal": "elite",
+      "xavi": "landmark",
+      "busquets": "sustained-elite",
+      "iniesta": "exceptional",
+      "pedro": "elite",
+      "messi": "historical-exception",
+      "villa": "elite-role",
+      "pinto": "reserve",
+      "adriano": "regular",
+      "mascherano": "elite",
+      "keita": "strong",
+      "thiago": "rotation",
+      "bojan": "rotation",
+      "afellay": "development"
+    },
+    "manchester-united-2010-2011": {
+      "van-der-sar": "sustained-elite",
+      "rafael": "reliable",
+      "ferdinand": "elite",
+      "vidic": "world-class-peak",
+      "evra": "elite",
+      "valencia": "limited-elite",
+      "carrick": "elite",
+      "giggs": "elite",
+      "park": "elite",
+      "rooney": "leading-world-class",
+      "hernandez": "elite",
+      "kuszczak": "reserve",
+      "smalling": "regular",
+      "jonny-evans": "regular",
+      "fletcher": "strong",
+      "anderson": "regular",
+      "nani": "elite-role",
+      "berbatov": "elite-role"
+    },
+    "real-madrid-2010-2011": {
+      "casillas": "sustained-elite",
+      "sergio-ramos": "elite",
+      "pepe": "elite-role",
+      "carvalho": "sustained-elite",
+      "marcelo": "elite",
+      "khedira": "strong",
+      "xabi-alonso": "sustained-elite",
+      "di-maria": "elite-role",
+      "ozil": "leading-world-class",
+      "cristiano-ronaldo": "exceptional-influence",
+      "benzema": "elite",
+      "dudek": "backup",
+      "arbeloa": "reliable",
+      "albiol": "regular",
+      "lass-diarra": "regular",
+      "granero": "rotation",
+      "kaka": "partial",
+      "higuain": "elite-role"
+    },
+    "chelsea-2011-2012": {
+      "cech": "leading-world-class",
+      "ivanovic": "elite",
+      "david-luiz": "elite",
+      "terry": "limited-elite",
+      "ashley-cole": "sustained-elite",
+      "mikel": "reliable",
+      "lampard": "elite",
+      "ramires": "elite",
+      "mata": "sustained-elite",
+      "kalou": "regular",
+      "drogba": "big-game-specialist",
+      "turnbull": "backup",
+      "bosingwa": "reliable",
+      "cahill": "elite",
+      "essien": "partial",
+      "meireles": "regular",
+      "torres": "reliable",
+      "sturridge": "reliable"
+    },
+    "bayern-2011-2012": {
+      "neuer": "sustained-elite",
+      "lahm": "leading-world-class",
+      "boateng": "elite",
+      "badstuber": "elite",
+      "alaba": "breakthrough",
+      "luiz-gustavo": "strong",
+      "schweinsteiger": "elite",
+      "robben": "elite-role",
+      "kroos": "elite",
+      "ribery": "world-class-peak",
+      "gomez": "leading-world-class",
+      "butt": "backup",
+      "rafinha": "regular",
+      "van-buyten": "reliable",
+      "tymoshchuk": "regular",
+      "pranjic": "rotation",
+      "muller": "elite",
+      "olic": "partial"
+    },
+    "real-madrid-2011-2012": {
+      "casillas": "sustained-elite",
+      "arbeloa": "reliable",
+      "pepe": "elite-role",
+      "sergio-ramos": "leading-world-class",
+      "marcelo": "elite-role",
+      "khedira": "elite",
+      "xabi-alonso": "leading-world-class",
+      "di-maria": "elite-role",
+      "ozil": "dominant-world-class",
+      "cristiano-ronaldo": "landmark",
+      "benzema": "leading-world-class",
+      "adan": "reserve",
+      "albiol": "regular",
+      "coentrao": "elite",
+      "lass-diarra": "regular",
+      "kaka": "regular",
+      "callejon": "reliable",
+      "higuain": "leading-world-class"
+    },
+    "bayern-2012-2013": {
+      "neuer": "exceptional-influence",
+      "lahm": "exceptional-influence",
+      "boateng": "sustained-elite",
+      "dante": "leading-world-class",
+      "alaba": "leading-world-class",
+      "javi-martinez": "world-class-peak",
+      "schweinsteiger": "exceptional",
+      "robben": "world-class-peak",
+      "muller": "world-class-peak",
+      "ribery": "landmark",
+      "mandzukic": "elite-role",
+      "starke": "reserve",
+      "rafinha": "reliable",
+      "van-buyten": "reliable",
+      "luiz-gustavo": "elite",
+      "kroos": "sustained-elite",
+      "shaqiri": "strong",
+      "gomez": "elite"
+    },
+    "dortmund-2012-2013": {
+      "weidenfeller": "elite",
+      "piszczek": "sustained-elite",
+      "subotic": "elite",
+      "hummels": "leading-world-class",
+      "schmelzer": "strong",
+      "sven-bender": "elite",
+      "gundogan": "leading-world-class",
+      "blaszczykowski": "elite",
+      "gotze": "leading-world-class",
+      "reus": "dominant-world-class",
+      "lewandowski": "exceptional",
+      "langerak": "reserve",
+      "felipe-santana": "reliable",
+      "grosskreutz": "strong",
+      "kehl": "reliable",
+      "sahin": "reliable",
+      "leitner": "rotation",
+      "schieber": "useful"
+    },
+    "barcelona-2012-2013": {
+      "valdes": "elite",
+      "dani-alves": "elite-role",
+      "pique": "elite",
+      "puyol": "partial",
+      "jordi-alba": "elite",
+      "xavi": "world-class-peak",
+      "busquets": "leading-world-class",
+      "iniesta": "exceptional",
+      "pedro": "strong",
+      "messi": "landmark",
+      "villa": "reliable",
+      "pinto": "reserve",
+      "adriano": "regular",
+      "mascherano": "elite",
+      "alex-song": "regular",
+      "thiago": "elite",
+      "alexis-sanchez": "reliable",
+      "tello": "regular"
+    },
+    "real-madrid-2013-2014": {
+      "casillas": "elite",
+      "carvajal": "elite",
+      "pepe": "sustained-elite",
+      "sergio-ramos": "world-class-peak",
+      "marcelo": "elite",
+      "di-maria": "world-class-peak",
+      "xabi-alonso": "elite",
+      "modric": "leading-world-class",
+      "bale": "dominant-world-class",
+      "benzema": "sustained-elite",
+      "cristiano-ronaldo": "historical-exception",
+      "diego-lopez": "elite",
+      "arbeloa": "reliable",
+      "varane": "regular",
+      "coentrao": "elite",
+      "illarramendi": "regular",
+      "isco": "elite",
+      "morata": "regular"
+    },
+    "atletico-2013-2014": {
+      "courtois": "world-class-peak",
+      "juanfran": "elite",
+      "miranda": "leading-world-class",
+      "godin": "exceptional",
+      "filipe-luis": "sustained-elite",
+      "arda-turan": "elite",
+      "gabi": "leading-world-class",
+      "tiago": "elite",
+      "koke": "leading-world-class",
+      "diego-costa": "dominant-world-class",
+      "villa": "elite",
+      "aranzubia": "backup",
+      "alderweireld": "regular",
+      "insua": "rotation",
+      "mario-suarez": "reliable",
+      "raul-garcia": "elite",
+      "adrian-lopez": "regular",
+      "jose-sosa": "rotation"
+    },
+    "bayern-2013-2014": {
+      "neuer": "world-class-peak",
+      "lahm": "exceptional-influence",
+      "boateng": "leading-world-class",
+      "dante": "elite",
+      "alaba": "elite-role",
+      "kroos": "leading-world-class",
+      "schweinsteiger": "elite",
+      "thiago": "interrupted-elite",
+      "robben": "world-class-peak",
+      "muller": "leading-world-class",
+      "ribery": "interrupted-elite",
+      "starke": "reserve",
+      "rafinha": "reliable",
+      "javi-martinez": "elite",
+      "gotze": "elite",
+      "shaqiri": "reliable",
+      "mandzukic": "elite-role",
+      "pizarro": "regular"
+    },
+    "barcelona-2014-2015": {
+      "ter-stegen": "elite",
+      "dani-alves": "elite-role",
+      "pique": "sustained-elite",
+      "mascherano": "sustained-elite",
+      "jordi-alba": "elite-role",
+      "rakitic": "sustained-elite",
+      "busquets": "sustained-elite",
+      "iniesta": "elite",
+      "messi": "historical-exception",
+      "suarez": "exceptional",
+      "neymar": "exceptional-influence",
+      "bravo": "sustained-elite",
+      "bartra": "regular",
+      "adriano": "regular",
+      "xavi": "elite",
+      "rafinha-alcantara": "regular",
+      "sergi-roberto": "regular",
+      "pedro": "reliable"
+    },
+    "juventus-2014-2015": {
+      "buffon": "leading-world-class",
+      "lichtsteiner": "elite",
+      "bonucci": "sustained-elite",
+      "chiellini": "leading-world-class",
+      "evra": "elite",
+      "pogba": "leading-world-class",
+      "pirlo": "elite",
+      "marchisio": "sustained-elite",
+      "vidal": "leading-world-class",
+      "tevez": "world-class-peak",
+      "morata": "elite",
+      "storari": "reserve",
+      "barzagli": "elite",
+      "caceres": "regular",
+      "padoin": "regular",
+      "sturaro": "regular",
+      "pereyra": "elite",
+      "llorente": "regular"
+    },
+    "bayern-2014-2015": {
+      "neuer": "exceptional",
+      "rafinha": "reliable",
+      "boateng": "leading-world-class",
+      "benatia": "elite",
+      "bernat": "elite",
+      "lahm": "elite",
+      "xabi-alonso": "elite",
+      "schweinsteiger": "elite",
+      "robben": "interrupted-elite",
+      "lewandowski": "elite-role",
+      "ribery": "limited-elite",
+      "reina": "backup",
+      "dante": "regular",
+      "badstuber": "limited-elite",
+      "javi-martinez": "partial",
+      "gotze": "elite",
+      "muller": "leading-world-class",
+      "pizarro": "rotation"
+    },
+    "real-madrid-2015-2016": {
+      "navas": "leading-world-class",
+      "carvajal": "sustained-elite",
+      "pepe": "sustained-elite",
+      "sergio-ramos": "leading-world-class",
+      "marcelo": "leading-world-class",
+      "modric": "exceptional",
+      "casemiro": "leading-world-class",
+      "kroos": "world-class-peak",
+      "bale": "leading-world-class",
+      "benzema": "sustained-elite",
+      "cristiano-ronaldo": "landmark",
+      "casilla": "reserve",
+      "danilo": "regular",
+      "varane": "elite",
+      "nacho": "regular",
+      "kovacic": "reliable",
+      "isco": "elite",
+      "jese": "rotation"
+    },
+    "atletico-2015-2016": {
+      "oblak": "world-class-peak",
+      "juanfran": "elite",
+      "gimenez": "sustained-elite",
+      "godin": "world-class-peak",
+      "filipe-luis": "sustained-elite",
+      "carrasco": "elite",
+      "gabi": "elite-role",
+      "saul": "sustained-elite",
+      "koke": "leading-world-class",
+      "griezmann": "exceptional",
+      "torres": "elite",
+      "moya": "reserve",
+      "savic": "elite",
+      "lucas-hernandez": "reliable",
+      "augusto-fernandez": "regular",
+      "tiago": "partial",
+      "oliver-torres": "regular",
+      "correa": "regular"
+    },
+    "barcelona-2015-2016": {
+      "ter-stegen": "elite",
+      "dani-alves": "elite-role",
+      "pique": "leading-world-class",
+      "mascherano": "elite-role",
+      "jordi-alba": "elite-role",
+      "rakitic": "sustained-elite",
+      "busquets": "sustained-elite",
+      "iniesta": "world-class-peak",
+      "messi": "landmark",
+      "suarez": "landmark",
+      "neymar": "world-class-peak",
+      "bravo": "sustained-elite",
+      "mathieu": "reliable",
+      "vermaelen": "partial",
+      "sergi-roberto": "elite",
+      "arda-turan": "regular",
+      "rafinha-alcantara": "limited-elite",
+      "munir": "regular"
+    },
+    "real-madrid-2016-2017": {
+      "navas": "elite",
+      "carvajal": "leading-world-class",
+      "varane": "elite-role",
+      "sergio-ramos": "leading-world-class",
+      "marcelo": "world-class-peak",
+      "modric": "exceptional-influence",
+      "casemiro": "leading-world-class",
+      "kroos": "exceptional",
+      "bale": "limited-elite",
+      "benzema": "elite-role",
+      "cristiano-ronaldo": "landmark",
+      "casilla": "reserve",
+      "pepe": "limited-elite",
+      "danilo": "reliable",
+      "kovacic": "elite",
+      "isco": "leading-world-class",
+      "asensio": "elite",
+      "morata": "elite"
+    },
+    "juventus-2016-2017": {
+      "buffon": "world-class-peak",
+      "dani-alves": "sustained-elite",
+      "bonucci": "leading-world-class",
+      "chiellini": "leading-world-class",
+      "alex-sandro": "sustained-elite",
+      "khedira": "elite",
+      "pjanic": "elite-role",
+      "cuadrado": "elite",
+      "dybala": "world-class-peak",
+      "mandzukic": "elite",
+      "higuain": "leading-world-class",
+      "neto": "reserve",
+      "barzagli": "reliable",
+      "rugani": "regular",
+      "lichtsteiner": "reliable",
+      "marchisio": "partial",
+      "lemina": "regular",
+      "pjaca": "partial"
+    },
+    "chelsea-2016-2017": {
+      "courtois": "sustained-elite",
+      "azpilicueta": "leading-world-class",
+      "david-luiz": "sustained-elite",
+      "cahill": "sustained-elite",
+      "moses": "elite",
+      "kante": "exceptional",
+      "matic": "elite",
+      "marcos-alonso": "elite",
+      "pedro": "sustained-elite",
+      "diego-costa": "leading-world-class",
+      "hazard": "exceptional-influence",
+      "begovic": "reserve",
+      "zouma": "regular",
+      "terry": "regular",
+      "fabregas": "elite-role",
+      "willian": "elite",
+      "batshuayi": "regular",
+      "loftus-cheek": "development"
+    },
+    "real-madrid-2017-2018": {
+      "navas": "elite",
+      "carvajal": "elite",
+      "varane": "sustained-elite",
+      "sergio-ramos": "sustained-elite",
+      "marcelo": "sustained-elite",
+      "modric": "world-class-peak",
+      "casemiro": "sustained-elite",
+      "kroos": "leading-world-class",
+      "bale": "elite",
+      "benzema": "reliable",
+      "cristiano-ronaldo": "landmark",
+      "casilla": "reserve",
+      "nacho": "elite",
+      "theo-hernandez": "partial",
+      "kovacic": "reliable",
+      "isco": "elite-role",
+      "asensio": "elite",
+      "lucas-vazquez": "elite"
+    },
+    "liverpool-2017-2018": {
+      "karius": "regular",
+      "trent": "leading-world-class",
+      "lovren": "reliable",
+      "van-dijk": "leading-world-class",
+      "robertson": "elite",
+      "henderson": "elite",
+      "milner": "elite",
+      "wijnaldum": "elite",
+      "salah": "landmark",
+      "firmino": "leading-world-class",
+      "mane": "leading-world-class",
+      "mignolet": "regular",
+      "klavan": "regular",
+      "joe-gomez": "regular",
+      "emre-can": "elite",
+      "lallana": "limited-elite",
+      "oxlade-chamberlain": "elite",
+      "solanke": "development"
+    },
+    "manchester-city-2017-2018": {
+      "ederson": "elite",
+      "walker": "sustained-elite",
+      "kompany": "limited-elite",
+      "otamendi": "sustained-elite",
+      "delph": "reliable",
+      "de-bruyne": "exceptional",
+      "fernandinho": "sustained-elite",
+      "david-silva": "world-class-peak",
+      "sterling": "sustained-elite",
+      "aguero": "leading-world-class",
+      "sane": "sustained-elite",
+      "bravo": "reserve",
+      "danilo": "regular",
+      "stones": "elite",
+      "laporte": "partial",
+      "gundogan": "elite",
+      "bernardo-silva": "elite",
+      "gabriel-jesus": "elite"
+    },
+    "liverpool-2018-2019": {
+      "alisson": "world-class-peak",
+      "trent": "world-class-peak",
+      "matip": "sustained-elite",
+      "van-dijk": "landmark",
+      "robertson": "leading-world-class",
+      "henderson": "sustained-elite",
+      "fabinho": "leading-world-class",
+      "wijnaldum": "sustained-elite",
+      "salah": "world-class-peak",
+      "firmino": "elite-role",
+      "mane": "world-class-peak",
+      "mignolet": "reserve",
+      "joe-gomez": "limited-elite",
+      "lovren": "elite",
+      "milner": "sustained-elite",
+      "naby-keita": "elite",
+      "shaqiri": "regular",
+      "origi": "big-game-specialist"
+    },
+    "manchester-city-2018-2019": {
+      "ederson": "sustained-elite",
+      "walker": "elite-role",
+      "kompany": "limited-elite",
+      "laporte": "leading-world-class",
+      "zinchenko": "reliable",
+      "de-bruyne": "interrupted-elite",
+      "fernandinho": "sustained-elite",
+      "david-silva": "sustained-elite",
+      "bernardo-silva": "world-class-peak",
+      "aguero": "world-class-peak",
+      "sterling": "world-class-peak",
+      "bravo": "backup",
+      "stones": "elite",
+      "danilo": "regular",
+      "gundogan": "elite-role",
+      "mahrez": "elite",
+      "sane": "elite",
+      "gabriel-jesus": "elite"
+    },
+    "ajax-2018-2019": {
+      "onana": "elite",
+      "mazraoui": "strong",
+      "de-ligt": "leading-world-class",
+      "blind": "sustained-elite",
+      "tagliafico": "elite",
+      "de-jong": "leading-world-class",
+      "schone": "elite",
+      "ziyech": "leading-world-class",
+      "van-de-beek": "leading-world-class",
+      "neres": "elite",
+      "tadic": "world-class-peak",
+      "lamprou": "backup",
+      "veltman": "regular",
+      "sinkgraven": "partial",
+      "eiting": "development",
+      "de-wit": "rotation",
+      "labyad": "rotation",
+      "huntelaar": "reliable"
+    },
+    "bayern-2019-2020": {
+      "neuer": "landmark",
+      "kimmich": "leading-world-class",
+      "boateng": "elite",
+      "alaba": "leading-world-class",
+      "davies": "leading-world-class",
+      "thiago": "world-class-peak",
+      "goretzka": "sustained-elite",
+      "gnabry": "world-class-peak",
+      "muller": "exceptional",
+      "coman": "elite",
+      "lewandowski": "historical-exception",
+      "ulreich": "reserve",
+      "pavard": "elite-role",
+      "sule": "regular",
+      "javi-martinez": "regular",
+      "tolisso": "regular",
+      "perisic": "elite",
+      "zirkzee": "rotation"
+    },
+    "psg-2019-2020": {
+      "navas": "leading-world-class",
+      "kehrer": "reliable",
+      "thiago-silva": "sustained-elite",
+      "kimpembe": "elite",
+      "bernat": "elite",
+      "verratti": "leading-world-class",
+      "marquinhos": "sustained-elite",
+      "ander-herrera": "reliable",
+      "di-maria": "leading-world-class",
+      "mbappe": "world-class-peak",
+      "neymar": "exceptional",
+      "rico": "reserve",
+      "meunier": "regular",
+      "diallo": "regular",
+      "kurzawa": "regular",
+      "paredes": "elite",
+      "draxler": "regular",
+      "icardi": "elite"
+    },
+    "liverpool-2019-2020": {
+      "alisson": "leading-world-class",
+      "trent": "exceptional",
+      "joe-gomez": "sustained-elite",
+      "van-dijk": "exceptional",
+      "robertson": "leading-world-class",
+      "henderson": "sustained-elite",
+      "fabinho": "leading-world-class",
+      "wijnaldum": "sustained-elite",
+      "salah": "world-class-peak",
+      "firmino": "elite",
+      "mane": "world-class-peak",
+      "adrian": "regular",
+      "matip": "limited-elite",
+      "lovren": "regular",
+      "milner": "reliable",
+      "naby-keita": "regular",
+      "oxlade-chamberlain": "reliable",
+      "origi": "regular"
+    },
+    "chelsea-2020-2021": {
+      "mendy": "sustained-elite",
+      "azpilicueta": "elite",
+      "thiago-silva": "sustained-elite",
+      "rudiger": "leading-world-class",
+      "reece-james": "elite",
+      "kante": "exceptional",
+      "jorginho": "elite-role",
+      "chilwell": "elite",
+      "mount": "elite-role",
+      "werner": "regular",
+      "havertz": "big-game-specialist",
+      "kepa": "regular",
+      "christensen": "elite",
+      "marcos-alonso": "regular",
+      "kovacic": "elite",
+      "ziyech": "regular",
+      "pulisic": "regular",
+      "giroud": "elite"
+    },
+    "manchester-city-2020-2021": {
+      "ederson": "sustained-elite",
+      "walker": "elite",
+      "stones": "sustained-elite",
+      "ruben-dias": "exceptional",
+      "zinchenko": "elite",
+      "gundogan": "world-class-peak",
+      "rodri": "sustained-elite",
+      "de-bruyne": "world-class-peak",
+      "mahrez": "leading-world-class",
+      "bernardo-silva": "sustained-elite",
+      "foden": "elite-role",
+      "steffen": "reserve",
+      "laporte": "limited-elite",
+      "cancelo": "sustained-elite",
+      "fernandinho": "elite",
+      "ferran-torres": "regular",
+      "sterling": "elite",
+      "gabriel-jesus": "elite"
+    },
+    "bayern-2020-2021": {
+      "neuer": "world-class-peak",
+      "pavard": "reliable",
+      "boateng": "elite",
+      "alaba": "elite",
+      "davies": "elite",
+      "kimmich": "exceptional",
+      "goretzka": "elite-role",
+      "sane": "elite",
+      "muller": "world-class-peak",
+      "gnabry": "elite",
+      "lewandowski": "historical-exception",
+      "nubel": "reserve",
+      "sule": "regular",
+      "lucas-hernandez": "elite",
+      "bouna-sarr": "rotation",
+      "tolisso": "regular",
+      "coman": "elite-role",
+      "choupo-moting": "reliable"
+    },
+    "real-madrid-2021-2022": {
+      "courtois": "landmark",
+      "carvajal": "elite",
+      "militao": "elite",
+      "alaba": "sustained-elite",
+      "ferland-mendy": "elite",
+      "kroos": "leading-world-class",
+      "casemiro": "sustained-elite",
+      "modric": "exceptional",
+      "valverde": "elite-role",
+      "benzema": "landmark",
+      "vinicius": "world-class-peak",
+      "lunin": "reserve",
+      "nacho": "elite",
+      "marcelo": "partial",
+      "camavinga": "elite",
+      "isco": "rotation",
+      "asensio": "elite",
+      "rodrygo": "elite"
+    },
+    "liverpool-2021-2022": {
+      "alisson": "world-class-peak",
+      "trent": "world-class-peak",
+      "konate": "elite",
+      "van-dijk": "exceptional",
+      "robertson": "leading-world-class",
+      "henderson": "elite",
+      "fabinho": "elite-role",
+      "thiago": "world-class-peak",
+      "salah": "exceptional",
+      "mane": "elite-role",
+      "luis-diaz": "elite",
+      "kelleher": "rotation",
+      "matip": "sustained-elite",
+      "joe-gomez": "regular",
+      "milner": "reliable",
+      "naby-keita": "regular",
+      "jota": "sustained-elite",
+      "firmino": "elite"
+    },
+    "manchester-city-2021-2022": {
+      "ederson": "elite",
+      "walker": "sustained-elite",
+      "stones": "elite",
+      "ruben-dias": "leading-world-class",
+      "cancelo": "world-class-peak",
+      "bernardo-silva": "leading-world-class",
+      "rodri": "world-class-peak",
+      "de-bruyne": "exceptional",
+      "mahrez": "elite-role",
+      "gabriel-jesus": "elite",
+      "foden": "elite-role",
+      "steffen": "reserve",
+      "laporte": "sustained-elite",
+      "ake": "elite",
+      "zinchenko": "elite",
+      "fernandinho": "reliable",
+      "gundogan": "elite-role",
+      "sterling": "elite-role"
+    },
+    "manchester-city-2022-2023": {
+      "ederson": "elite",
+      "walker": "sustained-elite",
+      "stones": "world-class-peak",
+      "ruben-dias": "leading-world-class",
+      "ake": "sustained-elite",
+      "gundogan": "world-class-peak",
+      "rodri": "landmark",
+      "de-bruyne": "world-class-peak",
+      "bernardo-silva": "leading-world-class",
+      "haaland": "landmark",
+      "grealish": "elite",
+      "ortega": "elite",
+      "laporte": "reliable",
+      "akanji": "sustained-elite",
+      "rico-lewis": "reliable",
+      "foden": "elite-role",
+      "mahrez": "elite-role",
+      "alvarez": "elite"
+    },
+    "inter-2022-2023": {
+      "onana": "elite",
+      "darmian": "reliable",
+      "acerbi": "elite",
+      "bastoni": "elite-role",
+      "dumfries": "strong",
+      "barella": "elite-role",
+      "brozovic": "elite",
+      "calhanoglu": "elite",
+      "dimarco": "elite",
+      "lautaro": "elite-role",
+      "dzeko": "reliable",
+      "handanovic": "regular",
+      "skriniar": "interrupted-elite",
+      "de-vrij": "reliable",
+      "gosens": "regular",
+      "mkhitaryan": "elite",
+      "gagliardini": "regular",
+      "lukaku": "elite"
+    },
+    "napoli-2022-2023": {
+      "meret": "elite",
+      "di-lorenzo": "sustained-elite",
+      "rrahmani": "sustained-elite",
+      "kim": "world-class-peak",
+      "mario-rui": "elite",
+      "anguissa": "elite",
+      "lobotka": "leading-world-class",
+      "zielinski": "elite-role",
+      "lozano": "regular",
+      "osimhen": "world-class-peak",
+      "kvaratskhelia": "world-class-peak",
+      "gollini": "reserve",
+      "juan-jesus": "regular",
+      "olivera": "reliable",
+      "elmas": "elite",
+      "politano": "elite",
+      "raspadori": "regular",
+      "giovanni-simeone": "reliable"
+    },
+    "real-madrid-2023-2024": {
+      "lunin": "elite",
+      "carvajal": "world-class-peak",
+      "rudiger": "world-class-peak",
+      "nacho": "elite",
+      "ferland-mendy": "elite",
+      "valverde": "world-class-peak",
+      "kroos": "exceptional",
+      "camavinga": "elite-role",
+      "bellingham": "world-class-peak",
+      "vinicius": "landmark",
+      "rodrygo": "elite",
+      "courtois": "big-game-specialist",
+      "militao": "partial",
+      "fran-garcia": "regular",
+      "tchouameni": "elite",
+      "modric": "limited-elite",
+      "brahim": "elite",
+      "joselu": "big-game-specialist"
+    },
+    "manchester-city-2023-2024": {
+      "ederson": "elite",
+      "walker": "elite",
+      "stones": "limited-elite",
+      "ruben-dias": "elite-role",
+      "gvardiol": "sustained-elite",
+      "rodri": "landmark",
+      "de-bruyne": "interrupted-elite",
+      "bernardo-silva": "elite-role",
+      "foden": "exceptional",
+      "doku": "elite",
+      "haaland": "world-class-peak",
+      "ortega": "elite",
+      "akanji": "sustained-elite",
+      "ake": "elite",
+      "rico-lewis": "reliable",
+      "kovacic": "elite",
+      "grealish": "regular",
+      "alvarez": "elite-role"
+    },
+    "leverkusen-2023-2024": {
+      "hradecky": "elite",
+      "kossounou": "sustained-elite",
+      "tah": "leading-world-class",
+      "tapsoba": "sustained-elite",
+      "frimpong": "leading-world-class",
+      "xhaka": "world-class-peak",
+      "palacios": "elite-role",
+      "grimaldo": "world-class-peak",
+      "hofmann": "elite",
+      "boniface": "elite",
+      "wirtz": "exceptional",
+      "kovar": "reliable",
+      "hincapie": "elite",
+      "stanisic": "elite",
+      "andrich": "sustained-elite",
+      "tella": "reliable",
+      "adli": "elite",
+      "schick": "leading-world-class"
+    },
+    "psg-2024-2025": {
+      "donnarumma": "world-class-peak",
+      "hakimi": "world-class-peak",
+      "marquinhos": "sustained-elite",
+      "pacho": "leading-world-class",
+      "nuno-mendes": "world-class-peak",
+      "fabian-ruiz": "sustained-elite",
+      "vitinha": "world-class-peak",
+      "joao-neves": "leading-world-class",
+      "desire-doue": "leading-world-class",
+      "ousmane-dembele": "exceptional-influence",
+      "kvaratskhelia": "leading-world-class",
+      "safonov": "regular",
+      "lucas-hernandez": "partial",
+      "beraldo": "reliable",
+      "zaire-emery": "elite",
+      "lee-kang-in": "elite",
+      "barcola": "elite",
+      "goncalo-ramos": "elite"
+    },
+    "inter-2024-2025": {
+      "sommer": "strong",
+      "pavard": "reliable",
+      "acerbi": "reliable",
+      "bastoni": "elite-role",
+      "dumfries": "strong",
+      "barella": "elite-role",
+      "calhanoglu": "elite",
+      "mkhitaryan": "regular",
+      "dimarco": "big-game-specialist",
+      "lautaro": "sustained-elite",
+      "thuram": "strong",
+      "josep-martinez": "regular",
+      "de-vrij": "reliable",
+      "bisseck": "reliable",
+      "carlos-augusto": "reliable",
+      "zielinski": "regular",
+      "frattesi": "reliable",
+      "taremi": "rotation"
+    },
+    "barcelona-2024-2025": {
+      "szczesny": "reliable",
+      "kounde": "sustained-elite",
+      "araujo": "limited-elite",
+      "cubarsi": "elite",
+      "balde": "elite",
+      "casado": "reliable",
+      "pedri": "world-class-peak",
+      "lamine-yamal": "leading-world-class",
+      "dani-olmo": "elite",
+      "raphinha": "world-class-peak",
+      "lewandowski": "leading-world-class",
+      "ter-stegen": "partial",
+      "inigo-martinez": "elite-role",
+      "christensen": "partial",
+      "gavi": "regular",
+      "fermin": "elite",
+      "ferran-torres": "elite",
+      "eric-garcia": "elite"
+    },
+    "psg-2025-2026": {
+      "chevalier": "reliable",
+      "hakimi": "sustained-elite",
+      "marquinhos": "elite",
+      "pacho": "elite",
+      "nuno-mendes": "sustained-elite",
+      "fabian-ruiz": "elite",
+      "vitinha": "leading-world-class",
+      "joao-neves": "sustained-elite",
+      "desire-doue": "elite",
+      "ousmane-dembele": "leading-world-class",
+      "kvaratskhelia": "sustained-elite",
+      "safonov": "reliable",
+      "zabarnyi": "elite",
+      "lucas-hernandez": "regular",
+      "zaire-emery": "elite",
+      "barcola": "elite",
+      "goncalo-ramos": "reliable",
+      "lee-kang-in": "elite"
+    },
+    "arsenal-2025-2026": {
+      "raya": "elite",
+      "timber": "elite",
+      "saliba": "sustained-elite",
+      "gabriel-magalhaes": "sustained-elite",
+      "calafiori": "reliable",
+      "zubimendi": "elite",
+      "rice": "leading-world-class",
+      "saka": "sustained-elite",
+      "odegaard": "sustained-elite",
+      "eze": "elite",
+      "gyokeres": "elite",
+      "kepa": "reliable",
+      "ben-white": "reliable",
+      "hincapie": "elite",
+      "merino": "elite",
+      "nwaneri": "regular",
+      "madueke": "elite",
+      "martinelli": "elite"
+    },
+    "bayern-2025-2026": {
+      "neuer": "elite",
+      "stanisic": "reliable",
+      "upamecano": "elite",
+      "tah": "elite",
+      "davies": "limited-elite",
+      "kimmich": "sustained-elite",
+      "pavlovic": "elite",
+      "olise": "sustained-elite",
+      "musiala": "limited-elite",
+      "luis-diaz": "sustained-elite",
+      "harry-kane": "leading-world-class",
+      "urbig": "reliable",
+      "kim": "elite",
+      "laimer": "elite",
+      "guerreiro": "reliable",
+      "goretzka": "elite",
+      "gnabry": "elite",
+      "nicolas-jackson": "regular"
+    }
+  },
+  "overrides": {
+    "barcelona-2010-2011:messi": {
+      "rationale": "Außergewöhnliche Verbindung von Abschluss, Dribbling und Spielgestaltung; entscheidender Beitrag zur Vereinssaison einschließlich des Champions-League-Finales. Historische Einordnung bezieht sich ausschließlich auf Barcelona.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-barcelona-2010-2011",
+        "reference-messi-rating"
+      ],
+      "historicalException": {
+        "justification": "Außergewöhnliche Verbindung von Abschluss, Dribbling und Spielgestaltung; entscheidender Beitrag zur Vereinssaison einschließlich des Champions-League-Finales. Historische Einordnung bezieht sich ausschließlich auf Barcelona.",
+        "sourceIds": [
+          "reference-barcelona-2010-2011",
+          "reference-messi-rating"
+        ]
+      }
+    },
+    "barcelona-2014-2015:messi": {
+      "rationale": "Historische Offensivsaison mit außergewöhnlicher Torproduktion und Spielgestaltung, insbesondere in der europäischen K.-o.-Phase. Bewertet wird die Vereinsleistung, nicht späterer Karriere-Ruhm.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-barcelona-2014-2015",
+        "reference-messi-rating"
+      ],
+      "historicalException": {
+        "justification": "Historische Offensivsaison mit außergewöhnlicher Torproduktion und Spielgestaltung, insbesondere in der europäischen K.-o.-Phase. Bewertet wird die Vereinsleistung, nicht späterer Karriere-Ruhm.",
+        "sourceIds": [
+          "reference-barcelona-2014-2015",
+          "reference-messi-rating"
+        ]
+      }
+    },
+    "real-madrid-2013-2014:cristiano-ronaldo": {
+      "rationale": "17 Champions-League-Tore in einer Saison als historischer Wettbewerbsrekord; außergewöhnliche Torproduktion über die Vereinssaison. Mannschaftstitel allein rechtfertigen diese Ausnahme nicht.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-real-madrid-2013-2014",
+        "reference-cristiano-rating"
+      ],
+      "historicalException": {
+        "justification": "17 Champions-League-Tore in einer Saison als historischer Wettbewerbsrekord; außergewöhnliche Torproduktion über die Vereinssaison. Mannschaftstitel allein rechtfertigen diese Ausnahme nicht.",
+        "sourceIds": [
+          "reference-real-madrid-2013-2014",
+          "reference-cristiano-rating"
+        ]
+      }
+    },
+    "bayern-2019-2020:lewandowski": {
+      "rationale": "55 Pflichtspieltore in der Vereinssaison und außergewöhnliche Produktion in Liga und Champions League. Abschlussleistung, Mannschaftseinfluss und Konstanz begründen die gesonderte historische Ausnahme.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-bayern-2019-2020",
+        "reference-lewandowski-rating"
+      ],
+      "historicalException": {
+        "justification": "55 Pflichtspieltore in der Vereinssaison und außergewöhnliche Produktion in Liga und Champions League. Abschlussleistung, Mannschaftseinfluss und Konstanz begründen die gesonderte historische Ausnahme.",
+        "sourceIds": [
+          "reference-bayern-2019-2020",
+          "reference-lewandowski-rating"
+        ]
+      }
+    },
+    "bayern-2020-2021:lewandowski": {
+      "rationale": "41 Bundesligatore als historischer Ligarekord; extreme Produktion trotz begrenzter Zahl an Ligaeinsätzen. Die ausgefallenen europäischen K.-o.-Spiele bleiben im Kriterium große Spiele berücksichtigt.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-bayern-2020-2021",
+        "reference-lewandowski-rating"
+      ],
+      "scores": {
+        "performance": 99,
+        "influence": 99,
+        "consistency": 97,
+        "bigGames": 91,
+        "historical": 99
+      },
+      "historicalException": {
+        "justification": "41 Bundesligatore als historischer Ligarekord; extreme Produktion trotz begrenzter Zahl an Ligaeinsätzen. Die ausgefallenen europäischen K.-o.-Spiele bleiben im Kriterium große Spiele berücksichtigt.",
+        "sourceIds": [
+          "reference-bayern-2020-2021",
+          "reference-lewandowski-rating"
+        ]
+      }
+    },
+    "barcelona-2012-2013:messi": {
+      "rationale": "Historisch außergewöhnliche Torproduktion, aber Verletzungsunterbrechungen und eine schwächere Abdeckung der späten K.-o.-Phase; deshalb keine automatische 98.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-barcelona-2012-2013"
+      ],
+      "scores": {
+        "performance": 99,
+        "influence": 98,
+        "consistency": 91,
+        "bigGames": 92,
+        "historical": 98
+      }
+    },
+    "barcelona-2009-2010:messi": {
+      "rationale": "Überragende Tor- und Offensivleistung in dieser Vereinssaison; deutlich oberhalb heutiger Durchbruchssaisons, ohne Gleichsetzung mit dem 73-Tore-Referenzjahr 2011/12.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-barcelona-2009-2010"
+      ]
+    },
+    "barcelona-2024-2025:lamine-yamal": {
+      "rationale": "Bereits gezeigte Weltklasse in Kreativität, Dribbling und Spielprägung; kein Aufschlag für Alter, Popularität oder erwartetes Karrierepotenzial. Historisch außergewöhnliche Messi-Saisons bleiben darüber.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-barcelona-2024-2025"
+      ]
+    },
+    "barcelona-2024-2025:raphinha": {
+      "rationale": "Sehr starker unmittelbarer Offensivbeitrag über die Vereinssaison und in Europa. Eine herausragende aktuelle Saison wird dadurch nicht automatisch zu einer historischen 98.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-barcelona-2024-2025"
+      ]
+    },
+    "barcelona-2024-2025:ter-stegen": {
+      "rationale": "Verletzungsbedingt stark begrenzter Saisonumfang. Die langjährige Karrierequalität darf die tatsächlich absolvierte Vereinssaison nicht ersetzen.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-barcelona-2024-2025"
+      ]
+    },
+    "barcelona-2024-2025:araujo": {
+      "rationale": "Saisonabdeckung und tatsächliche Rolle begrenzen die Gesamtbewertung; keine Fortschreibung früherer Stammspielerwerte.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-barcelona-2024-2025"
+      ]
+    },
+    "real-madrid-2023-2024:courtois": {
+      "rationale": "Starke Rückkehr einschließlich des Champions-League-Finales, aber sehr geringe Saisonabdeckung. Der Finalbeitrag erhält Gewicht, ohne die gesamte Saison auf Weltklasse-Niveau hochzurechnen.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-real-madrid-2023-2024"
+      ],
+      "scores": {
+        "performance": 93,
+        "influence": 85,
+        "consistency": 64,
+        "bigGames": 98,
+        "historical": 89
+      }
+    },
+    "bayern-2013-2014:neuer": {
+      "rationale": "Bewertet werden Torverhinderung, Raumkontrolle und Aufbau der Bayern-Vereinssaison. Die deutsche WM 2014 zählt ausdrücklich nicht zu dieser Karte.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-bayern-2013-2014"
+      ]
+    },
+    "bayern-2019-2020:neuer": {
+      "rationale": "Historisch herausragende Torwartsaison durch Torverhinderung, Raumkontrolle, Aufbau und wichtige K.-o.-Leistungen; Bewertung anhand der Torwartrolle, nicht anhand von Toren.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-bayern-2019-2020"
+      ]
+    },
+    "liverpool-2018-2019:van-dijk": {
+      "rationale": "Historisch herausragende defensive Stabilität, Raumkontrolle und Spielaufbau über die Vereinssaison. Wenige notwendige Tacklings sind kein negativer Leistungsmaßstab.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-liverpool-2018-2019"
+      ]
+    },
+    "bayern-2012-2013:lahm": {
+      "rationale": "Außergewöhnlich zuverlässige Positionsausübung, Spielaufbau und Einfluss als Außenverteidiger; derselbe historische Bewertungsanspruch wie bei offensiven Spielern.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-bayern-2012-2013"
+      ]
+    },
+    "real-madrid-2021-2022:benzema": {
+      "rationale": "Herausragende Torproduktion, Spielverbindung und wiederholter Einfluss in europäischen K.-o.-Spielen. Die Einordnung würdigt die Saisonleistung statt eines pauschalen Titelbonus.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-real-madrid-2021-2022"
+      ]
+    },
+    "real-madrid-2021-2022:courtois": {
+      "rationale": "Herausragende Torverhinderung einschließlich besonders wichtiger K.-o.- und Finalleistungen, bei hoher Saisonkonstanz. Ein Torwart wird positionsgerecht an historischen Spitzensaisons gemessen.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-real-madrid-2021-2022"
+      ]
+    },
+    "manchester-city-2022-2023:haaland": {
+      "rationale": "Außergewöhnliche Torproduktion einschließlich des Premier-League-Saisonrekords; Einfluss außerhalb des Abschlusses und die späte europäische K.-o.-Phase werden separat berücksichtigt.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-manchester-city-2022-2023"
+      ]
+    },
+    "manchester-city-2022-2023:rodri": {
+      "rationale": "Herausragende Saison als defensiver Spielgestalter mit Ballkontrolle, Absicherung und Einfluss in wichtigen Spielen. Tore sind hierfür kein erforderlicher Hauptmaßstab.",
+      "confidence": "reference",
+      "sourceIds": [
+        "reference-manchester-city-2022-2023"
+      ]
+    },
+    "inter-2024-2025:lautaro": {
+      "rationale": "Weltklassebeitrag im Angriff und in Europa, aber keine Gleichsetzung mit historisch außergewöhnlichen Tor- und Offensivsaisons. Das Erreichen eines Finales gibt keinen pauschalen Ratingbonus.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-inter-2024-2025"
+      ]
+    },
+    "inter-2024-2025:barella": {
+      "rationale": "Weltklasse im Mittelfeld durch Verbindungsspiel und Arbeit in beide Richtungen; die historische Ausnahmehürde wird damit nicht automatisch erfüllt.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-inter-2024-2025"
+      ]
+    },
+    "inter-2024-2025:bastoni": {
+      "rationale": "Weltklassebeitrag als aufbauender Verteidiger; Spielaufbau und defensive Qualität werden gemeinsam beurteilt. Keine pauschale Aufwertung aufgrund des Mannschaftserfolgs.",
+      "confidence": "editorial",
+      "sourceIds": [
+        "reference-inter-2024-2025"
+      ]
+    },
+    "milan-2006-2007:kaka": {
+      "sourceIds": [
+        "reference-milan-2006-2007"
+      ],
+      "rationale": "Herausragender individueller Einfluss durch Dribbling, Progression und Abschluss, besonders in der europäischen K.-o.-Phase; historische Einordnung als offensive Mittelfeld-Referenzsaison.",
+      "confidence": "reference"
+    },
+    "manchester-united-2007-2008:cristiano-ronaldo": {
+      "sourceIds": [
+        "reference-manchester-united-2007-2008"
+      ],
+      "rationale": "Außergewöhnliche Abschluss- und Flügelleistung über die Vereinssaison, mit starkem Einfluss im Ligabetrieb und in Europa; Einordnung anhand historischer Flügelsaisons.",
+      "confidence": "reference"
+    },
+    "barcelona-2008-2009:xavi": {
+      "sourceIds": [
+        "reference-barcelona-2008-2009"
+      ],
+      "rationale": "Außergewöhnliche Spielkontrolle, Passqualität und Chancenvorbereitung als zentraler Spielgestalter; Bewertung der Rolle über die gesamte Vereinssaison.",
+      "confidence": "reference"
+    },
+    "barcelona-2008-2009:messi": {
+      "sourceIds": [
+        "reference-barcelona-2008-2009"
+      ],
+      "rationale": "Historisch herausragende Verbindung von Dribbling, Abschluss und Kreativität mit wichtigen europäischen Leistungen; kein pauschaler Bonus für den Mannschaftstitel.",
+      "confidence": "reference"
+    },
+    "barcelona-2009-2010:xavi": {
+      "sourceIds": [
+        "reference-barcelona-2009-2010"
+      ],
+      "rationale": "Herausragender Saisonbeitrag als zentraler Spielgestalter mit sehr hoher Spielkontrolle und beständigem Einfluss; Nationalmannschaftsleistungen zählen nicht zu dieser Karte.",
+      "confidence": "reference"
+    },
+    "barcelona-2010-2011:xavi": {
+      "sourceIds": [
+        "reference-barcelona-2010-2011"
+      ],
+      "rationale": "Eine historische Referenzsaison für Spielkontrolle, Pressingresistenz und Passspiel eines zentralen Mittelfeldspielers. Die geringe Torzahl ist für diese Rolle kein Abwertungsgrund.",
+      "confidence": "reference"
+    },
+    "barcelona-2010-2011:iniesta": {
+      "sourceIds": [
+        "reference-barcelona-2010-2011"
+      ],
+      "rationale": "Außergewöhnliche Pressingresistenz, Verbindung und kreative Spielprägung in der Vereinssaison; Nationalmannschaftsleistungen werden nicht mitbewertet.",
+      "confidence": "reference"
+    },
+    "real-madrid-2010-2011:cristiano-ronaldo": {
+      "sourceIds": [
+        "reference-real-madrid-2010-2011"
+      ],
+      "rationale": "Herausragende Torproduktion und offensiver Einfluss in dieser konkreten Vereinssaison; Einordnung unabhängig von späteren Karriere-Rekorden.",
+      "confidence": "reference"
+    },
+    "real-madrid-2011-2012:cristiano-ronaldo": {
+      "sourceIds": [
+        "reference-real-madrid-2011-2012"
+      ],
+      "rationale": "Historisch herausragende Offensivsaison mit hoher Produktion und Konstanz; der Ligatitel allein begründet die Einstufung nicht.",
+      "confidence": "reference"
+    },
+    "bayern-2012-2013:neuer": {
+      "sourceIds": [
+        "reference-bayern-2012-2013"
+      ],
+      "rationale": "Außergewöhnliche Torverhinderung, Raumkontrolle und Spielaufbau innerhalb der Vereinssaison; eingeordnet anhand historischer Torwartrollen.",
+      "confidence": "reference"
+    },
+    "bayern-2012-2013:schweinsteiger": {
+      "sourceIds": [
+        "reference-bayern-2012-2013"
+      ],
+      "rationale": "Außergewöhnlicher Einfluss auf Spielkontrolle, Rhythmus und defensive Balance über die Vereinssaison; historische Einordnung innerhalb zentraler Mittelfeldrollen.",
+      "confidence": "reference"
+    },
+    "bayern-2012-2013:ribery": {
+      "sourceIds": [
+        "reference-bayern-2012-2013"
+      ],
+      "rationale": "Historisch herausragende Flügelsaison durch Dribbling, Kreation, Progression und Mannschaftseinfluss; die Torzahl allein bildet diese Rolle nicht ab.",
+      "confidence": "reference"
+    },
+    "barcelona-2015-2016:messi": {
+      "sourceIds": [
+        "reference-barcelona-2015-2016"
+      ],
+      "rationale": "Herausragende Verbindung von Torproduktion und Spielgestaltung, mit Saisonunterbrechungen und ohne automatische Übertragung des Referenzwerts von 2010/11 oder 2014/15.",
+      "confidence": "reference"
+    },
+    "barcelona-2015-2016:suarez": {
+      "sourceIds": [
+        "reference-barcelona-2015-2016"
+      ],
+      "rationale": "Historisch herausragende Mittelstürmersaison mit extremer Abschlussproduktion und starkem Verbindungsspiel; getrennte Einordnung von kreativen Flügelrollen.",
+      "confidence": "reference"
+    },
+    "real-madrid-2015-2016:cristiano-ronaldo": {
+      "sourceIds": [
+        "reference-real-madrid-2015-2016"
+      ],
+      "rationale": "Historisch herausragende Abschlussleistung mit hohem europäischen Einfluss; die Rolle wird anhand dieser Vereinssaison bewertet.",
+      "confidence": "reference"
+    },
+    "real-madrid-2016-2017:cristiano-ronaldo": {
+      "sourceIds": [
+        "reference-real-madrid-2016-2017"
+      ],
+      "rationale": "Historisch herausragender Einfluss im Abschluss und in wichtigen europäischen K.-o.-Spielen; keine Einbeziehung von Nationalmannschaftstiteln.",
+      "confidence": "reference"
+    },
+    "real-madrid-2016-2017:modric": {
+      "sourceIds": [
+        "reference-real-madrid-2016-2017"
+      ],
+      "rationale": "Außergewöhnliche Pressingresistenz, Ballprogression und Spielkontrolle über die Vereinssaison. Spätere WM-Leistungen bleiben außerhalb der Bewertung.",
+      "confidence": "reference"
+    },
+    "real-madrid-2017-2018:cristiano-ronaldo": {
+      "sourceIds": [
+        "reference-real-madrid-2017-2018"
+      ],
+      "rationale": "Historisch herausragende europäische Torproduktion und Abschlussleistung der Vereinssaison; die Bewertung wird nicht aus Karriere-Gesamtsummen übernommen.",
+      "confidence": "reference"
+    },
+    "liverpool-2017-2018:salah": {
+      "sourceIds": [
+        "reference-liverpool-2017-2018"
+      ],
+      "rationale": "Historisch herausragende Torproduktion aus einer Flügelrolle mit außergewöhnlichem Offensivbeitrag; die neue Vereinsrolle und die tatsächliche Saisonleistung sind der Maßstab.",
+      "confidence": "reference"
+    },
+    "chelsea-2016-2017:kante": {
+      "sourceIds": [
+        "reference-chelsea-2016-2017"
+      ],
+      "rationale": "Herausragende Saisonleistung in Raumsicherung, Ballrückgewinnung und defensiver Spielprägung; eine defensive Mittelfeld-Referenz ohne Anforderung an Torzahlen.",
+      "confidence": "reference"
+    }
+  },
+  "benchmarks": [
+    {
+      "id": "messi-2011-2012-99",
+      "personId": "messi",
+      "season": "2011/12",
+      "clubId": "barcelona",
+      "scores": {
+        "performance": 99,
+        "influence": 99,
+        "consistency": 99,
+        "bigGames": 94,
+        "historical": 99
+      },
+      "rationale": "73 Pflichtspieltore für Barcelona als historischer Referenzmaßstab. Keine zusätzliche spielbare Mannschaft: Barcelona 2011/12 ist im bestehenden Drei-Teams-Jahrgang nicht enthalten.",
+      "sourceIds": [
+        "reference-barcelona-2011-2012-benchmark"
+      ],
+      "historicalException": {
+        "justification": "Historisch außergewöhnliche Vereinssaison mit 73 Pflichtspieltoren; große Spiele werden trotz der extremen Gesamtproduktion separat bewertet.",
+        "sourceIds": [
+          "reference-barcelona-2011-2012-benchmark"
+        ]
+      }
+    }
+  ],
+  "reviewedAt": "2026-10-25",
+  "limitedEvidenceCards": {
+    "psg-2025-2026:chevalier": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:hakimi": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:marquinhos": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:pacho": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:nuno-mendes": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:fabian-ruiz": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:vitinha": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:joao-neves": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:desire-doue": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:ousmane-dembele": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:kvaratskhelia": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:safonov": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:zabarnyi": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:lucas-hernandez": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:zaire-emery": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:barcola": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:goncalo-ramos": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "psg-2025-2026:lee-kang-in": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:raya": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:timber": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:saliba": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:gabriel-magalhaes": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:calafiori": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:zubimendi": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:rice": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:saka": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:odegaard": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:eze": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:gyokeres": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:kepa": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:ben-white": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:hincapie": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:merino": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:nwaneri": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:madueke": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "arsenal-2025-2026:martinelli": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:neuer": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:stanisic": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:upamecano": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:tah": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:davies": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:kimmich": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:pavlovic": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:olise": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:musiala": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:luis-diaz": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:harry-kane": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:urbig": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:kim": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:laimer": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:guerreiro": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:goretzka": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:gnabry": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison.",
+    "bayern-2025-2026:nicolas-jackson": "Die leistungsbezogene Einzelprüfung dieser Karte ist noch begrenzt; die Kaderquelle allein belegt keine Weltklasse-Saison."
+  }
+}

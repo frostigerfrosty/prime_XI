@@ -58,6 +58,13 @@ try {
       await page.reload();
       await expect(page.getByRole('heading', { level: 1 })).toHaveText('AC Milan');
       await expect(page.locator('.roster-table tbody tr')).toHaveCount(18);
+      await expect(
+        page.locator('.roster-table tbody tr').first().locator('.roster-rating'),
+      ).toHaveText(
+        String(data.teams.find((team) => team.id === 'milan-2006-2007').players[0].rating),
+      );
+      await page.getByText('Bewertung erklären', { exact: true }).first().click();
+      await expect(page.locator('.rating-explanation').first().locator('dl > div')).toHaveCount(5);
       await page.goto(new URL('#/compare', address).href);
       await expect(page.getByRole('table')).toBeVisible();
       await page.getByRole('link', { name: 'Diese Paarung spielen', exact: true }).click();
@@ -102,6 +109,17 @@ try {
       await page.reload();
       await expect(page.getByText('Team 2 von 11', { exact: true })).toBeVisible();
       await expect(page.locator('.drawn-team')).toHaveCount(1);
+      await page.goto(new URL('#/settings', address).href);
+      await page.getByRole('combobox', { name: 'Sprache', exact: true }).selectOption('en');
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText('Settings');
+      await page.goto(new URL('#/team-builder', address).href);
+      await expect(page.getByText('Team 2 of 11', { exact: true })).toBeVisible();
+      await page.goto(new URL('#/settings', address).href);
+      await page.getByRole('combobox', { name: 'Language', exact: true }).selectOption('it');
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText('Impostazioni');
+      await page.goto(new URL('#/team-builder', address).href);
+      await page.reload();
+      await expect(page.getByText('Squadra 2 di 11', { exact: true })).toBeVisible();
       await page.evaluate(() => document.fonts.ready);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
         true,
@@ -116,6 +134,8 @@ try {
         roster: 18,
         seededMatchReplayed: true,
         sequentialDraftConfirmed: true,
+        seasonRatingsConfirmed: true,
+        languages: ['de', 'en', 'it'],
       });
     } finally {
       await context.close();

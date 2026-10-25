@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { useEffect, useRef, useState } from 'react';
 import { Copy } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,6 @@ import {
   type MatchLinkVersions,
   type MatchSetup,
 } from '../engine/match-link.ts';
-
 export function MatchSharePanel({
   setup,
   versions,
@@ -17,6 +17,7 @@ export function MatchSharePanel({
   versions: MatchLinkVersions;
   catalogPair: boolean;
 }) {
+  useLanguage();
   const [message, setMessage] = useState('');
   const [copying, setCopying] = useState(false);
   const input = useRef<HTMLInputElement>(null);
@@ -54,29 +55,32 @@ export function MatchSharePanel({
   }
   return (
     <section className="panel match-share" aria-labelledby="match-share-title">
-      <h2 id="match-share-title">Diese Begegnung teilen</h2>
+      <h2 id="match-share-title">{t('Diese Begegnung teilen')}</h2>
       {!catalogPair ? (
         <>
           <p>
-            Deine eigene Elf gehört zu deinem lokalen Spielstand. Für einen anderen Browser kannst
-            du deinen Spielstand als Datei sichern. Teilbare Testspiellinks sind für zwei
-            Katalogteams verfügbar.
+            {t(
+              'Deine eigene Elf geh\u00F6rt zu deinem lokalen Spielstand. F\u00FCr einen anderen Browser kannst du deinen Spielstand als Datei sichern. Teilbare Testspiellinks sind f\u00FCr zwei Katalogteams verf\u00FCgbar.',
+            )}
           </p>
           <Link className="text-link" to="/settings">
-            Zur Spielstandsicherung
+            {t('Zur Spielstandsicherung')}
           </Link>
         </>
       ) : (
         <>
           <p>
-            Der Link enthält Teams, Spielmodus, Platzwahl und Spielcode. Öffne ihn und wähle{' '}
-            <strong>Anpfiff</strong>, um die Begegnung mit demselben Katalog- und Regelstand zu
-            wiederholen.
+            {t(
+              'Der Link enth\u00E4lt Teams, Spielmodus, Platzwahl und Spielcode. \u00D6ffne ihn und w\u00E4hle',
+            )}
+            {t(' ')}
+            <strong>{t('Anpfiff')}</strong>
+            {t(', um die Begegnung mit demselben Katalog- und Regelstand zu wiederholen.')}
           </p>
           {shareable ? (
             <>
               <label className="match-field">
-                <span>Testspiellink</span>
+                <span>{t('Testspiellink')}</span>
                 <input
                   ref={input}
                   readOnly
@@ -86,13 +90,15 @@ export function MatchSharePanel({
               </label>
               <button className="button button--secondary" disabled={copying} onClick={copy}>
                 <Copy size={16} aria-hidden="true" />
-                {copying ? 'Link wird kopiert …' : 'Link kopieren'}
+                {t(copying ? 'Link wird kopiert …' : 'Link kopieren')}
               </button>
             </>
           ) : (
-            <p>Trage einen Spielcode mit 1 bis 100 Zeichen ein, um einen Link zu erstellen.</p>
+            <p>
+              {t('Trage einen Spielcode mit 1 bis 100 Zeichen ein, um einen Link zu erstellen.')}
+            </p>
           )}
-          {message && <p role="status">{message}</p>}
+          {message && <p role="status">{t(message)}</p>}
         </>
       )}
     </section>

@@ -1,3 +1,4 @@
+import { useLanguage } from '../i18n/react.ts';
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useHistory } from './HistoryProvider.tsx';
 import type { SavedTeam, TournamentState } from '../types/application.ts';
@@ -8,7 +9,6 @@ import {
 } from '../utils/tournament-storage.ts';
 import { tournamentEngine } from './game.ts';
 import { getGameStorage } from '../utils/game-storage.ts';
-
 interface TournamentContextValue {
   tournament: TournamentState | null;
   warning: string | null;
@@ -18,8 +18,8 @@ interface TournamentContextValue {
   knockoutAction: (action: 'draw' | 'leg' | 'finish', expectedToken: string) => void;
 }
 const TournamentContext = createContext<TournamentContextValue | null>(null);
-
 export function TournamentProvider({ children }: { children: ReactNode }) {
+  useLanguage();
   const { archive } = useHistory();
   const [loaded] = useState(() => {
     try {
@@ -90,7 +90,6 @@ export function TournamentProvider({ children }: { children: ReactNode }) {
     </TournamentContext>
   );
 }
-
 export function useTournament() {
   const context = useContext(TournamentContext);
   if (!context) throw new Error('TournamentProvider is missing');

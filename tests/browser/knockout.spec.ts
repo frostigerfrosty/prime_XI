@@ -1,6 +1,10 @@
 import { expect, test, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { tournamentFixture, championTestTeam } from '../helpers/tournament.ts';
+import {
+  tournamentFixture,
+  championTestTeam,
+  playoffShootoutFixture,
+} from '../helpers/tournament.ts';
 import type { SavedTeam, TournamentState } from '../../src/types/application.ts';
 import { roundLabels } from '../../src/utils/tournament-display.ts';
 
@@ -11,6 +15,7 @@ const drawn = f.engine.drawNextRound(league);
 const firstLeg = f.engine.nextKnockoutLeg(drawn, f.now);
 const playoffs = f.engine.nextKnockoutLeg(firstLeg, f.now);
 const complete = f.engine.finishTournament(league, f.now);
+const shootout = playoffShootoutFixture(f);
 const errors = new WeakMap<Page, string[]>();
 test.beforeEach(async ({ page }) => {
   const found: string[] = [];
@@ -139,10 +144,10 @@ test('every draw and leg can be played through the UI, with a real neutral final
 test('extra time displays the cumulative leg score and the shootout remains separate from aggregate goals', async ({
   page,
 }) => {
-  await preload(page, playoffs);
+  await preload(page, shootout.state);
   await page.goto('#/tournament');
-  const tie = playoffs.knockoutTies.find((tie) => tie.id === 'ko-playoffs-7')!;
-  const last = playoffs.matches.find((m) => m.id === tie.matchIds.at(-1))!;
+  const tie = shootout.tie;
+  const last = shootout.state.matches.find((m) => m.id === tie.matchIds.at(-1))!;
   if (last.status !== 'played') throw new Error('Missing fixture');
   expect(last.result.penalties).not.toBeNull();
   const card = page.getByTestId(`tie-${tie.id}`);
@@ -179,7 +184,7 @@ test('bulk completion asks first, shows a real user champion and preserves the c
   page,
 }) => {
   const team = championTestTeam(f);
-  const state = f.engine.finishLeague(f.engine.start(team, 'user-champion-0', f.now));
+  const state = f.engine.finishLeague(f.engine.start(team, 'user-champion-1', f.now));
   await preload(page, state, team);
   await page.goto('#/tournament');
   await page.getByRole('button', { name: 'Bis zum Finale simulieren', exact: true }).click();
@@ -281,11 +286,11 @@ test('failed knockout writes keep the session usable and reload the last saved f
 test('round navigation, match details and the finish dialog are accessible and fit mobile screens', async ({
   page,
 }) => {
-  await preload(page, playoffs);
+  await preload(page, shootout.state);
   await page.goto('#/tournament');
   await page.evaluate(() => document.fonts.ready);
   await expect(page.locator('.knockout-round-navigation button').nth(1)).toBeDisabled();
-  const card = page.getByTestId('tie-ko-playoffs-7');
+  const card = page.getByTestId(`tie-${shootout.tie.id}`);
   await card.getByText('Hin- und Rückspiel ansehen', { exact: true }).click();
   await card.getByText('Elfmeterschießen ansehen', { exact: true }).click();
   expect(

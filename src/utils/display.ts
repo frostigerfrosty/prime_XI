@@ -1,3 +1,5 @@
+import { getIntlLocale } from '../i18n/locale.ts';
+
 export function initials(name: string): string {
   const parts = name.trim().split(/\s+/u);
   return (
@@ -8,6 +10,6 @@ export function initials(name: string): string {
   );
 }
 
-export const formatNumber = (value: number): string => value.toLocaleString('de-DE');
+export const formatNumber = (value: number): string => value.toLocaleString(getIntlLocale());
 export const formatStrength = (value: number): string =>
-  value.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  value.toLocaleString(getIntlLocale(), { minimumFractionDigits: 2, maximumFractionDigits: 2 });

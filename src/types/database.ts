@@ -1,4 +1,5 @@
 /** Permanent identities are separate from season-specific gameplay records. */
+import type { RatingRubric, SeasonRatingAssessment } from '../engine/ratings.ts';
 export type Position =
   | 'GK'
   | 'RB'
@@ -88,6 +89,8 @@ export interface PlayerSeason {
   attributes: Attributes;
   ratingStatus: RatingStatus;
   ratingModelId: string;
+  /** Older frozen snapshots legitimately have no rubric assessment. */
+  ratingAssessment?: SeasonRatingAssessment;
   naturalCaptain: boolean;
   styleTags: StyleTag[];
   verificationStatus: ReviewStatus;
@@ -174,7 +177,8 @@ export interface Database {
     status: RatingStatus;
     provenance: 'original_editorial_gameplay';
     description: string;
-    method: 'explicit-season-attributes';
+    method: 'weighted-season-rubric';
+    rubric: RatingRubric;
     /** Initial authoring profiles retained for provenance; never overwrite explicit attributes. */
     attributeOffsets: Record<Position, Omit<Attributes, 'overall' | 'goalkeeping'>>;
   };

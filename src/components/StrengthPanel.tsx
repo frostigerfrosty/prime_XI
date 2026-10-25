@@ -1,15 +1,15 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { useDraft } from '../app/DraftProvider.tsx';
 import { strengthModel } from '../app/game.ts';
 import { formatNumber, formatStrength } from '../utils/display.ts';
-
 const groupLabels = {
   goalkeeper: 'Torwart',
   defence: 'Abwehr',
   midfield: 'Mittelfeld',
   attack: 'Angriff',
 };
-
 export function StrengthPanel() {
+  useLanguage();
   const { draft, assessment } = useDraft();
   const values = assessment?.strength;
   const complete = Boolean(draft?.coachCardId && draft.captainPersonId);
@@ -51,52 +51,59 @@ export function StrengthPanel() {
     <section className="panel strength-panel" aria-labelledby="strength-title">
       <div className="section-heading">
         <div>
-          <p className="eyebrow">DIE IDEE HINTER DEINER STÄRKE</p>
-          <h2 id="strength-title">Teamstärke & Boni</h2>
+          <p className="eyebrow">{t('DIE IDEE HINTER DEINER ST\u00C4RKE')}</p>
+          <h2 id="strength-title">{t('Teamst\u00E4rke & Boni')}</h2>
         </div>
         <span className="subtle-chip">
-          {assessment
-            ? complete
-              ? 'Elf vollständig'
-              : 'Vorschau · Coach oder Captain offen'
-            : `${draft?.picks.length ?? 0} / 11 Spieler`}
+          {t(
+            assessment
+              ? complete
+                ? 'Elf vollständig'
+                : 'Vorschau · Coach oder Captain offen'
+              : `${draft?.picks.length ?? 0} / 11 Spieler`,
+          )}
         </span>
       </div>
       <div className="strength-layout">
         <div className="strength-total">
-          <span>Matchstärke</span>
+          <span>{t('Matchst\u00E4rke')}</span>
           <strong data-testid="match-strength" aria-live="polite">
-            {values ? formatStrength(values.matchStrength) : '–'}
+            {t(values ? formatStrength(values.matchStrength) : '–')}
           </strong>
-          <p>Basisstärke + begrenzte Boni</p>
+          <p>{t('Basisst\u00E4rke + begrenzte Boni')}</p>
           <small>
-            {assessment
-              ? `Mit Boni sind Werte über 99 möglich. Obergrenze: ${formatNumber(strengthModel.maximumStrength)}.`
-              : 'Wird berechnet, sobald alle elf Positionen besetzt sind.'}
+            {t(
+              assessment
+                ? `Mit Boni sind Werte über 99 möglich. Obergrenze: ${formatNumber(strengthModel.maximumStrength)}.`
+                : 'Wird berechnet, sobald alle elf Positionen besetzt sind.',
+            )}
           </small>
         </div>
         <div className="strength-breakdown">
           <div className="strength-base">
             <span>
-              <strong>Basisstärke</strong>
-              <small>Positionsgewichtete Spielerqualität</small>
+              <strong>{t('Basisst\u00E4rke')}</strong>
+              <small>{t('Positionsgewichtete Spielerqualit\u00E4t')}</small>
             </span>
             <strong data-testid="baseTeamStrength">
-              {values ? formatStrength(values.baseTeamStrength) : '–'}
+              {t(values ? formatStrength(values.baseTeamStrength) : '–')}
             </strong>
           </div>
           <dl>
             {metrics.map(({ key, label, cap, detail }) => (
               <div key={key}>
                 <dt>
-                  {label}
-                  <small>{detail}</small>
+                  {t(label)}
+                  <small>{t(detail)}</small>
                 </dt>
                 <dd>
                   <strong data-testid={key}>
-                    {values ? `+${formatStrength(values[key])}` : '–'}
+                    {t(values ? `+${formatStrength(values[key])}` : '–')}
                   </strong>
-                  <small>max. +{formatNumber(cap)}</small>
+                  <small>
+                    {t('max. +')}
+                    {t(formatNumber(cap))}
+                  </small>
                 </dd>
               </div>
             ))}
@@ -109,38 +116,47 @@ export function StrengthPanel() {
             {assessment.groups.map((group) => (
               <div key={group.group}>
                 <span>
-                  {groupLabels[group.group]} <small>{group.players} Spieler</small>
+                  {t(groupLabels[group.group])}{' '}
+                  <small>
+                    {group.players}
+                    {t(' Spieler')}
+                  </small>
                 </span>
-                <strong>{formatStrength(group.average)}</strong>
-                <small>{formatNumber(group.weight * 100)} % Gewicht</small>
+                <strong>{t(formatStrength(group.average))}</strong>
+                <small>
+                  {t(formatNumber(group.weight * 100))}
+                  {t(' % Gewicht')}
+                </small>
               </div>
             ))}
           </div>
           <details className="strength-details">
-            <summary>Berechnung und Positionspassung ansehen</summary>
+            <summary>{t('Berechnung und Positionspassung ansehen')}</summary>
             <p>
-              Hauptposition: volle Wirkung. Nebenposition:{' '}
-              {formatNumber(strengthModel.rules.strength.positionFit.secondaryMultiplier * 100)} %
-              des Kartenratings. Die Basis verwendet die Durchschnittswerte der vier
-              Positionsgruppen; leere Plätze werden nicht als fiktive Spieler bewertet.
+              {t('Hauptposition: volle Wirkung. Nebenposition:')}
+              {t(' ')}
+              {t(formatNumber(strengthModel.rules.strength.positionFit.secondaryMultiplier * 100))}
+              {t(
+                ' % des Kartenratings. Die Basis verwendet die Durchschnittswerte der vier Positionsgruppen; leere Pl\u00E4tze werden nicht als fiktive Spieler bewertet.',
+              )}
             </p>
             <div
               className="strength-table-wrap"
               role="region"
               tabIndex={0}
-              aria-label="Positionsbeiträge"
+              aria-label={t('Positionsbeiträge')}
             >
               <table>
                 <caption className="sr-only">
-                  Spielerratings und Positionspassung der aktuellen Elf
+                  {t('Spielerratings und Positionspassung der aktuellen Elf')}
                 </caption>
                 <thead>
                   <tr>
-                    <th scope="col">Pos.</th>
-                    <th scope="col">Spieler</th>
-                    <th scope="col">Karte</th>
-                    <th scope="col">Passung</th>
-                    <th scope="col">Wirksam</th>
+                    <th scope="col">{t('Pos.')}</th>
+                    <th scope="col">{t('Spieler')}</th>
+                    <th scope="col">{t('Karte')}</th>
+                    <th scope="col">{t('Passung')}</th>
+                    <th scope="col">{t('Wirksam')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -150,34 +166,45 @@ export function StrengthPanel() {
                       <th scope="row">{player.name}</th>
                       <td>{player.rating}</td>
                       <td>
-                        {player.fit === 'primary' ? 'Hauptposition' : 'Nebenposition'} ·{' '}
-                        {formatNumber(player.multiplier * 100)} %
+                        {t(player.fit === 'primary' ? 'Hauptposition' : 'Nebenposition')} ·{t(' ')}
+                        {t(formatNumber(player.multiplier * 100))} %
                       </td>
-                      <td>{formatStrength(player.effectiveRating)}</td>
+                      <td>{t(formatStrength(player.effectiveRating))}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <p>
-              Coach: {formatNumber(strengthModel.rules.coach.formationShare * 100)} %
-              Formationspassung, {formatNumber(strengthModel.rules.coach.styleShare * 100)} %
-              Stilpassung, gewichtet mit dem Coach-Rating. Ein aufgestellter Natural Captain erhält
-              nur als gewählter Captain einen Bonus. Angezeigte Werte sind gerundet; die Matchstärke
-              ist die Summe der ausgewiesenen Komponenten.
+              {t('Coach: ')}
+              {t(formatNumber(strengthModel.rules.coach.formationShare * 100))}
+              {t(' % Formationspassung, ')}
+              {t(formatNumber(strengthModel.rules.coach.styleShare * 100))}
+              {t(
+                ' % Stilpassung, gewichtet mit dem Coach-Rating. Ein aufgestellter Natural Captain erh\u00E4lt nur als gew\u00E4hlter Captain einen Bonus. Angezeigte Werte sind gerundet; die Matchst\u00E4rke ist die Summe der ausgewiesenen Komponenten.',
+              )}
             </p>
             <p>
-              Chemie: Ein Länderpaar zählt mit Gewicht{' '}
-              {formatNumber(strengthModel.rules.chemistry.sameNationalityPairWeight)}, ein
-              Vereinspaar mit {formatNumber(strengthModel.rules.chemistry.sameClubPairWeight)}. Für{' '}
-              {assessment.chemistry.pairs} Paare beträgt das theoretische Maximum{' '}
-              {formatNumber(
-                assessment.chemistry.pairs *
-                  (strengthModel.rules.chemistry.sameNationalityPairWeight +
-                    strengthModel.rules.chemistry.sameClubPairWeight),
+              {t('Chemie: Ein L\u00E4nderpaar z\u00E4hlt mit Gewicht')}
+              {t(' ')}
+              {t(formatNumber(strengthModel.rules.chemistry.sameNationalityPairWeight))}
+              {t(', ein Vereinspaar mit ')}
+              {t(formatNumber(strengthModel.rules.chemistry.sameClubPairWeight))}
+              {t('. F\u00FCr')}
+              {t(' ')}
+              {assessment.chemistry.pairs}
+              {t(' Paare betr\u00E4gt das theoretische Maximum')}
+              {t(' ')}
+              {t(
+                formatNumber(
+                  assessment.chemistry.pairs *
+                    (strengthModel.rules.chemistry.sameNationalityPairWeight +
+                      strengthModel.rules.chemistry.sameClubPairWeight),
+                ),
               )}
-              ; der passende Anteil wird mit der Chemiegrenze multipliziert. Beim Taktikbonus zählt
-              jeder Spieler mit mindestens einem passenden Stil-Tag einmal.
+              {t(
+                '; der passende Anteil wird mit der Chemiegrenze multipliziert. Beim Taktikbonus z\u00E4hlt jeder Spieler mit mindestens einem passenden Stil-Tag einmal.',
+              )}
             </p>
           </details>
         </>

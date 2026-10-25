@@ -1,3 +1,4 @@
+import { t, useLanguage } from '../i18n/react.ts';
 import { Component, lazy, Suspense, useState, type ReactNode } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../components/Layout.tsx';
@@ -6,7 +7,6 @@ import { DraftProvider } from './DraftProvider.tsx';
 import { TournamentProvider } from './TournamentProvider.tsx';
 import { HistoryProvider } from './HistoryProvider.tsx';
 import { SessionContext } from './SessionContext.ts';
-
 const DashboardPage = lazy(() => import('../pages/DashboardPage.tsx'));
 const BuilderPage = lazy(() => import('../pages/BuilderPage.tsx'));
 const TeamsPage = lazy(() => import('../pages/TeamsPage.tsx'));
@@ -21,8 +21,14 @@ const SettingsPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import('../pages/StatusPages.tsx').then((module) => ({ default: module.NotFoundPage })),
 );
-
-class AppErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+class AppErrorBoundary extends Component<
+  {
+    children: ReactNode;
+  },
+  {
+    failed: boolean;
+  }
+> {
   state = { failed: false };
   static getDerivedStateFromError() {
     return { failed: true };
@@ -31,19 +37,19 @@ class AppErrorBoundary extends Component<{ children: ReactNode }, { failed: bool
     if (this.state.failed)
       return (
         <main className="fatal-error">
-          <p className="eyebrow">PRIME XI</p>
-          <h1>Kurze Spielunterbrechung.</h1>
-          <p>Die Seite konnte nicht geladen werden. Bitte lade die Anwendung neu.</p>
+          <p className="eyebrow">{t('PRIME XI')}</p>
+          <h1>{t('Kurze Spielunterbrechung.')}</h1>
+          <p>{t('Die Seite konnte nicht geladen werden. Bitte lade die Anwendung neu.')}</p>
           <a className="button button--primary" href={import.meta.env.BASE_URL}>
-            Neu laden
+            {t('Neu laden')}
           </a>
         </main>
       );
     return this.props.children;
   }
 }
-
 export function App() {
+  useLanguage();
   const [session, setSession] = useState(0);
   const [restored, setRestored] = useState(false);
   return (
@@ -66,8 +72,8 @@ export function App() {
                   <Suspense
                     fallback={
                       <div className="page-loading" role="status">
-                        <span className="loading-mark">XI</span>
-                        <p>Dein Spielfeld wird vorbereitet …</p>
+                        <span className="loading-mark">{t('XI')}</span>
+                        <p>{t('Dein Spielfeld wird vorbereitet \u2026')}</p>
                       </div>
                     }
                   >

@@ -28,7 +28,7 @@ test('the known nationality patch keeps old draft choices without writing or acc
   assert.equal(values.get(draftStorageKey), before);
   assert.ok(writeDraft(storage, f.draft, f.builder));
   assert.equal(JSON.parse(values.get(draftStorageKey)!).datasetVersion, getDatasetVersion());
-  for (const version of ['0.1.0', '0.2.2', '0.3.0', null, {}])
+  for (const version of ['0.1.0', '0.2.2', '0.3.1', null, {}])
     assert.equal(isCompatibleDraftDataset(version), false);
 });
 test('old backups retain their frozen team, tournament and archive snapshots under the new catalog', () => {

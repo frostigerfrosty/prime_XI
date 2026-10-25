@@ -1,8 +1,8 @@
 {
-  "id": "prime-xi-editorial-v2",
+  "id": "prime-xi-season-rubric-v3",
   "status": "approved",
   "provenance": "original_editorial_gameplay",
-  "description": "Eigene feste V1-Spielwerte. Individuelle Saisonattribute sind explizit je Karte gespeichert; Rollenprofile und bewusste Personenanpassungen dienten nur zur initialen redaktionellen Erstellung. Keine historischen Messwerte, keine EA/FIFA-Ratings. Simulationskalibrierung folgt mit der Engine.",
+  "description": "Strenge redaktionelle Vereinssaison-Bewertung anhand fünf positionsgerecht interpretierter Kriterien. Gewichtung und historische Ausnahmehürden gelten auf allen Positionen gleich. Profilzuordnungen sind explizite Saisonurteile, keine objektiven Messwerte; Quellenvertrauen ist separat ausgewiesen. Keine Potenzial-, Karriere-, Nationalmannschafts- oder automatischen Titelboni.",
   "attributeOffsets": {
     "GK": {
       "pace": -35,
@@ -131,5 +131,74 @@
       "leadership": -12
     }
   },
-  "method": "explicit-season-attributes"
+  "method": "weighted-season-rubric",
+  "rubric": {
+    "version": "1.0.0",
+    "scope": "club-season",
+    "weights": {
+      "performance": 0.35,
+      "influence": 0.25,
+      "consistency": 0.2,
+      "bigGames": 0.1,
+      "historical": 0.1
+    },
+    "criterionDescriptions": {
+      "performance": "Qualität bei den eigentlichen Aufgaben der konkreten Position und Spielrolle; Statistiken dienen als Kontextbelege.",
+      "influence": "Eigenständiger Einfluss auf Spielablauf und Mannschaft; keine automatische Gutschrift für Mannschaftstitel.",
+      "consistency": "Leistungsniveau und Abdeckung über die ganze Vereinssaison; Ausfälle und geringe Einsatzzeit werden berücksichtigt.",
+      "bigGames": "Leistung gegen starke Gegner und in wichtigen Partien; eine einzelne Aktion ersetzt nicht die Saison.",
+      "historical": "Vergleich mit Referenzsaisons derselben Rolle; kein Bonus für Karriere-Ruhm, Alter oder Potenzial."
+    },
+    "bands": [
+      {
+        "minimum": 98,
+        "label": "Historische Ausnahmesaison"
+      },
+      {
+        "minimum": 95,
+        "label": "Historisch herausragende Positionssaison"
+      },
+      {
+        "minimum": 90,
+        "label": "Weltklasse-Saison"
+      },
+      {
+        "minimum": 85,
+        "label": "Internationale Spitzenklasse"
+      },
+      {
+        "minimum": 80,
+        "label": "Sehr starke Saison"
+      },
+      {
+        "minimum": 75,
+        "label": "Gute Profisaison"
+      }
+    ],
+    "gates": {
+      "limitedEvidenceCap": 89,
+      "exceptionalMinimumHistory": 95,
+      "historicMinimumHistory": 98,
+      "historicMinimumPerformance": 98,
+      "historicMinimumInfluence": 98,
+      "historicMinimumConsistency": 95,
+      "worldClassMinimumHistory": 90
+    },
+    "roles": {
+      "GK": "Torverhinderung, Strafraum- und Raumkontrolle, Fehlervermeidung und Spielaufbau; keine Anforderung an Tore.",
+      "CB": "Stellungsspiel, Absicherung, Fehlervermeidung, Luft- und Bodenduelle sowie Aufbau; Tacklingzahlen allein sind kein Qualitätsmaß.",
+      "RB": "Defensive Absicherung, Breite, Spielaufbau, Laufarbeit und passende Offensivbeiträge.",
+      "LB": "Defensive Absicherung, Breite, Spielaufbau, Laufarbeit und passende Offensivbeiträge.",
+      "RWB": "Aufgaben als Schienenspieler: Breite, Chancenbeiträge, Umschalten und defensive Rückarbeit.",
+      "LWB": "Aufgaben als Schienenspieler: Breite, Chancenbeiträge, Umschalten und defensive Rückarbeit.",
+      "CDM": "Raumsicherung, Ballgewinne, Pressingresistenz, Ballzirkulation und Spielaufbau.",
+      "CM": "Spielkontrolle, Pass- und Entscheidungsqualität, Raumverhalten und Arbeit in beide Richtungen.",
+      "CAM": "Chancenkreation, Verbindungsspiel, Ballkontrolle und Rollenbeitrag zur Offensive.",
+      "RM": "Breite, Progression, Chancenbeiträge und defensive Mitarbeit entsprechend der Rolle.",
+      "LM": "Breite, Progression, Chancenbeiträge und defensive Mitarbeit entsprechend der Rolle.",
+      "RW": "Dribbling, Chancenkreation, Abschluss, Bewegung ohne Ball und Rollenbeitrag.",
+      "LW": "Dribbling, Chancenkreation, Abschluss, Bewegung ohne Ball und Rollenbeitrag.",
+      "ST": "Abschlussqualität und Produktion im Kontext der Chancen, Bewegung und Verbindungsspiel; keine bloße Torsumme."
+    }
+  }
 }

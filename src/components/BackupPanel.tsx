@@ -1,3 +1,5 @@
+import { getIntlLocale, languages } from '../i18n/locale.ts';
+import { t, useLanguage } from '../i18n/react.ts';
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import { Download, Upload } from 'lucide-react';
 import { useDraft } from '../app/DraftProvider.tsx';
@@ -16,16 +18,15 @@ import {
 } from '../engine/backup.ts';
 import { installSnapshot } from '../utils/game-storage.ts';
 import { roundLabels } from '../utils/tournament-display.ts';
-
 const services = { builder, model: strengthModel, tournament: tournamentEngine };
 const dateLabel = (value: string) =>
-  new Date(value).toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' });
-
+  new Date(value).toLocaleString(getIntlLocale(), { dateStyle: 'medium', timeStyle: 'short' });
 export function BackupPanel() {
+  useLanguage();
   const { draft, currentTeam } = useDraft();
   const { tournament } = useTournament();
   const { entries } = useHistory();
-  const { reduceMotion } = useSettings();
+  const { reduceMotion, locale } = useSettings();
   const { restored, restoreCompleted, acknowledgeRestore } = useSession();
   const [backup, setBackup] = useState<GameBackup | null>(null);
   const [fileName, setFileName] = useState('');
@@ -59,7 +60,7 @@ export function BackupPanel() {
           currentTeam,
           currentTournament: tournament,
           completedTournaments: entries,
-          userSettings: { ...getDefaultSettings(), reduceMotion },
+          userSettings: { ...getDefaultSettings(), reduceMotion, locale },
         },
         services,
         now,
@@ -134,18 +135,19 @@ export function BackupPanel() {
       className="panel settings-panel backup-panel"
       aria-labelledby="backup-title"
     >
-      <p className="eyebrow">DEINE DATEN BLEIBEN BEI DIR</p>
-      <h2 id="backup-title">Spielstand sichern & wiederherstellen</h2>
+      <p className="eyebrow">{t('DEINE DATEN BLEIBEN BEI DIR')}</p>
+      <h2 id="backup-title">{t('Spielstand sichern & wiederherstellen')}</h2>
       <p>
-        Speichere deinen geladenen Draft, deine Elf, dein Turnier, das Archiv und deine
-        Einstellungen in einer Datei. Auch noch nicht dauerhaft gespeicherte Änderungen aus dieser
-        Sitzung werden gesichert.
+        {t(
+          'Speichere deinen geladenen Draft, deine Elf, dein Turnier, das Archiv und deine Einstellungen in einer Datei. Auch noch nicht dauerhaft gespeicherte \u00C4nderungen aus dieser Sitzung werden gesichert.',
+        )}
       </p>
       <button className="button button--secondary" onClick={download}>
-        <Download size={16} aria-hidden="true" /> Sicherung herunterladen
+        <Download size={16} aria-hidden="true" />
+        {t(' Sicherung herunterladen')}
       </button>
       <div className="backup-import">
-        <label htmlFor="backup-file">Sicherungsdatei auswählen</label>
+        <label htmlFor="backup-file">{t('Sicherungsdatei ausw\u00E4hlen')}</label>
         <input
           id="backup-file"
           type="file"
@@ -154,74 +156,89 @@ export function BackupPanel() {
           aria-describedby="backup-file-help"
         />
         <p id="backup-file-help" className="settings-caption">
-          PRIME-XI-Sicherung als JSON, höchstens 8 MB. Die Datei wird nur auf deinem Gerät geprüft
-          und nicht hochgeladen.
+          {t(
+            'PRIME-XI-Sicherung als JSON, h\u00F6chstens 8 MB. Die Datei wird nur auf deinem Ger\u00E4t gepr\u00FCft und nicht hochgeladen.',
+          )}
         </p>
       </div>
       {(reading || message) && (
         <p className="backup-feedback" role="status">
-          {reading ? 'Sicherung wird geprüft …' : message}
+          {t(reading ? 'Sicherung wird geprüft …' : message)}
         </p>
       )}
       {error && (
         <p className="builder-alert builder-alert--error" role="alert">
-          {error}
+          {t(error)}
         </p>
       )}
       {backup && imported && (
-        <div className="backup-preview" role="region" aria-label="Sicherungsvorschau">
-          <h3>Geprüfte Sicherung</h3>
+        <div className="backup-preview" role="region" aria-label={t('Sicherungsvorschau')}>
+          <h3>{t('Gepr\u00FCfte Sicherung')}</h3>
           {imported.datasetVersion !== getDatasetVersion() && imported.currentDraft && (
             <p className="settings-caption">
-              Die Auswahl dieses älteren Drafts bleibt gültig. Die aktuelle Länderkorrektur kann
-              seine Chemie ändern. Gespeicherte Teams, Turniere und Archive behalten ihre bisherigen
-              Werte.
+              {t(
+                'Die Auswahl dieses \u00E4lteren Drafts bleibt g\u00FCltig. Aktuelle Saisonratings und L\u00E4nderzuordnungen k\u00F6nnen seine St\u00E4rke und Chemie \u00E4ndern. Gespeicherte Teams, Turniere und Archive behalten ihre bisherigen Werte.',
+              )}
             </p>
           )}
           <p className="backup-file-name">
-            {fileName} · {dateLabel(backup.exportedAt)}
+            {fileName} · {t(dateLabel(backup.exportedAt))}
           </p>
           <dl>
             <div>
-              <dt>Draft</dt>
+              <dt>{t('Draft')}</dt>
               <dd>
-                {imported.currentDraft
-                  ? `${imported.currentDraft.picks.length} / 11 Spieler`
-                  : 'Kein Draft'}
+                {t(
+                  imported.currentDraft
+                    ? `${imported.currentDraft.picks.length} / 11 Spieler`
+                    : 'Kein Draft',
+                )}
               </dd>
             </div>
             <div>
-              <dt>Gespeicherte Elf</dt>
-              <dd>{imported.currentTeam?.name ?? 'Keine Elf'}</dd>
+              <dt>{t('Gespeicherte Elf')}</dt>
+              <dd>{t(imported.currentTeam?.name ?? 'Keine Elf')}</dd>
             </div>
             <div>
-              <dt>Turnier</dt>
+              <dt>{t('Turnier')}</dt>
               <dd>
-                {!importedTournament
-                  ? 'Kein Turnier'
-                  : importedTournament.phase === 'completed'
-                    ? 'Abgeschlossen'
-                    : importedTournament.phase === 'league'
-                      ? `Ligaphase · ${tournamentEngine.progress(importedTournament).completedRounds} / 8 Spieltage`
-                      : roundLabels[importedTournament.phase]}
+                {t(
+                  !importedTournament
+                    ? 'Kein Turnier'
+                    : importedTournament.phase === 'completed'
+                      ? 'Abgeschlossen'
+                      : importedTournament.phase === 'league'
+                        ? `Ligaphase · ${tournamentEngine.progress(importedTournament).completedRounds} / 8 Spieltage`
+                        : roundLabels[importedTournament.phase],
+                )}
               </dd>
             </div>
             <div>
-              <dt>Archiv</dt>
+              <dt>{t('Archiv')}</dt>
               <dd>
-                {imported.completedTournaments.length}{' '}
-                {imported.completedTournaments.length === 1
-                  ? 'abgeschlossenes Turnier'
-                  : 'abgeschlossene Turniere'}
+                {imported.completedTournaments.length}
+                {t(' ')}
+                {t(
+                  imported.completedTournaments.length === 1
+                    ? 'abgeschlossenes Turnier'
+                    : 'abgeschlossene Turniere',
+                )}
               </dd>
             </div>
             <div>
-              <dt>Bewegung reduzieren</dt>
-              <dd>{imported.userSettings.reduceMotion ? 'An' : 'Aus'}</dd>
+              <dt>{t('Bewegung reduzieren')}</dt>
+              <dd>{t(imported.userSettings.reduceMotion ? 'An' : 'Aus')}</dd>
+            </div>
+            <div>
+              <dt>{t('Sprache')}</dt>
+              <dd>
+                {languages.find((language) => language.id === imported.userSettings.locale)?.name}
+              </dd>
             </div>
           </dl>
           <button className="button button--primary" onClick={() => setConfirm(true)}>
-            <Upload size={16} aria-hidden="true" /> Spielstand wiederherstellen
+            <Upload size={16} aria-hidden="true" />
+            {t(' Spielstand wiederherstellen')}
           </button>
         </div>
       )}
@@ -232,18 +249,18 @@ export function BackupPanel() {
         onCancel={() => setConfirm(false)}
         onClose={() => setConfirm(false)}
       >
-        <h2 id="backup-confirm-title">Aktuellen Spielstand ersetzen?</h2>
+        <h2 id="backup-confirm-title">{t('Aktuellen Spielstand ersetzen?')}</h2>
         <p>
-          Draft, gespeicherte Elf, aktuelles Turnier, Archiv und Einstellungen in diesem Browser
-          werden vollständig durch die geprüfte Sicherung ersetzt. Sichere deinen aktuellen Stand
-          vorher, wenn du ihn behalten möchtest. Die Archive werden nicht zusammengeführt.
+          {t(
+            'Draft, gespeicherte Elf, aktuelles Turnier, Archiv und Einstellungen in diesem Browser werden vollst\u00E4ndig durch die gepr\u00FCfte Sicherung ersetzt. Sichere deinen aktuellen Stand vorher, wenn du ihn behalten m\u00F6chtest. Die Archive werden nicht zusammengef\u00FChrt.',
+          )}
         </p>
         <div className="confirm-actions">
           <button className="button button--secondary" onClick={() => setConfirm(false)}>
-            Abbrechen
+            {t('Abbrechen')}
           </button>
           <button className="button button--primary" onClick={restore}>
-            Sicherung übernehmen
+            {t('Sicherung \u00FCbernehmen')}
           </button>
         </div>
       </dialog>

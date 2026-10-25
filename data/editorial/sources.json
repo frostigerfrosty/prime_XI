@@ -923,5 +923,137 @@
       "May-2021-association-change"
     ],
     "contentSha256": "2edeb6c4e0a9bcd83fc41e81e922f9e41c6b72c8d3c1f8b1a8c57a413d5f1925"
+  },
+  {
+    "id": "reference-maldini-career",
+    "title": "Paolo Maldini - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Paolo_Maldini",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "55ce2973d8cc81f9a3bbdd884e35dce04d2e3e568327bb2bfb163a12665601f7"
+  },
+  {
+    "id": "reference-lahm-career",
+    "title": "Philipp Lahm - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Philipp_Lahm",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "59847b4f381e891fade1a10b49aa7de6df44476ed2fda74f61f37f88e2e3c2dd"
+  },
+  {
+    "id": "reference-de-ligt-career",
+    "title": "Matthijs de Ligt - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Matthijs_de_Ligt",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "83fa6ce51c3e1b66b44e5f060cc9021e1905f858a6b4762d760e564a1dad5097"
+  },
+  {
+    "id": "reference-fernandinho-career",
+    "title": "Fernandinho (footballer, born May 1985) - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Fernandinho_%28footballer%2C_born_May_1985%29",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "92209c8a1568ec93334b87da74c43ca55f11df7ace47b25ae227e9af13c9c374"
+  },
+  {
+    "id": "reference-munir-career",
+    "title": "Munir El Haddadi - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Munir_El_Haddadi",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "20a9bcee36c804dc0148abb1d996c87ed5aa4e74e5f72b87b96041e651fb379a"
+  },
+  {
+    "id": "reference-bouna-sarr-career",
+    "title": "Bouna Sarr - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Bouna_Sarr",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "7a7fa82c37de4a1c4d1c4994efd0d80965f9d8f2ea3ca7f35789bdfe7533a67a"
+  },
+  {
+    "id": "reference-barcelona-2011-2012-benchmark",
+    "title": "2011–12 FC Barcelona season - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_FC_Barcelona_season",
+    "kind": "dataset_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "cdedb3e4a636050ef3a9ae09e086bc38f319f4cbf9c812985911660548148605"
+  },
+  {
+    "id": "reference-messi-rating",
+    "title": "Lionel Messi - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Lionel_Messi",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "486e85cbf14162d87c0adbb774b7b4995fa18560cca64dffac426033210ec3ea"
+  },
+  {
+    "id": "reference-cristiano-rating",
+    "title": "Cristiano Ronaldo - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Cristiano_Ronaldo",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "563025ab6acc3adc82c3cc7684ff96ce6604dccbeee08ee0d8883794310cf0e7"
+  },
+  {
+    "id": "reference-neuer-rating",
+    "title": "Manuel Neuer - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Manuel_Neuer",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "b1a15fd5d422c0e841ce31728ddc0ddb3f30fb3db1f4c2b5fa4ef0a76cabdda2"
+  },
+  {
+    "id": "reference-lewandowski-rating",
+    "title": "Robert Lewandowski - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Robert_Lewandowski",
+    "kind": "player_reference",
+    "accessStatus": "retrieved",
+    "checkedAt": "2026-10-24",
+    "intendedCoverage": [
+      "Club-season rating benchmark context; editorial judgments are not automatically source-verified."
+    ],
+    "contentSha256": "85e42171b7c7d09e0cb58174e35c081be17b65323f5607b626279d058f944c96"
   }
 ]

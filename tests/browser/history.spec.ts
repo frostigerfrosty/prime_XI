@@ -99,7 +99,7 @@ test('starting and completing another tournament keeps both archives and the fil
   await preload(page, complete, team);
   await page.goto('#/history');
   await expect(page.getByTestId('history-entry')).toHaveCount(1);
-  await restart(page, 'user-champion-0');
+  await restart(page, 'user-champion-1');
   await page.getByRole('button', { name: 'Restliche Ligaphase simulieren', exact: true }).click();
   await page.getByRole('button', { name: 'Bestätigen', exact: true }).click();
   await page.getByRole('button', { name: 'Bis zum Finale simulieren', exact: true }).click();
