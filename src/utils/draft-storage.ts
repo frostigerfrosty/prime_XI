@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from './untrusted-json.ts';
 import { getDatasetVersion, getGameRules } from '../data/index.ts';
 import { isCompatibleDraftDataset } from '../data/compatibility.ts';
 import type { DraftState } from '../types/application.ts';
@@ -15,7 +16,7 @@ export function readDraft(
   try {
     const raw = storage.getItem(draftStorageKey);
     if (!raw) return { draft: null, warning: null };
-    const value: unknown = JSON.parse(raw);
+    const value: unknown = parseUntrustedJson(raw, jsonLimits.draft);
     if (
       typeof value !== 'object' ||
       value === null ||

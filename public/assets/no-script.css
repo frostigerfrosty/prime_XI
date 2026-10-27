@@ -1,0 +1,6 @@
+.startup-screen .startup-fallback {
+  display: none;
+}
+.startup-screen .startup-without-js {
+  display: block;
+}

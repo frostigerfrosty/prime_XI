@@ -1,7 +1,17 @@
-const escapeXml = (text) => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
+const escapeXml = (text) =>
+  text
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&apos;');
 
 /** Original, deliberately simple monograms. No official crest or third-party image. */
 export function renderClubBadge(club) {
+  if (
+    ![club.colors.primary, club.colors.secondary].every((color) => /^#[0-9a-f]{6}$/iu.test(color))
+  )
+    throw new Error('Badge colors must be six-digit hexadecimal colors.');
   const hex = club.colors.primary.slice(1);
   const rgb = [0, 2, 4].map((i) => Number.parseInt(hex.slice(i, i + 2), 16) / 255);
   const luminance = rgb.reduce((sum, channel, i) => sum + channel * [0.2126, 0.7152, 0.0722][i], 0);

@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from './untrusted-json.ts';
 import { getGameRules } from '../data/index.ts';
 import { isSavedTeam } from '../engine/saved-team.ts';
 import type { StrengthModel } from '../engine/strength.ts';
@@ -15,7 +16,7 @@ export function readSavedTeam(
   try {
     const raw = storage.getItem(teamStorageKey);
     if (!raw) return { team: null, warning: null };
-    const envelope: unknown = JSON.parse(raw);
+    const envelope: unknown = parseUntrustedJson(raw, jsonLimits.team);
     if (
       typeof envelope !== 'object' ||
       envelope === null ||

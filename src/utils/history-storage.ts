@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from './untrusted-json.ts';
 import { getGameRules } from '../data/index.ts';
 import { historyLimit, isHistoryEntry } from '../engine/history.ts';
 import type { StrengthModel } from '../engine/strength.ts';
@@ -35,7 +36,7 @@ export function readHistory(storage: HistoryStorage, model: StrengthModel) {
         protectedArchive: false,
       };
     if (raw.length > maximumSize) throw new Error('Archive too large');
-    const envelope: unknown = JSON.parse(raw);
+    const envelope: unknown = parseUntrustedJson(raw, jsonLimits.tournament);
     if (
       !isRecord(envelope) ||
       envelope['schemaVersion'] !== 1 ||

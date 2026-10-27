@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from './untrusted-json.ts';
 import { getDefaultSettings, getGameRules } from '../data/index.ts';
 import type { UserSettings } from '../types/application.ts';
 import { isLanguage } from '../i18n/locale.ts';
@@ -8,7 +9,10 @@ type SettingsStorage = Pick<Storage, 'getItem' | 'setItem'>;
 export function readSettings(storage: SettingsStorage): UserSettings {
   const defaults = getDefaultSettings();
   try {
-    const value: unknown = JSON.parse(storage.getItem(settingsKey) ?? 'null');
+    const value: unknown = parseUntrustedJson(
+      storage.getItem(settingsKey) ?? 'null',
+      jsonLimits.settings,
+    );
     if (typeof value !== 'object' || value === null || Array.isArray(value)) return defaults;
     const candidate = value as Record<string, unknown>;
     return {

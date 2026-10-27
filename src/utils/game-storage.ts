@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from './untrusted-json.ts';
 import { getGameRules } from '../data/index.ts';
 import { isRecord } from '../engine/strength.ts';
 
@@ -9,7 +10,7 @@ type PhysicalStorage = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
 function readSnapshot(storage: PhysicalStorage): SnapshotRecords | null {
   const raw = storage.getItem(snapshotStorageKey);
   if (raw === null) return null;
-  const value: unknown = JSON.parse(raw);
+  const value: unknown = parseUntrustedJson(raw, jsonLimits.snapshot);
   if (!isRecord(value) || value['schemaVersion'] !== 1 || !isRecord(value['records']))
     throw new Error('Unbekanntes Spielstandformat.');
   const records = value['records'];

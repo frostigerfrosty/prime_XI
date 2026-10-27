@@ -136,6 +136,14 @@ Sie sind keine historischen Messwerte oder EA/FIFA-Ratings. Die Matchengine wurd
 an den Stärke-Beispielen der Spezifikation kalibriert; der historische Prüfstand
 der Kader bleibt davon unabhängig.
 
+## Sicherheit
+
+Schutzmaßnahmen, geprüfte OWASP-/CWE-Bereiche und Grenzen von GitHub Pages stehen in
+[docs/SICHERHEIT.md](docs/SICHERHEIT.md). Meldungen: [SECURITY.md](SECURITY.md).
+`npm run security:audit` prüft bekannte Abhängigkeitslücken;
+`npm run security:check` prüft gefährliche Code-Sinks und unveränderliche Action-Pins.
+Beide Prüfungen laufen auch in CI; CodeQL und Dependabot ergänzen sie.
+
 ## Prüfen und pflegen
 
 Node.js 24 verwenden:

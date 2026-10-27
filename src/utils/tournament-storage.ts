@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from './untrusted-json.ts';
 import { getGameRules } from '../data/index.ts';
 import type { TournamentState } from '../types/application.ts';
 import type { TournamentEngine } from '../engine/tournament.ts';
@@ -15,7 +16,7 @@ export function readTournament(
     const raw = storage.getItem(tournamentStorageKey);
     if (!raw) return { tournament: null, warning: null };
     if (raw.length > 4_000_000) throw new Error('Save too large');
-    const envelope: unknown = JSON.parse(raw);
+    const envelope: unknown = parseUntrustedJson(raw, jsonLimits.tournament);
     if (
       typeof envelope !== 'object' ||
       envelope === null ||

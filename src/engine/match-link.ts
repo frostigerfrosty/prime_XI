@@ -36,6 +36,8 @@ export function readMatchSetup(
   knownTeamIds: ReadonlySet<string>,
   versions: MatchLinkVersions,
 ): MatchSetup {
+  if (params.size > 32 || params.toString().length > 2048)
+    throw new Error('Der Testspiellink ist unvollständig. Wähle die Begegnung neu.');
   const present = fields.filter((key) => params.has(key));
   if (present.some((key) => params.getAll(key).length !== 1))
     throw new Error('Der Testspiellink enthält mehrdeutige Angaben. Wähle die Begegnung neu.');

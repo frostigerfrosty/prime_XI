@@ -1,3 +1,4 @@
+import { jsonLimits, parseUntrustedJson } from '../utils/untrusted-json.ts';
 import type { AppState } from '../types/application.ts';
 import type { Builder } from './builder.ts';
 import type { StrengthModel } from './strength.ts';
@@ -84,12 +85,17 @@ export function backupRecords(state: AppState): SnapshotRecords {
     }),
     [keys.userSettings]: JSON.stringify(state.userSettings),
   };
-  if (
-    [records[keys.currentTournament], records[keys.completedTournaments]].some(
-      (raw) => typeof raw === 'string' && raw.length > 4_000_000,
-    )
-  )
-    throw new Error('Die Sicherung enthält einen zu großen Turnier- oder Archivstand.');
+  const limits = {
+    [keys.currentDraft]: jsonLimits.draft,
+    [keys.currentTeam]: jsonLimits.team,
+    [keys.currentTournament]: jsonLimits.tournament,
+    [keys.completedTournaments]: jsonLimits.tournament,
+    [keys.userSettings]: jsonLimits.settings,
+  };
+  for (const [key, raw] of Object.entries(records)) {
+    if (typeof raw === 'string' && raw.length > limits[key]!)
+      throw new Error('Die Sicherung enthält einen zu großen Turnier- oder Archivstand.');
+  }
   return records;
 }
 
@@ -98,7 +104,7 @@ export function parseBackup(raw: string, services: BackupServices): GameBackup {
     throw new Error('Die Sicherung darf höchstens 8 MB groß sein.');
   let value: unknown;
   try {
-    value = JSON.parse(raw);
+    value = parseUntrustedJson(raw, maximumBackupBytes);
   } catch {
     throw new Error('Die Datei enthält keine lesbare JSON-Sicherung.');
   }

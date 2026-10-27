@@ -138,3 +138,12 @@ test('unfinished codes remain editable but cannot be shared; a local saved XI is
     own,
   );
 });
+
+test('untrusted matchlinks reject excessive parameter count and oversized encoded values', () => {
+  const many = matchSetupParams(defaults, versions);
+  for (let index = 0; index < 33; index++) many.append(`extra-${index}`, 'x');
+  assert.throws(() => read(many));
+  const oversized = matchSetupParams(defaults, versions);
+  oversized.set('extra', 'x'.repeat(2049));
+  assert.throws(() => read(oversized));
+});

@@ -50,6 +50,18 @@ try {
       await expect(page.getByRole('heading', { level: 1 })).toHaveText(
         'Willkommen am Spielfeldrand.',
       );
+      const securityPolicy = await page
+        .locator('meta[http-equiv="Content-Security-Policy"]')
+        .getAttribute('content');
+      for (const directive of [
+        "default-src 'none'",
+        "script-src 'self'",
+        "script-src-attr 'none'",
+        "connect-src 'self'",
+        "base-uri 'none'",
+      ])
+        expect(securityPolicy.split(';').map((part) => part.trim())).toContain(directive);
+      await expect(page.locator('meta[name="referrer"]')).toHaveAttribute('content', 'no-referrer');
       await page.goto(new URL('#/teams', address).href);
       await expect(page.locator('.team-card')).toHaveCount(60);
       await page.getByRole('combobox', { name: 'Verein', exact: true }).selectOption('milan');
@@ -135,6 +147,7 @@ try {
         seededMatchReplayed: true,
         sequentialDraftConfirmed: true,
         seasonRatingsConfirmed: true,
+        securityPolicyConfirmed: true,
         languages: ['de', 'en', 'it'],
       });
     } finally {
