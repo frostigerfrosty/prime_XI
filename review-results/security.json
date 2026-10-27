@@ -1,0 +1,32 @@
+{
+  "commit": "874aff9035600afc2c261eaab900e938b142f470",
+  "checkedAt": "2026-10-27T16:27:09.145Z",
+  "runUrl": "https://github.com/frostigerfrosty/prime_XI/actions/runs/40540798983",
+  "analysis": "success",
+  "reports": [
+    "javascript.sarif",
+    "python.sarif"
+  ],
+  "alerts": [
+    {
+      "file": "javascript.sarif",
+      "ruleId": "js/insecure-temporary-file",
+      "locations": [
+        {
+          "physicalLocation": {
+            "artifactLocation": {
+              "uri": "scripts/check-site.mjs",
+              "uriBaseId": "%SRCROOT%",
+              "index": 0
+            },
+            "region": {
+              "startLine": 164,
+              "startColumn": 19,
+              "endColumn": 25
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
