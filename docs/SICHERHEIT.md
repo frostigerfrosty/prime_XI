@@ -36,6 +36,12 @@ Schutz für eine künftig öffentliche Rangliste.
 | Browserkonfiguration, A05         | CWE-693                            | Produktionsbuild prüft CSP, Referrer-Policy und Abwesenheit von Inline-Skripten/-Styles. no-referrer reduziert Datenweitergabe bei externen Quellenlinks. Vite startet standardmäßig nur auf Loopback; Cloud-Vorschauen können --host ausdrücklich setzen.                                                                                                                                                                                          |
 | Dauerhafte Prüfungen, A05/A06/A08 | CWE-1104, CWE-693                  | Lokaler AST-Regressionsschutz für gefährliche Sinks und Workflow-Pins; GitHub CodeQL mit security-extended für JavaScript/TypeScript und Python bei Push/PR und wöchentlich. CodeQL-Ergebnisse stehen unter Security → Code scanning. Das ist ergänzende Analyse, kein Vollständigkeitsbeweis.                                                                                                                                                      |
 
+CodeQL fand bei der ersten Analyse außerdem einen vorhersehbaren temporären
+Standardpfad im Website-Prüfskript (CWE-377). Der Standardbericht erhält jetzt ein
+mit `mkdtemp` erstelltes, zufälliges und nur dem Benutzer zugängliches Verzeichnis.
+Explizite CLI-Ausgabepfade bleiben für CI-Berichte möglich. Ein Test prüft Isolation
+paralleler Aufrufe und die Verzeichnisrechte.
+
 ## Browserrichtlinie und Hostinggrenzen
 
 Die CSP wird ausschließlich beim Produktionsbuild als frühes Meta-Element eingefügt;

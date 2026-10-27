@@ -1,6 +1,7 @@
 import { chromium, expect } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
+import { siteReportPath } from './site-report.mjs';
 import { getDatabase } from '../src/data/index.ts';
 import { createMatchEngine } from '../src/engine/match.ts';
 import { createStrengthModel } from '../src/engine/strength.ts';
@@ -18,7 +19,7 @@ if (
   throw new Error('Supply the site URL with its trailing slash.');
 address.search = '';
 address.hash = '';
-const output = process.argv[3] ?? '/tmp/prime-xi-site-check.json';
+const output = await siteReportPath(process.argv[3]);
 const data = getDatabase(),
   model = createStrengthModel(data),
   engine = createMatchEngine(data.rules);
